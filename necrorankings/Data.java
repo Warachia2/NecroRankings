@@ -5,6 +5,7 @@ public class Data {
 	//SteamIDs of chaters
     public static boolean isCheater(String steamid){
     	switch(steamid){
+    	//more than 99.9% sure they are cheaters
     	case "76561198332676368": return true; //ez2003d
     	case "76561198123721632": return true; //一千個Bustywife
     	case "76561198117780523": return true; //Ephastus
@@ -65,6 +66,8 @@ public class Data {
     	case "76561198097652656": return true; //para
     	case "76561197993423171": return true; //nanuke
     	case "76561198084235152": return true; //Lemon
+    	//already excluded by impossible score
+    	case "76561198373879461": return true; //thegunslinger
     	//not sure
     	case "76561197988603462": return true; //Nexusmaster (?)
     	case "76561198109790029": return true; //木木彡 (?)
