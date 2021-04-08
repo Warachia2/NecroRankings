@@ -580,6 +580,24 @@ public class RankCalculator extends DefaultHandler{
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        
+        array.sort((a,b) -> (int)(10000*(b.scorepoints() - a.scorepoints()))); 
+        
+        try {
+            FileWriter f = new FileWriter("C:\\Users\\Warachia\\Desktop\\Old NecroLab Score.txt", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+
+            for(int i=0;i<200;i++){
+            	if(i%20 == 0){
+            		p.println(labexp);
+            	}
+            	p.println((i+1) + "\t" + array.get(i).scoreDescription());
+            }
+            p.close();
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
 
         array.sort((a,b) -> (a.timeSum(13) - b.timeSum(13)));
         

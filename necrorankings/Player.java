@@ -172,6 +172,16 @@ public class Player {
 		return d;
 	}
 	
+	public String scoreDescription(){
+		String d = name() + "\t" + String.format("%.2f",scorepoints());
+		
+		for(int i=0;i<17;i++){
+			d += "\t" + rankdes(score[i]);
+		}
+		
+		return d;
+	}
+	
 	public String timeSumDescription(int num){
 		String d = name();
 		
