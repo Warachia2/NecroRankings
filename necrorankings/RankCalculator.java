@@ -842,7 +842,7 @@ public class RankCalculator extends DefaultHandler{
     			}
     		}
     		else{
-    			if(score >= 50000){
+    			if(score >= 70000){
     				return false;
     			}
     			else{
