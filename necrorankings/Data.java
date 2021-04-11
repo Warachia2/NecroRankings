@@ -94,6 +94,7 @@ public class Data {
 		switch(steamid){
 		case "Mizmy": return "Mizmy";
 		case "76561198115768228": return "Mizmy";
+		case "Low% Monster": return "Low% Monster";
 		case "NR Hokuho": return "NR Hokuho";
 		case "Hard Hokuho": return "Hard Hokuho";
 		case "Rando Warachia": return "Rando Warachia";
@@ -769,6 +770,7 @@ public class Data {
     	case "76561198843189876": return "Mutlos";
     	case "76561198252597000": return "Ultimage";
     	case "76561198037800698": return "Fryone";
+    	case "76561198453991513": return "TheBigRanch";
     	default: return "ID:" + steamid;
 		}
 	}

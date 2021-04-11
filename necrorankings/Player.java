@@ -188,7 +188,7 @@ public class Player {
 		d += "\t" + csecToString(timeSum(num));
 				
 		for(int i=0;i<num;i++){
-			d += "\t" + csecToString(time[i]);
+			d += "\t" + csecToString(adjustedTime(i,time[i]));
 		}
 		return d;
 	}
@@ -470,25 +470,45 @@ public class Player {
 	
 	///Switch Players
     public static Player mizmy(){
-    	Player mizmy = new Player("Mizmy");
-    	mizmy.setTime(0, 41335); //Aria
-    	mizmy.setTime(1, 20398); //Bard
-    	mizmy.setTime(2, 22661); //Bolt
-    	mizmy.setTime(3, 35301); //Cadence
-    	mizmy.setTime(4, 28065); //Diamond
-    	mizmy.setTime(5, 23521); //Dorian
-    	mizmy.setTime(6, 17695); //Dove
-    	mizmy.setTime(7, 30632); //Eli
-    	mizmy.setTime(8, 31607); //Mary
-    	mizmy.setTime(9, 32665); //Melody
-    	mizmy.setTime(10, 41264); //Monk
-    	mizmy.setTime(11, 40680); //Nocturna
-    	mizmy.setTime(12, 26472); //Tempo
-    	mizmy.setTime(13, 71917); //Coda
-    	return mizmy;
+    	Player p = new Player("Mizmy");
+    	p.setTime(0, 41335); //Aria
+    	p.setTime(1, 20398); //Bard
+    	p.setTime(2, 22661); //Bolt
+    	p.setTime(3, 35301); //Cadence
+    	p.setTime(4, 28065); //Diamond
+    	p.setTime(5, 23521); //Dorian
+    	p.setTime(6, 17695); //Dove
+    	p.setTime(7, 30632); //Eli
+    	p.setTime(8, 31607); //Mary
+    	p.setTime(9, 32665); //Melody
+    	p.setTime(10, 41264); //Monk
+    	p.setTime(11, 40680); //Nocturna
+    	p.setTime(12, 26472); //Tempo
+    	p.setTime(13, 71917); //Coda
+    	return p;
     }
 	
     ///Extra Players
+    public static Player LowMonster(){
+    	Player p = new Player("Low% Monster");
+    	p.setTime(0, 58017); //Aria
+    	p.setTime(1, 32541); //Bard
+    	p.setTime(2, 32271); //Bolt
+    	p.setTime(3, 59368); //Cadence
+    	p.setTime(4, 40829); //Diamond
+    	p.setTime(5, 35248); //Dorian
+    	p.setTime(6, 27133); //Dove
+    	p.setTime(7, 999999); //Eli
+    	p.setTime(8, 64778); //Mary
+    	p.setTime(9, 30019); //Melody
+    	p.setTime(10, 134439); //Monk
+    	p.setTime(11, 57500); //Nocturna
+    	p.setTime(12, 36167); //Tempo
+    	p.setTime(13, 999999); //Coda
+    	p.setExtra(true);
+    	return p;
+    }
+    
     public static Player NRHokuho(){
     	Player p = new Player("NR Hokuho");
     	for(int i=0;i<14;i++){

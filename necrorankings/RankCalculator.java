@@ -445,6 +445,7 @@ public class RankCalculator extends DefaultHandler{
 
         
         //Extra Players
+        list.put("Low% Monster",Player.LowMonster());
         list.put("NR Hokuho",Player.NRHokuho());
         list.put("Hard Hokuho",Player.HardHokuho());
         list.put("Rando Warachia",Player.RandoWarachia());
@@ -607,7 +608,7 @@ public class RankCalculator extends DefaultHandler{
             int extra = 0;
     		p.println(sumexp13);
             
-            for(int i=0;i<155;i++){
+            for(int i=0;i<156;i++){
             	Player player = array.get(i);
             	if(player.isExtra){
             		extra++;
@@ -661,7 +662,7 @@ public class RankCalculator extends DefaultHandler{
             int extra = 0;
     		p.println(ratioexp13);
             
-            for(int i=0;i<155;i++){
+            for(int i=0;i<156;i++){
             	Player player = array.get(i);
             	if(player.isExtra){
             		extra++;
