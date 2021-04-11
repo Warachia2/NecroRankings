@@ -401,33 +401,33 @@ public class Player {
 	public int timeBound(int cur){ //upper bound of time for time sum rankings
 		switch(cur){
 		case 0:
-			return 66000;
+			return 72000; //Aria
 		case 1:
-			return 30000;
+			return 30000; //Bard
 		case 2:
-			return 36000;
+			return 48000; //Bolt
 		case 3:
-			return 60000;
+			return 60000; //Cadence
 		case 4:
-			return 48000;
+			return 48000; //Diamond
 		case 5:
-			return 42000;
+			return 48000; //Dorian
 		case 6:
-			return 30000;
+			return 30000; //Dove
 		case 7:
-			return 54000;
+			return 72000; //Eli
 		case 8:
-			return 60000;
+			return 60000; //Mary
 		case 9:
-			return 60000;
+			return 60000; //Melody
 		case 10:
-			return 72000;
+			return 72000; //Monk
 		case 11:
-			return 72000;
+			return 72000; //Noc
 		case 12:
-			return 48000;
+			return 48000; //Tempo
 		default:
-			return 99999999;
+			return 99999999; //Coda
 		}
 	}
 	
@@ -500,7 +500,7 @@ public class Player {
     	p.setTime(6, 27133); //Dove
     	p.setTime(7, 999999); //Eli
     	p.setTime(8, 64778); //Mary
-    	p.setTime(9, 30019); //Melody
+    	p.setTime(9, 36019); //Melody
     	p.setTime(10, 134439); //Monk
     	p.setTime(11, 57500); //Nocturna
     	p.setTime(12, 36167); //Tempo
