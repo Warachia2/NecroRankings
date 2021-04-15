@@ -66,6 +66,7 @@ public class Data {
     	case "76561198097652656": return true; //para
     	case "76561197993423171": return true; //nanuke
     	case "76561198084235152": return true; //Lemon
+    	case "76561198202195984": return true; //EagleMaintainer
     	//already excluded by impossible score
     	case "76561198373879461": return true; //thegunslinger
     	//not sure
@@ -771,6 +772,8 @@ public class Data {
     	case "76561198252597000": return "Ultimage";
     	case "76561198037800698": return "Fryone";
     	case "76561198453991513": return "TheBigRanch";
+    	case "76561198844450515": return "lakehope";
+    	case "76561198078314270": return "Evtet";
     	default: return "ID:" + steamid;
 		}
 	}
