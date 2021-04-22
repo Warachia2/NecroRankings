@@ -127,7 +127,7 @@ public class Data {
 		case "76561198052787418": return "seanpwolf";
 		case "76561198049600266": return "Nick";
 		case "76561198084303847": return "Spef";
-		case "76561198161380239": return "暗淡星";
+		case "76561198161380239": return "blexstar";
 		case "76561198112122029": return "Naymin";
 		case "76561197995770129": return "thedarkfreack";
 		case "76561197987716503": return "Squega";

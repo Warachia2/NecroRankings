@@ -140,9 +140,6 @@ public class Player {
 		
 		d += "\t" + String.format("%.2f",p/50);
 		
-		
-		d += "\t" + String.format("%.2f",(extraspeed*extraspeed() + extrascore*extrascore())/50);
-		
 		p = 0;
 		
 		for(int i=0;i<14;i++){
@@ -158,6 +155,8 @@ public class Player {
 		}
 		
 		d += "\t" + String.format("%.2f",p/50);
+		
+		d += "\t" + String.format("%.2f",(extraspeed*extraspeed() + extrascore*extrascore())/50);
 		
 		return d;
 	}
@@ -207,10 +206,10 @@ public class Player {
 	public String scoreRatioDescription(int num){
 		String d = name();
 		
-		d += "\t" + String.format("%.3f", averageScoreRatio(num));
+		d += "\t" + String.format("%.3f", averageScoreRatio(num)) + "%";
 		
 		for(int i=0;i<num;i++){
-			d += "\t" + String.format("%.3f",scoreRatio(i));
+			d += "\t" + String.format("%.3f",scoreRatio(i)) + "%";
 		}
 		return d;
 	}
@@ -457,7 +456,7 @@ public class Player {
 	}
 	
 	public double scoreRatio(int cur){
-		return (double)gold[cur]/scoreWR[cur];
+		return (double)100*gold[cur]/scoreWR[cur];
 	}
 	
 	public double averageScoreRatio(int num){
@@ -498,11 +497,11 @@ public class Player {
     	p.setTime(4, 40829); //Diamond
     	p.setTime(5, 35248); //Dorian
     	p.setTime(6, 27133); //Dove
-    	p.setTime(7, 999999); //Eli
+    	p.setTime(7, 48909); //Eli
     	p.setTime(8, 64778); //Mary
     	p.setTime(9, 36019); //Melody
-    	p.setTime(10, 134439); //Monk
-    	p.setTime(11, 57500); //Nocturna
+    	p.setTime(10, 75520); //Monk
+    	p.setTime(11, 48074); //Nocturna
     	p.setTime(12, 36167); //Tempo
     	p.setTime(13, 999999); //Coda
     	p.setExtra(true);

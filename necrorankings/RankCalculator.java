@@ -460,7 +460,7 @@ public class RankCalculator extends DefaultHandler{
 		DateTimeFormatter dtformat1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
 		String fdate1 = dtformat1.format(date1);
         
-        String influenceexp = "#" + "\t" + fdate1 + "\tTotal\tSpeed\tScore\tExtra\tDeathless";
+        String influenceexp = "#" + "\t" + fdate1 + "\tTotal\tSpeed\tScore\tDeathless\tExtra";
 		
         String extraexp = "#" + "\t" + fdate1 + "\tTotal\tHard\tNR\tRando\tPhasing\tMystery";
         String extraexp2 = "#" + "\t" + fdate1 + "\tTotal\tAria\tBard\tBolt\tCadence\tDiamond\tDorian\tDove\tEli\tMary\tMelody\tMonk\tNocturna\tTempo\tCoda";
