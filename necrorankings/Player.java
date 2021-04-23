@@ -32,6 +32,7 @@ public class Player {
 	final int codadeathless = 25;
 	final int difficultdeathless = 10;
 	final int easydeathless = 5;
+	final int codachallenge = 25;
 	final int extraspeed = 3;
 	final int extrascore = 1;
 	
@@ -156,7 +157,7 @@ public class Player {
 		
 		d += "\t" + String.format("%.2f",p/50);
 		
-		d += "\t" + String.format("%.2f",(extraspeed*extraspeed() + extrascore*extrascore())/50);
+		d += "\t" + String.format("%.2f",((codachallenge - extraspeed) * (points(nrspeed[13])+ points(hardspeed[13]) + points(randospeed[13]) + points(mysteryspeed[13])) + extraspeed*extraspeed() + extrascore*extrascore())/50);
 		
 		return d;
 	}
@@ -379,6 +380,7 @@ public class Player {
 			}
 		}
 		
+		p += (codachallenge - extraspeed) * (points(nrspeed[13])+ points(hardspeed[13]) + points(randospeed[13]) + points(mysteryspeed[13]));
 		p += extraspeed * extraspeed();
 		p += extrascore * extrascore();
 		
