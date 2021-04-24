@@ -488,7 +488,7 @@ public class Player {
     	p.setTime(13, 71917); //Coda
     	return p;
     }
-	
+
     ///Extra Players
     public static Player LowMonster(){
     	Player p = new Player("Low% Monster");
@@ -610,7 +610,7 @@ public class Player {
 	}
 	
 	public void setGold(int cur, int score){
-		gold[cur] = score;
+		gold[cur] = Math.max(score, gold[cur]);
 	}
 	
 	public void setExtra(boolean b){

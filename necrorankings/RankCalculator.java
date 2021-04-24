@@ -454,6 +454,9 @@ public class RankCalculator extends DefaultHandler{
         
         ArrayList<Player> array = new ArrayList<>(list.values());
         
+        //Unsubmitted
+        list.get("76561198453991513").setTime(3, 44474); //TheBigRanch, Cadence Speed 7:24.74
+        list.get("76561197999948240").setGold(11, 30086); //Ancalagor, Nocturna Score 30086
         
         //Bar Text
         LocalDateTime date1 = LocalDateTime.now();
@@ -474,7 +477,6 @@ public class RankCalculator extends DefaultHandler{
         String sumexp14 = "#" + "\t" + fdate1 + "\tSum\tAria\tBard\tBolt\tCadence\tDiamond\tDorian\tDove\tEli\tMary\tMelody\tMonk\tNocturna\tTempo\tCoda";
         String ratioexp13 = "#" + "\t" + fdate1 + "\tAverage\tAria\tBard\tBolt\tCadence\tDiamond\tDorian\tDove\tEli\tMary\tMelody\tMonk\tNocturna\tTempo";
         String ratioexp14 = "#" + "\t" + fdate1 + "\tAverage\tAria\tBard\tBolt\tCadence\tDiamond\tDorian\tDove\tEli\tMary\tMelody\tMonk\tNocturna\tTempo\tCoda";
-        
         
         //Rankings
         array.sort((a,b) -> (int)(10000*(b.extraspeed() - a.extraspeed()))); 
