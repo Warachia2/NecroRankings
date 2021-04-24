@@ -457,6 +457,8 @@ public class RankCalculator extends DefaultHandler{
         //Unsubmitted
         list.get("76561198453991513").setTime(3, 44474); //TheBigRanch, Cadence Speed 7:24.74
         list.get("76561197999948240").setGold(11, 30086); //Ancalagor, Nocturna Score 30086
+        list.get("76561198398758840").setGold(0, 26566); //Hokuho, Aria Score 26566
+        Player.scoreWR[0] = Math.max(Player.scoreWR[0], 26566);
         
         //Bar Text
         LocalDateTime date1 = LocalDateTime.now();
