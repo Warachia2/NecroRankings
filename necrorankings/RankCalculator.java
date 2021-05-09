@@ -825,6 +825,11 @@ public class RankCalculator extends DefaultHandler{
     public boolean canPass(String category, int score){
     	switch(category){
     	case "score":
+    	case "hardscore":
+    	case "mysteryscore":
+    	case "nrscore":
+    	case "randoscore":
+    	case "phasingscore":
     		if(cur == 1){
     			if(score >= 500000){
     				return false;

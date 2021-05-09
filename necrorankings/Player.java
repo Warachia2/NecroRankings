@@ -633,6 +633,10 @@ public class Player {
 	}
 	
     public static String csecToString(int csec){
+    	if(csec == 0){
+    		return "";
+    	}
+    	
     	int minutes = csec/6000;
     	
     	String H = String.valueOf(minutes/60);
