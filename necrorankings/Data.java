@@ -68,6 +68,9 @@ public class Data {
     	case "76561198084235152": return true; //Lemon
     	case "76561198202195984": return true; //EagleMaintainer
     	case "76561198070705526": return true; //Jelli
+    	case "76561197999764223": return true; //Arisias
+    	case "76561198104645750": return true; //Protogymnastos of Powerlifting
+    	case "76561198025603321": return true; //Coco_Skmdy@たけのこよりきのこが好き 
     	//already excluded by impossible score
     	case "76561198373879461": return true; //thegunslinger
     	//not sure
@@ -317,7 +320,6 @@ public class Data {
     	case "76561198011699352": return "Cavalcadence";
     	case "76561198084107692": return "Crowrevell";
     	case "76561198026968010": return "Xan42";
-    	case "76561197999764223": return "Arisias";
     	case "76561198061963965": return "kath";
     	case "76561198138535845": return "Dragon_V.V";
     	case "76561198003147305": return "Jabbofet";
@@ -776,6 +778,7 @@ public class Data {
     	case "76561198844450515": return "lakehope";
     	case "76561198078314270": return "Evtet";
     	case "76561198215353171": return "Karisa";
+    	case "76561198085840270": return "miss";
     	default: return "ID:" + steamid;
 		}
 	}

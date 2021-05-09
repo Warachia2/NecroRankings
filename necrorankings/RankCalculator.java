@@ -20,6 +20,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class RankCalculator extends DefaultHandler{
+	static String output = "C:\\Users\\Warachia\\Desktop\\"; //where you generate files
+	
 	static String category = "";
 	static int cur = 0; //category id, 0~16
     static boolean WRflag = false;
@@ -456,6 +458,7 @@ public class RankCalculator extends DefaultHandler{
         
         //Unsubmitted
         list.get("76561198453991513").setTime(3, 44474); //TheBigRanch, Cadence Speed 7:24.74
+        list.get("76561198087367133").setTime(2, 27345); //Shortcake Sweets, Bolt Speed, 4:33.45
         list.get("76561197999948240").setGold(11, 30086); //Ancalagor, Nocturna Score 30086
         list.get("76561198398758840").setGold(0, 26566); //Hokuho, Aria Score 26566
         Player.scoreWR[0] = Math.max(Player.scoreWR[0], 26566);
@@ -484,7 +487,7 @@ public class RankCalculator extends DefaultHandler{
         array.sort((a,b) -> (int)(10000*(b.extraspeed() - a.extraspeed()))); 
         
         try {
-            FileWriter f = new FileWriter("C:\\Users\\Warachia\\Desktop\\Extra Speed Rankings A.txt", false);
+            FileWriter f = new FileWriter(output + "Extra Speed Rankings A.txt", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
 
             for(int i=0;i<100;i++){
@@ -500,7 +503,7 @@ public class RankCalculator extends DefaultHandler{
         }
         
         try {
-            FileWriter f = new FileWriter("C:\\Users\\Warachia\\Desktop\\Extra Speed Rankings B.txt", false);
+            FileWriter f = new FileWriter(output + "Extra Speed Rankings B.txt", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
 
             for(int i=0;i<100;i++){
@@ -519,7 +522,7 @@ public class RankCalculator extends DefaultHandler{
         array.sort((a,b) -> (int)(10000*(b.extrascore() - a.extrascore()))); 
         
         try {
-            FileWriter f = new FileWriter("C:\\Users\\Warachia\\Desktop\\Extra Score Rankings A.txt", false);
+            FileWriter f = new FileWriter(output + "Extra Score Rankings A.txt", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
 
             for(int i=0;i<100;i++){
@@ -535,7 +538,7 @@ public class RankCalculator extends DefaultHandler{
         }
         
         try {
-            FileWriter f = new FileWriter("C:\\Users\\Warachia\\Desktop\\Extra Score Rankings B.txt", false);
+            FileWriter f = new FileWriter(output + "Extra Score Rankings B.txt", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
 
             for(int i=0;i<100;i++){
@@ -553,7 +556,7 @@ public class RankCalculator extends DefaultHandler{
         array.sort((a,b) -> (int)(10000*(b.contribution() - a.contribution())));
         
         try {
-            FileWriter f = new FileWriter("C:\\Users\\Warachia\\Desktop\\LBs Influence Rankings.txt", false);
+            FileWriter f = new FileWriter(output + "LBs Influence Rankings.txt", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
 
             for(int i=0;i<200;i++){
@@ -571,7 +574,7 @@ public class RankCalculator extends DefaultHandler{
         array.sort((a,b) -> (int)(10000*(b.speedpoints() - a.speedpoints()))); 
         
         try {
-            FileWriter f = new FileWriter("C:\\Users\\Warachia\\Desktop\\Old NecroLab Speed.txt", false);
+            FileWriter f = new FileWriter(output + "Old NecroLab Speed.txt", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
 
             for(int i=0;i<200;i++){
@@ -589,7 +592,7 @@ public class RankCalculator extends DefaultHandler{
         array.sort((a,b) -> (int)(10000*(b.scorepoints() - a.scorepoints()))); 
         
         try {
-            FileWriter f = new FileWriter("C:\\Users\\Warachia\\Desktop\\Old NecroLab Score.txt", false);
+            FileWriter f = new FileWriter(output + "Old NecroLab Score.txt", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
 
             for(int i=0;i<200;i++){
@@ -607,7 +610,7 @@ public class RankCalculator extends DefaultHandler{
         array.sort((a,b) -> (a.timeSum(13) - b.timeSum(13)));
         
         try {
-            FileWriter f = new FileWriter("C:\\Users\\Warachia\\Desktop\\13 Speed PB Sum.txt", false);
+            FileWriter f = new FileWriter(output + "13 Speed PB Sum.txt", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
             int extra = 0;
     		p.println(sumexp13);
@@ -634,7 +637,7 @@ public class RankCalculator extends DefaultHandler{
         array.sort((a,b) -> (a.timeSum(14) - b.timeSum(14)));
         
         try {
-            FileWriter f = new FileWriter("C:\\Users\\Warachia\\Desktop\\14 Speed PB Sum.txt", false);
+            FileWriter f = new FileWriter(output + "14 Speed PB Sum.txt", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
             int extra = 0;
     		p.println(sumexp14);
@@ -661,7 +664,7 @@ public class RankCalculator extends DefaultHandler{
         array.sort((a,b) -> (int)(1000000*(a.averageTimeRatio(13) - b.averageTimeRatio(13))));
         
         try {
-            FileWriter f = new FileWriter("C:\\Users\\Warachia\\Desktop\\13 Speed Ratio to WRs.txt", false);
+            FileWriter f = new FileWriter(output + "13 Speed Ratio to WRs.txt", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
             int extra = 0;
     		p.println(ratioexp13);
@@ -688,7 +691,7 @@ public class RankCalculator extends DefaultHandler{
         array.sort((a,b) -> (int)(1000000*(b.averageScoreRatio(14) - a.averageScoreRatio(14))));
         
         try {
-            FileWriter f = new FileWriter("C:\\Users\\Warachia\\Desktop\\14 Score Ratio to WRs.txt", false);
+            FileWriter f = new FileWriter(output + "14 Score Ratio to WRs.txt", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
             int extra = 0;
     		p.println(ratioexp14);
