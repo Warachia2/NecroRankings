@@ -28,7 +28,7 @@ import java.util.*;
 import necrorankings.Player;
 
 public class PBCalculator extends DefaultHandler{
-	static String output = "C:\\Users\\Warachia\\Desktop\\"; //where you generate files
+	static String output = "C:\\Users\\Warachia\\Desktop\\Document\\NecroPBs\\data\\"; //where you generate files
 	
 	static String category = "";
 	static int cur = 0; //category id, 0~16
@@ -269,7 +269,7 @@ public class PBCalculator extends DefaultHandler{
         cur++; //Nocturna
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/2041693/?xml=1").openStream(), new PBCalculator());
         cur++; //Tempo
-        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/2047971/?xml=1").openStream(), new PBCalculator());
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/2044754/?xml=1").openStream(), new PBCalculator());
         cur++; //Coda
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/2047448/?xml=1").openStream(), new PBCalculator());
         
@@ -482,6 +482,12 @@ public class PBCalculator extends DefaultHandler{
         targets.add("76561198113991193"); //Dragonsage
         targets.add("76561198085840270"); //miss
         targets.add("76561198079454638"); //Kupioala
+        targets.add("76561198994219732"); //NBtelethia
+        targets.add("76561199018238169"); //Oracle
+        targets.add("76561198164672699"); //jacobsmash
+        targets.add("76561198080860867"); //ParkerPNG
+        targets.add("76561198287861639"); //DragonicPixel
+        targets.add("76561198047891575"); //rivs
         
         for(String s:targets){
         	Player player = list.get(s);
@@ -515,6 +521,8 @@ public class PBCalculator extends DefaultHandler{
                 ex.printStackTrace();
             }
         }
+        
+        System.out.println("Done");
         
     }
 
@@ -710,6 +718,7 @@ public class PBCalculator extends DefaultHandler{
     	case 7: return "7th";
     	case 8: return "8th";
     	case 9: return "9th";
+    	case 10: return "10th";
     	default: return "";
     	}
     }

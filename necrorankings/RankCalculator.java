@@ -261,7 +261,7 @@ public class RankCalculator extends DefaultHandler{
         cur++; //Nocturna
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/2041693/?xml=1").openStream(), new RankCalculator());
         cur++; //Tempo
-        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/2047971/?xml=1").openStream(), new RankCalculator());
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/2044754/?xml=1").openStream(), new RankCalculator());
         cur++; //Coda
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/2047448/?xml=1").openStream(), new RankCalculator());
         
