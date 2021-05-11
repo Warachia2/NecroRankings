@@ -1,7 +1,7 @@
 package necrorankings;
 
 //////////////////////////////////////
-///edit line468~ to set the players you make the list of their PBs
+///register player's name/ID to Data.java if it doesn't include players you want yet (hundreds of players are already included)
 ///edit line30 to set where you generate files
 ///then copy&paste all to sample.xlsx
 //////////////////////////////////////
@@ -28,7 +28,7 @@ import java.util.*;
 import necrorankings.Player;
 
 public class PBCalculator extends DefaultHandler{
-	static String output = "C:\\Users\\Warachia\\Desktop\\Document\\NecroPBs\\data\\"; //where you generate files
+	static String output = "C:\\Users\\Warachia\\Desktop\\Document\\NecroPBs\\PBtexts\\"; //where you generate files
 	
 	static String category = "";
 	static int cur = 0; //category id, 0~16
@@ -466,31 +466,13 @@ public class PBCalculator extends DefaultHandler{
 		String fdate1 = dtformat1.format(date1);
 
         //PBs
-        ArrayList<String> targets = new ArrayList<>();
-        targets.add("76561198121399825"); //Warachia
-        targets.add("76561198398758840"); //Hokuho
-        targets.add("76561198002854407"); //Spooty
-        targets.add("76561198317639601"); //Monster
-        targets.add("76561198207378484"); //Ocre307
-        targets.add("76561197998799529"); //Biggiemac42
-        targets.add("76561197999948240"); //Ancalagor
-        targets.add("76561198028008855"); //Siveure
-        targets.add("76561197993247154"); //Abu Yazan
-        targets.add("76561198158315777"); //Drigallski
-        targets.add("76561198143370429"); //Sailo
-        targets.add("76561198453991513"); //TheBigRanch
-        targets.add("76561198113991193"); //Dragonsage
-        targets.add("76561198085840270"); //miss
-        targets.add("76561198079454638"); //Kupioala
-        targets.add("76561198994219732"); //NBtelethia
-        targets.add("76561199018238169"); //Oracle
-        targets.add("76561198164672699"); //jacobsmash
-        targets.add("76561198080860867"); //ParkerPNG
-        targets.add("76561198287861639"); //DragonicPixel
-        targets.add("76561198047891575"); //rivs
         
-        for(String s:targets){
-        	Player player = list.get(s);
+        ArrayList<Player> array = new ArrayList<>(list.values());
+        
+        for(Player player:array){
+        	if(player.name().startsWith("ID")){
+        		continue;
+        	}
             try {
                 FileWriter f = new FileWriter(output + player.name() + ".txt", false);
                 PrintWriter p = new PrintWriter(new BufferedWriter(f));

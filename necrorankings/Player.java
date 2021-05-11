@@ -345,6 +345,10 @@ public class Player {
 	}
 	
 	public double contribution(){
+		return contribution_speed() + contribution_score() + contribution_deathless() + contribution_extra();
+	}
+	
+	public double contribution_speed(){
 		double p = 0;
 		
 		for(int i=0;i<17;i++){
@@ -356,6 +360,11 @@ public class Player {
 			}
 		}
 		
+		return p/50;
+	}
+	
+	public double contribution_score(){
+		double p = 0;
 		for(int i=0;i<17;i++){
 			if(i == 3){
 				p += cadencescore * points(score[i]); //Cadence Score
@@ -367,7 +376,11 @@ public class Player {
 				p += otherscore * points(score[i]); //Other Score
 			}
 		}
-		
+		return p/50;
+	}
+	
+	public double contribution_deathless(){
+		double p = 0;
 		for(int i=0;i<14;i++){
 			if(i == 13){
 				p += codadeathless * points(deathless[i]); //Coda Dearthless
@@ -379,14 +392,17 @@ public class Player {
 				p += easydeathless * points(deathless[i]); //Other Deathless
 			}
 		}
+		return p/50;
+	}
+	
+	public double contribution_extra(){
+		double p = 0;
 		
 		p += (codachallenge - extraspeed) * (points(nrspeed[13])+ points(hardspeed[13]) + points(randospeed[13]) + points(mysteryspeed[13]));
 		p += extraspeed * extraspeed();
 		p += extrascore * extrascore();
 		
-		p /= 50;
-		
-		return p;
+		return p/50;
 	}
 	
 	///Sums, Ratios
