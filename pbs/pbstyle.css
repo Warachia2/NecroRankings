@@ -16,3 +16,21 @@
 .wr{
   font-weight: bold
 }
+
+.maintable{
+width: 500px;
+height: 150px;
+border: 2px #2b2b2b solid;
+}
+
+.score{
+width: 120px;
+}
+
+.rank{
+width: 60px;
+}
+
+.extra{
+width: 50px;
+}
