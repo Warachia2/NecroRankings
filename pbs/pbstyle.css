@@ -57,3 +57,17 @@ img{
 text-align:center; 
 vertical-align:bottom;
 }
+
+a {
+text-decoration:none;
+}
+a:link {
+   color: black;
+}
+a:visited {
+   color: black;
+}
+a:hover {
+   color: white;
+   background-color: black;
+}

@@ -34,3 +34,18 @@ text-align: center;
 p {
 text-align: center;
 }
+
+a {
+text-decoration:none;
+}
+
+a:link {
+   color: black;
+}
+a:visited {
+   color: black;
+}
+a:hover {
+   color: white;
+   background-color: black;
+}
