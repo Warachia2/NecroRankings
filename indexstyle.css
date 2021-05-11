@@ -1,3 +1,18 @@
 .center{
 text-align: center;
 }
+
+.categories{
+float: left;
+list-style: none;
+position: relative;
+left: 48.2%;
+}
+
+.go{
+float: left;
+position: relative;
+left: -50%;
+padding-right: 5px;
+text-align: center;
+}
