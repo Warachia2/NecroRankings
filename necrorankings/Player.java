@@ -502,6 +502,7 @@ public class Player {
     	p.setTime(11, 40680); //Nocturna
     	p.setTime(12, 26472); //Tempo
     	p.setTime(13, 71917); //Coda
+    	p.setTime(14, 182225); //Story
     	
     	p.setGold(0, 15742); //Aria
     	p.setGold(1, 140000); //Bard

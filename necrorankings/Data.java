@@ -71,6 +71,7 @@ public class Data {
     	case "76561197999764223": return true; //Arisias
     	case "76561198104645750": return true; //Protogymnastos of Powerlifting
     	case "76561198025603321": return true; //Coco_Skmdy@たけのこよりきのこが好き 
+    	case "76561198263406012": return true; //Kiwis
     	//already excluded by impossible score
     	case "76561198373879461": return true; //thegunslinger
     	//not sure
@@ -780,6 +781,43 @@ public class Data {
     	case "76561198215353171": return "Karisa";
     	case "76561198085840270": return "miss";
     	case "76561198113991193": return "Dragonsage";
+    	case "76561198111812454": return "Timmu";
+    	case "76561198210364576": return "Krex";
+    	case "76561198169426323": return "Jelly Donut";
+    	case "76561198041651094": return "zashes";
+    	case "76561198334461747": return "Coldcan";
+    	case "76561198037383368": return "Zaściankowa";
+    	case "76561199032747602": return "超级大神";
+    	case "76561198040299895": return "Snekalot";
+    	case "76561198057473982": return "TOAST";
+    	case "76561198091582327": return "Kyb";
+    	case "76561198096119344": return "zim_and_gir";
+    	case "76561198111103193": return "SeeNew";
+    	case "76561198043873826": return "Athleon";
+    	case "76561198184961014": return "Dreamcatcher";
+    	case "76561198070557003": return "Magicdoer1";
+    	case "76561198053505713": return "Nivek";
+    	case "76561198025543181": return "StupidPanda";
+    	case "76561198052229724": return "kaldiin";
+    	case "76561198195725089": return "marumaruitem";
+    	case "76561198346542902": return "jocko";
+    	case "76561198212852493": return "arashiyama";
+    	case "76561198404449153": return "bzzzzzzz";
+    	case "76561198119823559": return "b_ball_konjak";
+    	case "76561198343322040": return "SpectrumEdge";
+    	case "76561197997736603": return "Venik";
+    	case "76561198023185925": return "Tigerclaw10";
+    	case "76561198097886218": return "sacak32";
+    	case "76561198052611916": return "Snappey";
+    	case "76561198140390879": return "用水路";
+    	case "76561198402011206": return "Caffeinated";
+    	case "76561198143157509": return "rjdimo";
+    	case "76561198273450852": return "Pumba";
+    	case "76561198056391531": return "cy.molavi";
+    	case "76561198218217140": return "LizardLane";
+    	case "76561198125757435": return "Hating Mirror";
+    	case "76561198253281128": return "Phoenix";
+    	case "76561198427072340": return "Denjkeaa";
     	default: return "ID:" + steamid;
 		}
 	}
