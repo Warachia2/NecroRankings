@@ -1933,43 +1933,25 @@ public class HtmlGenerator extends DefaultHandler{
     
     ///top20rank
     public static String t20(int rank){
-    	switch(rank){
-    	case 1: return "WR";
-    	case 2: return "2nd";
-    	case 3: return "3rd";
-    	case 4: return "4th";
-    	case 5: return "5th";
-    	case 6: return "6th";
-    	case 7: return "7th";
-    	case 8: return "8th";
-    	case 9: return "9th";
-    	case 10: return "10th";
-    	case 11: return "11th";
-    	case 12: return "12th";
-    	case 13: return "13th";
-    	case 14: return "14th";
-    	case 15: return "15th";
-    	case 16: return "16th";
-    	case 17: return "17th";
-    	case 18: return "18th";
-    	case 19: return "19th";
-    	case 20: return "20th";
-    	default: return " ";
+    	if(rank<=20){
+    		return rankStr(rank);
+    	}
+    	else{
+    		return "";
     	}
     }
-    
+      
     public static String rankStr(int rank){
-    	switch(rank){
-    	case 0: return " ";
-    	case 1: return "WR";
-    	case 11: return "11th";
-    	case 12: return "12th";
-    	case 13: return "13th";
-    	default: return defRankStr(rank);
+    	if(rank == 0){
+    		return "";
     	}
-    }
-    
-    public static String defRankStr(int rank){
+    	else if(rank == 1){
+    		return "WR";
+    	}
+    	else if(rank%100 == 11 || rank%100 == 12 || rank%13 == 13){
+    		return rank + "th";
+    	}
+    	
     	switch(rank%10){
     	case 1: return rank + "st";
     	case 2: return rank + "nd";
@@ -1980,7 +1962,7 @@ public class HtmlGenerator extends DefaultHandler{
     
     public static String zeroout(int num){
     	if(num == 0){
-    		return " ";
+    		return "";
     	}
     	else{
     		return String.valueOf(num);

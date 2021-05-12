@@ -413,7 +413,7 @@ public class Player {
     public static Player Priw8(){
     	Player p = new Player("Priw8");
     	p.setTime(3, 40339); //Cadence 6:43.39
-    	p.setTime(6, 25259); //Dove 4:12.59
+    	p.setTime(6, 25259); //Dove 4:12.59 (Not PB)
     	p.setTime(9, 36235); //Mel 6:02.35
     	p.setTime(11, 51764); //Noc 8:37.64
     	p.setTime(12, 29471); //Tempo 4:54.71
