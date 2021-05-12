@@ -475,14 +475,17 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198136201511").setTime(16, 487546); //Ravio, 13char Speed 1:21:15.636
         Player.speedWR[16] = Math.min(Player.speedWR[16], 487564);
         
+        list.get("76561198121399825").setExtraGold(0, 1, 116598); //Warahica, Bard Hard Score 116598
+        
         //Bar Text
         LocalDateTime date1 = LocalDateTime.now();
 		DateTimeFormatter dtformat1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
 		String fdate1 = dtformat1.format(date1);
 		
-		System.out.println("Making Speed LBs");
-		
 		//LBs
+		
+		System.out.println("Making Regular LBs");
+		
 		for(int i=0;i<17;i++){
 	        try {
 	            FileWriter f = new FileWriter(lbsoutput + curToName(i) + "speedlbs.html", false);
@@ -496,6 +499,10 @@ public class HtmlGenerator extends DefaultHandler{
 	            p.println("</head>");
 	            p.println("<body>");
 	            p.println("<h1>" + curToName(i) +  " Speed LBs" + "</h1>");
+                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+	            if(i<14){
+	            	p.println(headertag(i,-1, "speed"));
+	            }
 	            p.println("<table border=\"5\">");
 	            p.println("<tr>");
 	            p.println("<th class=\"fixed01\">Rank</th>");
@@ -518,7 +525,7 @@ public class HtmlGenerator extends DefaultHandler{
 				            p.println("<td>" + rank + "</td>");
 				            if(player.name().startsWith("ID")){
 				            	p.println("<td>" + player.name() + "</td>");
-				            	System.out.println("New player:" + player.name());
+				            	System.out.println(curToName(i) + "Speed:" + player.name() + " rank:" + rank);
 				            }
 				            else{
 				            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
@@ -543,8 +550,6 @@ public class HtmlGenerator extends DefaultHandler{
 	        }
 		}
 		
-		System.out.println("Making Score LBs");
-		
 		for(int i=0;i<17;i++){
 	        try {
 	            FileWriter f = new FileWriter(lbsoutput + curToName(i) + "scorelbs.html", false);
@@ -558,6 +563,10 @@ public class HtmlGenerator extends DefaultHandler{
 	            p.println("</head>");
 	            p.println("<body>");
 	            p.println("<h1>" + curToName(i) +  " Score LBs" + "</h1>");
+                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+	            if(i<14){
+	            	p.println(headertag(i,-1, "score"));
+	            }
 	            p.println("<table border=\"5\">");
 	            p.println("<tr>");
 	            p.println("<th class=\"fixed01\">Rank</th>");
@@ -580,7 +589,7 @@ public class HtmlGenerator extends DefaultHandler{
 				            p.println("<td>" + rank + "</td>");
 				            if(player.name().startsWith("ID")){
 				            	p.println("<td>" + player.name() + "</td>");
-				            	System.out.println("New player:" + player.name());
+				            	System.out.println(curToName(i) + "Score:" + player.name() + " rank:" + rank);
 				            }
 				            else{
 				            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
@@ -604,6 +613,196 @@ public class HtmlGenerator extends DefaultHandler{
 	            ex.printStackTrace();
 	        }
 		}
+		
+		for(int i=0;i<14;i++){
+	        try {
+	            FileWriter f = new FileWriter(lbsoutput + curToName(i) + "deathlesslbs.html", false);
+	            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+	            
+	            p.println("<!DOCTYPE html>");
+	            p.println("<html>");
+	            p.println("<head>");
+	            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+	            p.println("<title>" + curToName(i) +  " Deathless LBs" + "</title>");
+	            p.println("</head>");
+	            p.println("<body>");
+	            p.println("<h1>" + curToName(i) +  " Deathless LBs" + "</h1>");
+                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+	            p.println("<table border=\"5\">");
+	            p.println("<tr>");
+	            p.println("<th class=\"fixed01\">Rank</th>");
+	            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
+	            p.println("<th class=\"fixed01\">Count</th>");
+	            p.println("</tr>");
+	            
+				int num = i;
+				array.sort((a,b) -> (b.clear[num] - a.clear[num]));
+				int rank = 1;
+				for(Player player:array){
+					if(player.clear[num] == 0 || player.isExtra){
+						continue;
+					}
+					else{
+						player.deathless[num] = rank;
+						
+						if(!player.name().startsWith("ID")){
+				            p.println("<tr>");
+				            p.println("<td>" + rank + "</td>");
+				            p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+				            p.println("<td>" + player.clearcount(num) + "</td>");
+				            p.println("</tr>");	
+						}
+						else{
+							if(rank <=10){
+								System.out.println(curToName(i) + " Deathless" + player.name() + " rank:" + rank);
+							}
+						}
+			            
+						rank++;
+					}
+				}
+
+	            p.println("</table>");
+	            p.println("</body>");
+                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+	            p.println("</html>");
+	            
+	            p.close();
+	 
+	        } catch (IOException ex) {
+	            ex.printStackTrace();
+	        }
+		}
+		
+		System.out.println("Making Extra LBs...");
+		
+		for(int h=0;h<5;h++){
+			for(int i=0;i<14;i++){
+		        try {
+		            FileWriter f = new FileWriter(lbsoutput + curToName(i) + ordToCategory(h) + "speedlbs.html", false);
+		            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+		            
+		            p.println("<!DOCTYPE html>");
+		            p.println("<html>");
+		            p.println("<head>");
+		            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+		            p.println("<title>" + curToName(i) + " " + ordToCategory(h) + " Speed LBs" + "</title>");
+		            p.println("</head>");
+		            p.println("<body>");
+		            p.println("<h1>" + curToName(i) + " " + ordToCategory(h) + " Speed LBs" + "</h1>");
+	                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+		            p.println(headertag(i, h, "speed"));
+		            p.println("<table border=\"5\">");
+		            p.println("<tr>");
+		            p.println("<th class=\"fixed01\">Rank</th>");
+		            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
+		            p.println("<th class=\"fixed01\">Time</th>");
+		            p.println("</tr>");
+		            
+		            int ord = h;
+					int num = i;
+					array.sort((a,b) -> (a.extratime[ord][num] - b.extratime[ord][num]));
+					int rank = 1;
+					for(Player player:array){
+						if(player.extratime[ord][num] == 0 || player.isExtra){
+							continue;
+						}
+						else{
+							player.setRank(ord, num, true, rank);
+							
+							if(!player.name().startsWith("ID")){
+					            p.println("<tr>");
+					            p.println("<td>" + rank + "</td>");
+					            p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+					            p.println("<td>" + Player.csecToString(player.extratime[ord][num]) + "</td>");
+					            p.println("</tr>");	
+							}
+							else{
+								if(rank <=10){
+									System.out.println(curToName(i) + " " + ordToCategory(h) + " Speed" + player.name() + " rank:" + rank);
+								}
+							}
+				            
+							rank++;
+						}
+					}
+
+		            p.println("</table>");
+		            p.println("</body>");
+	                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+		            p.println("</html>");
+		            
+		            p.close();
+		 
+		        } catch (IOException ex) {
+		            ex.printStackTrace();
+		        }
+			}
+		}
+		
+		for(int h=0;h<5;h++){
+			for(int i=0;i<14;i++){
+		        try {
+		            FileWriter f = new FileWriter(lbsoutput + curToName(i) + ordToCategory(h) + "scorelbs.html", false);
+		            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+		            
+		            p.println("<!DOCTYPE html>");
+		            p.println("<html>");
+		            p.println("<head>");
+		            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+		            p.println("<title>" + curToName(i) + " " + ordToCategory(h) + " Score LBs" + "</title>");
+		            p.println("</head>");
+		            p.println("<body>");
+		            p.println("<h1>" + curToName(i) + " " + ordToCategory(h) + " Score LBs" + "</h1>");
+	                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+		            p.println(headertag(i, h, "score"));
+		            p.println("<table border=\"5\">");
+		            p.println("<tr>");
+		            p.println("<th class=\"fixed01\">Rank</th>");
+		            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
+		            p.println("<th class=\"fixed01\">Score</th>");
+		            p.println("</tr>");
+		            
+		            int ord = h;
+					int num = i;
+					array.sort((a,b) -> (b.extragold[ord][num] - a.extragold[ord][num]));
+					int rank = 1;
+					for(Player player:array){
+						if(player.extragold[ord][num] == 0 || player.isExtra){
+							continue;
+						}
+						else{
+							player.setRank(ord, num, false, rank);
+							
+							if(!player.name().startsWith("ID")){
+					            p.println("<tr>");
+					            p.println("<td>" + rank + "</td>");
+					            p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+					            p.println("<td>" + player.extragold[ord][num] + "</td>");
+					            p.println("</tr>");	
+							}
+							else{
+								if(rank <=5){
+									System.out.println(curToName(i) + " " + ordToCategory(h) + " Score" + player.name() + " rank:" + rank);
+								}
+							}
+				            
+							rank++;
+						}
+					}
+
+		            p.println("</table>");
+		            p.println("</body>");
+	                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+		            p.println("</html>");
+		            
+		            p.close();
+		 
+		        } catch (IOException ex) {
+		            ex.printStackTrace();
+		        }
+			}
+		}
         
         //Rankings
         System.out.println("Making Sum/Ratio Rankings...");
@@ -617,29 +816,30 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<!DOCTYPE html>");
             p.println("<html>");
             p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+            p.println("<link rel=\"stylesheet\" href=\"13speedsumstyle.css\">");
             p.println("<title>NecroDancer 13char Speed PB Sum Rankings</title>");
             p.println("</head>");
             p.println("<body>");
             p.println("<h1>NecroDancer 13char Speed PB Sum Rankings</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             p.println("<tr>");
             p.println("<th class=\"fixed01\">Rank</th>");
             p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01\">Sum</th>");
-            p.println("<th class=\"fixed01\">Aria</th>");
-            p.println("<th class=\"fixed01\">Bard</th>");
-            p.println("<th class=\"fixed01\">Bolt</th>");
-            p.println("<th class=\"fixed01\">Cad</th>");
-            p.println("<th class=\"fixed01\">Dia</th>");
-            p.println("<th class=\"fixed01\">Dor</th>");
-            p.println("<th class=\"fixed01\">Dove</th>");
-            p.println("<th class=\"fixed01\">Eli</th>");
-            p.println("<th class=\"fixed01\">Mary</th>");
-            p.println("<th class=\"fixed01\">Mel</th>");
-            p.println("<th class=\"fixed01\">Monk</th>");
-            p.println("<th class=\"fixed01\">Noc</th>");
-            p.println("<th class=\"fixed01\">Tempo</th>");
+            p.println("<th class=\"fixed01 total\">Sum</th>");
+            p.println("<th class=\"fixed01 char\">Aria</th>");
+            p.println("<th class=\"fixed01 char\">Bard</th>");
+            p.println("<th class=\"fixed01 char\">Bolt</th>");
+            p.println("<th class=\"fixed01 char\">Cad</th>");
+            p.println("<th class=\"fixed01 char\">Dia</th>");
+            p.println("<th class=\"fixed01 char\">Dor</th>");
+            p.println("<th class=\"fixed01 char\">Dove</th>");
+            p.println("<th class=\"fixed01 char\">Eli</th>");
+            p.println("<th class=\"fixed01 char\">Mary</th>");
+            p.println("<th class=\"fixed01 char\">Mel</th>");
+            p.println("<th class=\"fixed01 char\">Monk</th>");
+            p.println("<th class=\"fixed01 char\">Noc</th>");
+            p.println("<th class=\"fixed01 char\">Tempo</th>");
             p.println("</tr>");
             
             int extra = 0;
@@ -662,11 +862,14 @@ public class HtmlGenerator extends DefaultHandler{
             	}
             	else{
                 	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+                	if(player.name().startsWith("ID")){
+                		System.out.println("13sum" + player.name() + " rank:" + (i+1-extra));
+                	}
             	}
             	p.println("<td>" + Player.csecToString(player.timeSum(13)) + "</td>");
             	
             	for(int j=0;j<13;j++){
-                	p.println("<td>" + Player.csecToString(player.adjustedTime(j ,player.time[j])) + "</td>");
+                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(j) + "speedlbs.html\">" + Player.csecToString(player.adjustedTime(j ,player.time[j])) + "</a></td>");
             	}
             	
                 p.println("</tr>");
@@ -692,29 +895,30 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<!DOCTYPE html>");
             p.println("<html>");
             p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+            p.println("<link rel=\"stylesheet\" href=\"13speedratiostyle.css\">");
             p.println("<title>NecroDancer 13char Speed PB Ratio to WRs Rankings</title>");
             p.println("</head>");
             p.println("<body>");
             p.println("<h1>NecroDancer 13char Speed PB Ratio to WRs Rankings</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             p.println("<tr>");
             p.println("<th class=\"fixed01\">Rank</th>");
             p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01\">Average</th>");
-            p.println("<th class=\"fixed01\">Aria</th>");
-            p.println("<th class=\"fixed01\">Bard</th>");
-            p.println("<th class=\"fixed01\">Bolt</th>");
-            p.println("<th class=\"fixed01\">Cad</th>");
-            p.println("<th class=\"fixed01\">Dia</th>");
-            p.println("<th class=\"fixed01\">Dor</th>");
-            p.println("<th class=\"fixed01\">Dove</th>");
-            p.println("<th class=\"fixed01\">Eli</th>");
-            p.println("<th class=\"fixed01\">Mary</th>");
-            p.println("<th class=\"fixed01\">Mel</th>");
-            p.println("<th class=\"fixed01\">Monk</th>");
-            p.println("<th class=\"fixed01\">Noc</th>");
-            p.println("<th class=\"fixed01\">Tempo</th>");
+            p.println("<th class=\"fixed01 total\">Average</th>");
+            p.println("<th class=\"fixed01 char\">Aria</th>");
+            p.println("<th class=\"fixed01 char\">Bard</th>");
+            p.println("<th class=\"fixed01 char\">Bolt</th>");
+            p.println("<th class=\"fixed01 char\">Cad</th>");
+            p.println("<th class=\"fixed01 char\">Dia</th>");
+            p.println("<th class=\"fixed01 char\">Dor</th>");
+            p.println("<th class=\"fixed01 char\">Dove</th>");
+            p.println("<th class=\"fixed01 char\">Eli</th>");
+            p.println("<th class=\"fixed01 char\">Mary</th>");
+            p.println("<th class=\"fixed01 char\">Mel</th>");
+            p.println("<th class=\"fixed01 char\">Monk</th>");
+            p.println("<th class=\"fixed01 char\">Noc</th>");
+            p.println("<th class=\"fixed01 char\">Tempo</th>");
             p.println("</tr>");
             
             int extra = 0;
@@ -737,11 +941,14 @@ public class HtmlGenerator extends DefaultHandler{
             	}
             	else{
                 	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+                	if(player.name().startsWith("ID")){
+                		System.out.println("13ratio" + player.name() + " rank:" + (i+1-extra));
+                	}
             	}
             	p.println("<td>" + String.format("%.3f", player.averageTimeRatio(13)) + "</td>");
             	
             	for(int j=0;j<13;j++){
-                	p.println("<td>" + String.format("%.3f",player.timeRatio(j)) + "</td>");
+                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(j) + "speedlbs.html\">" + String.format("%.3f",player.timeRatio(j)) + "</a></td>");
             	}
             	
                 p.println("</tr>");
@@ -767,30 +974,31 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<!DOCTYPE html>");
             p.println("<html>");
             p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+            p.println("<link rel=\"stylesheet\" href=\"14speedsumstyle.css\">");
             p.println("<title>NecroDancer 14char PB Sum Rankings</title>");
             p.println("</head>");
             p.println("<body>");
             p.println("<h1>NecroDancer 14char PB Sum Rankings</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             p.println("<tr>");
             p.println("<th class=\"fixed01\">Rank</th>");
             p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01\">Sum</th>");
-            p.println("<th class=\"fixed01\">Aria</th>");
-            p.println("<th class=\"fixed01\">Bard</th>");
-            p.println("<th class=\"fixed01\">Bolt</th>");
-            p.println("<th class=\"fixed01\">Cad</th>");
-            p.println("<th class=\"fixed01\">Dia</th>");
-            p.println("<th class=\"fixed01\">Dor</th>");
-            p.println("<th class=\"fixed01\">Dove</th>");
-            p.println("<th class=\"fixed01\">Eli</th>");
-            p.println("<th class=\"fixed01\">Mary</th>");
-            p.println("<th class=\"fixed01\">Mel</th>");
-            p.println("<th class=\"fixed01\">Monk</th>");
-            p.println("<th class=\"fixed01\">Noc</th>");
-            p.println("<th class=\"fixed01\">Tempo</th>");
-            p.println("<th class=\"fixed01\">Coda</th>");
+            p.println("<th class=\"fixed01 total\">Sum</th>");
+            p.println("<th class=\"fixed01 char\">Aria</th>");
+            p.println("<th class=\"fixed01 char\">Bard</th>");
+            p.println("<th class=\"fixed01 char\">Bolt</th>");
+            p.println("<th class=\"fixed01 char\">Cad</th>");
+            p.println("<th class=\"fixed01 char\">Dia</th>");
+            p.println("<th class=\"fixed01 char\">Dor</th>");
+            p.println("<th class=\"fixed01 char\">Dove</th>");
+            p.println("<th class=\"fixed01 char\">Eli</th>");
+            p.println("<th class=\"fixed01 char\">Mary</th>");
+            p.println("<th class=\"fixed01 char\">Mel</th>");
+            p.println("<th class=\"fixed01 char\">Monk</th>");
+            p.println("<th class=\"fixed01 char\">Noc</th>");
+            p.println("<th class=\"fixed01 char\">Tempo</th>");
+            p.println("<th class=\"fixed01 char\">Coda</th>");
             p.println("</tr>");
             
             int extra = 0;
@@ -813,11 +1021,14 @@ public class HtmlGenerator extends DefaultHandler{
             	}
             	else{
                 	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+                	if(player.name().startsWith("ID")){
+                		System.out.println("14sum" + player.name() + " rank:" + (i+1-extra));
+                	}
             	}
             	p.println("<td>" + Player.csecToString(player.timeSum(14)) + "</td>");
             	
             	for(int j=0;j<14;j++){
-                	p.println("<td>" + Player.csecToString(player.adjustedTime(j ,player.time[j])) + "</td>");
+                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(j) + "speedlbs.html\">" + Player.csecToString(player.adjustedTime(j ,player.time[j])) + "</a></td>");
             	}
             	
                 p.println("</tr>");
@@ -848,25 +1059,26 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("</head>");
             p.println("<body>");
             p.println("<h1>NecroDancer 14char Score PB Ratio to WRs Rankings</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             p.println("<tr>");
             p.println("<th class=\"fixed01\">Rank</th>");
             p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01\">Average</th>");
-            p.println("<th class=\"fixed01\">Aria</th>");
-            p.println("<th class=\"fixed01\">Bard</th>");
-            p.println("<th class=\"fixed01\">Bolt</th>");
-            p.println("<th class=\"fixed01\">Cad</th>");
-            p.println("<th class=\"fixed01\">Dia</th>");
-            p.println("<th class=\"fixed01\">Dor</th>");
-            p.println("<th class=\"fixed01\">Dove</th>");
-            p.println("<th class=\"fixed01\">Eli</th>");
-            p.println("<th class=\"fixed01\">Mary</th>");
-            p.println("<th class=\"fixed01\">Mel</th>");
-            p.println("<th class=\"fixed01\">Monk</th>");
-            p.println("<th class=\"fixed01\">Noc</th>");
-            p.println("<th class=\"fixed01\">Tempo</th>");
-            p.println("<th class=\"fixed01\">Coda</th>");
+            p.println("<th class=\"fixed01 total\">Average(%)</th>");
+            p.println("<th class=\"fixed01 char\">Aria</th>");
+            p.println("<th class=\"fixed01 char\">Bard</th>");
+            p.println("<th class=\"fixed01 char\">Bolt</th>");
+            p.println("<th class=\"fixed01 char\">Cad</th>");
+            p.println("<th class=\"fixed01 char\">Dia</th>");
+            p.println("<th class=\"fixed01 char\">Dor</th>");
+            p.println("<th class=\"fixed01 char\">Dove</th>");
+            p.println("<th class=\"fixed01 char\">Eli</th>");
+            p.println("<th class=\"fixed01 char\">Mary</th>");
+            p.println("<th class=\"fixed01 char\">Mel</th>");
+            p.println("<th class=\"fixed01 char\">Monk</th>");
+            p.println("<th class=\"fixed01 char\">Noc</th>");
+            p.println("<th class=\"fixed01 char\">Tempo</th>");
+            p.println("<th class=\"fixed01 char\">Coda</th>");
             p.println("</tr>");
             
             int extra = 0;
@@ -889,11 +1101,14 @@ public class HtmlGenerator extends DefaultHandler{
             	}
             	else{
                 	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+                	if(player.name().startsWith("ID")){
+                		System.out.println("14scoreratio" + player.name() + " rank:" + (i+1-extra));
+                	}
             	}
-            	p.println("<td>" + String.format("%.2f", player.averageScoreRatio(14)) + "%" + "</td>");
+            	p.println("<td>" + String.format("%.2f", player.averageScoreRatio(14)) + "</td>");
             	
             	for(int j=0;j<14;j++){
-                	p.println("<td>" + String.format("%.2f",player.scoreRatio(j)) + "%" + "</td>");
+                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(j) + "scorelbs.html\">" + String.format("%.2f",player.scoreRatio(j)) + "%" + "</a></td>");
             	}
             	
                 p.println("</tr>");
@@ -921,21 +1136,22 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<!DOCTYPE html>");
             p.println("<html>");
             p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+            p.println("<link rel=\"stylesheet\" href=\"extraastyle.css\">");
             p.println("<title>NecroDancer Extra Speed Rankings A</title>");
             p.println("</head>");
             p.println("<body>");
             p.println("<h1>NecroDancer Extra Speed Rankings A</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             p.println("<tr>");
             p.println("<th class=\"fixed01\">Rank</th>");
             p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01\">Total</th>");
-            p.println("<th class=\"fixed01\">Hard</th>");
-            p.println("<th class=\"fixed01\">NR</th>");
-            p.println("<th class=\"fixed01\">Rando</th>");
-            p.println("<th class=\"fixed01\">Phasing</th>");
-            p.println("<th class=\"fixed01\">Mystery</th>");
+            p.println("<th class=\"fixed01 total\">Total</th>");
+            p.println("<th class=\"fixed01 char\">Hard</th>");
+            p.println("<th class=\"fixed01 char\">NR</th>");
+            p.println("<th class=\"fixed01 char\">Rando</th>");
+            p.println("<th class=\"fixed01 char\">Phasing</th>");
+            p.println("<th class=\"fixed01 char\">Mystery</th>");
             p.println("</tr>");
             
             for(int i=0;i<100;i++){
@@ -945,6 +1161,9 @@ public class HtmlGenerator extends DefaultHandler{
             	
             	p.println("<td>" + (i+1) + "</td>");
             	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+            	if(player.name().startsWith("ID")){
+            		System.out.println("Extra Speed Rankings" + player.name() + " rank:" + (i+1));
+            	}
             	p.println("<td>" + String.format("%.2f",player.extraspeed()) + "</td>");
             	p.println("<td>" + String.format("%.2f",player.hardspeed()) + "</td>");
             	p.println("<td>" + String.format("%.2f",player.nrspeed()) + "</td>");
@@ -973,30 +1192,31 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<!DOCTYPE html>");
             p.println("<html>");
             p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+            p.println("<link rel=\"stylesheet\" href=\"extrabstyle.css\">");
             p.println("<title>NecroDancer Extra Speed Rankings B</title>");
             p.println("</head>");
             p.println("<body>");
             p.println("<h1>NecroDancer Extra Speed Rankings B</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             p.println("<tr>");
             p.println("<th class=\"fixed01\">Rank</th>");
             p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01\">Total</th>");
-            p.println("<th class=\"fixed01\">Aria</th>");
-            p.println("<th class=\"fixed01\">Bard</th>");
-            p.println("<th class=\"fixed01\">Bolt</th>");
-            p.println("<th class=\"fixed01\">Cad</th>");
-            p.println("<th class=\"fixed01\">Dia</th>");
-            p.println("<th class=\"fixed01\">Dor</th>");
-            p.println("<th class=\"fixed01\">Dove</th>");
-            p.println("<th class=\"fixed01\">Eli</th>");
-            p.println("<th class=\"fixed01\">Mary</th>");
-            p.println("<th class=\"fixed01\">Mel</th>");
-            p.println("<th class=\"fixed01\">Monk</th>");
-            p.println("<th class=\"fixed01\">Noc</th>");
-            p.println("<th class=\"fixed01\">Tempo</th>");
-            p.println("<th class=\"fixed01\">Coda</th>");
+            p.println("<th class=\"fixed01 total\">Total</th>");
+            p.println("<th class=\"fixed01 char\">Aria</th>");
+            p.println("<th class=\"fixed01 char\">Bard</th>");
+            p.println("<th class=\"fixed01 char\">Bolt</th>");
+            p.println("<th class=\"fixed01 char\">Cad</th>");
+            p.println("<th class=\"fixed01 char\">Dia</th>");
+            p.println("<th class=\"fixed01 char\">Dor</th>");
+            p.println("<th class=\"fixed01 char\">Dove</th>");
+            p.println("<th class=\"fixed01 char\">Eli</th>");
+            p.println("<th class=\"fixed01 char\">Mary</th>");
+            p.println("<th class=\"fixed01 char\">Mel</th>");
+            p.println("<th class=\"fixed01 char\">Monk</th>");
+            p.println("<th class=\"fixed01 char\">Noc</th>");
+            p.println("<th class=\"fixed01 char\">Tempo</th>");
+            p.println("<th class=\"fixed01 char\">Coda</th>");
             p.println("</tr>");
             
             for(int i=0;i<100;i++){
@@ -1035,21 +1255,22 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<!DOCTYPE html>");
             p.println("<html>");
             p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+            p.println("<link rel=\"stylesheet\" href=\"extraastyle.css\">");
             p.println("<title>NecroDancer Extra Score Rankings A</title>");
             p.println("</head>");
             p.println("<body>");
             p.println("<h1>NecroDancer Extra Score Rankings A</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             p.println("<tr>");
             p.println("<th class=\"fixed01\">Rank</th>");
             p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01\">Total</th>");
-            p.println("<th class=\"fixed01\">Hard</th>");
-            p.println("<th class=\"fixed01\">NR</th>");
-            p.println("<th class=\"fixed01\">Rando</th>");
-            p.println("<th class=\"fixed01\">Phasing</th>");
-            p.println("<th class=\"fixed01\">Mystery</th>");
+            p.println("<th class=\"fixed01 total\">Total</th>");
+            p.println("<th class=\"fixed01 char\">Hard</th>");
+            p.println("<th class=\"fixed01 char\">NR</th>");
+            p.println("<th class=\"fixed01 char\">Rando</th>");
+            p.println("<th class=\"fixed01 char\">Phasing</th>");
+            p.println("<th class=\"fixed01 char\">Mystery</th>");
             p.println("</tr>");
             
             for(int i=0;i<100;i++){
@@ -1059,6 +1280,9 @@ public class HtmlGenerator extends DefaultHandler{
             	
             	p.println("<td>" + (i+1) + "</td>");
             	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+            	if(player.name().startsWith("ID")){
+            		System.out.println("Extra Score Rankings" + player.name() + " rank:" + (i+1));
+            	}
             	p.println("<td>" + String.format("%.2f",player.extrascore()) + "</td>");
             	p.println("<td>" + String.format("%.2f",player.hardscore()) + "</td>");
             	p.println("<td>" + String.format("%.2f",player.nrscore()) + "</td>");
@@ -1087,30 +1311,31 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<!DOCTYPE html>");
             p.println("<html>");
             p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+            p.println("<link rel=\"stylesheet\" href=\"extrabstyle.css\">");
             p.println("<title>NecroDancer Extra Score Rankings B</title>");
             p.println("</head>");
             p.println("<body>");
             p.println("<h1>NecroDancer Extra Score Rankings B</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             p.println("<tr>");
             p.println("<th class=\"fixed01\">Rank</th>");
             p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01\">Total</th>");
-            p.println("<th class=\"fixed01\">Aria</th>");
-            p.println("<th class=\"fixed01\">Bard</th>");
-            p.println("<th class=\"fixed01\">Bolt</th>");
-            p.println("<th class=\"fixed01\">Cad</th>");
-            p.println("<th class=\"fixed01\">Dia</th>");
-            p.println("<th class=\"fixed01\">Dor</th>");
-            p.println("<th class=\"fixed01\">Dove</th>");
-            p.println("<th class=\"fixed01\">Eli</th>");
-            p.println("<th class=\"fixed01\">Mary</th>");
-            p.println("<th class=\"fixed01\">Mel</th>");
-            p.println("<th class=\"fixed01\">Monk</th>");
-            p.println("<th class=\"fixed01\">Noc</th>");
-            p.println("<th class=\"fixed01\">Tempo</th>");
-            p.println("<th class=\"fixed01\">Coda</th>");
+            p.println("<th class=\"fixed01 total\">Total</th>");
+            p.println("<th class=\"fixed01 char\">Aria</th>");
+            p.println("<th class=\"fixed01 char\">Bard</th>");
+            p.println("<th class=\"fixed01 char\">Bolt</th>");
+            p.println("<th class=\"fixed01 char\">Cad</th>");
+            p.println("<th class=\"fixed01 char\">Dia</th>");
+            p.println("<th class=\"fixed01 char\">Dor</th>");
+            p.println("<th class=\"fixed01 char\">Dove</th>");
+            p.println("<th class=\"fixed01 char\">Eli</th>");
+            p.println("<th class=\"fixed01 char\">Mary</th>");
+            p.println("<th class=\"fixed01 char\">Mel</th>");
+            p.println("<th class=\"fixed01 char\">Monk</th>");
+            p.println("<th class=\"fixed01 char\">Noc</th>");
+            p.println("<th class=\"fixed01 char\">Tempo</th>");
+            p.println("<th class=\"fixed01 char\">Coda</th>");
             p.println("</tr>");
             
             for(int i=0;i<100;i++){
@@ -1151,33 +1376,34 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<!DOCTYPE html>");
             p.println("<html>");
             p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+            p.println("<link rel=\"stylesheet\" href=\"labstyle.css\">");
             p.println("<title>NecroLab Speed Rankings Imitator</title>");
             p.println("</head>");
             p.println("<body>");
             p.println("<h1>NecroLab Speed Rankings Imitator</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             p.println("<tr>");
             p.println("<th class=\"fixed01\">Rank</th>");
             p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01\">Points</th>");
-            p.println("<th class=\"fixed01\">Aria</th>");
-            p.println("<th class=\"fixed01\">Bard</th>");
-            p.println("<th class=\"fixed01\">Bolt</th>");
-            p.println("<th class=\"fixed01\">Cad</th>");
-            p.println("<th class=\"fixed01\">Dia</th>");
-            p.println("<th class=\"fixed01\">Dor</th>");
-            p.println("<th class=\"fixed01\">Dove</th>");
-            p.println("<th class=\"fixed01\">Eli</th>");
-            p.println("<th class=\"fixed01\">Mary</th>");
-            p.println("<th class=\"fixed01\">Mel</th>");
-            p.println("<th class=\"fixed01\">Monk</th>");
-            p.println("<th class=\"fixed01\">Noc</th>");
-            p.println("<th class=\"fixed01\">Tempo</th>");
-            p.println("<th class=\"fixed01\">Coda</th>");
-            p.println("<th class=\"fixed01\">Story</th>");
-            p.println("<th class=\"fixed01\">9char</th>");
-            p.println("<th class=\"fixed01\">13char</th>");
+            p.println("<th class=\"fixed01 total\">Points</th>");
+            p.println("<th class=\"fixed01 char\">Aria</th>");
+            p.println("<th class=\"fixed01 char\">Bard</th>");
+            p.println("<th class=\"fixed01 char\">Bolt</th>");
+            p.println("<th class=\"fixed01 char\">Cad</th>");
+            p.println("<th class=\"fixed01 char\">Dia</th>");
+            p.println("<th class=\"fixed01 char\">Dor</th>");
+            p.println("<th class=\"fixed01 char\">Dove</th>");
+            p.println("<th class=\"fixed01 char\">Eli</th>");
+            p.println("<th class=\"fixed01 char\">Mary</th>");
+            p.println("<th class=\"fixed01 char\">Mel</th>");
+            p.println("<th class=\"fixed01 char\">Monk</th>");
+            p.println("<th class=\"fixed01 char\">Noc</th>");
+            p.println("<th class=\"fixed01 char\">Tempo</th>");
+            p.println("<th class=\"fixed01 char\">Coda</th>");
+            p.println("<th class=\"fixed01 char\">Story</th>");
+            p.println("<th class=\"fixed01 char\">9char</th>");
+            p.println("<th class=\"fixed01 char\">13char</th>");
             p.println("</tr>");
             
             for(int i=0;i<200;i++){
@@ -1187,10 +1413,13 @@ public class HtmlGenerator extends DefaultHandler{
             	
             	p.println("<td>" + (i+1) + "</td>");
             	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+            	if(player.name().startsWith("ID")){
+            		System.out.println("NecroLab Speed" + player.name() + " rank:" + (i+1));
+            	}
             	p.println("<td>" + String.format("%.2f",player.speedpoints()) + "</td>");
 
         		for(int j=0;j<17;j++){
-                	p.println(ranktag(player.speed[j]));
+                	p.println(ranktag(player.speed[j], j, "speed"));
         		}
                 
                 p.println("</tr>");
@@ -1216,33 +1445,34 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<!DOCTYPE html>");
             p.println("<html>");
             p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+            p.println("<link rel=\"stylesheet\" href=\"labstyle.css\">");
             p.println("<title>NecroLab Score Rankings Imitator</title>");
             p.println("</head>");
             p.println("<body>");
             p.println("<h1>NecroLab Score Rankings Imitator</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             p.println("<tr>");
             p.println("<th class=\"fixed01\">Rank</th>");
             p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01\">Points</th>");
-            p.println("<th class=\"fixed01\">Aria</th>");
-            p.println("<th class=\"fixed01\">Bard</th>");
-            p.println("<th class=\"fixed01\">Bolt</th>");
-            p.println("<th class=\"fixed01\">Cad</th>");
-            p.println("<th class=\"fixed01\">Dia</th>");
-            p.println("<th class=\"fixed01\">Dor</th>");
-            p.println("<th class=\"fixed01\">Dove</th>");
-            p.println("<th class=\"fixed01\">Eli</th>");
-            p.println("<th class=\"fixed01\">Mary</th>");
-            p.println("<th class=\"fixed01\">Mel</th>");
-            p.println("<th class=\"fixed01\">Monk</th>");
-            p.println("<th class=\"fixed01\">Noc</th>");
-            p.println("<th class=\"fixed01\">Tempo</th>");
-            p.println("<th class=\"fixed01\">Coda</th>");
-            p.println("<th class=\"fixed01\">Story</th>");
-            p.println("<th class=\"fixed01\">9char</th>");
-            p.println("<th class=\"fixed01\">13char</th>");
+            p.println("<th class=\"fixed01 total\">Points</th>");
+            p.println("<th class=\"fixed01 char\">Aria</th>");
+            p.println("<th class=\"fixed01 char\">Bard</th>");
+            p.println("<th class=\"fixed01 char\">Bolt</th>");
+            p.println("<th class=\"fixed01 char\">Cad</th>");
+            p.println("<th class=\"fixed01 char\">Dia</th>");
+            p.println("<th class=\"fixed01 char\">Dor</th>");
+            p.println("<th class=\"fixed01 char\">Dove</th>");
+            p.println("<th class=\"fixed01 char\">Eli</th>");
+            p.println("<th class=\"fixed01 char\">Mary</th>");
+            p.println("<th class=\"fixed01 char\">Mel</th>");
+            p.println("<th class=\"fixed01 char\">Monk</th>");
+            p.println("<th class=\"fixed01 char\">Noc</th>");
+            p.println("<th class=\"fixed01 char\">Tempo</th>");
+            p.println("<th class=\"fixed01 char\">Coda</th>");
+            p.println("<th class=\"fixed01 char\">Story</th>");
+            p.println("<th class=\"fixed01 char\">9char</th>");
+            p.println("<th class=\"fixed01 char\">13char</th>");
             p.println("</tr>");
             
             for(int i=0;i<200;i++){
@@ -1252,10 +1482,13 @@ public class HtmlGenerator extends DefaultHandler{
             	
             	p.println("<td>" + (i+1) + "</td>");
             	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+            	if(player.name().startsWith("ID")){
+            		System.out.println("NecroLab Score" + player.name() + " rank:" + (i+1));
+            	}
             	p.println("<td>" + String.format("%.2f",player.scorepoints()) + "</td>");
 
         		for(int j=0;j<17;j++){
-                	p.println(ranktag(player.score[j]));
+                	p.println(ranktag(player.score[j], j, "score"));
         		}
                 
                 p.println("</tr>");
@@ -1282,11 +1515,12 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<!DOCTYPE html>");
             p.println("<html>");
             p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+            p.println("<link rel=\"stylesheet\" href=\"influencestyle.css\">");
             p.println("<title>NecroDancer LBs Influence Rankings</title>");
             p.println("</head>");
             p.println("<body>");
             p.println("<h1>NecroDancer LBs Influence Rankings</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<p>Points are based on old necrolab formula: 1.7 / (log($rank / 100 + 1.03) / log(10))</p>");
             p.println("<p>ex. You gain 99.8 points from 1st place, 80.2 points from 2nd place, 67.2 points from 3rd place...</p>");
             p.println("<h3>[Weights]</h3>");
@@ -1298,11 +1532,11 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<tr>");
             p.println("<th class=\"fixed01\">Rank</th>");
             p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01\">Total</th>");
-            p.println("<th class=\"fixed01\">Speed</th>");
-            p.println("<th class=\"fixed01\">Score</th>");
-            p.println("<th class=\"fixed01\">DLess</th>");
-            p.println("<th class=\"fixed01\">Extra</th>");
+            p.println("<th class=\"fixed01 total\">Total</th>");
+            p.println("<th class=\"fixed01 char\">Speed</th>");
+            p.println("<th class=\"fixed01 char\">Score</th>");
+            p.println("<th class=\"fixed01 char\">DLess</th>");
+            p.println("<th class=\"fixed01 char\">Extra</th>");
             p.println("</tr>");
 
             for(int i=0;i<200;i++){
@@ -1311,6 +1545,9 @@ public class HtmlGenerator extends DefaultHandler{
                 p.println("<tr>");
             	p.println("<td>" + (i+1) + "</td>");
             	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+            	if(player.name().startsWith("ID")){
+            		System.out.println("LBs Influence" + player.name() + " rank:" + (i+1));
+            	}
             	p.println("<td>" + String.format("%.2f", player.contribution()) + "</td>");
             	p.println("<td>" + String.format("%.2f", player.contribution_speed()) + "</td>");
             	p.println("<td>" + String.format("%.2f", player.contribution_score()) + "</td>");
@@ -1362,13 +1599,15 @@ public class HtmlGenerator extends DefaultHandler{
                 
                 for(int i=0;i<17;i++){
                     p.println("<tr>");
-                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + "speedlbs.html\"><img src=\"icons/" + i + ".jpg\">" + "</a></td>");
-                	p.println("<td>" + curToName(i) + "</td>");
-                	p.println("<td>" + Player.csecToString(player.time[i]) + "</td>");
-                	p.println(ranktag(player.speed[i]));
-                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + "scorelbs.html\"><img src=\"icons/" + i + ".jpg\">" + "</a></td>");
-                	p.println("<td>" + zeroout(player.gold[i]) + "</td>");
-                	p.println(ranktag(player.score[i]));
+                	//p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + "speedlbs.html\"><img src=\"icons/" + i + ".jpg\">" + "</a></td>");
+                    p.println("<td><img src=\"icons/" + i + ".jpg\">" + "</td>");
+                    p.println("<td>" + curToName(i) + "</td>");
+                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + "speedlbs.html\">" + Player.csecToString(player.time[i]) + "</a></td>");
+                	p.println(ranktag(player.speed[i], i, "speed"));
+                	//p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + "scorelbs.html\"><img src=\"icons/" + i + ".jpg\">" + "</a></td>");
+                    p.println("<td><img src=\"icons/" + i + ".jpg\">" + "</td>");
+                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + "scorelbs.html\">" + zeroout(player.gold[i]) + "</a></td>");
+                	p.println(ranktag(player.score[i], i, "score"));
                     p.println("</tr>");
                 }
 
@@ -1398,18 +1637,18 @@ public class HtmlGenerator extends DefaultHandler{
                     p.println("<tr>");
                 	p.println("<td>" + "<img src=\"icons/" + i + ".jpg\">" + "</td>");
                 	p.println("<td>" + curToName(i) + "</td>");
-                	p.println(t20tag(player.hardspeed[i]));
-                	p.println(t20tag(player.nrspeed[i]));
-                	p.println(t20tag(player.randospeed[i]));
-                	p.println(t20tag(player.phasingspeed[i]));
-                	p.println(t20tag(player.mysteryspeed[i]));
+                	p.println(t20tag(player.hardspeed[i], 0, i, true));
+                	p.println(t20tag(player.nrspeed[i], 1, i, true));
+                	p.println(t20tag(player.randospeed[i], 2, i, true));
+                	p.println(t20tag(player.phasingspeed[i], 3, i, true));
+                	p.println(t20tag(player.mysteryspeed[i], 4, i, true));
                 	p.println("<td>" + "<img src=\"icons/" + i + ".jpg\">" + "</td>");
-                	p.println(t9tag(player.hardscore[i]));
-                	p.println(t9tag(player.nrscore[i]));
-                	p.println(t9tag(player.randoscore[i]));
-                	p.println(t9tag(player.phasingscore[i]));
-                	p.println(t9tag(player.mysteryscore[i]));
-                	p.println(t20tag(player.deathless[i]));
+                	p.println(t20tag(player.hardscore[i], 0, i, false));
+                	p.println(t20tag(player.nrscore[i], 1, i, false));
+                	p.println(t20tag(player.randoscore[i], 2, i, false));
+                	p.println(t20tag(player.phasingscore[i], 3, i, false));
+                	p.println(t20tag(player.mysteryscore[i], 4, i, false));
+                	p.println(t20tagDL(player.deathless[i], i));
                     p.println("</tr>");
                 }
                 
@@ -1458,9 +1697,8 @@ public class HtmlGenerator extends DefaultHandler{
         	nowscore = score;
         	
         	if(category == "speed"){
-            	int csec = rawToCsec(rawscore);
-            	
             	if(!necrorankings.Data.isCheater(nowid)){
+            		int csec = rawToCsec(rawscore);
                 	if(WRflag){
                 		Player.speedWR[cur] = csec;
                 		WRflag = false;
@@ -1493,7 +1731,47 @@ public class HtmlGenerator extends DefaultHandler{
                 	}
             	}
         	}
-        	else if(nowid.equals("76561198398758840")){
+        	else if(category == "deathless"){
+        		if(!necrorankings.Data.isCheater(nowid)){
+                	if(list.containsKey(nowid)){
+                		list.get(nowid).setClear(cur, score);
+                	}
+                	else{
+                		Player p = new Player(nowid);
+                		p.setClear(cur, score);
+                		list.put(nowid, p);
+                	}
+        		}
+        	}
+        	else if(category == "hardspeed" || category == "nrspeed" || category == "randospeed" || category == "phasingspeed" || category == "mysteryspeed"){
+            	if(!necrorankings.Data.isCheater(nowid)){
+            		int csec = rawToCsec(rawscore);
+            		int ord = categoryToOrd(category);
+                	if(list.containsKey(nowid)){
+                		list.get(nowid).setExtraTime(ord, cur, csec);
+                	}
+                	else{
+                		Player p = new Player(nowid);
+                		p.setExtraTime(ord, cur, csec);
+                		list.put(nowid, p);
+                	}
+            	}
+        	}
+        	else{
+            	if(canPass(category, score) && !necrorankings.Data.isCheater(nowid)){
+            		int ord = categoryToOrd(category);
+                	if(list.containsKey(nowid)){
+                		list.get(nowid).setExtraGold(ord, cur, score);
+                	}
+                	else{
+                		Player p = new Player(nowid);
+                		p.setExtraGold(ord, cur, score);
+                		list.put(nowid, p);
+                	}
+            	}
+        	}
+        	
+        	if(nowid.equals("76561198398758840")){
         		if(category == "hardspeed"){
         			Player.HardHokuho[cur] = rawToCsec(rawscore);
         		}
@@ -1611,20 +1889,44 @@ public class HtmlGenerator extends DefaultHandler{
     	}
     }
     
-    ///top20rank
-    public static String t9(int rank){
-    	switch(rank){
-    	case 1: return "WR";
-    	case 2: return "2nd";
-    	case 3: return "3rd";
-    	case 4: return "4th";
-    	case 5: return "5th";
-    	case 6: return "6th";
-    	case 7: return "7th";
-    	case 8: return "8th";
-    	case 9: return "9th";
-    	case 10: return "10th";
+    ///category - order
+    public static int categoryToOrd(String category){
+    	if(category == "hardspeed" || category == "hardscore"){
+    		return 0;
+    	}
+    	else if(category == "nrspeed" || category == "nrscore"){
+    		return 1;
+    	}
+    	else if(category == "randospeed" || category == "randoscore"){
+    		return 2;
+    	}
+    	else if(category == "phasingspeed" || category == "phasingscore"){
+    		return 3;
+    	}
+    	else{
+    		return 4;
+    	}
+    }
+    
+    public static String ordToCategory(int ord){
+    	switch(ord){
+    	case 0: return "Hard";
+    	case 1: return "NR";
+    	case 2: return "Rando";
+    	case 3: return "Phasing";
+    	case 4: return "Mystery";
     	default: return "";
+    	}
+    }
+    
+    public static String ordToCategoryDisplay(int ord){
+    	switch(ord){
+    	case 0: return "Hard";
+    	case 1: return "NR";
+    	case 2: return "Rando";
+    	case 3: return "Phasing";
+    	case 4: return "Mystery";
+    	default: return "Standard";
     	}
     }
     
@@ -1651,13 +1953,13 @@ public class HtmlGenerator extends DefaultHandler{
     	case 18: return "18th";
     	case 19: return "19th";
     	case 20: return "20th";
-    	default: return "";
+    	default: return " ";
     	}
     }
     
     public static String rankStr(int rank){
     	switch(rank){
-    	case 0: return "";
+    	case 0: return " ";
     	case 1: return "WR";
     	case 11: return "11th";
     	case 12: return "12th";
@@ -1677,13 +1979,13 @@ public class HtmlGenerator extends DefaultHandler{
     
     public static String zeroout(int num){
     	if(num == 0){
-    		return "";
+    		return " ";
     	}
     	else{
     		return String.valueOf(num);
     	}
     }
-
+    
     ///rank to tag
     public static String ranktag(int rank){
     	if(rank == 1){
@@ -1703,15 +2005,6 @@ public class HtmlGenerator extends DefaultHandler{
     	}
     }
     
-    public static String t9tag(int rank){
-    	if(rank == 1){
-        	return "<td class=\"wr\">" + t9(rank) + "</td>";
-    	}
-    	else{
-        	return "<td>" + t9(rank) + "</td>";	
-    	}
-    }
-    
     public static String t20tag(int rank){
     	if(rank == 1){
         	return "<td class=\"wr\">" + t20(rank) + "</td>";
@@ -1719,5 +2012,48 @@ public class HtmlGenerator extends DefaultHandler{
     	else{
         	return "<td>" + t20(rank) + "</td>";	
     	}
+    }
+    
+    public static String t20tag(int rank, int ord, int cur, boolean isSpeed){
+    	if(rank == 1){
+    		if(isSpeed){
+    			return "<td class=\"wr\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + ordToCategory(ord) + "speedlbs.html\">" + t20(rank) + "</a></td>";
+    		}
+    		else{
+    			return "<td class=\"wr\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + ordToCategory(ord) + "scorelbs.html\">" + t20(rank) + "</a></td>";
+    		}
+    	}
+    	else{
+    		if(isSpeed){
+    			return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + ordToCategory(ord) + "speedlbs.html\">" + t20(rank) + "</a></td>";
+    		}
+    		else{
+    			return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + ordToCategory(ord) + "scorelbs.html\">" + t20(rank) + "</a></td>";
+    		}
+    	}
+    }
+    
+    public static String t20tagDL(int rank, int cur){
+    	if(rank == 1){
+    		return "<td class=\"wr\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "deathlesslbs.html\">" + t20(rank) + "</a></td>";
+    	}
+    	else{
+    		return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "deathlesslbs.html\">" + t20(rank) + "</a></td>";
+    	}
+    }
+    
+    ///lbs header tag
+    public static String headertag(int cur, int ord, String cat){
+    	String s = "<h4>";
+    	for(int i=-1;i<5;i++){
+    		if(ord == i){
+    			//s += "<a>" + ordToCategoryDisplay(i) + "</a>\r\n";
+    		}
+    		else{
+    			s += "<a class=\"header\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + ordToCategory(i) + cat + "lbs.html\">" + ordToCategoryDisplay(i) + "</a>\r\n";
+    		}
+    	}
+    	s += "</h4>";
+    	return s;
     }
 }
