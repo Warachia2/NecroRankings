@@ -621,7 +621,7 @@ public class Player {
 	
 	///Getters
 	public boolean hasWR(int ord, int cur, String category){
-		if(category == "speed"){
+		if(category == "speed" || category == "Speed"){
 			switch(ord){
 			case 0: return hardspeed[cur] == 1;
 			case 1: return nrspeed[cur] == 1;
@@ -631,7 +631,7 @@ public class Player {
 			default: return speed[cur] == 1;
 			}
 		}
-		else if(category == "score"){
+		else if(category == "score" || category == "Score"){
 			switch(ord){
 			case 0: return hardscore[cur] == 1;
 			case 1: return nrscore[cur] == 1;
@@ -643,6 +643,32 @@ public class Player {
 		}
 		else{
 			return deathless[cur] == 1;
+		}
+	}
+	
+	public int getRank(int ord, int cur, String category){
+		if(category == "speed" || category == "Speed"){
+			switch(ord){
+			case 0: return hardspeed[cur];
+			case 1: return nrspeed[cur];
+			case 2: return randospeed[cur];
+			case 3: return phasingspeed[cur];
+			case 4: return mysteryspeed[cur];
+			default: return speed[cur];
+			}
+		}
+		else if(category == "score" || category == "Score"){
+			switch(ord){
+			case 0: return hardscore[cur];
+			case 1: return nrscore[cur];
+			case 2: return randoscore[cur];
+			case 3: return phasingscore[cur];
+			case 4: return mysteryscore[cur];
+			default: return score[cur];
+			}
+		}
+		else{
+			return deathless[cur];
 		}
 	}
 	

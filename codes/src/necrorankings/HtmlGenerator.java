@@ -499,6 +499,8 @@ public class HtmlGenerator extends DefaultHandler{
         pblistMaker();
         System.out.println("Making Charts...");
         densityMaker();
+        top10ChartMaker("Speed");
+        top10ChartMaker("Score");
         extraChartMaker();
         
         System.out.println("Done");
@@ -1675,6 +1677,50 @@ public class HtmlGenerator extends DefaultHandler{
         }
     }
     
+    public static void top10ChartMaker(String Category){
+    	try {
+            FileWriter f = new FileWriter(chartsoutput + Category + "top10s.html", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+            
+            p.println("<!DOCTYPE html><html><head>");
+            p.println("<link rel=\"stylesheet\" href=\"recordchart.css\">");
+            p.println("<title>Extra World Records</title>");
+            p.println("</head><body>");
+            p.println("<h1 class=\"center\">"+ Category + " Top10s" +"</h1>");
+            
+            p.println("<table border=\"5\">");
+            p.println("<tr>");
+            p.println("<th class=\"frame\">Rank</th>");
+            for(int i=0;i<17;i++){
+            	p.println("<th class=\"frame\"><img src=\"icons/" + i + ".jpg\"></th>");
+            }
+            p.println("</tr>");
+
+            for(int r=1;r<11;r++){
+                p.println("<tr>");
+                p.println("<th class=\"frame\">" + rankStr(r) + "</th>");
+            	for(int i=0;i<17;i++){
+            		for(Player player: array){
+            			if(player.getRank(-1 , i, Category) == r){
+            				printPlayerLinkedIcon(p, player);
+                			break;	
+            			}
+            		}
+            	}
+            	p.println("</tr>");
+            }
+            
+            p.println("</table>");
+            p.println("<p>" + "Last Updated:" + fdate1 +"</p>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>"); 
+            p.println("</body></html>");
+            p.close();
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
     public static void extraChartMaker(){
         try {
             FileWriter f = new FileWriter(chartsoutput + "extrawrs.html", false);
@@ -1746,6 +1792,7 @@ public class HtmlGenerator extends DefaultHandler{
             }
             p.println("</tr>");
             p.println("</table>");
+            p.println("<p>" + "Last Updated:" + fdate1 +"</p>");
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>"); 
             p.println("</body></html>");
             p.close();
@@ -1754,7 +1801,7 @@ public class HtmlGenerator extends DefaultHandler{
             ex.printStackTrace();
         }
     }
-    
+        
     public static void printPlayerLinkedIcon(PrintWriter p, Player player){
     	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/"+ player.name() + ".html\"><img src=\"players/" + player.name() + ".jpg\"></a></td>");
     }
