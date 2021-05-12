@@ -1017,7 +1017,7 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<h1>NecroDancer 13char Speed PB Ratio to WRs Rankings</h1>");
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
-            categoryHeader(p, 14, "Average");
+            categoryHeader(p, 13, "Average");
             
             int extra = 0;
             
@@ -1746,7 +1746,7 @@ public class HtmlGenerator extends DefaultHandler{
             }
             p.println("</tr>");
             p.println("</table>");
-            
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>"); 
             p.println("</body></html>");
             p.close();
  
