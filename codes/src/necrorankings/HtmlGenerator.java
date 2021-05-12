@@ -2134,7 +2134,7 @@ public class HtmlGenerator extends DefaultHandler{
     }
     
     public static void densityStart(PrintWriter p){
-    	p.println("<!DOCTYPE HTML><html><head><script>");
+    	p.println("<!DOCTYPE HTML><html><head><link rel=\"stylesheet\" href=\"recordchart.css\"><script>");
     	p.println("window.onload = function(){");
     	p.println("var chart = new CanvasJS.Chart(\"chartContainer\", {");
     	p.println("title: {text: \"Top100 Speed Density\"},");
@@ -2160,6 +2160,8 @@ public class HtmlGenerator extends DefaultHandler{
     	p.println("<body>");
     	p.println("<div id=\"chartContainer\" style=\"height: 800px; max-width: 1200px; margin: 0px auto;\"></div>");
     	p.println("<script src=\"https://canvasjs.com/assets/script/canvasjs.min.js\"></script>");
+        p.println("<p>" + "Last Updated:" + fdate1 +"</p>");
+        p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
     	p.println("</body></html>");
     }
 }
