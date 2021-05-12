@@ -429,6 +429,14 @@ public class Player {
     	return p;
     }
 
+    public static Player GPA(){
+    	Player p = new Player("GPA");
+    	p.setGold(0, 12095); //Aria
+    	p.setGold(1, 144378); //Bard
+    	p.setGold(12, 9815); //Tempo
+    	return p;
+    }
+    
     ///Extra Players
     public static Player LowMonster(){
     	Player p = new Player("Low% Monster");

@@ -47,6 +47,7 @@ public class HtmlGenerator extends DefaultHandler{
         //Switch Players
         list.put("76561198115768228", Player.mizmy());
         list.put("76561198846415602", Player.Priw8());
+        list.put("76561199043981220", Player.GPA());
         
         System.out.println("Getting Regular Entries...");
         
@@ -1684,7 +1685,7 @@ public class HtmlGenerator extends DefaultHandler{
             
             p.println("<!DOCTYPE html><html><head>");
             p.println("<link rel=\"stylesheet\" href=\"recordchart.css\">");
-            p.println("<title>Extra World Records</title>");
+            p.println("<title>" + Category + " Top10s" + "</title>");
             p.println("</head><body>");
             p.println("<h1 class=\"center\">"+ Category + " Top10s" +"</h1>");
             
@@ -2086,15 +2087,22 @@ public class HtmlGenerator extends DefaultHandler{
     	if(player.time[cur] == 0){
     		tooltip = "No Entry";
     	}
+    	else if(player.isExtra){
+    		tooltip = Player.csecToString(player.time[cur]) + ", Extra Record";
+    	}
     	
     	return "<td class=\"tooltip\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "speedlbs.html\">" 
     			+ "<span class=\"tooltip-text\">" + tooltip + "</span>" + String.format("%.3f",player.timeRatio(cur)) + "</a></td>";
     }
     
     public static String scoreratiotag(Player player, int cur){
+
     	String tooltip = String.valueOf(player.gold[cur]) + ", " + rankStr(player.score[cur]);
     	if(player.gold[cur] == 0){
     		tooltip = "No entry or below 5000th";
+    	}
+    	else if(player.isExtra){
+    		tooltip = String.valueOf(player.gold[cur]) + ", Extra Record";
     	}
     	
     	return "<td class=\"tooltip\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html\">" 
@@ -2104,7 +2112,10 @@ public class HtmlGenerator extends DefaultHandler{
     public static String speedtimetag(Player player, int cur){
     	String tooltip = "";
     	
-    	if(player.time[cur] == 0){
+    	if(player.isExtra){
+    		tooltip = "Extra Record";
+    	}
+    	else if(player.time[cur] == 0){
     		tooltip = "No Entry";
     	}
     	else if(player.time[cur] > Player.timeBound(cur)){
