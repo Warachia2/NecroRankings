@@ -662,7 +662,7 @@ public class Player {
 	
 	public String clearcount(int cur){
 		if(cur == 0){ //Aria
-			return (6-((clear[cur] - clear[cur]%100)/100)) + "-" + ((clear[cur]%100 - clear[cur]%10)/10 + 1) + "-" + (clear[cur]%10 + 1);
+			return ((clear[cur] - clear[cur]%100)/100) + "-" + (6-((clear[cur]%100 - clear[cur]%10)/10 + 1)) + "-" + (clear[cur]%10 + 1);
 		}
 		else{
 			return (clear[cur] - clear[cur]%100)/100 + "-" + ((clear[cur]%100 - clear[cur]%10)/10 + 1) + "-" + (clear[cur]%10 + 1);	

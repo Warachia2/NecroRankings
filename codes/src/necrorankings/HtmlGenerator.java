@@ -1578,6 +1578,10 @@ public class HtmlGenerator extends DefaultHandler{
                 FileWriter f = new FileWriter(pbsoutput + player.name() + ".html", false);
                 PrintWriter p = new PrintWriter(new BufferedWriter(f));
                 
+                int extraspeedthreshold = 20;
+                int extrascorethreshold = 10;
+                int deathlessthreshold = 20;
+                
                 p.println("<!DOCTYPE html>");
                 p.println("<html>");
                 p.println("<head>");
@@ -1638,18 +1642,18 @@ public class HtmlGenerator extends DefaultHandler{
                     p.println("<tr>");
                 	p.println("<td>" + "<img src=\"icons/" + i + ".jpg\">" + "</td>");
                 	p.println("<td>" + curToName(i) + "</td>");
-                	p.println(t20tag(player.hardspeed[i], 0, i, true));
-                	p.println(t20tag(player.nrspeed[i], 1, i, true));
-                	p.println(t20tag(player.randospeed[i], 2, i, true));
-                	p.println(t20tag(player.phasingspeed[i], 3, i, true));
-                	p.println(t20tag(player.mysteryspeed[i], 4, i, true));
+                	p.println(t20tag(player.hardspeed[i], 0, i, "speed", Player.csecToString(player.extratime[0][i]), extraspeedthreshold));
+                	p.println(t20tag(player.nrspeed[i], 1, i, "speed", Player.csecToString(player.extratime[1][i]), extraspeedthreshold));
+                	p.println(t20tag(player.randospeed[i], 2, i, "speed", Player.csecToString(player.extratime[2][i]), extraspeedthreshold));
+                	p.println(t20tag(player.phasingspeed[i], 3, i, "speed", Player.csecToString(player.extratime[3][i]), extraspeedthreshold));
+                	p.println(t20tag(player.mysteryspeed[i], 4, i, "speed", Player.csecToString(player.extratime[4][i]), extraspeedthreshold));
                 	p.println("<td>" + "<img src=\"icons/" + i + ".jpg\">" + "</td>");
-                	p.println(t20tag(player.hardscore[i], 0, i, false));
-                	p.println(t20tag(player.nrscore[i], 1, i, false));
-                	p.println(t20tag(player.randoscore[i], 2, i, false));
-                	p.println(t20tag(player.phasingscore[i], 3, i, false));
-                	p.println(t20tag(player.mysteryscore[i], 4, i, false));
-                	p.println(t20tagDL(player.deathless[i], i));
+                	p.println(t20tag(player.hardscore[i], 0, i, "score", zeroout(player.extragold[0][i]), extrascorethreshold));
+                	p.println(t20tag(player.nrscore[i], 1, i, "score", zeroout(player.extragold[1][i]), extrascorethreshold));
+                	p.println(t20tag(player.randoscore[i], 2, i, "score", zeroout(player.extragold[2][i]), extrascorethreshold));
+                	p.println(t20tag(player.phasingscore[i], 3, i, "score", zeroout(player.extragold[3][i]), extrascorethreshold));
+                	p.println(t20tag(player.mysteryscore[i], 4, i, "score", zeroout(player.extragold[4][i]), extrascorethreshold));
+                	p.println(t20tag(player.deathless[i], -1, i, "deathless", player.clearcount(i), deathlessthreshold));
                     p.println("</tr>");
                 }
                 
@@ -1932,8 +1936,8 @@ public class HtmlGenerator extends DefaultHandler{
     }
     
     ///top20rank
-    public static String t20(int rank){
-    	if(rank<=20){
+    public static String t20(int rank, int threshold){
+    	if(rank<=threshold){
     		return rankStr(rank);
     	}
     	else{
@@ -1988,41 +1992,37 @@ public class HtmlGenerator extends DefaultHandler{
     	}
     }
     
-    public static String t20tag(int rank){
-    	if(rank == 1){
-        	return "<td class=\"wr\">" + t20(rank) + "</td>";
+    public static String t20tag(int rank, int ord, int cur, String category, String tooltip, int threshold){
+    	String lbsname = "";
+    	if(category == "speed"){
+    		lbsname = curToName(cur) + ordToCategory(ord) + "speedlbs";
+    	}
+    	else if(category == "score"){
+    		lbsname = curToName(cur) + ordToCategory(ord) + "scorelbs";
     	}
     	else{
-        	return "<td>" + t20(rank) + "</td>";	
+    		lbsname = curToName(cur) + "deathlesslbs";
     	}
-    }
-    
-    public static String t20tag(int rank, int ord, int cur, boolean isSpeed){
+    	
+    	String td = "";
     	if(rank == 1){
-    		if(isSpeed){
-    			return "<td class=\"wr\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + ordToCategory(ord) + "speedlbs.html\">" + t20(rank) + "</a></td>";
-    		}
-    		else{
-    			return "<td class=\"wr\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + ordToCategory(ord) + "scorelbs.html\">" + t20(rank) + "</a></td>";
-    		}
+    		td = "<td class=\"wr tooltip\">";
+    	}
+    	else if(rank == 0){
+    		td = "<td>";
     	}
     	else{
-    		if(isSpeed){
-    			return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + ordToCategory(ord) + "speedlbs.html\">" + t20(rank) + "</a></td>";
-    		}
-    		else{
-    			return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + ordToCategory(ord) + "scorelbs.html\">" + t20(rank) + "</a></td>";
-    		}
+    		td = "<td class=\"tooltip\">";
     	}
-    }
-    
-    public static String t20tagDL(int rank, int cur){
-    	if(rank == 1){
-    		return "<td class=\"wr\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "deathlesslbs.html\">" + t20(rank) + "</a></td>";
+    	
+    	if(rank <= threshold){
+        	return td + "<a href=\"https://warachia2.github.io/NecroRankings/lbs/" + lbsname + ".html\">" 
+    				+ "<span class=\"tooltip-text\">" + tooltip + "</span>" + t20(rank, threshold) + "</a></td>";	
     	}
     	else{
-    		return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "deathlesslbs.html\">" + t20(rank) + "</a></td>";
+        	return td + "<a href=\"https://warachia2.github.io/NecroRankings/lbs/" + lbsname + ".html\">" + t20(rank, threshold) + "</a></td>";
     	}
+
     }
     
     ///lbs header tag
