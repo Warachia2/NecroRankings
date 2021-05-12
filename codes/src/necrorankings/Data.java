@@ -101,6 +101,8 @@ public class Data {
 		switch(steamid){
 		case "Mizmy": return "Mizmy";
 		case "76561198115768228": return "Mizmy";
+		case "Priw8": return "Priw8";
+    	case "76561198846415602": return "Priw8";
 		case "Low% Monster": return "Low% Monster";
 		case "NR Hokuho": return "NR Hokuho";
 		case "Hard Hokuho": return "Hard Hokuho";
@@ -470,7 +472,6 @@ public class Data {
     	case "76561198025231301": return "Jennifer";
     	case "76561198053362086": return "Ampersand";
     	case "76561198008824818": return "Ruby";
-    	case "76561198846415602": return "Priw8";
     	case "76561198087840095": return "AT";
     	case "76561198039684185": return "Mac";
     	case "76561198053137758": return "Polymerq";

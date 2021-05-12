@@ -347,7 +347,7 @@ public class Player {
 		}
 		return r/num;
 	}
-	
+		
 	///Switch Players
     public static Player mizmy(){
     	Player p = new Player("Mizmy");
@@ -376,6 +376,7 @@ public class Player {
     	p.setExtraTime(0, 0, 99642); //Aria Hard 16:36
     	p.setExtraTime(2, 0, 94525); //Aria Rando 15:45
     	p.setExtraTime(4, 0, 106939); //Aria Mystery 17:49
+    	p.setExtraTime(2, 2, 33064); //Bolt Rando 5:30
     	p.setExtraTime(0, 3, 77552); //Cad Hard 12:55
     	p.setExtraTime(1, 4, 39345); //Dia NR 6:33
     	p.setExtraTime(3, 4, 36801); //Dia Phasing 6:08
@@ -396,7 +397,26 @@ public class Player {
     	p.setExtraTime(0, 12, 35389); //Tempo Hard 5:53
     	p.setExtraTime(2, 12, 52366); //Tempo Rando 8:43
     	
-    	p.setClear(7, 6103);
+    	p.setExtraGold(2, 3, 31975); //Cadence Rando 31975
+    	
+    	p.setClear(0, 610); //Aria deathless 6-4-1
+    	p.setClear(2, 1801); //Bolt deathless 18-1-2
+    	p.setClear(4, 1542); //Diamond deathless 15-5-3
+    	p.setClear(6, 1740); //Dove deathless 17-5-1
+    	p.setClear(7, 6103); //Eli deathless 61-1-4
+    	p.setClear(10, 2); //Monk deathless 0-3-3
+    	p.setClear(12, 303); //Tempo deathless 3-1-4
+    	
+    	return p;
+    }
+    
+    public static Player Priw8(){
+    	Player p = new Player("Priw8");
+    	p.setTime(3, 40339); //Cadence 6:43.39
+    	p.setTime(6, 25259); //Dove 4:12.59
+    	p.setTime(9, 36235); //Mel 6:02.35
+    	p.setTime(11, 51764); //Noc 8:37.64
+    	p.setTime(12, 29471); //Tempo 4:54.71
     	return p;
     }
 
@@ -641,7 +661,12 @@ public class Player {
 	}
 	
 	public String clearcount(int cur){
-		return (clear[cur] - clear[cur]%100)/100 + "-" + ((clear[cur]%100 - clear[cur]%10)/10 + 1) + "-" + (clear[cur]%10 + 1);
+		if(cur == 0){ //Aria
+			return (6-((clear[cur] - clear[cur]%100)/100)) + "-" + ((clear[cur]%100 - clear[cur]%10)/10 + 1) + "-" + (clear[cur]%10 + 1);
+		}
+		else{
+			return (clear[cur] - clear[cur]%100)/100 + "-" + ((clear[cur]%100 - clear[cur]%10)/10 + 1) + "-" + (clear[cur]%10 + 1);	
+		}
 	}
 	
 	public String name(){

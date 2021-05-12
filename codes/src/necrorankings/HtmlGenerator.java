@@ -41,7 +41,8 @@ public class HtmlGenerator extends DefaultHandler{
         SAXParser saxParser = saxParserFactory.newSAXParser();
         
         //Switch Players
-        list.put("76561198115768228",Player.mizmy());
+        list.put("76561198115768228", Player.mizmy());
+        list.put("76561198846415602", Player.Priw8());
         
         System.out.println("Getting Regular Entries...");
         
