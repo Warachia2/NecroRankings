@@ -29,9 +29,12 @@ public class HtmlGenerator extends DefaultHandler{
 	static int cur = 0; //category id, 0~16
     static boolean WRflag = false;
 	static HashMap<String, Player> list = new HashMap<>();
+	static ArrayList<Player> array = new ArrayList<>();
 	String nowid = "";
 	int nowscore = 0;
 	int nowrank = 0;
+	
+	static String fdate1 = "";
 	
     boolean isSteamid = false;
     boolean isScore = false;
@@ -467,7 +470,7 @@ public class HtmlGenerator extends DefaultHandler{
         list.put("Mystery Warachia",Player.MysteryWarachia());
         list.put("NR Warachia",Player.NRWarachia());
         
-        ArrayList<Player> array = new ArrayList<>(list.values());
+        array = new ArrayList<>(list.values());
         
         //Unsubmitted
         list.get("76561198087367133").setTime(2, 27345); //Shortcake Sweets, Bolt Speed, 4:33.45
@@ -482,1242 +485,21 @@ public class HtmlGenerator extends DefaultHandler{
         //Bar Text
         LocalDateTime date1 = LocalDateTime.now();
 		DateTimeFormatter dtformat1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
-		String fdate1 = dtformat1.format(date1);
+		fdate1 = dtformat1.format(date1);
 		
-		//LBs
-		
-		System.out.println("Making Regular LBs");
-		
-		for(int i=0;i<17;i++){
-	        try {
-	            FileWriter f = new FileWriter(lbsoutput + curToName(i) + "speedlbs.html", false);
-	            PrintWriter p = new PrintWriter(new BufferedWriter(f));
-	            
-	            p.println("<!DOCTYPE html>");
-	            p.println("<html>");
-	            p.println("<head>");
-	            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
-	            p.println("<title>" + curToName(i) +  " Speed LBs" + "</title>");
-	            p.println("</head>");
-	            p.println("<body>");
-	            p.println("<h1>" + curToName(i) +  " Speed LBs" + "</h1>");
-                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-	            if(i<14){
-	            	p.println(headertag(i,-1, "speed"));
-	            }
-	            p.println("<table border=\"5\">");
-	            p.println("<tr>");
-	            p.println("<th class=\"fixed01\">Rank</th>");
-	            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-	            p.println("<th class=\"fixed01\">Time</th>");
-	            p.println("</tr>");
-	            
-				int num = i;
-				array.sort((a,b) -> (a.time[num] - b.time[num]));
-				int rank = 1;
-				for(Player player:array){
-					if(player.time[num] == 0 || player.isExtra){
-						continue;
-					}
-					else{
-						player.speed[num] = rank;
-						
-						if(rank<=100 || !player.name().startsWith("ID")){
-				            p.println("<tr>");
-				            p.println("<td>" + rank + "</td>");
-				            if(player.name().startsWith("ID")){
-				            	p.println("<td>" + player.name() + "</td>");
-				            	System.out.println(curToName(i) + "Speed:" + player.name() + " rank:" + rank);
-				            }
-				            else{
-				            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
-				            }
-				            p.println("<td>" + Player.csecToString(player.time[num]) + "</td>");
-				            p.println("</tr>");	
-						}
-			            
-						rank++;
-					}
-				}
-
-	            p.println("</table>");
-	            p.println("</body>");
-                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-	            p.println("</html>");
-	            
-	            p.close();
-	 
-	        } catch (IOException ex) {
-	            ex.printStackTrace();
-	        }
-		}
-		
-		for(int i=0;i<17;i++){
-	        try {
-	            FileWriter f = new FileWriter(lbsoutput + curToName(i) + "scorelbs.html", false);
-	            PrintWriter p = new PrintWriter(new BufferedWriter(f));
-	            
-	            p.println("<!DOCTYPE html>");
-	            p.println("<html>");
-	            p.println("<head>");
-	            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
-	            p.println("<title>" + curToName(i) +  " Score LBs" + "</title>");
-	            p.println("</head>");
-	            p.println("<body>");
-	            p.println("<h1>" + curToName(i) +  " Score LBs" + "</h1>");
-                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-	            if(i<14){
-	            	p.println(headertag(i,-1, "score"));
-	            }
-	            p.println("<table border=\"5\">");
-	            p.println("<tr>");
-	            p.println("<th class=\"fixed01\">Rank</th>");
-	            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-	            p.println("<th class=\"fixed01\">Score</th>");
-	            p.println("</tr>");
-	            
-				int num = i;
-				array.sort((a,b) -> (b.gold[num] - a.gold[num]));
-				int rank = 1;
-				for(Player player:array){
-					if(player.score[num] == 0 || player.isExtra){
-						continue;
-					}
-					else{
-						player.score[num] = rank;
-						
-						if(rank<=50 || !player.name().startsWith("ID")){
-				            p.println("<tr>");
-				            p.println("<td>" + rank + "</td>");
-				            if(player.name().startsWith("ID")){
-				            	p.println("<td>" + player.name() + "</td>");
-				            	System.out.println(curToName(i) + "Score:" + player.name() + " rank:" + rank);
-				            }
-				            else{
-				            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
-				            }
-				            p.println("<td>" + player.gold[num] + "</td>");
-				            p.println("</tr>");	
-						}
-			            
-						rank++;
-					}
-				}
-
-	            p.println("</table>");
-	            p.println("</body>");
-                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-	            p.println("</html>");
-	            
-	            p.close();
-	 
-	        } catch (IOException ex) {
-	            ex.printStackTrace();
-	        }
-		}
-		
-		for(int i=0;i<14;i++){
-	        try {
-	            FileWriter f = new FileWriter(lbsoutput + curToName(i) + "deathlesslbs.html", false);
-	            PrintWriter p = new PrintWriter(new BufferedWriter(f));
-	            
-	            p.println("<!DOCTYPE html>");
-	            p.println("<html>");
-	            p.println("<head>");
-	            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
-	            p.println("<title>" + curToName(i) +  " Deathless LBs" + "</title>");
-	            p.println("</head>");
-	            p.println("<body>");
-	            p.println("<h1>" + curToName(i) +  " Deathless LBs" + "</h1>");
-                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-	            p.println("<table border=\"5\">");
-	            p.println("<tr>");
-	            p.println("<th class=\"fixed01\">Rank</th>");
-	            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-	            p.println("<th class=\"fixed01\">Count</th>");
-	            p.println("</tr>");
-	            
-				int num = i;
-				array.sort((a,b) -> (b.clear[num] - a.clear[num]));
-				int rank = 1;
-				for(Player player:array){
-					if(player.clear[num] == 0 || player.isExtra){
-						continue;
-					}
-					else{
-						player.deathless[num] = rank;
-						
-						if(!player.name().startsWith("ID")){
-				            p.println("<tr>");
-				            p.println("<td>" + rank + "</td>");
-				            p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
-				            p.println("<td>" + player.clearcount(num) + "</td>");
-				            p.println("</tr>");	
-						}
-						else{
-							if(rank <=10){
-								System.out.println(curToName(i) + " Deathless" + player.name() + " rank:" + rank);
-							}
-						}
-			            
-						rank++;
-					}
-				}
-
-	            p.println("</table>");
-	            p.println("</body>");
-                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-	            p.println("</html>");
-	            
-	            p.close();
-	 
-	        } catch (IOException ex) {
-	            ex.printStackTrace();
-	        }
-		}
-		
-		System.out.println("Making Extra LBs...");
-		
-		for(int h=0;h<5;h++){
-			for(int i=0;i<14;i++){
-		        try {
-		            FileWriter f = new FileWriter(lbsoutput + curToName(i) + ordToCategory(h) + "speedlbs.html", false);
-		            PrintWriter p = new PrintWriter(new BufferedWriter(f));
-		            
-		            p.println("<!DOCTYPE html>");
-		            p.println("<html>");
-		            p.println("<head>");
-		            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
-		            p.println("<title>" + curToName(i) + " " + ordToCategory(h) + " Speed LBs" + "</title>");
-		            p.println("</head>");
-		            p.println("<body>");
-		            p.println("<h1>" + curToName(i) + " " + ordToCategory(h) + " Speed LBs" + "</h1>");
-	                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-		            p.println(headertag(i, h, "speed"));
-		            p.println("<table border=\"5\">");
-		            p.println("<tr>");
-		            p.println("<th class=\"fixed01\">Rank</th>");
-		            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-		            p.println("<th class=\"fixed01\">Time</th>");
-		            p.println("</tr>");
-		            
-		            int ord = h;
-					int num = i;
-					array.sort((a,b) -> (a.extratime[ord][num] - b.extratime[ord][num]));
-					int rank = 1;
-					for(Player player:array){
-						if(player.extratime[ord][num] == 0 || player.isExtra){
-							continue;
-						}
-						else{
-							player.setRank(ord, num, true, rank);
-							
-							if(!player.name().startsWith("ID")){
-					            p.println("<tr>");
-					            p.println("<td>" + rank + "</td>");
-					            p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
-					            p.println("<td>" + Player.csecToString(player.extratime[ord][num]) + "</td>");
-					            p.println("</tr>");	
-							}
-							else{
-								if(rank <=10){
-									System.out.println(curToName(i) + " " + ordToCategory(h) + " Speed" + player.name() + " rank:" + rank);
-								}
-							}
-				            
-							rank++;
-						}
-					}
-
-		            p.println("</table>");
-		            p.println("</body>");
-	                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-		            p.println("</html>");
-		            
-		            p.close();
-		 
-		        } catch (IOException ex) {
-		            ex.printStackTrace();
-		        }
-			}
-		}
-		
-		for(int h=0;h<5;h++){
-			for(int i=0;i<14;i++){
-		        try {
-		            FileWriter f = new FileWriter(lbsoutput + curToName(i) + ordToCategory(h) + "scorelbs.html", false);
-		            PrintWriter p = new PrintWriter(new BufferedWriter(f));
-		            
-		            p.println("<!DOCTYPE html>");
-		            p.println("<html>");
-		            p.println("<head>");
-		            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
-		            p.println("<title>" + curToName(i) + " " + ordToCategory(h) + " Score LBs" + "</title>");
-		            p.println("</head>");
-		            p.println("<body>");
-		            p.println("<h1>" + curToName(i) + " " + ordToCategory(h) + " Score LBs" + "</h1>");
-	                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-		            p.println(headertag(i, h, "score"));
-		            p.println("<table border=\"5\">");
-		            p.println("<tr>");
-		            p.println("<th class=\"fixed01\">Rank</th>");
-		            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-		            p.println("<th class=\"fixed01\">Score</th>");
-		            p.println("</tr>");
-		            
-		            int ord = h;
-					int num = i;
-					array.sort((a,b) -> (b.extragold[ord][num] - a.extragold[ord][num]));
-					int rank = 1;
-					for(Player player:array){
-						if(player.extragold[ord][num] == 0 || player.isExtra){
-							continue;
-						}
-						else{
-							player.setRank(ord, num, false, rank);
-							
-							if(!player.name().startsWith("ID")){
-					            p.println("<tr>");
-					            p.println("<td>" + rank + "</td>");
-					            p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
-					            p.println("<td>" + player.extragold[ord][num] + "</td>");
-					            p.println("</tr>");	
-							}
-							else{
-								if(rank <=5){
-									System.out.println(curToName(i) + " " + ordToCategory(h) + " Score" + player.name() + " rank:" + rank);
-								}
-							}
-				            
-							rank++;
-						}
-					}
-
-		            p.println("</table>");
-		            p.println("</body>");
-	                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-		            p.println("</html>");
-		            
-		            p.close();
-		 
-		        } catch (IOException ex) {
-		            ex.printStackTrace();
-		        }
-			}
-		}
-        
-        //Rankings
-        System.out.println("Making Sum/Ratio Rankings...");
-        
-        array.sort((a,b) -> (a.timeSum(13) - b.timeSum(13)));
-        
-        try {
-            FileWriter f = new FileWriter(rankingsoutput + "13speedsum.html", false);
-            PrintWriter p = new PrintWriter(new BufferedWriter(f));
-            
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"13speedsumstyle.css\">");
-            p.println("<title>NecroDancer 13char Speed PB Sum Rankings</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroDancer 13char Speed PB Sum Rankings</h1>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("<table border=\"5\">");
-            p.println("<tr>");
-            p.println("<th class=\"fixed01\">Rank</th>");
-            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01 total\">Sum</th>");
-            p.println("<th class=\"fixed01 char\">Aria</th>");
-            p.println("<th class=\"fixed01 char\">Bard</th>");
-            p.println("<th class=\"fixed01 char\">Bolt</th>");
-            p.println("<th class=\"fixed01 char\">Cad</th>");
-            p.println("<th class=\"fixed01 char\">Dia</th>");
-            p.println("<th class=\"fixed01 char\">Dor</th>");
-            p.println("<th class=\"fixed01 char\">Dove</th>");
-            p.println("<th class=\"fixed01 char\">Eli</th>");
-            p.println("<th class=\"fixed01 char\">Mary</th>");
-            p.println("<th class=\"fixed01 char\">Mel</th>");
-            p.println("<th class=\"fixed01 char\">Monk</th>");
-            p.println("<th class=\"fixed01 char\">Noc</th>");
-            p.println("<th class=\"fixed01 char\">Tempo</th>");
-            p.println("</tr>");
-            
-            int extra = 0;
-            
-            for(int i=0;i<156;i++){
-            	Player player = array.get(i);
-            	
-                p.println("<tr>");
-            	
-            	if(player.isExtra){
-            		extra++;
-                	p.println("<td>" + (i+1-extra) + ".5" +  "</td>");
-            	}
-            	else{
-                	p.println("<td>" + (i+1-extra) + "</td>");
-            	}
-            	
-            	if(player.isExtra){
-                	p.println("<td>" + player.name() + "</td>");
-            	}
-            	else{
-                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
-                	if(player.name().startsWith("ID")){
-                		System.out.println("13sum" + player.name() + " rank:" + (i+1-extra));
-                	}
-            	}
-            	p.println("<td>" + Player.csecToString(player.timeSum(13)) + "</td>");
-            	
-            	for(int j=0;j<13;j++){
-                	p.println(speedtimetag(player, j));
-            	}
-            	
-                p.println("</tr>");
-            }
-            
-            p.println("</table>");
-            p.println("</body>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("</html>");
-            
-            p.close();
- 
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        
-        array.sort((a,b) -> (int)(1000000*(a.averageTimeRatio(13) - b.averageTimeRatio(13))));
-        
-        try {
-            FileWriter f = new FileWriter(rankingsoutput + "13speedratio.html", false);
-            PrintWriter p = new PrintWriter(new BufferedWriter(f));
-            
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"13speedratiostyle.css\">");
-            p.println("<title>NecroDancer 13char Speed PB Ratio to WRs Rankings</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroDancer 13char Speed PB Ratio to WRs Rankings</h1>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("<table border=\"5\">");
-            p.println("<tr>");
-            p.println("<th class=\"fixed01\">Rank</th>");
-            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01 total\">Average</th>");
-            p.println("<th class=\"fixed01 char\">Aria</th>");
-            p.println("<th class=\"fixed01 char\">Bard</th>");
-            p.println("<th class=\"fixed01 char\">Bolt</th>");
-            p.println("<th class=\"fixed01 char\">Cad</th>");
-            p.println("<th class=\"fixed01 char\">Dia</th>");
-            p.println("<th class=\"fixed01 char\">Dor</th>");
-            p.println("<th class=\"fixed01 char\">Dove</th>");
-            p.println("<th class=\"fixed01 char\">Eli</th>");
-            p.println("<th class=\"fixed01 char\">Mary</th>");
-            p.println("<th class=\"fixed01 char\">Mel</th>");
-            p.println("<th class=\"fixed01 char\">Monk</th>");
-            p.println("<th class=\"fixed01 char\">Noc</th>");
-            p.println("<th class=\"fixed01 char\">Tempo</th>");
-            p.println("</tr>");
-            
-            int extra = 0;
-            
-            for(int i=0;i<156;i++){
-            	Player player = array.get(i);
-            	
-                p.println("<tr>");
-            	
-            	if(player.isExtra){
-            		extra++;
-                	p.println("<td>" + (i+1-extra) + ".5" +  "</td>");
-            	}
-            	else{
-                	p.println("<td>" + (i+1-extra) + "</td>");
-            	}
-            	
-            	if(player.isExtra){
-                	p.println("<td>" + player.name() + "</td>");
-            	}
-            	else{
-                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
-                	if(player.name().startsWith("ID")){
-                		System.out.println("13ratio" + player.name() + " rank:" + (i+1-extra));
-                	}
-            	}
-            	p.println("<td>" + String.format("%.3f", player.averageTimeRatio(13)) + "</td>");
-            	
-            	for(int j=0;j<13;j++){
-            		p.println(speedratiotag(player, j));
-            	}
-            	
-                p.println("</tr>");
-            }
-            
-            p.println("</table>");
-            p.println("</body>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("</html>");
-            
-            p.close();
- 
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-
-        array.sort((a,b) -> (a.timeSum(14) - b.timeSum(14)));
-        
-        try {
-            FileWriter f = new FileWriter(rankingsoutput + "14speedsum.html", false);
-            PrintWriter p = new PrintWriter(new BufferedWriter(f));
-            
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"14speedsumstyle.css\">");
-            p.println("<title>NecroDancer 14char PB Sum Rankings</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroDancer 14char PB Sum Rankings</h1>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("<table border=\"5\">");
-            p.println("<tr>");
-            p.println("<th class=\"fixed01\">Rank</th>");
-            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01 total\">Sum</th>");
-            p.println("<th class=\"fixed01 char\">Aria</th>");
-            p.println("<th class=\"fixed01 char\">Bard</th>");
-            p.println("<th class=\"fixed01 char\">Bolt</th>");
-            p.println("<th class=\"fixed01 char\">Cad</th>");
-            p.println("<th class=\"fixed01 char\">Dia</th>");
-            p.println("<th class=\"fixed01 char\">Dor</th>");
-            p.println("<th class=\"fixed01 char\">Dove</th>");
-            p.println("<th class=\"fixed01 char\">Eli</th>");
-            p.println("<th class=\"fixed01 char\">Mary</th>");
-            p.println("<th class=\"fixed01 char\">Mel</th>");
-            p.println("<th class=\"fixed01 char\">Monk</th>");
-            p.println("<th class=\"fixed01 char\">Noc</th>");
-            p.println("<th class=\"fixed01 char\">Tempo</th>");
-            p.println("<th class=\"fixed01 char\">Coda</th>");
-            p.println("</tr>");
-            
-            int extra = 0;
-            
-            for(int i=0;i<50;i++){
-            	Player player = array.get(i);
-            	
-                p.println("<tr>");
-            	
-            	if(player.isExtra){
-            		extra++;
-                	p.println("<td>" + (i+1-extra) + ".5" +  "</td>");
-            	}
-            	else{
-                	p.println("<td>" + (i+1-extra) + "</td>");
-            	}
-            	
-            	if(player.isExtra){
-                	p.println("<td>" + player.name() + "</td>");
-            	}
-            	else{
-                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
-                	if(player.name().startsWith("ID")){
-                		System.out.println("14sum" + player.name() + " rank:" + (i+1-extra));
-                	}
-            	}
-            	p.println("<td>" + Player.csecToString(player.timeSum(14)) + "</td>");
-            	
-            	for(int j=0;j<14;j++){
-                	p.println(speedtimetag(player, j));
-            	}
-            	
-                p.println("</tr>");
-            }
-            
-            p.println("</table>");
-            p.println("</body>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("</html>");
-            
-            p.close();
- 
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        
-        array.sort((a,b) -> (int)(1000000*(b.averageScoreRatio(14) - a.averageScoreRatio(14))));
-        
-        try {
-            FileWriter f = new FileWriter(rankingsoutput + "14scoreratio.html", false);
-            PrintWriter p = new PrintWriter(new BufferedWriter(f));
-            
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
-            p.println("<title>NecroDancer 14char Score PB Ratio to WRs Rankings</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroDancer 14char Score PB Ratio to WRs Rankings</h1>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("<table border=\"5\">");
-            p.println("<tr>");
-            p.println("<th class=\"fixed01\">Rank</th>");
-            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01 total\">Average(%)</th>");
-            p.println("<th class=\"fixed01 char\">Aria</th>");
-            p.println("<th class=\"fixed01 char\">Bard</th>");
-            p.println("<th class=\"fixed01 char\">Bolt</th>");
-            p.println("<th class=\"fixed01 char\">Cad</th>");
-            p.println("<th class=\"fixed01 char\">Dia</th>");
-            p.println("<th class=\"fixed01 char\">Dor</th>");
-            p.println("<th class=\"fixed01 char\">Dove</th>");
-            p.println("<th class=\"fixed01 char\">Eli</th>");
-            p.println("<th class=\"fixed01 char\">Mary</th>");
-            p.println("<th class=\"fixed01 char\">Mel</th>");
-            p.println("<th class=\"fixed01 char\">Monk</th>");
-            p.println("<th class=\"fixed01 char\">Noc</th>");
-            p.println("<th class=\"fixed01 char\">Tempo</th>");
-            p.println("<th class=\"fixed01 char\">Coda</th>");
-            p.println("</tr>");
-            
-            int extra = 0;
-            
-            for(int i=0;i<50;i++){
-            	Player player = array.get(i);
-            	
-                p.println("<tr>");
-            	
-            	if(player.isExtra){
-            		extra++;
-                	p.println("<td>" + (i+1-extra) + ".5" +  "</td>");
-            	}
-            	else{
-                	p.println("<td>" + (i+1-extra) + "</td>");
-            	}
-            	
-            	if(player.isExtra){
-                	p.println("<td>" + player.name() + "</td>");
-            	}
-            	else{
-                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
-                	if(player.name().startsWith("ID")){
-                		System.out.println("14scoreratio" + player.name() + " rank:" + (i+1-extra));
-                	}
-            	}
-            	p.println("<td>" + String.format("%.2f", player.averageScoreRatio(14)) + "</td>");
-            	
-            	for(int j=0;j<14;j++){
-                	p.println(scoreratiotag(player, j));
-            	}
-            	
-                p.println("</tr>");
-            }
-            
-            p.println("</table>");
-            p.println("</body>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("</html>");
-            
-            p.close();
- 
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        
-        System.out.println("Making Extra Rankings...");
-        
-        array.sort((a,b) -> (int)(10000*(b.extraspeed() - a.extraspeed()))); 
-        
-        try {
-            FileWriter f = new FileWriter(rankingsoutput + "extraspeeda.html", false);
-            PrintWriter p = new PrintWriter(new BufferedWriter(f));
-            
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"extraastyle.css\">");
-            p.println("<title>NecroDancer Extra Speed Rankings A</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroDancer Extra Speed Rankings A</h1>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("<table border=\"5\">");
-            p.println("<tr>");
-            p.println("<th class=\"fixed01\">Rank</th>");
-            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01 total\">Total</th>");
-            p.println("<th class=\"fixed01 char\">Hard</th>");
-            p.println("<th class=\"fixed01 char\">NR</th>");
-            p.println("<th class=\"fixed01 char\">Rando</th>");
-            p.println("<th class=\"fixed01 char\">Phasing</th>");
-            p.println("<th class=\"fixed01 char\">Mystery</th>");
-            p.println("</tr>");
-            
-            for(int i=0;i<100;i++){
-            	Player player = array.get(i);
-            	
-                p.println("<tr>");
-            	
-            	p.println("<td>" + (i+1) + "</td>");
-            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
-            	if(player.name().startsWith("ID")){
-            		System.out.println("Extra Speed Rankings" + player.name() + " rank:" + (i+1));
-            	}
-            	p.println("<td>" + String.format("%.2f",player.extraspeed()) + "</td>");
-            	p.println("<td>" + String.format("%.2f",player.hardspeed()) + "</td>");
-            	p.println("<td>" + String.format("%.2f",player.nrspeed()) + "</td>");
-            	p.println("<td>" + String.format("%.2f",player.randospeed()) + "</td>");
-            	p.println("<td>" + String.format("%.2f",player.phasingspeed()) + "</td>");
-            	p.println("<td>" + String.format("%.2f",player.nrspeed()) + "</td>");
-                
-                p.println("</tr>");
-            }
-            
-            p.println("</table>");
-            p.println("</body>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("</html>");
-            
-            p.close();
- 
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        
-        try {
-            FileWriter f = new FileWriter(rankingsoutput + "extraspeedb.html", false);
-            PrintWriter p = new PrintWriter(new BufferedWriter(f));
-            
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"extrabstyle.css\">");
-            p.println("<title>NecroDancer Extra Speed Rankings B</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroDancer Extra Speed Rankings B</h1>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("<table border=\"5\">");
-            p.println("<tr>");
-            p.println("<th class=\"fixed01\">Rank</th>");
-            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01 total\">Total</th>");
-            p.println("<th class=\"fixed01 char\">Aria</th>");
-            p.println("<th class=\"fixed01 char\">Bard</th>");
-            p.println("<th class=\"fixed01 char\">Bolt</th>");
-            p.println("<th class=\"fixed01 char\">Cad</th>");
-            p.println("<th class=\"fixed01 char\">Dia</th>");
-            p.println("<th class=\"fixed01 char\">Dor</th>");
-            p.println("<th class=\"fixed01 char\">Dove</th>");
-            p.println("<th class=\"fixed01 char\">Eli</th>");
-            p.println("<th class=\"fixed01 char\">Mary</th>");
-            p.println("<th class=\"fixed01 char\">Mel</th>");
-            p.println("<th class=\"fixed01 char\">Monk</th>");
-            p.println("<th class=\"fixed01 char\">Noc</th>");
-            p.println("<th class=\"fixed01 char\">Tempo</th>");
-            p.println("<th class=\"fixed01 char\">Coda</th>");
-            p.println("</tr>");
-            
-            for(int i=0;i<100;i++){
-            	Player player = array.get(i);
-            	
-                p.println("<tr>");
-            	
-            	p.println("<td>" + (i+1) + "</td>");
-            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
-            	p.println("<td>" + String.format("%.2f",player.extraspeed()) + "</td>");
-
-        		for(int j=0;j<14;j++){
-                	p.println("<td>" + String.format("%.2f",player.extraSpeedCharPoints(j)) + "</td>");
-        		}
-                
-                p.println("</tr>");
-            }
-            
-            p.println("</table>");
-            p.println("</body>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("</html>");
-            
-            p.close();
- 
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        
-        array.sort((a,b) -> (int)(10000*(b.extrascore() - a.extrascore()))); 
-        
-        try {
-            FileWriter f = new FileWriter(rankingsoutput + "extrascorea.html", false);
-            PrintWriter p = new PrintWriter(new BufferedWriter(f));
-            
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"extraastyle.css\">");
-            p.println("<title>NecroDancer Extra Score Rankings A</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroDancer Extra Score Rankings A</h1>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("<table border=\"5\">");
-            p.println("<tr>");
-            p.println("<th class=\"fixed01\">Rank</th>");
-            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01 total\">Total</th>");
-            p.println("<th class=\"fixed01 char\">Hard</th>");
-            p.println("<th class=\"fixed01 char\">NR</th>");
-            p.println("<th class=\"fixed01 char\">Rando</th>");
-            p.println("<th class=\"fixed01 char\">Phasing</th>");
-            p.println("<th class=\"fixed01 char\">Mystery</th>");
-            p.println("</tr>");
-            
-            for(int i=0;i<100;i++){
-            	Player player = array.get(i);
-            	
-                p.println("<tr>");
-            	
-            	p.println("<td>" + (i+1) + "</td>");
-            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
-            	if(player.name().startsWith("ID")){
-            		System.out.println("Extra Score Rankings" + player.name() + " rank:" + (i+1));
-            	}
-            	p.println("<td>" + String.format("%.2f",player.extrascore()) + "</td>");
-            	p.println("<td>" + String.format("%.2f",player.hardscore()) + "</td>");
-            	p.println("<td>" + String.format("%.2f",player.nrscore()) + "</td>");
-            	p.println("<td>" + String.format("%.2f",player.randoscore()) + "</td>");
-            	p.println("<td>" + String.format("%.2f",player.phasingscore()) + "</td>");
-            	p.println("<td>" + String.format("%.2f",player.nrscore()) + "</td>");
-                
-                p.println("</tr>");
-            }
-            
-            p.println("</table>");
-            p.println("</body>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("</html>");
-            
-            p.close();
- 
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        
-        try {
-            FileWriter f = new FileWriter(rankingsoutput + "extrascoreb.html", false);
-            PrintWriter p = new PrintWriter(new BufferedWriter(f));
-            
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"extrabstyle.css\">");
-            p.println("<title>NecroDancer Extra Score Rankings B</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroDancer Extra Score Rankings B</h1>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("<table border=\"5\">");
-            p.println("<tr>");
-            p.println("<th class=\"fixed01\">Rank</th>");
-            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01 total\">Total</th>");
-            p.println("<th class=\"fixed01 char\">Aria</th>");
-            p.println("<th class=\"fixed01 char\">Bard</th>");
-            p.println("<th class=\"fixed01 char\">Bolt</th>");
-            p.println("<th class=\"fixed01 char\">Cad</th>");
-            p.println("<th class=\"fixed01 char\">Dia</th>");
-            p.println("<th class=\"fixed01 char\">Dor</th>");
-            p.println("<th class=\"fixed01 char\">Dove</th>");
-            p.println("<th class=\"fixed01 char\">Eli</th>");
-            p.println("<th class=\"fixed01 char\">Mary</th>");
-            p.println("<th class=\"fixed01 char\">Mel</th>");
-            p.println("<th class=\"fixed01 char\">Monk</th>");
-            p.println("<th class=\"fixed01 char\">Noc</th>");
-            p.println("<th class=\"fixed01 char\">Tempo</th>");
-            p.println("<th class=\"fixed01 char\">Coda</th>");
-            p.println("</tr>");
-            
-            for(int i=0;i<100;i++){
-            	Player player = array.get(i);
-            	
-                p.println("<tr>");
-            	
-            	p.println("<td>" + (i+1) + "</td>");
-            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
-            	p.println("<td>" + String.format("%.2f",player.extrascore()) + "</td>");
-
-        		for(int j=0;j<14;j++){
-                	p.println("<td>" + String.format("%.2f",player.extraScoreCharPoints(j)) + "</td>");
-        		}
-                
-                p.println("</tr>");
-            }
-            
-            p.println("</table>");
-            p.println("</body>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("</html>");
-            
-            p.close();
- 
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        
-        System.out.println("Making NecroLab Imitators...");
-        
-        array.sort((a,b) -> (int)(10000*(b.speedpoints() - a.speedpoints()))); 
-        
-        try {
-            FileWriter f = new FileWriter(rankingsoutput + "necrolabspeedimitator.html", false);
-            PrintWriter p = new PrintWriter(new BufferedWriter(f));
-            
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"labstyle.css\">");
-            p.println("<title>NecroLab Speed Rankings Imitator</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroLab Speed Rankings Imitator</h1>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("<table border=\"5\">");
-            p.println("<tr>");
-            p.println("<th class=\"fixed01\">Rank</th>");
-            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01 total\">Points</th>");
-            p.println("<th class=\"fixed01 char\">Aria</th>");
-            p.println("<th class=\"fixed01 char\">Bard</th>");
-            p.println("<th class=\"fixed01 char\">Bolt</th>");
-            p.println("<th class=\"fixed01 char\">Cad</th>");
-            p.println("<th class=\"fixed01 char\">Dia</th>");
-            p.println("<th class=\"fixed01 char\">Dor</th>");
-            p.println("<th class=\"fixed01 char\">Dove</th>");
-            p.println("<th class=\"fixed01 char\">Eli</th>");
-            p.println("<th class=\"fixed01 char\">Mary</th>");
-            p.println("<th class=\"fixed01 char\">Mel</th>");
-            p.println("<th class=\"fixed01 char\">Monk</th>");
-            p.println("<th class=\"fixed01 char\">Noc</th>");
-            p.println("<th class=\"fixed01 char\">Tempo</th>");
-            p.println("<th class=\"fixed01 char\">Coda</th>");
-            p.println("<th class=\"fixed01 char\">Story</th>");
-            p.println("<th class=\"fixed01 char\">9char</th>");
-            p.println("<th class=\"fixed01 char\">13char</th>");
-            p.println("</tr>");
-            
-            for(int i=0;i<200;i++){
-            	Player player = array.get(i);
-            	
-                p.println("<tr>");
-            	
-            	p.println("<td>" + (i+1) + "</td>");
-            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
-            	if(player.name().startsWith("ID")){
-            		System.out.println("NecroLab Speed" + player.name() + " rank:" + (i+1));
-            	}
-            	p.println("<td>" + String.format("%.2f",player.speedpoints()) + "</td>");
-
-        		for(int j=0;j<17;j++){
-                	p.println(ranktag(player.speed[j], -1, j, "speed", Player.csecToString(player.time[j])));
-        		}
-                
-                p.println("</tr>");
-            }
-            
-            p.println("</table>");
-            p.println("</body>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("</html>");
-            
-            p.close();
- 
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        
-        array.sort((a,b) -> (int)(10000*(b.scorepoints() - a.scorepoints()))); 
-        
-        try {
-            FileWriter f = new FileWriter(rankingsoutput + "necrolabscoreimitator.html", false);
-            PrintWriter p = new PrintWriter(new BufferedWriter(f));
-            
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"labstyle.css\">");
-            p.println("<title>NecroLab Score Rankings Imitator</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroLab Score Rankings Imitator</h1>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("<table border=\"5\">");
-            p.println("<tr>");
-            p.println("<th class=\"fixed01\">Rank</th>");
-            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01 total\">Points</th>");
-            p.println("<th class=\"fixed01 char\">Aria</th>");
-            p.println("<th class=\"fixed01 char\">Bard</th>");
-            p.println("<th class=\"fixed01 char\">Bolt</th>");
-            p.println("<th class=\"fixed01 char\">Cad</th>");
-            p.println("<th class=\"fixed01 char\">Dia</th>");
-            p.println("<th class=\"fixed01 char\">Dor</th>");
-            p.println("<th class=\"fixed01 char\">Dove</th>");
-            p.println("<th class=\"fixed01 char\">Eli</th>");
-            p.println("<th class=\"fixed01 char\">Mary</th>");
-            p.println("<th class=\"fixed01 char\">Mel</th>");
-            p.println("<th class=\"fixed01 char\">Monk</th>");
-            p.println("<th class=\"fixed01 char\">Noc</th>");
-            p.println("<th class=\"fixed01 char\">Tempo</th>");
-            p.println("<th class=\"fixed01 char\">Coda</th>");
-            p.println("<th class=\"fixed01 char\">Story</th>");
-            p.println("<th class=\"fixed01 char\">9char</th>");
-            p.println("<th class=\"fixed01 char\">13char</th>");
-            p.println("</tr>");
-            
-            for(int i=0;i<200;i++){
-            	Player player = array.get(i);
-            	
-                p.println("<tr>");
-            	
-            	p.println("<td>" + (i+1) + "</td>");
-            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
-            	if(player.name().startsWith("ID")){
-            		System.out.println("NecroLab Score" + player.name() + " rank:" + (i+1));
-            	}
-            	p.println("<td>" + String.format("%.2f",player.scorepoints()) + "</td>");
-
-        		for(int j=0;j<17;j++){
-                	p.println(ranktag(player.score[j], -1, j, "score", zeroout(player.gold[j])));
-        		}
-                
-                p.println("</tr>");
-            }
-            
-            p.println("</table>");
-            p.println("</body>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("</html>");
-            
-            p.close();
- 
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        
-        System.out.println("Making Influence Rankings...");
-        array.sort((a,b) -> (int)(100000*(b.contribution() - a.contribution())));
-        
-        try {
-            FileWriter f = new FileWriter(rankingsoutput + "influence.html", false);
-            PrintWriter p = new PrintWriter(new BufferedWriter(f));
-            
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"influencestyle.css\">");
-            p.println("<title>NecroDancer LBs Influence Rankings</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroDancer LBs Influence Rankings</h1>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("<p>Points are based on old necrolab formula: 1.7 / (log($rank / 100 + 1.03) / log(10))</p>");
-            p.println("<p>ex. You gain 99.8 points from 1st place, 80.2 points from 2nd place, 67.2 points from 3rd place...</p>");
-            p.println("<h3>[Weights]</h3>");
-            p.println("<p>Speed: Cadence x2, Other x1</p>");
-            p.println("<p>Score: Cadence x1, 9/13char x0.2, Other x0.5</p>");
-            p.println("<p>DLess: Coda x0.5, Aria/Monk/Mary x0.2, Other x0.1</p>");
-            p.println("<p>Extra: Coda NR/Rando/Mystery/Hard Speed x0.5, Other Extra Speed x0.06, Extra Score x0.02</p>");
-            p.println("<table border=\"5\">");
-            p.println("<tr>");
-            p.println("<th class=\"fixed01\">Rank</th>");
-            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
-            p.println("<th class=\"fixed01 total\">Total</th>");
-            p.println("<th class=\"fixed01 char\">Speed</th>");
-            p.println("<th class=\"fixed01 char\">Score</th>");
-            p.println("<th class=\"fixed01 char\">DLess</th>");
-            p.println("<th class=\"fixed01 char\">Extra</th>");
-            p.println("</tr>");
-
-            for(int i=0;i<200;i++){
-            	Player player = array.get(i);
-            	
-                p.println("<tr>");
-            	p.println("<td>" + (i+1) + "</td>");
-            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
-            	if(player.name().startsWith("ID")){
-            		System.out.println("LBs Influence" + player.name() + " rank:" + (i+1));
-            	}
-            	p.println("<td>" + String.format("%.2f", player.contribution()) + "</td>");
-            	p.println("<td>" + String.format("%.2f", player.contribution_speed()) + "</td>");
-            	p.println("<td>" + String.format("%.2f", player.contribution_score()) + "</td>");
-            	p.println("<td>" + String.format("%.2f", player.contribution_deathless()) + "</td>");
-            	p.println("<td>" + String.format("%.2f", player.contribution_extra()) + "</td>");
-                p.println("</tr>");
-            }
-            
-            p.println("</table>");
-            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("</body>");
-            p.println("</html>");
-            
-            p.close();
- 
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        
+		System.out.println("Making LBs");
+		regularLBsMaker();
+		extraLBsMaker();
+		System.out.println("Making Rankings...");
+        sumratioMaker();
+        extraRankingMaker();
+        labMaker();
+        influenceMaker();
         System.out.println("Making PB Lists...");
-        
-        for(Player player: array){
-        	if(player.name().startsWith("ID") || player.isExtra){
-        		continue;
-        	}
-            try {
-                FileWriter f = new FileWriter(pbsoutput + player.name() + ".html", false);
-                PrintWriter p = new PrintWriter(new BufferedWriter(f));
-                
-                int extraspeedthreshold = 20;
-                int extrascorethreshold = 10;
-                int deathlessthreshold = 20;
-                
-                p.println("<!DOCTYPE html>");
-                p.println("<html>");
-                p.println("<head>");
-                p.println("<link rel=\"stylesheet\" href=\"pbstyle.css\">");
-                p.println("<title>" + player.name() + "</title>");
-                p.println("</head>");
-                p.println("<body>");
-                p.println("<h1>" + player.name() +"</h1>");
-
-                p.println("<table border=\"5\">");
-                p.println("<tr>");
-                p.println("<th class=\"header\">-</th>");
-                p.println("<th class=\"header\">Character</th>");
-                p.println("<th class=\"header score\">Speed</th>");
-                p.println("<th class=\"header rank\">-</th>");
-                p.println("<th class=\"header\">-</th>");
-                p.println("<th class=\"header score\">Score</th>");
-                p.println("<th class=\"header rank\">-</th>");
-                p.println("</tr>");
-                
-                for(int i=0;i<17;i++){
-                    p.println("<tr>");
-                	//p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + "speedlbs.html\"><img src=\"icons/" + i + ".jpg\">" + "</a></td>");
-                    p.println("<td><img src=\"icons/" + i + ".jpg\">" + "</td>");
-                    p.println("<td>" + curToName(i) + "</td>");
-                	p.println(speedpbtag(player, i));
-                	p.println(ranktag(player.speed[i], i, "speed"));
-                	//p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + "scorelbs.html\"><img src=\"icons/" + i + ".jpg\">" + "</a></td>");
-                    p.println("<td><img src=\"icons/" + i + ".jpg\">" + "</td>");
-                	p.println(scorepbtag(player, i));
-                	p.println(ranktag(player.score[i], i, "score"));
-                    p.println("</tr>");
-                }
-
-                p.println("</table>");
-
-                p.println("<p></p>");
-                
-                p.println("<table border=\"5\">");
-                p.println("<tr>");
-                p.println("<th class=\"header\">-</th>");
-                p.println("<th class=\"header\">Character</th>");
-                p.println("<th class=\"header extra\">HrdSp</th>");
-                p.println("<th class=\"header extra\">NRSp</th>");
-                p.println("<th class=\"header extra\">RndSp</th>");
-                p.println("<th class=\"header extra\">PhsSp</th>");
-                p.println("<th class=\"header extra\">MysSp</th>");
-                p.println("<th class=\"header\">-</th>");
-                p.println("<th class=\"header extra\">HrdSc</th>");
-                p.println("<th class=\"header extra\">NRSc</th>");
-                p.println("<th class=\"header extra\">RndSc</th>");
-                p.println("<th class=\"header extra\">PhsSc</th>");
-                p.println("<th class=\"header extra\">MysSc</th>");
-                p.println("<th class=\"header extra\">DLess</th>");
-                p.println("</tr>");
-                
-                for(int i=0;i<14;i++){
-                    p.println("<tr>");
-                	p.println("<td>" + "<img src=\"icons/" + i + ".jpg\">" + "</td>");
-                	p.println("<td>" + curToName(i) + "</td>");
-                	p.println(ranktag(player.hardspeed[i], 0, i, "speed", Player.csecToString(player.extratime[0][i]), extraspeedthreshold));
-                	p.println(ranktag(player.nrspeed[i], 1, i, "speed", Player.csecToString(player.extratime[1][i]), extraspeedthreshold));
-                	p.println(ranktag(player.randospeed[i], 2, i, "speed", Player.csecToString(player.extratime[2][i]), extraspeedthreshold));
-                	p.println(ranktag(player.phasingspeed[i], 3, i, "speed", Player.csecToString(player.extratime[3][i]), extraspeedthreshold));
-                	p.println(ranktag(player.mysteryspeed[i], 4, i, "speed", Player.csecToString(player.extratime[4][i]), extraspeedthreshold));
-                	p.println("<td>" + "<img src=\"icons/" + i + ".jpg\">" + "</td>");
-                	p.println(ranktag(player.hardscore[i], 0, i, "score", zeroout(player.extragold[0][i]), extrascorethreshold));
-                	p.println(ranktag(player.nrscore[i], 1, i, "score", zeroout(player.extragold[1][i]), extrascorethreshold));
-                	p.println(ranktag(player.randoscore[i], 2, i, "score", zeroout(player.extragold[2][i]), extrascorethreshold));
-                	p.println(ranktag(player.phasingscore[i], 3, i, "score", zeroout(player.extragold[3][i]), extrascorethreshold));
-                	p.println(ranktag(player.mysteryscore[i], 4, i, "score", zeroout(player.extragold[4][i]), extrascorethreshold));
-                	p.println(ranktag(player.deathless[i], -1, i, "deathless", player.clearcount(i), deathlessthreshold));
-                    p.println("</tr>");
-                }
-                
-                p.println("</table>");
-                
-                p.println("<p>" + "Last Updated:" + fdate1 +"</p>");
-                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-                
-                p.println("</body>");
-                p.println("</html>");
-                
-                p.close();
-     
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
-        
+        pblistMaker();
         System.out.println("Making Charts...");
-
-        try {
-            FileWriter f = new FileWriter(chartsoutput + "density.html", false);
-            PrintWriter p = new PrintWriter(new BufferedWriter(f));
-            
-            densityStart(p);
-
-            for(int i=0;i<13;i++){
-				int num = i;
-				array.sort((a,b) -> (a.speed[num] - b.speed[num]));
-				p.println("{type:\"line\", axisYType: \"secondary\", name: \""+ curToName(i) + "\", showInLegend: true, markerSize: 0, dataPoints: [");
-				
-				for(Player player:array){
-					if(player.speed[i] == 0){
-						continue;
-					}
-					else if(player.speed[i] > 100){
-						break;
-					}
-					
-					p.print("{x: " + player.speed[i] + ", y: " + String.format("%.3f",player.timeRatio_nobound(i)) + "}");
-
-					if(player.speed[i] != 100){
-						p.println(",");
-					}
-					else{
-						p.println("");
-					}
-				}
-				if(i!=12){
-					p.println("]},");
-				}
-				else{
-					p.println("]}");
-				}
-            }
-
-            densityEnd(p);
-            
-            p.close();
- 
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+        densityMaker();
+        extraChartMaker();
         
         System.out.println("Done");
     }
@@ -1865,6 +647,1113 @@ public class HtmlGenerator extends DefaultHandler{
     public void endDocument(){
     }
 
+    ///html makers
+    public static void regularLBsMaker(){
+		for(int i=0;i<17;i++){
+	        try {
+	            FileWriter f = new FileWriter(lbsoutput + curToName(i) + "speedlbs.html", false);
+	            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+	            
+	            p.println("<!DOCTYPE html>");
+	            p.println("<html>");
+	            p.println("<head>");
+	            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+	            p.println("<title>" + curToName(i) +  " Speed LBs" + "</title>");
+	            p.println("</head>");
+	            p.println("<body>");
+	            p.println("<h1>" + curToName(i) +  " Speed LBs" + "</h1>");
+                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+	            if(i<14){
+	            	p.println(headertag(i,-1, "speed"));
+	            }
+	            p.println("<table border=\"5\">");
+	            p.println("<tr>");
+	            p.println("<th class=\"fixed01\">Rank</th>");
+	            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
+	            p.println("<th class=\"fixed01\">Time</th>");
+	            p.println("</tr>");
+	            
+				int num = i;
+				array.sort((a,b) -> (a.time[num] - b.time[num]));
+				int rank = 1;
+				for(Player player:array){
+					if(player.time[num] == 0 || player.isExtra){
+						continue;
+					}
+					else{
+						player.speed[num] = rank;
+						
+						if(rank<=100 || !player.name().startsWith("ID")){
+				            p.println("<tr>");
+				            p.println("<td>" + rank + "</td>");
+				            if(player.name().startsWith("ID")){
+				            	p.println("<td>" + player.name() + "</td>");
+				            	System.out.println(curToName(i) + "Speed:" + player.name() + " rank:" + rank);
+				            }
+				            else{
+				            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+				            }
+				            p.println("<td>" + Player.csecToString(player.time[num]) + "</td>");
+				            p.println("</tr>");	
+						}
+			            
+						rank++;
+					}
+				}
+
+	            rankingCloser(p);
+	            
+	        } catch (IOException ex) {
+	            ex.printStackTrace();
+	        }
+		}
+		
+		for(int i=0;i<17;i++){
+	        try {
+	            FileWriter f = new FileWriter(lbsoutput + curToName(i) + "scorelbs.html", false);
+	            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+	            
+	            p.println("<!DOCTYPE html>");
+	            p.println("<html>");
+	            p.println("<head>");
+	            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+	            p.println("<title>" + curToName(i) +  " Score LBs" + "</title>");
+	            p.println("</head>");
+	            p.println("<body>");
+	            p.println("<h1>" + curToName(i) +  " Score LBs" + "</h1>");
+                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+	            if(i<14){
+	            	p.println(headertag(i,-1, "score"));
+	            }
+	            p.println("<table border=\"5\">");
+	            p.println("<tr>");
+	            p.println("<th class=\"fixed01\">Rank</th>");
+	            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
+	            p.println("<th class=\"fixed01\">Score</th>");
+	            p.println("</tr>");
+	            
+				int num = i;
+				array.sort((a,b) -> (b.gold[num] - a.gold[num]));
+				int rank = 1;
+				for(Player player:array){
+					if(player.score[num] == 0 || player.isExtra){
+						continue;
+					}
+					else{
+						player.score[num] = rank;
+						
+						if(rank<=50 || !player.name().startsWith("ID")){
+				            p.println("<tr>");
+				            p.println("<td>" + rank + "</td>");
+				            if(player.name().startsWith("ID")){
+				            	p.println("<td>" + player.name() + "</td>");
+				            	System.out.println(curToName(i) + "Score:" + player.name() + " rank:" + rank);
+				            }
+				            else{
+				            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+				            }
+				            p.println("<td>" + player.gold[num] + "</td>");
+				            p.println("</tr>");	
+						}
+			            
+						rank++;
+					}
+				}
+
+	            rankingCloser(p);
+	 
+	        } catch (IOException ex) {
+	            ex.printStackTrace();
+	        }
+		}
+		
+		for(int i=0;i<14;i++){
+	        try {
+	            FileWriter f = new FileWriter(lbsoutput + curToName(i) + "deathlesslbs.html", false);
+	            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+	            
+	            p.println("<!DOCTYPE html>");
+	            p.println("<html>");
+	            p.println("<head>");
+	            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+	            p.println("<title>" + curToName(i) +  " Deathless LBs" + "</title>");
+	            p.println("</head>");
+	            p.println("<body>");
+	            p.println("<h1>" + curToName(i) +  " Deathless LBs" + "</h1>");
+                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+	            p.println("<table border=\"5\">");
+	            p.println("<tr>");
+	            p.println("<th class=\"fixed01\">Rank</th>");
+	            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
+	            p.println("<th class=\"fixed01\">Count</th>");
+	            p.println("</tr>");
+	            
+				int num = i;
+				array.sort((a,b) -> (b.clear[num] - a.clear[num]));
+				int rank = 1;
+				for(Player player:array){
+					if(player.clear[num] == 0 || player.isExtra){
+						continue;
+					}
+					else{
+						player.deathless[num] = rank;
+						
+						if(!player.name().startsWith("ID")){
+				            p.println("<tr>");
+				            p.println("<td>" + rank + "</td>");
+				            p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+				            p.println("<td>" + player.clearcount(num) + "</td>");
+				            p.println("</tr>");	
+						}
+						else{
+							if(rank <=10){
+								System.out.println(curToName(i) + " Deathless" + player.name() + " rank:" + rank);
+							}
+						}
+			            
+						rank++;
+					}
+				}
+
+	            rankingCloser(p);
+	 
+	        } catch (IOException ex) {
+	            ex.printStackTrace();
+	        }
+		}
+    }
+    
+    public static void extraLBsMaker(){
+		for(int h=0;h<5;h++){
+			for(int i=0;i<14;i++){
+		        try {
+		            FileWriter f = new FileWriter(lbsoutput + curToName(i) + ordToCategory(h) + "speedlbs.html", false);
+		            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+		            
+		            p.println("<!DOCTYPE html>");
+		            p.println("<html>");
+		            p.println("<head>");
+		            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+		            p.println("<title>" + curToName(i) + " " + ordToCategory(h) + " Speed LBs" + "</title>");
+		            p.println("</head>");
+		            p.println("<body>");
+		            p.println("<h1>" + curToName(i) + " " + ordToCategory(h) + " Speed LBs" + "</h1>");
+	                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+		            p.println(headertag(i, h, "speed"));
+		            p.println("<table border=\"5\">");
+		            p.println("<tr>");
+		            p.println("<th class=\"fixed01\">Rank</th>");
+		            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
+		            p.println("<th class=\"fixed01\">Time</th>");
+		            p.println("</tr>");
+		            
+		            int ord = h;
+					int num = i;
+					array.sort((a,b) -> (a.extratime[ord][num] - b.extratime[ord][num]));
+					int rank = 1;
+					for(Player player:array){
+						if(player.extratime[ord][num] == 0 || player.isExtra){
+							continue;
+						}
+						else{
+							player.setRank(ord, num, true, rank);
+							
+							if(!player.name().startsWith("ID")){
+					            p.println("<tr>");
+					            p.println("<td>" + rank + "</td>");
+					            p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+					            p.println("<td>" + Player.csecToString(player.extratime[ord][num]) + "</td>");
+					            p.println("</tr>");	
+							}
+							else{
+								if(rank <=10){
+									System.out.println(curToName(i) + " " + ordToCategory(h) + " Speed" + player.name() + " rank:" + rank);
+								}
+							}
+				            
+							rank++;
+						}
+					}
+
+		            rankingCloser(p);
+		 
+		        } catch (IOException ex) {
+		            ex.printStackTrace();
+		        }
+			}
+		}
+		
+		for(int h=0;h<5;h++){
+			for(int i=0;i<14;i++){
+		        try {
+		            FileWriter f = new FileWriter(lbsoutput + curToName(i) + ordToCategory(h) + "scorelbs.html", false);
+		            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+		            
+		            p.println("<!DOCTYPE html>");
+		            p.println("<html>");
+		            p.println("<head>");
+		            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+		            p.println("<title>" + curToName(i) + " " + ordToCategory(h) + " Score LBs" + "</title>");
+		            p.println("</head>");
+		            p.println("<body>");
+		            p.println("<h1>" + curToName(i) + " " + ordToCategory(h) + " Score LBs" + "</h1>");
+	                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+		            p.println(headertag(i, h, "score"));
+		            p.println("<table border=\"5\">");
+		            p.println("<tr>");
+		            p.println("<th class=\"fixed01\">Rank</th>");
+		            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
+		            p.println("<th class=\"fixed01\">Score</th>");
+		            p.println("</tr>");
+		            
+		            int ord = h;
+					int num = i;
+					array.sort((a,b) -> (b.extragold[ord][num] - a.extragold[ord][num]));
+					int rank = 1;
+					for(Player player:array){
+						if(player.extragold[ord][num] == 0 || player.isExtra){
+							continue;
+						}
+						else{
+							player.setRank(ord, num, false, rank);
+							
+							if(!player.name().startsWith("ID")){
+					            p.println("<tr>");
+					            p.println("<td>" + rank + "</td>");
+					            p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+					            p.println("<td>" + player.extragold[ord][num] + "</td>");
+					            p.println("</tr>");	
+							}
+							else{
+								if(rank <=5){
+									System.out.println(curToName(i) + " " + ordToCategory(h) + " Score" + player.name() + " rank:" + rank);
+								}
+							}
+				            
+							rank++;
+						}
+					}
+
+		            rankingCloser(p);
+		 
+		        } catch (IOException ex) {
+		            ex.printStackTrace();
+		        }
+			}
+		}
+    }
+    
+    public static void sumratioMaker(){
+        array.sort((a,b) -> (a.timeSum(13) - b.timeSum(13)));
+        
+        try {
+            FileWriter f = new FileWriter(rankingsoutput + "13speedsum.html", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+            
+            p.println("<!DOCTYPE html>");
+            p.println("<html>");
+            p.println("<head>");
+            p.println("<link rel=\"stylesheet\" href=\"13speedsumstyle.css\">");
+            p.println("<title>NecroDancer 13char Speed PB Sum Rankings</title>");
+            p.println("</head>");
+            p.println("<body>");
+            p.println("<h1>NecroDancer 13char Speed PB Sum Rankings</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+            p.println("<table border=\"5\">");
+            categoryHeader(p, 13, "Sum");
+            
+            int extra = 0;
+            
+            for(int i=0;i<156;i++){
+            	Player player = array.get(i);
+            	
+                p.println("<tr>");
+            	
+            	if(player.isExtra){
+            		extra++;
+                	p.println("<td>" + (i+1-extra) + ".5" +  "</td>");
+            	}
+            	else{
+                	p.println("<td>" + (i+1-extra) + "</td>");
+            	}
+            	
+            	if(player.isExtra){
+                	p.println("<td>" + player.name() + "</td>");
+            	}
+            	else{
+                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+                	if(player.name().startsWith("ID")){
+                		System.out.println("13sum" + player.name() + " rank:" + (i+1-extra));
+                	}
+            	}
+            	p.println("<td>" + Player.csecToString(player.timeSum(13)) + "</td>");
+            	
+            	for(int j=0;j<13;j++){
+                	p.println(speedtimetag(player, j));
+            	}
+            	
+                p.println("</tr>");
+            }
+            
+            rankingCloser(p);
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        
+        array.sort((a,b) -> (int)(1000000*(a.averageTimeRatio(13) - b.averageTimeRatio(13))));
+        
+        try {
+            FileWriter f = new FileWriter(rankingsoutput + "13speedratio.html", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+            
+            p.println("<!DOCTYPE html>");
+            p.println("<html>");
+            p.println("<head>");
+            p.println("<link rel=\"stylesheet\" href=\"13speedratiostyle.css\">");
+            p.println("<title>NecroDancer 13char Speed PB Ratio to WRs Rankings</title>");
+            p.println("</head>");
+            p.println("<body>");
+            p.println("<h1>NecroDancer 13char Speed PB Ratio to WRs Rankings</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+            p.println("<table border=\"5\">");
+            categoryHeader(p, 14, "Average");
+            
+            int extra = 0;
+            
+            for(int i=0;i<156;i++){
+            	Player player = array.get(i);
+            	
+                p.println("<tr>");
+            	
+            	if(player.isExtra){
+            		extra++;
+                	p.println("<td>" + (i+1-extra) + ".5" +  "</td>");
+            	}
+            	else{
+                	p.println("<td>" + (i+1-extra) + "</td>");
+            	}
+            	
+            	if(player.isExtra){
+                	p.println("<td>" + player.name() + "</td>");
+            	}
+            	else{
+                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+                	if(player.name().startsWith("ID")){
+                		System.out.println("13ratio" + player.name() + " rank:" + (i+1-extra));
+                	}
+            	}
+            	p.println("<td>" + String.format("%.3f", player.averageTimeRatio(13)) + "</td>");
+            	
+            	for(int j=0;j<13;j++){
+            		p.println(speedratiotag(player, j));
+            	}
+            	
+                p.println("</tr>");
+            }
+            
+            rankingCloser(p);
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        array.sort((a,b) -> (a.timeSum(14) - b.timeSum(14)));
+        
+        try {
+            FileWriter f = new FileWriter(rankingsoutput + "14speedsum.html", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+            
+            p.println("<!DOCTYPE html>");
+            p.println("<html>");
+            p.println("<head>");
+            p.println("<link rel=\"stylesheet\" href=\"14speedsumstyle.css\">");
+            p.println("<title>NecroDancer 14char PB Sum Rankings</title>");
+            p.println("</head>");
+            p.println("<body>");
+            p.println("<h1>NecroDancer 14char PB Sum Rankings</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+            p.println("<table border=\"5\">");
+            categoryHeader(p, 14, "Sum");
+            
+            int extra = 0;
+            
+            for(int i=0;i<50;i++){
+            	Player player = array.get(i);
+            	
+                p.println("<tr>");
+            	
+            	if(player.isExtra){
+            		extra++;
+                	p.println("<td>" + (i+1-extra) + ".5" +  "</td>");
+            	}
+            	else{
+                	p.println("<td>" + (i+1-extra) + "</td>");
+            	}
+            	
+            	if(player.isExtra){
+                	p.println("<td>" + player.name() + "</td>");
+            	}
+            	else{
+                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+                	if(player.name().startsWith("ID")){
+                		System.out.println("14sum" + player.name() + " rank:" + (i+1-extra));
+                	}
+            	}
+            	p.println("<td>" + Player.csecToString(player.timeSum(14)) + "</td>");
+            	
+            	for(int j=0;j<14;j++){
+                	p.println(speedtimetag(player, j));
+            	}
+            	
+                p.println("</tr>");
+            }
+            
+            rankingCloser(p);
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        
+        array.sort((a,b) -> (int)(1000000*(b.averageScoreRatio(14) - a.averageScoreRatio(14))));
+        
+        try {
+            FileWriter f = new FileWriter(rankingsoutput + "14scoreratio.html", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+            
+            p.println("<!DOCTYPE html>");
+            p.println("<html>");
+            p.println("<head>");
+            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+            p.println("<title>NecroDancer 14char Score PB Ratio to WRs Rankings</title>");
+            p.println("</head>");
+            p.println("<body>");
+            p.println("<h1>NecroDancer 14char Score PB Ratio to WRs Rankings</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+            p.println("<table border=\"5\">");
+            categoryHeader(p, 14, "Average(%)");
+            
+            int extra = 0;
+            
+            for(int i=0;i<50;i++){
+            	Player player = array.get(i);
+            	
+                p.println("<tr>");
+            	
+            	if(player.isExtra){
+            		extra++;
+                	p.println("<td>" + (i+1-extra) + ".5" +  "</td>");
+            	}
+            	else{
+                	p.println("<td>" + (i+1-extra) + "</td>");
+            	}
+            	
+            	if(player.isExtra){
+                	p.println("<td>" + player.name() + "</td>");
+            	}
+            	else{
+                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+                	if(player.name().startsWith("ID")){
+                		System.out.println("14scoreratio" + player.name() + " rank:" + (i+1-extra));
+                	}
+            	}
+            	p.println("<td>" + String.format("%.2f", player.averageScoreRatio(14)) + "</td>");
+            	
+            	for(int j=0;j<14;j++){
+                	p.println(scoreratiotag(player, j));
+            	}
+            	
+                p.println("</tr>");
+            }
+            
+            rankingCloser(p);
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public static void extraRankingMaker(){
+        array.sort((a,b) -> (int)(10000*(b.extraspeed() - a.extraspeed()))); 
+        
+        try {
+            FileWriter f = new FileWriter(rankingsoutput + "extraspeeda.html", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+            
+            p.println("<!DOCTYPE html>");
+            p.println("<html>");
+            p.println("<head>");
+            p.println("<link rel=\"stylesheet\" href=\"extraastyle.css\">");
+            p.println("<title>NecroDancer Extra Speed Rankings A</title>");
+            p.println("</head>");
+            p.println("<body>");
+            p.println("<h1>NecroDancer Extra Speed Rankings A</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+            p.println("<table border=\"5\">");
+            p.println("<tr>");
+            p.println("<th class=\"fixed01\">Rank</th>");
+            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
+            p.println("<th class=\"fixed01 total\">Total</th>");
+            p.println("<th class=\"fixed01 char\">Hard</th>");
+            p.println("<th class=\"fixed01 char\">NR</th>");
+            p.println("<th class=\"fixed01 char\">Rando</th>");
+            p.println("<th class=\"fixed01 char\">Phasing</th>");
+            p.println("<th class=\"fixed01 char\">Mystery</th>");
+            p.println("</tr>");
+            
+            for(int i=0;i<100;i++){
+            	Player player = array.get(i);
+            	
+                p.println("<tr>");
+            	
+            	p.println("<td>" + (i+1) + "</td>");
+            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+            	if(player.name().startsWith("ID")){
+            		System.out.println("Extra Speed Rankings" + player.name() + " rank:" + (i+1));
+            	}
+            	p.println("<td>" + String.format("%.2f",player.extraspeed()) + "</td>");
+            	p.println("<td>" + String.format("%.2f",player.hardspeed()) + "</td>");
+            	p.println("<td>" + String.format("%.2f",player.nrspeed()) + "</td>");
+            	p.println("<td>" + String.format("%.2f",player.randospeed()) + "</td>");
+            	p.println("<td>" + String.format("%.2f",player.phasingspeed()) + "</td>");
+            	p.println("<td>" + String.format("%.2f",player.nrspeed()) + "</td>");
+                
+                p.println("</tr>");
+            }
+            
+            rankingCloser(p);
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        
+        try {
+            FileWriter f = new FileWriter(rankingsoutput + "extraspeedb.html", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+            
+            p.println("<!DOCTYPE html>");
+            p.println("<html>");
+            p.println("<head>");
+            p.println("<link rel=\"stylesheet\" href=\"extrabstyle.css\">");
+            p.println("<title>NecroDancer Extra Speed Rankings B</title>");
+            p.println("</head>");
+            p.println("<body>");
+            p.println("<h1>NecroDancer Extra Speed Rankings B</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+            p.println("<table border=\"5\">");
+            categoryHeader(p, 14, "Total");
+            
+            for(int i=0;i<100;i++){
+            	Player player = array.get(i);
+            	
+                p.println("<tr>");
+            	
+            	p.println("<td>" + (i+1) + "</td>");
+            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+            	p.println("<td>" + String.format("%.2f",player.extraspeed()) + "</td>");
+
+        		for(int j=0;j<14;j++){
+                	p.println("<td>" + String.format("%.2f",player.extraSpeedCharPoints(j)) + "</td>");
+        		}
+                
+                p.println("</tr>");
+            }
+            
+            rankingCloser(p);
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        
+        array.sort((a,b) -> (int)(10000*(b.extrascore() - a.extrascore()))); 
+        
+        try {
+            FileWriter f = new FileWriter(rankingsoutput + "extrascorea.html", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+            
+            p.println("<!DOCTYPE html>");
+            p.println("<html>");
+            p.println("<head>");
+            p.println("<link rel=\"stylesheet\" href=\"extraastyle.css\">");
+            p.println("<title>NecroDancer Extra Score Rankings A</title>");
+            p.println("</head>");
+            p.println("<body>");
+            p.println("<h1>NecroDancer Extra Score Rankings A</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+            p.println("<table border=\"5\">");
+            p.println("<tr>");
+            p.println("<th class=\"fixed01\">Rank</th>");
+            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
+            p.println("<th class=\"fixed01 total\">Total</th>");
+            p.println("<th class=\"fixed01 char\">Hard</th>");
+            p.println("<th class=\"fixed01 char\">NR</th>");
+            p.println("<th class=\"fixed01 char\">Rando</th>");
+            p.println("<th class=\"fixed01 char\">Phasing</th>");
+            p.println("<th class=\"fixed01 char\">Mystery</th>");
+            p.println("</tr>");
+            
+            for(int i=0;i<100;i++){
+            	Player player = array.get(i);
+            	
+                p.println("<tr>");
+            	
+            	p.println("<td>" + (i+1) + "</td>");
+            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+            	if(player.name().startsWith("ID")){
+            		System.out.println("Extra Score Rankings" + player.name() + " rank:" + (i+1));
+            	}
+            	p.println("<td>" + String.format("%.2f",player.extrascore()) + "</td>");
+            	p.println("<td>" + String.format("%.2f",player.hardscore()) + "</td>");
+            	p.println("<td>" + String.format("%.2f",player.nrscore()) + "</td>");
+            	p.println("<td>" + String.format("%.2f",player.randoscore()) + "</td>");
+            	p.println("<td>" + String.format("%.2f",player.phasingscore()) + "</td>");
+            	p.println("<td>" + String.format("%.2f",player.nrscore()) + "</td>");
+                
+                p.println("</tr>");
+            }
+            
+            rankingCloser(p);
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        
+        try {
+            FileWriter f = new FileWriter(rankingsoutput + "extrascoreb.html", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+            
+            p.println("<!DOCTYPE html>");
+            p.println("<html>");
+            p.println("<head>");
+            p.println("<link rel=\"stylesheet\" href=\"extrabstyle.css\">");
+            p.println("<title>NecroDancer Extra Score Rankings B</title>");
+            p.println("</head>");
+            p.println("<body>");
+            p.println("<h1>NecroDancer Extra Score Rankings B</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+            p.println("<table border=\"5\">");
+            categoryHeader(p, 14, "Total");
+            
+            for(int i=0;i<100;i++){
+            	Player player = array.get(i);
+            	
+                p.println("<tr>");
+            	
+            	p.println("<td>" + (i+1) + "</td>");
+            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+            	p.println("<td>" + String.format("%.2f",player.extrascore()) + "</td>");
+
+        		for(int j=0;j<14;j++){
+                	p.println("<td>" + String.format("%.2f",player.extraScoreCharPoints(j)) + "</td>");
+        		}
+                
+                p.println("</tr>");
+            }
+            
+            rankingCloser(p);
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public static void labMaker(){
+        array.sort((a,b) -> (int)(10000*(b.speedpoints() - a.speedpoints()))); 
+        
+        try {
+            FileWriter f = new FileWriter(rankingsoutput + "necrolabspeedimitator.html", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+            
+            p.println("<!DOCTYPE html>");
+            p.println("<html>");
+            p.println("<head>");
+            p.println("<link rel=\"stylesheet\" href=\"labstyle.css\">");
+            p.println("<title>NecroLab Speed Rankings Imitator</title>");
+            p.println("</head>");
+            p.println("<body>");
+            p.println("<h1>NecroLab Speed Rankings Imitator</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+            p.println("<table border=\"5\">");
+            categoryHeader(p, 17, "Points");
+            
+            for(int i=0;i<200;i++){
+            	Player player = array.get(i);
+            	
+                p.println("<tr>");
+            	
+            	p.println("<td>" + (i+1) + "</td>");
+            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+            	if(player.name().startsWith("ID")){
+            		System.out.println("NecroLab Speed" + player.name() + " rank:" + (i+1));
+            	}
+            	p.println("<td>" + String.format("%.2f",player.speedpoints()) + "</td>");
+
+        		for(int j=0;j<17;j++){
+                	p.println(ranktag(player.speed[j], -1, j, "speed", Player.csecToString(player.time[j])));
+        		}
+                
+                p.println("</tr>");
+            }
+            
+            rankingCloser(p);
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        
+        array.sort((a,b) -> (int)(10000*(b.scorepoints() - a.scorepoints()))); 
+        
+        try {
+            FileWriter f = new FileWriter(rankingsoutput + "necrolabscoreimitator.html", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+            
+            p.println("<!DOCTYPE html>");
+            p.println("<html>");
+            p.println("<head>");
+            p.println("<link rel=\"stylesheet\" href=\"labstyle.css\">");
+            p.println("<title>NecroLab Score Rankings Imitator</title>");
+            p.println("</head>");
+            p.println("<body>");
+            p.println("<h1>NecroLab Score Rankings Imitator</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+            p.println("<table border=\"5\">");
+            categoryHeader(p, 17, "Points");
+            
+            for(int i=0;i<200;i++){
+            	Player player = array.get(i);
+            	
+                p.println("<tr>");
+            	
+            	p.println("<td>" + (i+1) + "</td>");
+            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+            	if(player.name().startsWith("ID")){
+            		System.out.println("NecroLab Score" + player.name() + " rank:" + (i+1));
+            	}
+            	p.println("<td>" + String.format("%.2f",player.scorepoints()) + "</td>");
+
+        		for(int j=0;j<17;j++){
+                	p.println(ranktag(player.score[j], -1, j, "score", zeroout(player.gold[j])));
+        		}
+                
+                p.println("</tr>");
+            }
+            
+            rankingCloser(p);
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public static void influenceMaker(){
+        array.sort((a,b) -> (int)(100000*(b.contribution() - a.contribution())));
+        
+        try {
+            FileWriter f = new FileWriter(rankingsoutput + "influence.html", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+            
+            p.println("<!DOCTYPE html>");
+            p.println("<html>");
+            p.println("<head>");
+            p.println("<link rel=\"stylesheet\" href=\"influencestyle.css\">");
+            p.println("<title>NecroDancer LBs Influence Rankings</title>");
+            p.println("</head>");
+            p.println("<body>");
+            p.println("<h1>NecroDancer LBs Influence Rankings</h1>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+            p.println("<p>Points are based on old necrolab formula: 1.7 / (log($rank / 100 + 1.03) / log(10))</p>");
+            p.println("<p>ex. You gain 99.8 points from 1st place, 80.2 points from 2nd place, 67.2 points from 3rd place...</p>");
+            p.println("<h3>[Weights]</h3>");
+            p.println("<p>Speed: Cadence x2, Other x1</p>");
+            p.println("<p>Score: Cadence x1, 9/13char x0.2, Other x0.5</p>");
+            p.println("<p>DLess: Coda x0.5, Aria/Monk/Mary x0.2, Other x0.1</p>");
+            p.println("<p>Extra: Coda NR/Rando/Mystery/Hard Speed x0.5, Other Extra Speed x0.06, Extra Score x0.02</p>");
+            p.println("<table border=\"5\">");
+            p.println("<tr>");
+            p.println("<th class=\"fixed01\">Rank</th>");
+            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
+            p.println("<th class=\"fixed01 total\">Total</th>");
+            p.println("<th class=\"fixed01 char\">Speed</th>");
+            p.println("<th class=\"fixed01 char\">Score</th>");
+            p.println("<th class=\"fixed01 char\">DLess</th>");
+            p.println("<th class=\"fixed01 char\">Extra</th>");
+            p.println("</tr>");
+
+            for(int i=0;i<200;i++){
+            	Player player = array.get(i);
+            	
+                p.println("<tr>");
+            	p.println("<td>" + (i+1) + "</td>");
+            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+            	if(player.name().startsWith("ID")){
+            		System.out.println("LBs Influence" + player.name() + " rank:" + (i+1));
+            	}
+            	p.println("<td>" + String.format("%.2f", player.contribution()) + "</td>");
+            	p.println("<td>" + String.format("%.2f", player.contribution_speed()) + "</td>");
+            	p.println("<td>" + String.format("%.2f", player.contribution_score()) + "</td>");
+            	p.println("<td>" + String.format("%.2f", player.contribution_deathless()) + "</td>");
+            	p.println("<td>" + String.format("%.2f", player.contribution_extra()) + "</td>");
+                p.println("</tr>");
+            }
+            
+            rankingCloser(p);
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public static void rankingCloser(PrintWriter p){
+        p.println("</table>");
+        p.println("</body>");
+        p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+        p.println("</html>");
+        
+        p.close();
+    }
+    
+    public static void categoryHeader(PrintWriter p, int max, String representative){
+        p.println("<tr>");
+        p.println("<th class=\"fixed01\">Rank</th>");
+        p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
+        p.println("<th class=\"fixed01 total\">" + representative + "</th>");
+        
+        for(int i=0;i<max;i++){
+            p.println("<th class=\"fixed01 char\">" + curToShortName(i) + "</th>");
+        }
+        
+        p.println("</tr>");
+    }
+    
+    public static void pblistMaker(){
+        for(Player player: array){
+        	if(player.name().startsWith("ID") || player.isExtra){
+        		continue;
+        	}
+            try {
+                FileWriter f = new FileWriter(pbsoutput + player.name() + ".html", false);
+                PrintWriter p = new PrintWriter(new BufferedWriter(f));
+                
+                int extraspeedthreshold = 20;
+                int extrascorethreshold = 10;
+                int deathlessthreshold = 20;
+                
+                p.println("<!DOCTYPE html>");
+                p.println("<html>");
+                p.println("<head>");
+                p.println("<link rel=\"stylesheet\" href=\"pbstyle.css\">");
+                p.println("<title>" + player.name() + "</title>");
+                p.println("</head>");
+                p.println("<body>");
+                p.println("<h1>" + player.name() +"</h1>");
+
+                p.println("<table border=\"5\">");
+                p.println("<tr>");
+                p.println("<th class=\"header\">-</th>");
+                p.println("<th class=\"header\">Character</th>");
+                p.println("<th class=\"header score\">Speed</th>");
+                p.println("<th class=\"header rank\">-</th>");
+                p.println("<th class=\"header\">-</th>");
+                p.println("<th class=\"header score\">Score</th>");
+                p.println("<th class=\"header rank\">-</th>");
+                p.println("</tr>");
+                
+                for(int i=0;i<17;i++){
+                    p.println("<tr>");
+                	//p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + "speedlbs.html\"><img src=\"icons/" + i + ".jpg\">" + "</a></td>");
+                    p.println("<td><img src=\"icons/" + i + ".jpg\">" + "</td>");
+                    p.println("<td>" + curToName(i) + "</td>");
+                	p.println(speedpbtag(player, i));
+                	p.println(ranktag(player.speed[i], i, "speed"));
+                	//p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + "scorelbs.html\"><img src=\"icons/" + i + ".jpg\">" + "</a></td>");
+                    p.println("<td><img src=\"icons/" + i + ".jpg\">" + "</td>");
+                	p.println(scorepbtag(player, i));
+                	p.println(ranktag(player.score[i], i, "score"));
+                    p.println("</tr>");
+                }
+
+                p.println("</table>");
+
+                p.println("<p></p>");
+                
+                p.println("<table border=\"5\">");
+                p.println("<tr>");
+                p.println("<th class=\"header\">-</th>");
+                p.println("<th class=\"header\">Character</th>");
+                p.println("<th class=\"header extra\">HrdSp</th>");
+                p.println("<th class=\"header extra\">NRSp</th>");
+                p.println("<th class=\"header extra\">RndSp</th>");
+                p.println("<th class=\"header extra\">PhsSp</th>");
+                p.println("<th class=\"header extra\">MysSp</th>");
+                p.println("<th class=\"header\">-</th>");
+                p.println("<th class=\"header extra\">HrdSc</th>");
+                p.println("<th class=\"header extra\">NRSc</th>");
+                p.println("<th class=\"header extra\">RndSc</th>");
+                p.println("<th class=\"header extra\">PhsSc</th>");
+                p.println("<th class=\"header extra\">MysSc</th>");
+                p.println("<th class=\"header extra\">DLess</th>");
+                p.println("</tr>");
+                
+                for(int i=0;i<14;i++){
+                    p.println("<tr>");
+                	p.println("<td>" + "<img src=\"icons/" + i + ".jpg\">" + "</td>");
+                	p.println("<td>" + curToName(i) + "</td>");
+                	p.println(ranktag(player.hardspeed[i], 0, i, "speed", Player.csecToString(player.extratime[0][i]), extraspeedthreshold));
+                	p.println(ranktag(player.nrspeed[i], 1, i, "speed", Player.csecToString(player.extratime[1][i]), extraspeedthreshold));
+                	p.println(ranktag(player.randospeed[i], 2, i, "speed", Player.csecToString(player.extratime[2][i]), extraspeedthreshold));
+                	p.println(ranktag(player.phasingspeed[i], 3, i, "speed", Player.csecToString(player.extratime[3][i]), extraspeedthreshold));
+                	p.println(ranktag(player.mysteryspeed[i], 4, i, "speed", Player.csecToString(player.extratime[4][i]), extraspeedthreshold));
+                	p.println("<td>" + "<img src=\"icons/" + i + ".jpg\">" + "</td>");
+                	p.println(ranktag(player.hardscore[i], 0, i, "score", zeroout(player.extragold[0][i]), extrascorethreshold));
+                	p.println(ranktag(player.nrscore[i], 1, i, "score", zeroout(player.extragold[1][i]), extrascorethreshold));
+                	p.println(ranktag(player.randoscore[i], 2, i, "score", zeroout(player.extragold[2][i]), extrascorethreshold));
+                	p.println(ranktag(player.phasingscore[i], 3, i, "score", zeroout(player.extragold[3][i]), extrascorethreshold));
+                	p.println(ranktag(player.mysteryscore[i], 4, i, "score", zeroout(player.extragold[4][i]), extrascorethreshold));
+                	p.println(ranktag(player.deathless[i], -1, i, "deathless", player.clearcount(i), deathlessthreshold));
+                    p.println("</tr>");
+                }
+                
+                p.println("</table>");
+                
+                p.println("<p>" + "Last Updated:" + fdate1 +"</p>");
+                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+                
+                p.println("</body>");
+                p.println("</html>");
+                
+                p.close();
+     
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
+    public static void densityMaker(){
+        try {
+            FileWriter f = new FileWriter(chartsoutput + "density.html", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+            
+            densityStart(p);
+
+            for(int i=0;i<13;i++){
+				int num = i;
+				array.sort((a,b) -> (a.speed[num] - b.speed[num]));
+				p.println("{type:\"line\", axisYType: \"secondary\", name: \""+ curToName(i) + "\", showInLegend: true, markerSize: 0, dataPoints: [");
+				
+				for(Player player:array){
+					if(player.speed[i] == 0){
+						continue;
+					}
+					else if(player.speed[i] > 100){
+						break;
+					}
+					
+					p.print("{x: " + player.speed[i] + ", y: " + String.format("%.3f",player.timeRatio_nobound(i)) + "}");
+
+					if(player.speed[i] != 100){
+						p.println(",");
+					}
+					else{
+						p.println("");
+					}
+				}
+				if(i!=12){
+					p.println("]},");
+				}
+				else{
+					p.println("]}");
+				}
+            }
+
+            densityEnd(p);
+            
+            p.close();
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public static void extraChartMaker(){
+        try {
+            FileWriter f = new FileWriter(chartsoutput + "extrawrs.html", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+            
+            p.println("<!DOCTYPE html><html><head>");
+            p.println("<link rel=\"stylesheet\" href=\"recordchart.css\">");
+            p.println("<title>Extra World Records</title>");
+            p.println("</head><body>");
+            p.println("<h1 class=\"center\">Extra World Records</h1>");
+            
+            
+            ///Extra Speed
+            p.println("<table border=\"5\">");
+            p.println("<tr>");
+            p.println("<th class=\"frame\">Category</th>");
+            for(int i=0;i<14;i++){
+            	p.println("<th class=\"frame\"><img src=\"icons/" + i + ".jpg\"></th>");
+            }
+            p.println("</tr>");
+            
+            for(int h=0;h<5;h++){
+                p.println("<tr>");
+                p.println("<th class=\"frame\">" + ordToCategory(h) + " Speed" + "</th>");
+            	for(int i=0;i<14;i++){
+            		for(Player player: array){
+            			if(player.hasWR(h, i, "speed")){
+                			p.println("<td><img src=\"players/" + player.name() + ".jpg\"></td>");
+                			break;	
+            			}
+            		}
+            	}
+            	p.println("</tr>");
+            }
+            p.println("</table>");
+            
+            ///Extra Score & Deathless
+            p.println("<table border=\"5\">");
+            p.println("<tr>");
+            p.println("<th class=\"frame\">Category</th>");
+            for(int i=0;i<14;i++){
+            	p.println("<th class=\"frame\"><img src=\"icons/" + i + ".jpg\"></th>");
+            }
+            p.println("</tr>");
+            
+            for(int h=0;h<5;h++){
+                p.println("<tr>");
+                p.println("<th class=\"frame\">" + ordToCategory(h) + " Score" + "</th>");
+            	for(int i=0;i<14;i++){
+            		for(Player player: array){
+            			if(player.hasWR(h, i, "score")){
+                			p.println("<td><img src=\"players/" + player.name() + ".jpg\"></td>");
+                			break;	
+            			}
+            		}
+            	}
+            	p.println("</tr>");
+            }
+            p.println("<tr>");
+            p.println("<th class=\"frame\">" + "Deathless" + "</th>");
+            for(int i=0;i<14;i++){
+        		for(Player player: array){
+        			if(player.hasWR(-1, i, "deathless")){
+            			p.println("<td><img src=\"players/" + player.name() + ".jpg\"></td>");
+            			break;	
+        			}
+        		}
+            }
+            p.println("</tr>");
+            p.println("</table>");
+            
+            p.println("</body></html>");
+            p.close();
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
     ///exclude obvious chaters
     public boolean canPass(String category, int score){
     	switch(category){
@@ -1933,6 +1822,28 @@ public class HtmlGenerator extends DefaultHandler{
     	case 9: return "Melody";
     	case 10: return "Monk";
     	case 11: return "Nocturna";
+    	case 12: return "Tempo";
+    	case 13: return "Coda";
+    	case 14: return "Story";
+    	case 15: return "9char";
+    	default: return "13char";
+    	}
+    }
+    
+    public static String curToShortName(int cur){
+    	switch(cur){
+    	case 0: return "Aria";
+    	case 1: return "Bard";
+    	case 2: return "Bolt";
+    	case 3: return "Cad";
+    	case 4: return "Dia";
+    	case 5: return "Dor";
+    	case 6: return "Dove";
+    	case 7: return "Eli";
+    	case 8: return "Mary";
+    	case 9: return "Mel";
+    	case 10: return "Monk";
+    	case 11: return "Noc";
     	case 12: return "Tempo";
     	case 13: return "Coda";
     	case 14: return "Story";

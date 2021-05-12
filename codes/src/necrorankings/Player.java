@@ -619,6 +619,33 @@ public class Player {
 		isExtra = b;
 	}
 	
+	///Getters
+	public boolean hasWR(int ord, int cur, String category){
+		if(category == "speed"){
+			switch(ord){
+			case 0: return hardspeed[cur] == 1;
+			case 1: return nrspeed[cur] == 1;
+			case 2: return randospeed[cur] == 1;
+			case 3: return phasingspeed[cur] == 1;
+			case 4: return mysteryspeed[cur] == 1;
+			default: return speed[cur] == 1;
+			}
+		}
+		else if(category == "score"){
+			switch(ord){
+			case 0: return hardscore[cur] == 1;
+			case 1: return nrscore[cur] == 1;
+			case 2: return randoscore[cur] == 1;
+			case 3: return phasingscore[cur] == 1;
+			case 4: return mysteryscore[cur] == 1;
+			default: return score[cur] == 1;
+			}
+		}
+		else{
+			return deathless[cur] == 1;
+		}
+	}
+	
 	///Core Methods
 	static double points(int rank){
 		if(rank == 0){
