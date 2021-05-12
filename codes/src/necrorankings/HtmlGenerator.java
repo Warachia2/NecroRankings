@@ -1080,7 +1080,7 @@ public class HtmlGenerator extends DefaultHandler{
             
             int extra = 0;
             
-            for(int i=0;i<50;i++){
+            for(int i=0;i<31;i++){
             	Player player = array.get(i);
             	
                 p.println("<tr>");
