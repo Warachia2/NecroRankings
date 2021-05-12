@@ -1935,16 +1935,6 @@ public class HtmlGenerator extends DefaultHandler{
     	}
     }
     
-    ///top20rank
-    public static String t20(int rank, int threshold){
-    	if(rank<=threshold){
-    		return rankStr(rank);
-    	}
-    	else{
-    		return "";
-    	}
-    }
-      
     public static String rankStr(int rank){
     	if(rank == 0){
     		return "";
@@ -2004,23 +1994,26 @@ public class HtmlGenerator extends DefaultHandler{
     		lbsname = curToName(cur) + "deathlesslbs";
     	}
     	
-    	String td = "";
+    	String tda = "";
     	if(rank == 1){
-    		td = "<td class=\"wr tooltip\">";
+    		tda = "<td class=\"wr tooltip\"><a ";
     	}
     	else if(rank == 0){
-    		td = "<td>";
+    		tda = "<td><a ";
     	}
-    	else{
-    		td = "<td class=\"tooltip\">";
+    	else if(rank <= threshold){
+    		tda = "<td class=\"tooltip\"><a ";
+    	}
+    	else{ //worse than threshold
+    		tda = "<td class=\"tooltip out\"><a class = \"out\"";
     	}
     	
-    	if(rank <= threshold){
-        	return td + "<a href=\"https://warachia2.github.io/NecroRankings/lbs/" + lbsname + ".html\">" 
-    				+ "<span class=\"tooltip-text\">" + tooltip + "</span>" + t20(rank, threshold) + "</a></td>";	
+    	if(rank != 0){
+        	return tda + "href=\"https://warachia2.github.io/NecroRankings/lbs/" + lbsname + ".html\">" 
+    				+ "<span class=\"tooltip-text\">" + tooltip + "</span>" + rankStr(rank) + "</a></td>";	
     	}
     	else{
-        	return td + "<a href=\"https://warachia2.github.io/NecroRankings/lbs/" + lbsname + ".html\">" + t20(rank, threshold) + "</a></td>";
+        	return tda + "<a href=\"https://warachia2.github.io/NecroRankings/lbs/" + lbsname + ".html\">" + rankStr(rank) + "</a></td>";
     	}
 
     }

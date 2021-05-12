@@ -75,6 +75,13 @@ a:hover {
    background-color: black;
 }
 
+.out:link{
+   color: white;
+}
+.out:visited{
+   color: white;
+}
+
 /* カーソルを重ねる要素 */
 .tooltip {
   position: relative; /* ツールチップの位置の基準に */
