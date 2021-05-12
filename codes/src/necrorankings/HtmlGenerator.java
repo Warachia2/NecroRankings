@@ -1702,7 +1702,7 @@ public class HtmlGenerator extends DefaultHandler{
             	for(int i=0;i<14;i++){
             		for(Player player: array){
             			if(player.hasWR(h, i, "speed")){
-                			p.println("<td><img src=\"players/" + player.name() + ".jpg\"></td>");
+            				printPlayerLinkedIcon(p, player);
                 			break;	
             			}
             		}
@@ -1710,6 +1710,7 @@ public class HtmlGenerator extends DefaultHandler{
             	p.println("</tr>");
             }
             p.println("</table>");
+            p.println("<p></p>");
             
             ///Extra Score & Deathless
             p.println("<table border=\"5\">");
@@ -1726,7 +1727,7 @@ public class HtmlGenerator extends DefaultHandler{
             	for(int i=0;i<14;i++){
             		for(Player player: array){
             			if(player.hasWR(h, i, "score")){
-                			p.println("<td><img src=\"players/" + player.name() + ".jpg\"></td>");
+            				printPlayerLinkedIcon(p, player);
                 			break;	
             			}
             		}
@@ -1738,7 +1739,7 @@ public class HtmlGenerator extends DefaultHandler{
             for(int i=0;i<14;i++){
         		for(Player player: array){
         			if(player.hasWR(-1, i, "deathless")){
-            			p.println("<td><img src=\"players/" + player.name() + ".jpg\"></td>");
+        				printPlayerLinkedIcon(p, player);
             			break;	
         			}
         		}
@@ -1752,6 +1753,10 @@ public class HtmlGenerator extends DefaultHandler{
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
+    
+    public static void printPlayerLinkedIcon(PrintWriter p, Player player){
+    	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/"+ player.name() + ".html\"><img src=\"players/" + player.name() + ".jpg\"></a></td>");
     }
     
     ///exclude obvious chaters
