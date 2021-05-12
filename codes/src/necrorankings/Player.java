@@ -278,7 +278,7 @@ public class Player {
 		}
 	}
 	
-	public int timeBound(int cur){ //upper bound of time for time sum rankings
+	public static int timeBound(int cur){ //upper bound of time for time sum rankings
 		switch(cur){
 		case 0:
 			return 72000; //Aria
@@ -622,7 +622,7 @@ public class Player {
 	
     public static String csecToString(int csec){
     	if(csec == 0){
-    		return " ";
+    		return "";
     	}
     	
     	int minutes = csec/6000;

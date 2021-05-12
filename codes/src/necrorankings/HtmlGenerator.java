@@ -870,7 +870,7 @@ public class HtmlGenerator extends DefaultHandler{
             	p.println("<td>" + Player.csecToString(player.timeSum(13)) + "</td>");
             	
             	for(int j=0;j<13;j++){
-                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(j) + "speedlbs.html\">" + Player.csecToString(player.adjustedTime(j ,player.time[j])) + "</a></td>");
+                	p.println(speedtimetag(player, j));
             	}
             	
                 p.println("</tr>");
@@ -949,7 +949,7 @@ public class HtmlGenerator extends DefaultHandler{
             	p.println("<td>" + String.format("%.3f", player.averageTimeRatio(13)) + "</td>");
             	
             	for(int j=0;j<13;j++){
-                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(j) + "speedlbs.html\">" + String.format("%.3f",player.timeRatio(j)) + "</a></td>");
+            		p.println(speedratiotag(player, j));
             	}
             	
                 p.println("</tr>");
@@ -1029,7 +1029,7 @@ public class HtmlGenerator extends DefaultHandler{
             	p.println("<td>" + Player.csecToString(player.timeSum(14)) + "</td>");
             	
             	for(int j=0;j<14;j++){
-                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(j) + "speedlbs.html\">" + Player.csecToString(player.adjustedTime(j ,player.time[j])) + "</a></td>");
+                	p.println(speedtimetag(player, j));
             	}
             	
                 p.println("</tr>");
@@ -1109,7 +1109,7 @@ public class HtmlGenerator extends DefaultHandler{
             	p.println("<td>" + String.format("%.2f", player.averageScoreRatio(14)) + "</td>");
             	
             	for(int j=0;j<14;j++){
-                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(j) + "scorelbs.html\">" + String.format("%.2f",player.scoreRatio(j)) + "%" + "</a></td>");
+                	p.println(scoreratiotag(player, j));
             	}
             	
                 p.println("</tr>");
@@ -2046,6 +2046,44 @@ public class HtmlGenerator extends DefaultHandler{
         	return tda + "<a href=\"https://warachia2.github.io/NecroRankings/lbs/" + lbsname + ".html\">" + "-" + "</a></td>";
     	}
 
+    }
+    
+    //ranking tags
+    public static String speedratiotag(Player player, int cur){
+    	String tooltip = Player.csecToString(player.time[cur]) + ", " + rankStr(player.speed[cur]);
+    	if(player.time[cur] == 0){
+    		tooltip = "No Entry";
+    	}
+    	
+    	return "<td class=\"tooltip\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "speedlbs.html\">" 
+    			+ "<span class=\"tooltip-text\">" + tooltip + "</span>" + String.format("%.3f",player.timeRatio(cur)) + "</a></td>";
+    }
+    
+    public static String scoreratiotag(Player player, int cur){
+    	String tooltip = String.valueOf(player.gold[cur]) + ", " + rankStr(player.score[cur]);
+    	if(player.gold[cur] == 0){
+    		tooltip = "No entry or below 5000th";
+    	}
+    	
+    	return "<td class=\"tooltip\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html\">" 
+    			+ "<span class=\"tooltip-text\">" + tooltip + "</span>" + String.format("%.2f",player.scoreRatio(cur)) + "</a></td>";
+    }
+    
+    public static String speedtimetag(Player player, int cur){
+    	String tooltip = "";
+    	
+    	if(player.time[cur] == 0){
+    		tooltip = "No Entry";
+    	}
+    	else if(player.time[cur] > Player.timeBound(cur)){
+    		tooltip = "Raw time: " + Player.csecToString(player.time[cur]) + ", " + rankStr(player.speed[cur]);
+    	}
+    	else{
+    		tooltip = rankStr(player.speed[cur]);
+    	}
+    	
+    	return "<td class=\"tooltip\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "speedlbs.html\">" 
+    			+ "<span class=\"tooltip-text\">" + tooltip + "</span>" + Player.csecToString(player.adjustedTime(cur ,player.time[cur])) + "</a></td>";
     }
     
     ///lbs header tag
