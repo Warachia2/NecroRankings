@@ -103,6 +103,8 @@ public class Data {
 		case "76561198115768228": return "Mizmy";
 		case "Priw8": return "Priw8";
     	case "76561198846415602": return "Priw8";
+		case "GPA": return "GPA";
+    	case "76561199043981220": return "GPA";
 		case "Low% Monster": return "Low% Monster";
 		case "NR Hokuho": return "NR Hokuho";
 		case "Hard Hokuho": return "Hard Hokuho";
@@ -757,7 +759,6 @@ public class Data {
     	case "76561198018346964": return "Shiny Braixen";
     	case "76561199018238169": return "Oracle";
     	case "76561198124992540": return "chiefagent007";
-    	case "76561199043981220": return "GPA";
     	case "76561198994219732": return "NBtelethia";
     	case "76561197980797064": return "Jethrain";
     	case "76561198060353777": return "Pieczyyea";
