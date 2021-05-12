@@ -93,7 +93,7 @@ a:hover {
   opacity: 0; /* はじめは隠しておく */
   visibility: hidden; /* はじめは隠しておく */
   position: absolute; /* 絶対配置 */
-  left: 120%; /* 親に対して中央配置 - 50% */
+  left: 50%; /* 親に対して中央配置 - 50% */
   transform: translateX(-50%); /* 親に対して中央配置 */
   bottom: 32px; /* 親要素下からの位置 */
   display: inline-block;
@@ -105,6 +105,7 @@ a:hover {
   color: #fff; /* 文字色 */
   border-radius: 3px; /* 角丸 */
   transition: 0.3s ease-in; /* アニメーション */
+  pointer-events: none;
 }
 
 /* ホバー時にツールチップの非表示を解除 */

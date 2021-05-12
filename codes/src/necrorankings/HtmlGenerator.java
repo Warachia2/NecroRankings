@@ -1998,10 +1998,7 @@ public class HtmlGenerator extends DefaultHandler{
     	if(rank == 1){
     		tda = "<td class=\"wr tooltip\"><a ";
     	}
-    	else if(rank == 0){
-    		tda = "<td><a ";
-    	}
-    	else if(rank <= threshold){
+    	else if(2 <= rank && rank <= threshold){
     		tda = "<td class=\"tooltip\"><a ";
     	}
     	else{ //worse than threshold
@@ -2013,7 +2010,7 @@ public class HtmlGenerator extends DefaultHandler{
     				+ "<span class=\"tooltip-text\">" + tooltip + "</span>" + rankStr(rank) + "</a></td>";	
     	}
     	else{
-        	return tda + "<a href=\"https://warachia2.github.io/NecroRankings/lbs/" + lbsname + ".html\">" + rankStr(rank) + "</a></td>";
+        	return tda + "<a href=\"https://warachia2.github.io/NecroRankings/lbs/" + lbsname + ".html\">" + "-" + "</a></td>";
     	}
 
     }
