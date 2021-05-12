@@ -1953,7 +1953,7 @@ public class HtmlGenerator extends DefaultHandler{
     	else if(rank == 1){
     		return "WR";
     	}
-    	else if(rank%100 == 11 || rank%100 == 12 || rank%13 == 13){
+    	else if(rank%100 == 11 || rank%100 == 12 || rank%100 == 13){
     		return rank + "th";
     	}
     	
