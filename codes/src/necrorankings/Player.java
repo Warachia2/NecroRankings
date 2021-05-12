@@ -328,6 +328,15 @@ public class Player {
 		}
 	}
 	
+	public double timeRatio_nobound(int cur){
+		if(time[cur]==0){
+			return 100000.0;
+		}
+		else{
+			return (double) time[cur]/speedWR[cur];
+		}
+	}
+	
 	public double averageTimeRatio(int num){
 		double s = 0;
 		for(int i=0;i<num;i++){

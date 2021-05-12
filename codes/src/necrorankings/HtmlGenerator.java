@@ -23,6 +23,7 @@ public class HtmlGenerator extends DefaultHandler{
 	static String rankingsoutput = "C:\\Users\\Warachia\\Documents\\GitHub\\NecroRankings\\rankings\\";
 	static String lbsoutput = "C:\\Users\\Warachia\\Documents\\GitHub\\NecroRankings\\lbs\\";
 	static String pbsoutput = "C:\\Users\\Warachia\\Documents\\GitHub\\NecroRankings\\pbs\\";
+	static String chartsoutput = "C:\\Users\\Warachia\\Documents\\GitHub\\NecroRankings\\charts\\";
 	
 	static String category = "";
 	static int cur = 0; //category id, 0~16
@@ -1672,6 +1673,52 @@ public class HtmlGenerator extends DefaultHandler{
             }
         }
         
+        System.out.println("Making Charts...");
+
+        try {
+            FileWriter f = new FileWriter(chartsoutput + "density.html", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+            
+            densityStart(p);
+
+            for(int i=0;i<13;i++){
+				int num = i;
+				array.sort((a,b) -> (a.speed[num] - b.speed[num]));
+				p.println("{type:\"line\", axisYType: \"secondary\", name: \""+ curToName(i) + "\", showInLegend: true, markerSize: 0, dataPoints: [");
+				
+				for(Player player:array){
+					if(player.speed[i] == 0){
+						continue;
+					}
+					else if(player.speed[i] > 100){
+						break;
+					}
+					
+					p.print("{x: " + player.speed[i] + ", y: " + String.format("%.3f",player.timeRatio_nobound(i)) + "}");
+
+					if(player.speed[i] != 100){
+						p.println(",");
+					}
+					else{
+						p.println("");
+					}
+				}
+				if(i!=12){
+					p.println("]},");
+				}
+				else{
+					p.println("]}");
+				}
+            }
+
+            densityEnd(p);
+            
+            p.close();
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        
         System.out.println("Done");
     }
 
@@ -2121,5 +2168,35 @@ public class HtmlGenerator extends DefaultHandler{
     	}
     	s += "</h4>";
     	return s;
+    }
+    
+    public static void densityStart(PrintWriter p){
+    	p.println("<!DOCTYPE HTML><html><head><script>");
+    	p.println("window.onload = function(){");
+    	p.println("var chart = new CanvasJS.Chart(\"chartContainer\", {");
+    	p.println("title: {text: \"Top100 Speed Density\"},");
+    	p.println("axisX: {title: \"Rank\"},");
+    	p.println("axisY2: {title: \"Ratio to WR\", minimum: 1.0},");
+    	p.println("toolTip: {shared: false,content: \"{name} {x}: {y}\"},");
+    	p.println("legend: {cursor: \"pointer\", verticalAlign: \"top\", horizontalAlign: \"center\", dockInsidePlotArea: true, itemclick: toogleDataSeries},");
+    	p.println("data: [");
+    }
+    
+    public static void densityEnd(PrintWriter p){
+    	p.println("]});");
+    	p.println("chart.render();");
+    	p.println("function toogleDataSeries(e){");
+    	p.println("if (typeof(e.dataSeries.visible) === \"undefined\" || e.dataSeries.visible) {");
+    	p.println("e.dataSeries.visible = false;");
+    	p.println("} else{");
+    	p.println("e.dataSeries.visible = true;");
+    	p.println("}");
+    	p.println("chart.render();");
+    	p.println("}}");
+    	p.println("</script></head>");
+    	p.println("<body>");
+    	p.println("<div id=\"chartContainer\" style=\"height: 800px; max-width: 1200px; margin: 0px auto;\"></div>");
+    	p.println("<script src=\"https://canvasjs.com/assets/script/canvasjs.min.js\"></script>");
+    	p.println("</body></html>");
     }
 }
