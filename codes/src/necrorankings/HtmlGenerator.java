@@ -1435,7 +1435,7 @@ public class HtmlGenerator extends DefaultHandler{
             	p.println("<td>" + String.format("%.2f",player.scorepoints()) + "</td>");
 
         		for(int j=0;j<17;j++){
-                	p.println(ranktag(player.score[j], -1, j, "score", zeroout(player.gold[j]) + ", " + String.format("%.2f",Player.points(player.speed[j])) + "pt"));
+                	p.println(ranktag(player.score[j], -1, j, "score", zeroout(player.gold[j]) + ", " + String.format("%.2f",Player.points(player.score[j])) + "pt"));
         		}
                 
                 p.println("</tr>");
