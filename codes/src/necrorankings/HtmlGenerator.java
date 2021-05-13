@@ -700,6 +700,7 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561199043981220").addInfo("Also known as: Gaming Pro's Adventure");
     	//Grimmy
     	list.get("76561198052453103").addInfo(conduitWinner(16));
+    	list.get("76561198052453103").addInfo(worldsfirst("Aria Rando Low% Clear", "https://www.youtube.com/watch?v=2DB1RW6AvVs"));
     	//Hokuho
     	list.get("76561198398758840").addInfo(worldsfirst("13char Low% Clear","https://youtu.be/9ZFyF3VS_nc"));
     	list.get("76561198398758840").addInfo(youtube("https://www.youtube.com/channel/UC4C2RyyKRNWmM9nXqWsY3qQ"));
