@@ -657,6 +657,8 @@ public class HtmlGenerator extends DefaultHandler{
     public static void moreInfo(){
     	//Abu
     	list.get("76561197993247154").addInfo(worldsfirst("Every Character Sub6"));
+    	list.get("76561197993247154").addInfo(worldsfirst("Cadence Sub5","https://youtu.be/-RuMZpJQF_o"));
+    	list.get("76561197993247154").addInfo(worldsfirst("Nocturna Sub6"));
     	list.get("76561197993247154").addInfo("Winner of CoNDOR S7");
     	list.get("76561197993247154").addInfo(youtube("https://www.youtube.com/channel/UC-2RuaSxOc8Jt7BKJoM_TMQ"));
     	//AlexisYj
@@ -707,7 +709,7 @@ public class HtmlGenerator extends DefaultHandler{
     	//HummingBee
     	list.get("76561198101480527").addInfo("Also known as: ZgH");
     	list.get("76561198101480527").addInfo(conduitWinner(47));
-    	list.get("76561198101480527").addInfo(worldsfirst("Coda Rando Clear"));
+    	list.get("76561198101480527").addInfo(worldsfirst("Coda Rando Clear","https://youtu.be/qBgw6bKzPQE"));
     	//incnoce
     	list.get("76561198000263514").addInfo("Winner of CoNDOR S5/S9");
     	//Jack
@@ -753,6 +755,8 @@ public class HtmlGenerator extends DefaultHandler{
     	//Ocre
     	list.get("76561198207378484").addInfo("Also known as: Mewtwo");
     	list.get("76561198207378484").addInfo(conduitWinner(38));
+    	list.get("76561198207378484").addInfo(worldsfirst("Diamond Score 40k", "https://www.twitch.tv/videos/740002662"));
+    	list.get("76561198207378484").addInfo(worldsfirst("Cadence Score 40k", "https://youtu.be/jrrBKN9leOw"));
     	//Oblivion
     	list.get("76561198006220424").addInfo(conduitWinner(4));
     	list.get("76561198006220424").addInfo(linkText("Known for Oblivion Strat", "https://sites.google.com/view/warachiasouko/%E3%83%9B%E3%83%BC%E3%83%A0/necrodancer-english/dead-ringer-strategies#h.p_kjBFD5UewiDQ"));
@@ -771,6 +775,7 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198253324593").addInfo(conduitWinner(36));
     	//Ptrevor
     	list.get("76561198089956676").addInfo(conduitWinner(22));
+    	list.get("76561198089956676").addInfo(worldsfirst("Mary Sub5"));
     	//roncli
     	list.get("76561197996696153").addInfo(conduitWinner(8));
     	//Ranch
@@ -779,6 +784,7 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198136201511").addInfo(conduitWinner(18));
     	//RoyalGoof
     	list.get("76561198118733148").addInfo(conduitWinner(12));
+    	list.get("76561198118733148").addInfo(worldsfirst("Bolt Sub3", "https://youtu.be/wSIIwp_SynU"));
     	//RPGG
     	list.get("76561198247123198").addInfo(conduitWinner(35));
     	//Sailo
@@ -796,6 +802,7 @@ public class HtmlGenerator extends DefaultHandler{
     	//Sivcria
     	list.get("76561198057683647").addInfo(conduitWinner(39));
     	//Siveure
+    	list.get("76561198028008855").addInfo(worldsfirst("Monk Sub6"));
     	list.get("76561198028008855").addInfo(conduitWinner(20));
     	//Slimo
     	list.get("76561198047144954").addInfo(conduitWinner(34));
@@ -805,13 +812,21 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198097522980").addInfo(conduitWinner(17));
     	//Spooty
     	list.get("76561198002854407").addInfo(worldsfirst("Coda Clear"));
-    	list.get("76561198002854407").addInfo(worldsfirst("Coda Low%/Mystery/NR/Hard Clear"));
+    	list.get("76561198002854407").addInfo(worldsfirst("Coda Sub5","https://youtu.be/Y1a6ISxi9BI"));
+    	list.get("76561198002854407").addInfo(worldsfirst("Coda Low% Clear","https://youtu.be/aBOEDwNKCUY"));
+    	list.get("76561198002854407").addInfo(worldsfirst("Coda Low% Sub10","https://youtu.be/FTacfI6ikxM"));
+    	list.get("76561198002854407").addInfo(worldsfirst("Coda Mystery Clear","https://youtu.be/8aQ473WFiRs"));
+    	list.get("76561198002854407").addInfo(worldsfirst("Coda NR Clear","https://youtu.be/bnigp0V7U-M"));
+    	list.get("76561198002854407").addInfo(worldsfirst("Coda Hard Clear","https://youtu.be/R_02QKWL7Vc"));
+    	list.get("76561198002854407").addInfo(worldsfirst("9char Sub Hour","https://youtu.be/YmSn4X4iMnk"));
     	list.get("76561198002854407").addInfo(conduitWinner(1));
     	list.get("76561198002854407").addInfo("Winner of CoNDOR S6/S8/X/X2");
     	list.get("76561198002854407").addInfo(youtube("https://www.youtube.com/channel/UCLCqsFZw6ZglWzKjjQA4koA"));
     	list.get("76561198002854407").addInfo(linkText("Hosts CRoW","http://race.condor.live/"));
     	//Supervillain Joe
     	list.get("76561198836504795").addInfo(conduitWinner(26));
+    	//Switchaxe
+    	list.get("76561198101072470").addInfo(worldsfirst("Eli Sub5"));
     	//Szprycha
     	list.get("76561198259285620").addInfo(conduitWinner(45));
     	//Tama
@@ -826,6 +841,9 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198149556207").addInfo(conduitWinner(24));
     	//Warachia
         list.get("76561198121399825").addInfo("Developer of this site");
+        list.get("76561198121399825").addInfo(worldsfirst("Tempo Sub4, https://youtu.be/pwUUTypRdjM"));
+        list.get("76561198121399825").addInfo(worldsfirst("Aria Sub5","https://youtu.be/WcNgUxDgJ_I"));
+        list.get("76561198121399825").addInfo(youtube("https://www.youtube.com/channel/UC0HOUDmhQdFsWZYRQJhqsgQ"));
         list.get("76561198121399825").addInfo(linkText("Warachia's warehouse", "https://sites.google.com/view/warachiasouko/%E3%83%9B%E3%83%BC%E3%83%A0/necrodancer-english"));
         list.get("76561198121399825").addInfo(youtube("https://www.youtube.com/channel/UC0HOUDmhQdFsWZYRQJhqsgQ"));
         //Waski
