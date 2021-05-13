@@ -723,7 +723,7 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198317639601").addInfo(linkText("Low% Records", "https://www.speedrun.com/user/Monsterracer"));
     	list.get("76561198317639601").addInfo(youtube("https://www.youtube.com/channel/UCtW_1PyLrDTJQzJCw_wg6hw"));
     	//Moyuma
-    	list.get("76561198317639601").addInfo(linkText("Organizer of WtW1", "https://discord.gg/4PgxpXW"));
+    	list.get("76561198195540037").addInfo(linkText("Organizer of WtW1", "https://discord.gg/4PgxpXW"));
     	//mpr
     	list.get("76561198002760663").addInfo("Also known as: cohomerlogist");
     	list.get("76561198002760663").addInfo(conduitWinner(28));
@@ -787,9 +787,9 @@ public class HtmlGenerator extends DefaultHandler{
     	//Spooty
     	list.get("76561198002854407").addInfo(worldsfirst("Coda Clear"));
     	list.get("76561198002854407").addInfo(worldsfirst("Coda Low%/Mystery/NR/Hard Clear"));
-    	list.get("76561197998799529").addInfo(conduitWinner(1));
-    	list.get("76561197998799529").addInfo("Winner of CoNDOR S6/S8/X/X2");
-    	list.get("76561197998799529").addInfo(youtube("https://www.youtube.com/channel/UCLCqsFZw6ZglWzKjjQA4koA"));
+    	list.get("76561198002854407").addInfo(conduitWinner(1));
+    	list.get("76561198002854407").addInfo("Winner of CoNDOR S6/S8/X/X2");
+    	list.get("76561198002854407").addInfo(youtube("https://www.youtube.com/channel/UCLCqsFZw6ZglWzKjjQA4koA"));
     	//Supervillain Joe
     	list.get("76561198836504795").addInfo(conduitWinner(26));
     	//Szprycha
@@ -1805,7 +1805,7 @@ public class HtmlGenerator extends DefaultHandler{
                     p.println("<summary>More Info</summary>");
                     for(int i=0;i<player.moreinfo.size();i++){
                     	p.print(player.moreinfo.get(i));
-                    	if(i+1 != player.moreinfo.size()){
+                    	if(i+1 != player.moreinfo.size() && !player.moreinfo.get(i).startsWith("<a")){
                     		p.println("<br>");
                     	}
                     	else{
