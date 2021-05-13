@@ -669,12 +669,16 @@ public class HtmlGenerator extends DefaultHandler{
     	//biggiemac42
     	list.get("76561197998799529").addInfo(conduitWinner(23));
     	list.get("76561197998799529").addInfo("Found gold duping");
+    	//Crispy Fried Potatoes
+    	list.get("76561198071175501").addInfo("Also known as: Crispy Fried Potatoes");
     	//Cyber
     	list.get("76561198194866686").addInfo(conduitWinner(11));
     	//DJC
     	list.get("76561197970186393").addInfo("Winner of ConDOR S1");
     	//DLKurosh
     	list.get("76561198072087224").addInfo(youtube("https://www.youtube.com/channel/UCQqf8wGcxNz1NuLSAZQskyg"));
+    	//DNH
+    	list.get("76561198096014598").addInfo("Also known as: definitely not HIM");
     	//Doopliss
     	list.get("76561197993823027").addInfo(conduitWinner(7));
     	//d_tea
@@ -706,6 +710,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561197998362244").addInfo(linkText("Developer of TUNE Mod", "https://steamcommunity.com/sharedfiles/filedetails/?id=860039892"));
     	//JPed
     	list.get("76561198091352147").addInfo(conduitWinner(41));
+    	//Katheryn Miles
+    	list.get("76561198042911025").addInfo("Saguara");
     	//Kupioala
     	list.get("76561198079454638").addInfo("Also known as: Zarushi");
     	//lith
@@ -776,6 +782,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198272994316").addInfo("Also known as: scc127");
     	//seanpwolf
     	list.get("76561198052787418").addInfo(conduitWinner(25));
+    	//Shortcake
+    	list.get("76561198087367133").addInfo("Also known as: Shortcake Sweets");
     	//Sivcria
     	list.get("76561198057683647").addInfo(conduitWinner(39));
     	//Siveure

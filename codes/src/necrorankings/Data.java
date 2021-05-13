@@ -108,8 +108,8 @@ public class Data {
 		case "Low% Monster": return "Low% Monster";
 		case "NR Hokuho": return "NR Hokuho";
 		case "Hard Hokuho": return "Hard Hokuho";
-		case "Rando Warachia": return "Rando Warachia";
-		case "Mystery Warachia": return "Mystery Warachia";
+		case "Rando Warachia": return "Rando Wara";
+		case "Mystery Warachia": return "Mystery Wara";
 		case "NR Warachia": return "NR Warachia";
 		case "76561198317639601": return "Monsterracer";
 		case "76561197993247154": return "Abu Yazan";
@@ -193,7 +193,7 @@ public class Data {
 		case "76561198001874256": return "Bear Krills";
 		case "76561198024950122": return "larksford";
 		case "76561197984187817": return "Lucoa";
-		case "76561198096014598": return "definitely not HIM";
+		case "76561198096014598": return "DNH";
 		case "76561198045959196": return "Iwuh";
 		case "76561198306352835": return "Marcy";
 		case "76561198142553698": return "Ruenardo";
@@ -245,7 +245,7 @@ public class Data {
 		case "76561197989223079": return "King Torture";
 		case "76561198072087224": return "DLKurosh";
 		case "76561198256046322": return "hwplant";
-		case "76561198087367133": return "Shortcake Sweets";
+		case "76561198087367133": return "Shortcake";
 		case "76561198056675549": return "BreedPineapple";
 		case "76561198142716311": return "Exam";
     	case "76561198159054244": return "Muk";
@@ -860,7 +860,7 @@ public class Data {
     	case "76561198344484128": return "Geigenzähler";
     	case "76561198165641882": return "propfeds";
     	case "76561197988962917": return "BOT Zin";
-    	case "76561198071175501": return "Crispy Fried Potatoes";
+    	case "76561198071175501": return "CFP";
     	case "76561198108165418": return ". .";
     	case "76561198001433805": return "Omnomasaur";
     	case "76561198191906933": return "wcdawtda";
