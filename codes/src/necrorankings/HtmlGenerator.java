@@ -722,6 +722,9 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198087840095").addInfo(conduitWinner(42));
     	//lith
     	list.get("76561198849821236").addInfo("Also known as: Amellia");
+    	//marc
+    	list.get("76561198075137353").addInfo("Frequently changes his/her Steam name");
+    	list.get("76561198075137353").addInfo(youtube("https://www.youtube.com/channel/UCZty0cjqrVKnBGMnuVk9enQ"));
     	//Marcy
     	list.get("76561198306352835").addInfo(conduitWinner(40));
     	//Marukyu
@@ -743,8 +746,6 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198002760663").addInfo(conduitWinner(28));
     	//mudjoe
     	list.get("76561197996690770").addInfo("Winner of CoNDOR S4");
-    	//Namechanger
-    	list.get("76561198075137353").addInfo("Frequently changes his/her Steam name");
     	//Nick
     	list.get("76561198049600266").addInfo(worldsfirst("Aria NR Low% Clear", "https://www.youtube.com/watch?v=-5SXUFxYruY"));
     	//Ocre
@@ -806,6 +807,7 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198002854407").addInfo(conduitWinner(1));
     	list.get("76561198002854407").addInfo("Winner of CoNDOR S6/S8/X/X2");
     	list.get("76561198002854407").addInfo(youtube("https://www.youtube.com/channel/UCLCqsFZw6ZglWzKjjQA4koA"));
+    	list.get("76561198002854407").addInfo(linkText("Hosts CRoW","http://race.condor.live/"));
     	//Supervillain Joe
     	list.get("76561198836504795").addInfo(conduitWinner(26));
     	//Szprycha
