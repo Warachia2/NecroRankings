@@ -90,6 +90,7 @@ a:hover {
 .tooltip {
   position: relative; /* ツールチップの位置の基準に */
   cursor: pointer; /* カーソルを当てたときにポインターに */
+  z-index: 200;
 }
 
 /* ツールチップのテキスト */

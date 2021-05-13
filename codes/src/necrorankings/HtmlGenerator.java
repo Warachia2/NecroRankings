@@ -1140,6 +1140,7 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<html>");
             p.println("<head>");
             p.println("<link rel=\"stylesheet\" href=\"13speedsumstyle.css\">");
+            p.println("<script>console.log(\"\");</script>"); //for earlier css reading
             p.println("<title>NecroDancer 13char Speed PB Sum Rankings</title>");
             p.println("</head>");
             p.println("<body>");
@@ -1197,6 +1198,7 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<html>");
             p.println("<head>");
             p.println("<link rel=\"stylesheet\" href=\"13speedratiostyle.css\">");
+            p.println("<script>console.log(\"\");</script>"); //for earlier css reading
             p.println("<title>NecroDancer 13char Speed PB Ratio to WRs Rankings</title>");
             p.println("</head>");
             p.println("<body>");
@@ -1254,6 +1256,7 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<html>");
             p.println("<head>");
             p.println("<link rel=\"stylesheet\" href=\"14speedsumstyle.css\">");
+            p.println("<script>console.log(\"\");</script>"); //for earlier css reading
             p.println("<title>NecroDancer 14char PB Sum Rankings</title>");
             p.println("</head>");
             p.println("<body>");
@@ -1311,6 +1314,7 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<html>");
             p.println("<head>");
             p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
+            p.println("<script>console.log(\"\");</script>"); //for earlier css reading
             p.println("<title>NecroDancer 14char Score PB Ratio to WRs Rankings</title>");
             p.println("</head>");
             p.println("<body>");
@@ -1554,6 +1558,7 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<html>");
             p.println("<head>");
             p.println("<link rel=\"stylesheet\" href=\"labstyle.css\">");
+            p.println("<script>console.log(\"\");</script>"); //for earlier css reading
             p.println("<title>NecroLab Speed Rankings Imitator</title>");
             p.println("</head>");
             p.println("<body>");
@@ -1728,6 +1733,7 @@ public class HtmlGenerator extends DefaultHandler{
                 p.println("<html>");
                 p.println("<head>");
                 p.println("<link rel=\"stylesheet\" href=\"pbstyle.css\">");
+                p.println("<script>console.log(\"\");</script>"); //for earlier css reading
                 p.println("<title>" + player.name() + "</title>");
                 p.println("</head>");
                 p.println("<body>");
