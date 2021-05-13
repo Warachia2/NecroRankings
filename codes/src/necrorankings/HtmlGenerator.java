@@ -481,6 +481,8 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198136201511").setTime(16, 487546); //Ravio, 13char Speed 1:21:15.636
         Player.speedWR[16] = Math.min(Player.speedWR[16], 487564);
         
+        list.get("76561198994219732").setClear(6, 401);
+        
         list.get("76561198121399825").setExtraGold(0, 1, 116598); //Warachia, Bard Hard Score 116598
         
         //Bar Text
@@ -766,6 +768,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561199018238169").addInfo("Also known as: Dragran");
     	//Pancelor
     	list.get("76561198034369998").addInfo(linkText("Pancelor's DR Strats Collection", "https://www.youtube.com/playlist?list=PLDeU_mCoStZmaV9e1CYKJrw6DTDxbaUsh"));
+    	//Pibonacci
+    	list.get("76561198031063446").addInfo(worldsfirst("Diamond Sub4"));
     	//Plectro
     	list.get("76561198044207658").addInfo(conduitWinner(32));
     	list.get("76561198044207658").addInfo(linkText("Plectro's Tactics Videos", "https://www.youtube.com/playlist?list=PLHBvPtZEl_bkixIflKS3M-w8RXWSPR3es"));
@@ -803,6 +807,7 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198057683647").addInfo(conduitWinner(39));
     	//Siveure
     	list.get("76561198028008855").addInfo(worldsfirst("Monk Sub6"));
+    	list.get("76561198028008855").addInfo(worldsfirst("Story Sub30"));
     	list.get("76561198028008855").addInfo(conduitWinner(20));
     	//Slimo
     	list.get("76561198047144954").addInfo(conduitWinner(34));
