@@ -1643,6 +1643,7 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<html>");
             p.println("<head>");
             p.println("<link rel=\"stylesheet\" href=\"labstyle.css\">");
+            p.println("<script>console.log(\"\");</script>"); //for earlier css reading
             p.println("<title>NecroLab Score Rankings Imitator</title>");
             p.println("</head>");
             p.println("<body>");
