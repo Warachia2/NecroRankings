@@ -701,6 +701,7 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198000263514").addInfo("Winner of CoNDOR S5/S9");
     	//Jack
     	list.get("76561197998362244").addInfo("Winner of CoNDOR S2");
+    	list.get("76561197998362244").addInfo(linkText("Developer of TUNE Mod", "https://steamcommunity.com/sharedfiles/filedetails/?id=860039892"));
     	//JPed
     	list.get("76561198091352147").addInfo(conduitWinner(41));
     	//Kupioala
@@ -711,6 +712,7 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198306352835").addInfo(conduitWinner(40));
     	//Marukyu
     	list.get("76561198034177100").addInfo("Winner of CoNDOR S3");
+    	list.get("76561198034177100").addInfo(linkText("Developer of Synchrony", "https://necro.marukyu.de/"));
     	//Minhs2
     	list.get("76561198040828497").addInfo(conduitWinner(37));
     	//Mizmy
@@ -727,6 +729,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198002760663").addInfo(conduitWinner(28));
     	//mudjoe
     	list.get("76561197996690770").addInfo("Winner of CoNDOR S4");
+    	//Namechanger
+    	list.get("76561198075137353").addInfo("Frequently changes his/her Steam name");
     	//Nick
     	list.get("76561198049600266").addInfo(worldsfirst("Aria NR Low% Clear", "https://www.youtube.com/watch?v=-5SXUFxYruY"));
     	//Ocre
@@ -776,6 +780,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198028008855").addInfo(conduitWinner(20));
     	//Slimo
     	list.get("76561198047144954").addInfo(conduitWinner(34));
+    	//Smokepipe
+    	list.get("76561198044935308").addInfo("Also known as: The Kataclysmic Kollision Krab, the prince of pickles, The Kill la Kill Krab");
     	//Sponska
     	list.get("76561198097522980").addInfo(conduitWinner(17));
     	//Spooty
@@ -799,7 +805,7 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198149556207").addInfo(conduitWinner(24));
     	//Warachia
         list.get("76561198121399825").addInfo("Developer of this site");
-        list.get("76561198121399825").addInfo(linkText("Owner of Warachia's warehouse", "https://sites.google.com/view/warachiasouko/%E3%83%9B%E3%83%BC%E3%83%A0/necrodancer-english"));
+        list.get("76561198121399825").addInfo(linkText("Warachia's warehouse", "https://sites.google.com/view/warachiasouko/%E3%83%9B%E3%83%BC%E3%83%A0/necrodancer-english"));
         list.get("76561198121399825").addInfo(youtube("https://www.youtube.com/channel/UC0HOUDmhQdFsWZYRQJhqsgQ"));
         //Waski
         list.get("76561198094733262").addInfo(youtube("https://www.youtube.com/channel/UCD8O0AksMFaVNUD4nIihcbw"));
