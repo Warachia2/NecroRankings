@@ -1746,7 +1746,7 @@ public class HtmlGenerator extends DefaultHandler{
                 
                 int extraspeedthreshold = 100;
                 int extrascorethreshold = 10;
-                int deathlessthreshold = 20;
+                int deathlessthreshold = 50;
                 
                 p.println("<!DOCTYPE html>");
                 p.println("<html>");
