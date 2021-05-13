@@ -810,6 +810,7 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198055098680").addInfo("Also known as: Revalize");
     	list.get("76561198055098680").addInfo(conduitWinner(14));
     	//TNF
+    	list.get("76561198021587175").addInfo("Also known as: TheNitromeFan");
     	list.get("76561198021587175").addInfo(conduitWinner(46));
     	//Uniowen
     	list.get("76561198149556207").addInfo(conduitWinner(24));
@@ -822,7 +823,7 @@ public class HtmlGenerator extends DefaultHandler{
     }
     
     public static String conduitWinner(int n){
-    	return "Winner of CoNDUIT " + n;
+    	return linkText("Winner of CoNDUIT " + n, "https://warachia2.github.io/NecroRankings/hidden/conduitwinners.html");
     }
         
     public static String worldsfirst(String s){
