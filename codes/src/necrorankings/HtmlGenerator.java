@@ -1671,6 +1671,9 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<body>");
             p.println("<h1>NecroDancer LBs Influence Rankings</h1>");
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+            
+            p.println("<details class=\"center\">");
+            p.println("<summary>Details</summary>");
             p.println("<p>Points are based on old necrolab formula: 1.7 / (log($rank / 100 + 1.03) / log(10))</p>");
             p.println("<p>ex. You gain 99.8 points from 1st place, 80.2 points from 2nd place, 67.2 points from 3rd place...</p>");
             p.println("<h3>[Weights]</h3>");
@@ -1678,6 +1681,8 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<p>Score: Cadence x1, 9/13char x0.2, Other x0.5</p>");
             p.println("<p>DLess: Coda x0.5, Aria/Monk/Mary x0.2, Other x0.1</p>");
             p.println("<p>Extra: Coda NR/Rando/Mystery/Hard Speed x0.5, Other Extra Speed x0.06, Extra Score x0.02</p>");
+            p.println("</details><p></p>");
+            
             p.println("<table border=\"5\">");
             p.println("<tr>");
             p.println("<th class=\"fixed01\">Rank</th>");
