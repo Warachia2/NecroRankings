@@ -1740,7 +1740,7 @@ public class HtmlGenerator extends DefaultHandler{
                 FileWriter f = new FileWriter(pbsoutput + player.name() + ".html", false);
                 PrintWriter p = new PrintWriter(new BufferedWriter(f));
                 
-                int extraspeedthreshold = 20;
+                int extraspeedthreshold = 100;
                 int extrascorethreshold = 10;
                 int deathlessthreshold = 20;
                 
