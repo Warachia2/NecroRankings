@@ -664,6 +664,9 @@ public class HtmlGenerator extends DefaultHandler{
     	//Ancalagor
     	list.get("76561197999948240").addInfo("Also known as: feartheducky");
     	list.get("76561197999948240").addInfo(conduitWinner(30));
+    	//ashastral
+    	list.get("76561198012546822").addInfo("Also known as: Fraxtil");
+    	list.get("76561198012546822").addInfo(linkText("Developer of Delta Mod", "https://steamcommunity.com/sharedfiles/filedetails/?id=1866616675"));
     	//bacing
     	list.get("76561198028146044").addInfo("Also known as: BigBlue");
     	//biggiemac42
