@@ -35,6 +35,10 @@ width: 60px;
 width: 60px;
 }
 
+.center{
+text-align: center;
+}
+
 table {
     margin-left: auto;
     margin-right: auto;
@@ -112,4 +116,27 @@ a:hover {
 .tooltip:hover .tooltip-text {
   opacity: 1;
   visibility: visible;
+}
+
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+margin-left: auto; margin-right: auto;
+width:400px;
+}
+
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
+
+details[open] {
+    padding: .5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
 }

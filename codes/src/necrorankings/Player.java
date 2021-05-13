@@ -1,8 +1,11 @@
 package necrorankings;
 
+import java.util.ArrayList;
+
 public class Player {
 	String SteamID;
 	boolean isExtra;
+	ArrayList<String> moreinfo;
 	
 	///ranks
 	int[] speed;
@@ -76,6 +79,8 @@ public class Player {
 		clear = new int[14];
 		extratime = new int[5][14];
 		extragold = new int[5][14];
+		
+		moreinfo = new ArrayList<>();
 	}
 	
 	///Points
@@ -625,6 +630,10 @@ public class Player {
 	
 	public void setExtra(boolean b){
 		isExtra = b;
+	}
+	
+	public void addInfo(String s){
+		moreinfo.add(s);
 	}
 	
 	///Getters

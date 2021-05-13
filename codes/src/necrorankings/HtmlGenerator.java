@@ -481,12 +481,15 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198136201511").setTime(16, 487546); //Ravio, 13char Speed 1:21:15.636
         Player.speedWR[16] = Math.min(Player.speedWR[16], 487564);
         
-        list.get("76561198121399825").setExtraGold(0, 1, 116598); //Warahica, Bard Hard Score 116598
+        list.get("76561198121399825").setExtraGold(0, 1, 116598); //Warachia, Bard Hard Score 116598
         
         //Bar Text
         LocalDateTime date1 = LocalDateTime.now();
 		DateTimeFormatter dtformat1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
 		fdate1 = dtformat1.format(date1);
+		
+		//More Info
+		moreInfo();
 		
 		System.out.println("Making LBs");
 		regularLBsMaker();
@@ -650,6 +653,178 @@ public class HtmlGenerator extends DefaultHandler{
     public void endDocument(){
     }
 
+    //More Info
+    public static void moreInfo(){
+    	//Abu
+    	list.get("76561197993247154").addInfo(worldsfirst("Every Character Sub6"));
+    	list.get("76561197993247154").addInfo("Winner of CoNDOR S7");
+    	list.get("76561197993247154").addInfo(youtube("https://www.youtube.com/channel/UC-2RuaSxOc8Jt7BKJoM_TMQ"));
+    	//AlexisYj
+    	list.get("76561198040558429").addInfo(conduitWinner(5));
+    	//Ancalagor
+    	list.get("76561197999948240").addInfo("Also known as: feartheducky");
+    	list.get("76561197999948240").addInfo(conduitWinner(30));
+    	//bacing
+    	list.get("76561198028146044").addInfo("Also known as: BigBlue");
+    	//biggiemac42
+    	list.get("76561197998799529").addInfo(conduitWinner(23));
+    	list.get("76561197998799529").addInfo("Found gold duping");
+    	//Cyber
+    	list.get("76561198194866686").addInfo(conduitWinner(11));
+    	//DJC
+    	list.get("76561197970186393").addInfo("Winner of ConDOR S1");
+    	//DLKurosh
+    	list.get("76561198072087224").addInfo(youtube("https://www.youtube.com/channel/UCQqf8wGcxNz1NuLSAZQskyg"));
+    	//Doopliss
+    	list.get("76561197993823027").addInfo(conduitWinner(7));
+    	//d_tea
+    	list.get("76561198042191965").addInfo(conduitWinner(33));
+    	//encryptid
+    	list.get("76561198041011456").addInfo("Also known as: Blaire, Maya");
+    	//Espeon
+    	list.get("76561198853968591").addInfo(conduitWinner(43));
+    	//Frosty Mentos
+    	list.get("76561198168248850").addInfo("Also known as: MantasMBL");
+    	list.get("76561198168248850").addInfo(conduitWinner(27));
+    	//GPA
+    	list.get("76561199043981220").addInfo("Also known as: Gaming Pro's Adventure");
+    	//Grimmy
+    	list.get("76561198052453103").addInfo(conduitWinner(16));
+    	//Hokuho
+    	list.get("76561198398758840").addInfo(worldsfirst("13char Low% Clear","https://youtu.be/9ZFyF3VS_nc"));
+    	list.get("76561198398758840").addInfo(youtube("https://www.youtube.com/channel/UC4C2RyyKRNWmM9nXqWsY3qQ"));
+    	//HummingBee
+    	list.get("76561198101480527").addInfo("Also known as: ZgH");
+    	list.get("76561198101480527").addInfo(conduitWinner(47));
+    	list.get("76561198101480527").addInfo(worldsfirst("Coda Rando Clear"));
+    	//incnoce
+    	list.get("76561198000263514").addInfo("Winner of CoNDOR S5/S9");
+    	//Jack
+    	list.get("76561197998362244").addInfo("Winner of CoNDOR S2");
+    	//JPed
+    	list.get("76561198091352147").addInfo(conduitWinner(41));
+    	//Kupioala
+    	list.get("76561198079454638").addInfo("Also known as: Zarushi");
+    	//lith
+    	list.get("76561198849821236").addInfo("Also known as: Amellia");
+    	//Marcy
+    	list.get("76561198306352835").addInfo(conduitWinner(40));
+    	//Marukyu
+    	list.get("76561198034177100").addInfo("Winner of CoNDOR S3");
+    	//Minhs2
+    	list.get("76561198040828497").addInfo(conduitWinner(37));
+    	//Mizmy
+    	list.get("76561198115768228").addInfo(youtube("https://www.youtube.com/channel/UCowvRn1WHf-WE4B9pzYAGBw"));
+    	//Monster
+    	list.get("76561198317639601").addInfo(linkText("Organizer of WtW2", "https://discord.gg/4PgxpXW"));
+    	list.get("76561198317639601").addInfo(conduitWinner(31));
+    	list.get("76561198317639601").addInfo(linkText("Low% Records", "https://www.speedrun.com/user/Monsterracer"));
+    	list.get("76561198317639601").addInfo(youtube("https://www.youtube.com/channel/UCtW_1PyLrDTJQzJCw_wg6hw"));
+    	//Moyuma
+    	list.get("76561198317639601").addInfo(linkText("Organizer of WtW1", "https://discord.gg/4PgxpXW"));
+    	//mpr
+    	list.get("76561198002760663").addInfo("Also known as: cohomerlogist");
+    	list.get("76561198002760663").addInfo(conduitWinner(28));
+    	//mudjoe
+    	list.get("76561197996690770").addInfo("Winner of CoNDOR S4");
+    	//Nick
+    	list.get("76561198049600266").addInfo(worldsfirst("Aria NR Low% Clear", "https://www.youtube.com/watch?v=-5SXUFxYruY"));
+    	//Ocre
+    	list.get("76561198207378484").addInfo("Also known as: Mewtwo");
+    	list.get("76561198207378484").addInfo(conduitWinner(38));
+    	//Oblivion
+    	list.get("76561198006220424").addInfo(conduitWinner(4));
+    	list.get("76561198006220424").addInfo(linkText("Known for Oblivion Strat", "https://sites.google.com/view/warachiasouko/%E3%83%9B%E3%83%BC%E3%83%A0/necrodancer-english/dead-ringer-strategies#h.p_kjBFD5UewiDQ"));
+    	//omnijectivity
+    	list.get("76561198293152614").addInfo(conduitWinner(13));
+    	//Oracle
+    	list.get("76561199018238169").addInfo("Also known as: Dragran");
+    	//Pancelor
+    	list.get("76561198034369998").addInfo(linkText("Pancelor's DR Strats Collection", "https://www.youtube.com/playlist?list=PLDeU_mCoStZmaV9e1CYKJrw6DTDxbaUsh"));
+    	//Plectro
+    	list.get("76561198044207658").addInfo(conduitWinner(32));
+    	list.get("76561198044207658").addInfo(linkText("Plectro's Tactics Videos", "https://www.youtube.com/playlist?list=PLHBvPtZEl_bkixIflKS3M-w8RXWSPR3es"));
+    	//Priw8
+    	list.get("76561198846415602").addInfo(conduitWinner(44));
+    	//ptar124
+    	list.get("76561198253324593").addInfo(conduitWinner(36));
+    	//Ptrevor
+    	list.get("76561198089956676").addInfo(conduitWinner(22));
+    	//roncli
+    	list.get("76561197996696153").addInfo(conduitWinner(8));
+    	//Ranch
+    	list.get("76561198453991513").addInfo("Also known as: theb, TheBigRanch, sranch");
+    	//RavioLinguini
+    	list.get("76561198136201511").addInfo(conduitWinner(18));
+    	//RoyalGoof
+    	list.get("76561198118733148").addInfo(conduitWinner(12));
+    	//RPGG
+    	list.get("76561198247123198").addInfo(conduitWinner(35));
+    	//Sailo
+    	list.get("76561198143370429").addInfo(youtube("https://www.youtube.com/channel/UCU7t5UX31nY8CXuXQZFxNmA"));
+    	//SailorMint
+    	list.get("76561197967734490").addInfo(conduitWinner(29));
+    	//Sanga
+    	list.get("76561198062929160").addInfo("Also known as: Liquid Nitrogen, 박상아");
+    	//sc2
+    	list.get("76561198272994316").addInfo("Also known as: scc127");
+    	//seanpwolf
+    	list.get("76561198052787418").addInfo(conduitWinner(25));
+    	//Sivcria
+    	list.get("76561198057683647").addInfo(conduitWinner(39));
+    	//Siveure
+    	list.get("76561198028008855").addInfo(conduitWinner(20));
+    	//Slimo
+    	list.get("76561198047144954").addInfo(conduitWinner(34));
+    	//Sponska
+    	list.get("76561198097522980").addInfo(conduitWinner(17));
+    	//Spooty
+    	list.get("76561198002854407").addInfo(worldsfirst("Coda Clear"));
+    	list.get("76561198002854407").addInfo(worldsfirst("Coda Low%/Mystery/NR/Hard Clear"));
+    	list.get("76561197998799529").addInfo(conduitWinner(1));
+    	list.get("76561197998799529").addInfo("Winner of CoNDOR S6/S8/X/X2");
+    	list.get("76561197998799529").addInfo(youtube("https://www.youtube.com/channel/UCLCqsFZw6ZglWzKjjQA4koA"));
+    	//Supervillain Joe
+    	list.get("76561198836504795").addInfo(conduitWinner(26));
+    	//Szprycha
+    	list.get("76561198259285620").addInfo(conduitWinner(45));
+    	//Tama
+    	list.get("76561198137933363").addInfo(linkText("Composer of Suizin Remix", "https://steamcommunity.com/sharedfiles/filedetails/?id=2102278534"));
+    	//tang
+    	list.get("76561198055098680").addInfo("Also known as: Revalize");
+    	list.get("76561198055098680").addInfo(conduitWinner(14));
+    	//TNF
+    	list.get("76561198021587175").addInfo(conduitWinner(46));
+    	//Uniowen
+    	list.get("76561198149556207").addInfo(conduitWinner(24));
+    	//Warachia
+        list.get("76561198121399825").addInfo("Developer of this site");
+        list.get("76561198121399825").addInfo(linkText("Owner of Warachia's warehouse", "https://sites.google.com/view/warachiasouko/%E3%83%9B%E3%83%BC%E3%83%A0/necrodancer-english"));
+        list.get("76561198121399825").addInfo(youtube("https://www.youtube.com/channel/UC0HOUDmhQdFsWZYRQJhqsgQ"));
+        //Waski
+        list.get("76561198094733262").addInfo(youtube("https://www.youtube.com/channel/UCD8O0AksMFaVNUD4nIihcbw"));
+    }
+    
+    public static String conduitWinner(int n){
+    	return "Winner of CoNDUIT " + n;
+    }
+        
+    public static String worldsfirst(String s){
+    	return "World's First " + s;
+    }
+    
+    public static String worldsfirst(String s, String url){
+    	return linkText(worldsfirst(s), url);
+    }
+    
+    public static String linkText(String s, String url){
+    	return "<a href= \"" + url + "\">" + s + "</a>";
+    }
+    
+    public static String youtube(String url){
+    	return linkText("Youtube Channel", url);
+    }
+    
     ///html makers
     public static void regularLBsMaker(){
 		for(int i=0;i<17;i++){
@@ -1618,6 +1793,22 @@ public class HtmlGenerator extends DefaultHandler{
                 
                 p.println("</table>");
                 
+                if(!player.moreinfo.isEmpty()){
+                    p.println("<p></p>");
+                    p.println("<details class=\"center\">");
+                    p.println("<summary>More Info</summary>");
+                    for(int i=0;i<player.moreinfo.size();i++){
+                    	p.print(player.moreinfo.get(i));
+                    	if(i+1 != player.moreinfo.size()){
+                    		p.println("<br>");
+                    	}
+                    	else{
+                    		p.println();
+                    	}
+                    }
+                    p.println("</details>");
+                }
+                
                 p.println("<p>" + "Last Updated:" + fdate1 +"</p>");
                 p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
                 
@@ -1676,6 +1867,38 @@ public class HtmlGenerator extends DefaultHandler{
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
+    
+    public static void densityStart(PrintWriter p){
+    	p.println("<!DOCTYPE HTML><html><head><link rel=\"stylesheet\" href=\"recordchart.css\"><script>");
+    	p.println("window.onload = function(){");
+    	p.println("var chart = new CanvasJS.Chart(\"chartContainer\", {");
+    	p.println("title: {text: \"Top100 Speed Density\"},");
+    	p.println("axisX: {title: \"Rank\"},");
+    	p.println("axisY2: {title: \"Ratio to WR\", minimum: 1.0},");
+    	p.println("toolTip: {shared: false,content: \"{name} {x}: {y}\"},");
+    	p.println("legend: {cursor: \"pointer\", verticalAlign: \"top\", horizontalAlign: \"center\", dockInsidePlotArea: true, itemclick: toogleDataSeries},");
+    	p.println("data: [");
+    }
+    
+    public static void densityEnd(PrintWriter p){
+    	p.println("]});");
+    	p.println("chart.render();");
+    	p.println("function toogleDataSeries(e){");
+    	p.println("if (typeof(e.dataSeries.visible) === \"undefined\" || e.dataSeries.visible) {");
+    	p.println("e.dataSeries.visible = false;");
+    	p.println("} else{");
+    	p.println("e.dataSeries.visible = true;");
+    	p.println("}");
+    	p.println("chart.render();");
+    	p.println("}}");
+    	p.println("</script></head>");
+    	p.println("<body>");
+    	p.println("<div id=\"chartContainer\" style=\"height: 800px; max-width: 1200px; margin: 0px auto;\"></div>");
+    	p.println("<script src=\"https://canvasjs.com/assets/script/canvasjs.min.js\"></script>");
+        p.println("<p>" + "Last Updated:" + fdate1 +"</p>");
+        p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+    	p.println("</body></html>");
     }
     
     public static void top10ChartMaker(String Category){
@@ -2143,36 +2366,4 @@ public class HtmlGenerator extends DefaultHandler{
     	s += "</h4>";
     	return s;
     }
-    
-    public static void densityStart(PrintWriter p){
-    	p.println("<!DOCTYPE HTML><html><head><link rel=\"stylesheet\" href=\"recordchart.css\"><script>");
-    	p.println("window.onload = function(){");
-    	p.println("var chart = new CanvasJS.Chart(\"chartContainer\", {");
-    	p.println("title: {text: \"Top100 Speed Density\"},");
-    	p.println("axisX: {title: \"Rank\"},");
-    	p.println("axisY2: {title: \"Ratio to WR\", minimum: 1.0},");
-    	p.println("toolTip: {shared: false,content: \"{name} {x}: {y}\"},");
-    	p.println("legend: {cursor: \"pointer\", verticalAlign: \"top\", horizontalAlign: \"center\", dockInsidePlotArea: true, itemclick: toogleDataSeries},");
-    	p.println("data: [");
     }
-    
-    public static void densityEnd(PrintWriter p){
-    	p.println("]});");
-    	p.println("chart.render();");
-    	p.println("function toogleDataSeries(e){");
-    	p.println("if (typeof(e.dataSeries.visible) === \"undefined\" || e.dataSeries.visible) {");
-    	p.println("e.dataSeries.visible = false;");
-    	p.println("} else{");
-    	p.println("e.dataSeries.visible = true;");
-    	p.println("}");
-    	p.println("chart.render();");
-    	p.println("}}");
-    	p.println("</script></head>");
-    	p.println("<body>");
-    	p.println("<div id=\"chartContainer\" style=\"height: 800px; max-width: 1200px; margin: 0px auto;\"></div>");
-    	p.println("<script src=\"https://canvasjs.com/assets/script/canvasjs.min.js\"></script>");
-        p.println("<p>" + "Last Updated:" + fdate1 +"</p>");
-        p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-    	p.println("</body></html>");
-    }
-}
