@@ -1447,7 +1447,7 @@ public class HtmlGenerator extends DefaultHandler{
             	p.println("<td>" + String.format("%.2f",player.nrspeed()) + "</td>");
             	p.println("<td>" + String.format("%.2f",player.randospeed()) + "</td>");
             	p.println("<td>" + String.format("%.2f",player.phasingspeed()) + "</td>");
-            	p.println("<td>" + String.format("%.2f",player.nrspeed()) + "</td>");
+            	p.println("<td>" + String.format("%.2f",player.mysteryspeed()) + "</td>");
                 
                 p.println("</tr>");
             }
@@ -1538,7 +1538,7 @@ public class HtmlGenerator extends DefaultHandler{
             	p.println("<td>" + String.format("%.2f",player.nrscore()) + "</td>");
             	p.println("<td>" + String.format("%.2f",player.randoscore()) + "</td>");
             	p.println("<td>" + String.format("%.2f",player.phasingscore()) + "</td>");
-            	p.println("<td>" + String.format("%.2f",player.nrscore()) + "</td>");
+            	p.println("<td>" + String.format("%.2f",player.mysteryscore()) + "</td>");
                 
                 p.println("</tr>");
             }
