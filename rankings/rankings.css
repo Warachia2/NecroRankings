@@ -14,6 +14,10 @@
   }
 }
 
+.name{
+width: 160px;
+}
+
 .wr{
   font-weight: bold
 }

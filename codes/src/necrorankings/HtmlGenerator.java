@@ -683,6 +683,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198041011456").addInfo("Also known as: Blaire, Maya");
     	//Espeon
     	list.get("76561198853968591").addInfo(conduitWinner(43));
+    	//FocusingFace
+    	list.get("76561198236991654").addInfo("Also known as: ShinobiHende");
     	//Frosty Mentos
     	list.get("76561198168248850").addInfo("Also known as: MantasMBL");
     	list.get("76561198168248850").addInfo(conduitWinner(27));
@@ -1699,7 +1701,7 @@ public class HtmlGenerator extends DefaultHandler{
     public static void categoryHeader(PrintWriter p, int max, String representative){
         p.println("<tr>");
         p.println("<th class=\"fixed01\">Rank</th>");
-        p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
+        p.println("<th class=\"fixed01 name\">" + fdate1 + "</th>");
         p.println("<th class=\"fixed01 total\">" + representative + "</th>");
         
         for(int i=0;i<max;i++){

@@ -398,7 +398,7 @@ public class Data {
     	case "76561198063518275": return "Aqukinn";
     	case "76561198066734879": return "zizindasesen";
     	case "76561198137933363": return "Tama";
-    	case "76561198236991654": return "ShinobiHende";
+    	case "76561198236991654": return "FocusingFace";
     	case "76561198263424374": return "Mikael";
     	case "76561198252203614": return "vlatkosh";
     	case "76561198011130555": return "mnymn";
@@ -865,6 +865,7 @@ public class Data {
     	case "76561198001433805": return "Omnomasaur";
     	case "76561198191906933": return "wcdawtda";
     	case "76561198205107160": return "AtLeastItsAdam";
+    	case "76561198239147398": return "AnkouSoei";
     	default: return "ID:" + steamid;
 		}
 	}
