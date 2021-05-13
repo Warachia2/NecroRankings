@@ -3,6 +3,7 @@
   top: 0;
   color: #fff;
   background: #333;
+  z-index:500;
   &:before{
     content: "";
     position: absolute;
