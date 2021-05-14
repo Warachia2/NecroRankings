@@ -2259,7 +2259,7 @@ public class HtmlGenerator extends DefaultHandler{
     	else if(p.score[cur] != 0 && p.gold[cur] >= scorethreshold){
     		return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + category + "lbs.html\">" + rankStr(p.score[cur]) + "</a></td>";	
     	}
-    	else if(p.gold[cur] < scorethreshold){
+    	else if(p.score[cur] != 0 && p.gold[cur] < scorethreshold){
     		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + category + "lbs.html\">" + rankStr(p.score[cur]) + "</a></td>";
     	}
     	else{ //no entry
