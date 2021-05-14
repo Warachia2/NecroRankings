@@ -29,7 +29,7 @@ h3{
   text-indent: 4em;
 }
 
-p{
+p:not(.in){
   padding-left: 6em;
 }
 
