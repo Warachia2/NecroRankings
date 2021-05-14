@@ -1671,10 +1671,6 @@ public class HtmlGenerator extends DefaultHandler{
                 FileWriter f = new FileWriter(pbsoutput + player.name() + ".html", false);
                 PrintWriter p = new PrintWriter(new BufferedWriter(f));
                 
-                int extraspeedthreshold = 100;
-                int extrascorethreshold = 10;
-                int deathlessthreshold = 100;
-                
                 htmlStart(p, player.name(), "pbstyle");
 
                 p.println("<table border=\"5\">");
@@ -1728,18 +1724,18 @@ public class HtmlGenerator extends DefaultHandler{
                     p.println("<tr>");
                 	p.println("<td>" + "<img src=\"icons/" + i + ".jpg\">" + "</td>");
                 	p.println("<td>" + curToName(i) + "</td>");
-                	p.println(ranktag(player.hardspeed[i], 0, i, "speed", Player.csecToString(player.extratime[0][i]), extraspeedthreshold));
-                	p.println(ranktag(player.nrspeed[i], 1, i, "speed", Player.csecToString(player.extratime[1][i]), extraspeedthreshold));
-                	p.println(ranktag(player.randospeed[i], 2, i, "speed", Player.csecToString(player.extratime[2][i]), extraspeedthreshold));
-                	p.println(ranktag(player.phasingspeed[i], 3, i, "speed", Player.csecToString(player.extratime[3][i]), extraspeedthreshold));
-                	p.println(ranktag(player.mysteryspeed[i], 4, i, "speed", Player.csecToString(player.extratime[4][i]), extraspeedthreshold));
+                	p.println(ranktag(player.hardspeed[i], 0, i, "speed", Player.csecToString(player.extratime[0][i])));
+                	p.println(ranktag(player.nrspeed[i], 1, i, "speed", Player.csecToString(player.extratime[1][i])));
+                	p.println(ranktag(player.randospeed[i], 2, i, "speed", Player.csecToString(player.extratime[2][i])));
+                	p.println(ranktag(player.phasingspeed[i], 3, i, "speed", Player.csecToString(player.extratime[3][i])));
+                	p.println(ranktag(player.mysteryspeed[i], 4, i, "speed", Player.csecToString(player.extratime[4][i])));
                 	p.println("<td>" + "<img src=\"icons/" + i + ".jpg\">" + "</td>");
-                	p.println(ranktag(player.hardscore[i], 0, i, "score", zeroout(player.extragold[0][i]), extrascorethreshold));
-                	p.println(ranktag(player.nrscore[i], 1, i, "score", zeroout(player.extragold[1][i]), extrascorethreshold));
-                	p.println(ranktag(player.randoscore[i], 2, i, "score", zeroout(player.extragold[2][i]), extrascorethreshold));
-                	p.println(ranktag(player.phasingscore[i], 3, i, "score", zeroout(player.extragold[3][i]), extrascorethreshold));
-                	p.println(ranktag(player.mysteryscore[i], 4, i, "score", zeroout(player.extragold[4][i]), extrascorethreshold));
-                	p.println(ranktag(player.deathless[i], -1, i, "deathless", player.clearcount(i), deathlessthreshold));
+                	p.println(exscoreranktag(player, 4, i, scorethreshold(i)));
+                	p.println(exscoreranktag(player, 4, i, scorethreshold(i)));
+                	p.println(exscoreranktag(player, 4, i, scorethreshold(i)));
+                	p.println(exscoreranktag(player, 4, i, (int) (scorethreshold(i)*0.8)));
+                	p.println(exscoreranktag(player, 4, i, (int) (scorethreshold(i)*0.8)));
+                	p.println(ranktag(player.deathless[i], -1, i, "deathless", player.clearcount(i)));
                     p.println("</tr>");
                 }
                 
@@ -1779,7 +1775,7 @@ public class HtmlGenerator extends DefaultHandler{
     public static int scorethreshold(int cur){
     	switch(cur){
     	case 0: return 10000;	//Aria
-    	case 1: return 15000; //Bard
+    	case 1: return 10000; //Bard
     	case 2: return 7500; //Bolt
     	case 3: return 10000; //Cadence
     	case 4: return 10000; //Diamond
@@ -1792,8 +1788,8 @@ public class HtmlGenerator extends DefaultHandler{
     	case 11: return 10000; //Nocturna
     	case 12: return 7500; //Tempo
     	case 13: return 1; //Coda
-    	case 14: return 40000; //Story
-    	case 15: return 40000; //9char
+    	case 14: return 50000; //Story
+    	case 15: return 50000; //9char
     	default: return 50000; //13char
     	}
     }
@@ -2255,24 +2251,19 @@ public class HtmlGenerator extends DefaultHandler{
     	}
 
     }
-    
-    public static String ranktag(int rank, int ord, int cur, String category, String tooltip, int threshold){
-    	String lbsname = "";
-    	if(category == "speed"){
-    		lbsname = curToName(cur) + ordToCategory(ord) + "speedlbs";
-    	}
-    	else if(category == "score"){
-    		lbsname = curToName(cur) + ordToCategory(ord) + "scorelbs";
-    	}
-    	else{
-    		lbsname = curToName(cur) + "deathlesslbs";
-    	}
+        
+    public static String exscoreranktag(Player player, int ord, int cur, int threshold){
+    	String lbsname = curToName(cur) + ordToCategory(ord) + "scorelbs";
+    	
+    	int rank = player.getRank(ord, cur, "score");
+    	int gold = player.extragold[ord][cur];
+    	String tooltip = zeroout(gold);
     	
     	String tda = "";
     	if(rank == 1){
     		tda = "<td class=\"wr tooltip\"><a ";
     	}
-    	else if(2 <= rank && rank <= threshold){
+    	else if(2 <= rank && gold >= threshold){
     		tda = "<td class=\"tooltip\"><a ";
     	}
     	else{ //worse than threshold
@@ -2286,7 +2277,6 @@ public class HtmlGenerator extends DefaultHandler{
     	else{
         	return tda + "<a href=\"https://warachia2.github.io/NecroRankings/lbs/" + lbsname + ".html\">" + "-" + "</a></td>";
     	}
-
     }
     
     //pb tags
