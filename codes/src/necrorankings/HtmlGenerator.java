@@ -2425,7 +2425,12 @@ public class HtmlGenerator extends DefaultHandler{
     		tooltip = Player.csecToString(player.time[cur]) + ", Extra Record";
     	}
     	
-    	return "<td class=\"tooltip\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "speedlbs.html#r" + player.speed[cur] + "\">"
+    	String td = "<td class=\"tooltip\">";
+    	if(player.speed[cur] == 1){
+    		td = "<td class=\"tooltip wr\">";
+    	}
+    	
+    	return td + "<a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "speedlbs.html#r" + player.speed[cur] + "\">"
     			+ "<span class=\"tooltip-text\">" + tooltip + "</span>" + String.format("%.3f",player.timeRatio(cur)) + "</a></td>";
     }
     
@@ -2439,7 +2444,12 @@ public class HtmlGenerator extends DefaultHandler{
     		tooltip = String.valueOf(player.gold[cur]) + ", Extra Record";
     	}
     	
-    	return "<td class=\"tooltip\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + player.score[cur] + "\">"
+    	String td = "<td class=\"tooltip\">";
+    	if(player.score[cur] == 1){
+    		td = "<td class=\"tooltip wr\">";
+    	}
+    	
+    	return td + "<a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + player.score[cur] + "\">"
     			+ "<span class=\"tooltip-text\">" + tooltip + "</span>" + String.format("%.2f",player.scoreRatio(cur)) + "</a></td>";
     }
     
@@ -2459,7 +2469,12 @@ public class HtmlGenerator extends DefaultHandler{
     		tooltip = rankStr(player.speed[cur]);
     	}
     	
-    	return "<td class=\"tooltip\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "speedlbs.html#r" + player.speed[cur] + "\">"
+    	String td = "<td class=\"tooltip\">";
+    	if(player.speed[cur] == 1){
+    		td = "<td class=\"tooltip wr\">";
+    	}
+    	
+    	return td + "<a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "speedlbs.html#r" + player.speed[cur] + "\">"
     			+ "<span class=\"tooltip-text\">" + tooltip + "</span>" + Player.csecToString(player.adjustedTime(cur ,player.time[cur])) + "</a></td>";
     }
     
