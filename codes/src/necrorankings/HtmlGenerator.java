@@ -1697,8 +1697,8 @@ public class HtmlGenerator extends DefaultHandler{
                 	p.println(ranktag(player.speed[i], i, "speed"));
                 	//p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + "scorelbs.html\"><img src=\"icons/" + i + ".jpg\">" + "</a></td>");
                     p.println("<td><img src=\"icons/" + i + ".jpg\">" + "</td>");
-                	p.println(scorepbtag(player, i, player.score[i], scorethreshold(i)));
-                	p.println(ranktag(player.score[i], i, "score", scorethreshold(i)));
+                	p.println(scorepbtag(player, i, scorethreshold(i)));
+                	p.println(scoreranktag(player, i, scorethreshold(i)));
                     p.println("</tr>");
                 }
 
@@ -1775,25 +1775,26 @@ public class HtmlGenerator extends DefaultHandler{
         }
     }
     
+    
     public static int scorethreshold(int cur){
     	switch(cur){
-    	case 0: return 100;	//Aria
-    	case 1: return 300; //Bard
-    	case 2: return 100; //Bolt
-    	case 3: return 1000; //Cadence
-    	case 4: return 150; //Diamond
-    	case 5: return 50; //Dorian
-    	case 6: return 200; //Dove
-    	case 7: return 50; //Eli
-    	case 8: return 50; //Mary
-    	case 9: return 150; //Melody
-    	case 10: return 150; //Monk
-    	case 11: return 1000; //Nocturna
-    	case 12: return 150; //Tempo
-    	case 13: return 500; //Coda
-    	case 14: return 25; //Story
-    	case 15: return 25; //9char
-    	default: return 25; //13char
+    	case 0: return 10000;	//Aria
+    	case 1: return 15000; //Bard
+    	case 2: return 7500; //Bolt
+    	case 3: return 10000; //Cadence
+    	case 4: return 10000; //Diamond
+    	case 5: return 7500; //Dorian
+    	case 6: return 1000; //Dove
+    	case 7: return 7500; //Eli
+    	case 8: return 7500; //Mary
+    	case 9: return 10000; //Melody
+    	case 10: return 7500; //Monk
+    	case 11: return 10000; //Nocturna
+    	case 12: return 7500; //Tempo
+    	case 13: return 1; //Coda
+    	case 14: return 40000; //Story
+    	case 15: return 40000; //9char
+    	default: return 50000; //13char
     	}
     }
 
@@ -2207,15 +2208,15 @@ public class HtmlGenerator extends DefaultHandler{
     	}
     }
     
-    public static String ranktag(int rank, int cur, String category, int threshold){
-    	if(rank == 1){
-        	return "<td class=\"wr\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + category + "lbs.html\">" + rankStr(rank) + "</a></td>";
+    public static String scoreranktag(Player p, int cur, int scorethreshold){
+    	if(p.score[cur] == 1){
+        	return "<td class=\"wr\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + category + "lbs.html\">" + rankStr(p.score[cur]) + "</a></td>";
     	}
-    	else if(rank != 0 && rank <= threshold){
-    		return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + category + "lbs.html\">" + rankStr(rank) + "</a></td>";	
+    	else if(p.score[cur] != 0 && p.gold[cur] >= scorethreshold){
+    		return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + category + "lbs.html\">" + rankStr(p.score[cur]) + "</a></td>";	
     	}
-    	else if(rank > threshold){
-    		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + category + "lbs.html\">" + rankStr(rank) + "</a></td>";
+    	else if(p.gold[cur] < scorethreshold){
+    		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + category + "lbs.html\">" + rankStr(p.score[cur]) + "</a></td>";
     	}
     	else{ //no entry
     		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + category + "lbs.html\">" + "-" + "</a></td>";
@@ -2307,11 +2308,11 @@ public class HtmlGenerator extends DefaultHandler{
     	}
     }
     
-    public static String scorepbtag(Player player, int cur, int rank, int threshold){
+    public static String scorepbtag(Player player, int cur, int scorethreshold){
     	if(player.gold[cur] == 0){
     		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html\">" + "-" + "</a></td>";
     	}
-    	else if(rank >= threshold){
+    	else if(player.gold[cur] < scorethreshold){
     		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html\">" + String.valueOf(player.gold[cur]) + "</a></td>";
     	}
     	else{
