@@ -2278,7 +2278,7 @@ public class HtmlGenerator extends DefaultHandler{
     		tda = "<td class=\"tooltip out\"><a class = \"out\"";
     	}
     	
-    	if(category == "deathless" && cur == 3 && player.clear[3] <= 1000){
+    	if(category == "deathless" && cur == 3 && player.clear[3] < 1100){
     		tda = "<td class=\"tooltip out\"><a class = \"out\"";
     	}
     	
