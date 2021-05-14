@@ -2235,17 +2235,12 @@ public class HtmlGenerator extends DefaultHandler{
     }
     
     ///rank to tag
-    public static String ranktag(int rank){
-    	if(rank == 1){
-        	return "<td class=\"wr\">" + rankStr(rank) + "</td>";
+    public static String ranktag(int rank, int cur, String category){
+    	int boldthreshold = 1;
+    	if(category == "speed" || category == "score"){
+    		boldthreshold = 10;
     	}
-    	else{
-        	return "<td>" + rankStr(rank) + "</td>";	
-    	}
-    }
-    
-    public static String ranktag(int rank, int cur, String category){    	
-    	if(rank == 1){
+    	if(0<rank && rank <= boldthreshold){
         	return "<td class=\"wr\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + category + "lbs.html#r" + rank + "\">" + rankStr(rank) + "</a></td>";
     	}
     	else if(rank != 0){
@@ -2257,7 +2252,7 @@ public class HtmlGenerator extends DefaultHandler{
     }
     
     public static String scoreranktag(Player p, int cur, int scorethreshold){
-    	if(p.score[cur] == 1){
+    	if(0 < p.score[cur] && p.score[cur] <= 10){
         	return "<td class=\"wr\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + p.score[cur] + "\">" + rankStr(p.score[cur]) + "</a></td>";
     	}
     	else if(p.score[cur] != 0 && p.gold[cur] >= scorethreshold){
@@ -2283,8 +2278,13 @@ public class HtmlGenerator extends DefaultHandler{
     		lbsname = curToName(cur) + "deathlesslbs";
     	}
     	
+    	int boldthreshold = 1;
+    	if(ord == -1 && (category == "speed" || category == "score")){
+    		boldthreshold = 10;
+    	}
+    	
     	String tda = "";
-    	if(rank == 1){
+    	if(0< rank && rank <= boldthreshold){
     		tda = "<td class=\"wr tooltip\"><a ";
     	}
     	else if(2 <= rank){
@@ -2307,13 +2307,21 @@ public class HtmlGenerator extends DefaultHandler{
     public static String ranktag(Player player, int ord, int cur, String category, String tooltip){
     	String lbsname = "";
     	int rank = 0;
+    	int boldthreshold = 1;
+    	
     	if(category == "speed"){
     		lbsname = curToName(cur) + ordToCategory(ord) + "speedlbs";
     		rank = player.getRank(ord, cur, "speed");
+    		if(ord == -1){
+    			boldthreshold = 10;
+    		}
     	}
     	else if(category == "score"){
     		lbsname = curToName(cur) + ordToCategory(ord) + "scorelbs";
     		rank = player.getRank(ord, cur, "score");
+    		if(ord == -1){
+    			boldthreshold = 10;
+    		}
     	}
     	else{
     		lbsname = curToName(cur) + "deathlesslbs";
@@ -2321,7 +2329,7 @@ public class HtmlGenerator extends DefaultHandler{
     	}
     	
     	String tda = "";
-    	if(rank == 1){
+    	if(0< rank || rank <= boldthreshold){
     		tda = "<td class=\"wr tooltip\"><a ";
     	}
     	else if(2 <= rank){
