@@ -1990,6 +1990,8 @@ public class HtmlGenerator extends DefaultHandler{
     }
         
     public static void playerListMaker(){
+		array.sort((a,b) -> a.name().compareTo(b.name()));
+    	
     	try {
             FileWriter f = new FileWriter(hiddenoutput + "playerlist.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
