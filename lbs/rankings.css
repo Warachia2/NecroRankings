@@ -23,6 +23,12 @@ table {
     margin-right: auto;
 }
 
+td {
+    display: block;
+    padding-top: 70px;
+    margin-top: -70px;
+}
+
 h1 {
 text-align: center;
 }
