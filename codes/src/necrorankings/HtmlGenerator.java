@@ -24,6 +24,7 @@ public class HtmlGenerator extends DefaultHandler{
 	static String lbsoutput = "C:\\Users\\Warachia\\Documents\\GitHub\\NecroRankings\\lbs\\";
 	static String pbsoutput = "C:\\Users\\Warachia\\Documents\\GitHub\\NecroRankings\\pbs\\";
 	static String chartsoutput = "C:\\Users\\Warachia\\Documents\\GitHub\\NecroRankings\\charts\\";
+	static String hiddenoutput = "C:\\Users\\Warachia\\Documents\\GitHub\\NecroRankings\\hidden\\";
 	
 	static String category = "";
 	static int cur = 0; //category id, 0~16
@@ -502,6 +503,7 @@ public class HtmlGenerator extends DefaultHandler{
         labMaker();
         influenceMaker();
         System.out.println("Making PB Lists...");
+        playerListMaker();
         pblistMaker();
         System.out.println("Making Charts...");
         densityMaker();
@@ -813,7 +815,7 @@ public class HtmlGenerator extends DefaultHandler{
     	//Slimo
     	list.get("76561198047144954").addInfo(conduitWinner(34));
     	//Smokepipe
-    	list.get("76561198044935308").addInfo("Also known as: The Kataclysmic Kollision Krab, the prince of pickles, The Kill la Kill Krab");
+    	list.get("76561198044935308").addInfo("Also known as: The Kataclysmic Kollision Krab, the prince of pickles");
     	//Sponska
     	list.get("76561198097522980").addInfo(conduitWinner(17));
     	//Spooty
@@ -1987,6 +1989,51 @@ public class HtmlGenerator extends DefaultHandler{
         }
     }
         
+    public static void playerListMaker(){
+    	try {
+            FileWriter f = new FileWriter(hiddenoutput + "playerlist.html", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+
+            htmlStart(p, "List of Registered Players", "playerliststyle");
+            
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+
+            p.println("<table border=\"5\">");
+            p.println("<tr>");
+            p.println("<th class=\"fixed01 id\">Steam ID</th>");
+            p.println("<th class=\"fixed01 name\">Name</th>");
+            p.println("<th class=\"fixed01 remark\">Also known as:</th>");
+            p.println("</tr>");
+            
+            for(Player player:array){
+            	if(!player.name().startsWith("ID") && !player.isExtra){
+                    p.println("<tr>");
+                    p.println("<td>" + player.SteamID + "</td>");
+                	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
+                    
+                    boolean hasAnother = false;
+                    for(String s:player.moreinfo){
+                    	if(s.startsWith("Also known")){
+                    		p.println("<td>" + s.substring(15) + "</td>");
+                    		hasAnother = true;
+                    	}
+                    }
+                    
+                    if(!hasAnother){
+                        p.println("<td></td>");
+                    }
+                    
+                    p.println("</tr>");
+            	}
+            }
+
+            rankingCloser(p);
+            
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
     public static void printPlayerLinkedIcon(PrintWriter p, Player player){
     	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/"+ player.name() + ".html\"><img src=\"players/" + player.name() + ".jpg\"></a></td>");
     }

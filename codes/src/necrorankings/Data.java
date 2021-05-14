@@ -99,18 +99,15 @@ public class Data {
     //Player Names
 	public static String name(String steamid){
 		switch(steamid){
-		case "Mizmy": return "Mizmy";
-		case "76561198115768228": return "Mizmy";
-		case "Priw8": return "Priw8";
-    	case "76561198846415602": return "Priw8";
-		case "GPA": return "GPA";
-    	case "76561199043981220": return "GPA";
 		case "Low% Monster": return "Low% Monster";
 		case "NR Hokuho": return "NR Hokuho";
 		case "Hard Hokuho": return "Hard Hokuho";
 		case "Rando Warachia": return "Rando Wara";
 		case "Mystery Warachia": return "Mystery Wara";
 		case "NR Warachia": return "NR Warachia";
+		case "76561198115768228": return "Mizmy";
+    	case "76561198846415602": return "Priw8";
+    	case "76561199043981220": return "GPA";
 		case "76561198317639601": return "Monsterracer";
 		case "76561197993247154": return "Abu Yazan";
 		case "76561198149072446": return "Nominozo";
@@ -867,6 +864,7 @@ public class Data {
     	case "76561198205107160": return "AtLeastItsAdam";
     	case "76561198239147398": return "AnkouSoei";
     	case "76561199078008627": return "ladyljl401";
+    	case "76561198090143615": return "Heskey";
     	default: return "ID:" + steamid;
 		}
 	}

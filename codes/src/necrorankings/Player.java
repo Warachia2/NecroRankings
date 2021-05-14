@@ -364,7 +364,7 @@ public class Player {
 		
 	///Switch Players
     public static Player mizmy(){
-    	Player p = new Player("Mizmy");
+    	Player p = new Player("76561198115768228");
     	p.setTime(0, 41335); //Aria
     	p.setTime(1, 20398); //Bard
     	p.setTime(2, 22661); //Bolt
@@ -425,7 +425,7 @@ public class Player {
     }
     
     public static Player Priw8(){
-    	Player p = new Player("Priw8");
+    	Player p = new Player("76561198846415602");
     	p.setTime(3, 40339); //Cadence 6:43.39
     	p.setTime(6, 25259); //Dove 4:12.59 (Not PB)
     	p.setTime(9, 36235); //Mel 6:02.35
@@ -435,7 +435,7 @@ public class Player {
     }
 
     public static Player GPA(){
-    	Player p = new Player("GPA");
+    	Player p = new Player("76561199043981220");
     	p.setGold(0, 12095); //Aria
     	p.setGold(1, 144378); //Bard
     	p.setGold(12, 9815); //Tempo
