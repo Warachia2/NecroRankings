@@ -909,7 +909,7 @@ public class HtmlGenerator extends DefaultHandler{
 						
 						if(rank<=100 || !player.name().startsWith("ID")){
 				            p.println("<tr>");
-				            p.println("<td id=\"r" + rank + "\">" + rank + "</td>");
+				            p.println("<td><a id=\"r" + rank + "\"></a>" + rank + "</td>");
 				            if(player.name().startsWith("ID")){
 				            	p.println("<td>" + player.name() + "</td>");
 				            	System.out.println(curToName(i) + "Speed: " + player.name() + " rank:" + rank);
