@@ -63,7 +63,7 @@ a:hover {
 
 td { 
 text-align:center; 
-vertical-align:bottom;
+vertical-align:middle;
 }
 
 /* カーソルを重ねる要素 */
