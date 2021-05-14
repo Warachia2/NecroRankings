@@ -881,15 +881,9 @@ public class HtmlGenerator extends DefaultHandler{
 	        try {
 	            FileWriter f = new FileWriter(lbsoutput + curToName(i) + "speedlbs.html", false);
 	            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+
+	            htmlStart(p, curToName(i) +  " Speed LBs", "rankings");
 	            
-	            p.println("<!DOCTYPE html>");
-	            p.println("<html>");
-	            p.println("<head>");
-	            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
-	            p.println("<title>" + curToName(i) +  " Speed LBs" + "</title>");
-	            p.println("</head>");
-	            p.println("<body>");
-	            p.println("<h1>" + curToName(i) +  " Speed LBs" + "</h1>");
                 p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
 	            if(i<14){
 	            	p.println(headertag(i,-1, "speed"));
@@ -941,14 +935,8 @@ public class HtmlGenerator extends DefaultHandler{
 	            FileWriter f = new FileWriter(lbsoutput + curToName(i) + "scorelbs.html", false);
 	            PrintWriter p = new PrintWriter(new BufferedWriter(f));
 	            
-	            p.println("<!DOCTYPE html>");
-	            p.println("<html>");
-	            p.println("<head>");
-	            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
-	            p.println("<title>" + curToName(i) +  " Score LBs" + "</title>");
-	            p.println("</head>");
-	            p.println("<body>");
-	            p.println("<h1>" + curToName(i) +  " Score LBs" + "</h1>");
+	            htmlStart(p, curToName(i) +  " Score LBs", "rankings");
+	            
                 p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
 	            if(i<14){
 	            	p.println(headertag(i,-1, "score"));
@@ -1000,14 +988,8 @@ public class HtmlGenerator extends DefaultHandler{
 	            FileWriter f = new FileWriter(lbsoutput + curToName(i) + "deathlesslbs.html", false);
 	            PrintWriter p = new PrintWriter(new BufferedWriter(f));
 	            
-	            p.println("<!DOCTYPE html>");
-	            p.println("<html>");
-	            p.println("<head>");
-	            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
-	            p.println("<title>" + curToName(i) +  " Deathless LBs" + "</title>");
-	            p.println("</head>");
-	            p.println("<body>");
-	            p.println("<h1>" + curToName(i) +  " Deathless LBs" + "</h1>");
+	            htmlStart(p, curToName(i) +  " Deathless LBs", "rankings");
+	            
                 p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
 	            p.println("<table border=\"5\">");
 	            p.println("<tr>");
@@ -1058,14 +1040,8 @@ public class HtmlGenerator extends DefaultHandler{
 		            FileWriter f = new FileWriter(lbsoutput + curToName(i) + ordToCategory(h) + "speedlbs.html", false);
 		            PrintWriter p = new PrintWriter(new BufferedWriter(f));
 		            
-		            p.println("<!DOCTYPE html>");
-		            p.println("<html>");
-		            p.println("<head>");
-		            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
-		            p.println("<title>" + curToName(i) + " " + ordToCategory(h) + " Speed LBs" + "</title>");
-		            p.println("</head>");
-		            p.println("<body>");
-		            p.println("<h1>" + curToName(i) + " " + ordToCategory(h) + " Speed LBs" + "</h1>");
+		            htmlStart(p, curToName(i) + " " + ordToCategory(h) + " Speed LBs", "rankings");
+		            
 	                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
 		            p.println(headertag(i, h, "speed"));
 		            p.println("<table border=\"5\">");
@@ -1117,14 +1093,8 @@ public class HtmlGenerator extends DefaultHandler{
 		            FileWriter f = new FileWriter(lbsoutput + curToName(i) + ordToCategory(h) + "scorelbs.html", false);
 		            PrintWriter p = new PrintWriter(new BufferedWriter(f));
 		            
-		            p.println("<!DOCTYPE html>");
-		            p.println("<html>");
-		            p.println("<head>");
-		            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
-		            p.println("<title>" + curToName(i) + " " + ordToCategory(h) + " Score LBs" + "</title>");
-		            p.println("</head>");
-		            p.println("<body>");
-		            p.println("<h1>" + curToName(i) + " " + ordToCategory(h) + " Score LBs" + "</h1>");
+		            htmlStart(p, curToName(i) + " " + ordToCategory(h) + " Score LBs", "rankings");
+		            
 	                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
 		            p.println(headertag(i, h, "score"));
 		            p.println("<table border=\"5\">");
@@ -1177,16 +1147,9 @@ public class HtmlGenerator extends DefaultHandler{
         try {
             FileWriter f = new FileWriter(rankingsoutput + "13speedsum.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
+   
+            htmlStart(p, "NecroDancer 13char Speed PB Sum Rankings", "13speedsumstyle");
             
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"13speedsumstyle.css\">");
-            p.println("<script>console.log(\"\");</script>"); //for earlier css reading
-            p.println("<title>NecroDancer 13char Speed PB Sum Rankings</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroDancer 13char Speed PB Sum Rankings</h1>");
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             categoryHeader(p, 13, "Sum");
@@ -1236,15 +1199,8 @@ public class HtmlGenerator extends DefaultHandler{
             FileWriter f = new FileWriter(rankingsoutput + "13speedratio.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
             
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"13speedratiostyle.css\">");
-            p.println("<script>console.log(\"\");</script>"); //for earlier css reading
-            p.println("<title>NecroDancer 13char Speed PB Ratio to WRs Rankings</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroDancer 13char Speed PB Ratio to WRs Rankings</h1>");
+            htmlStart(p, "NecroDancer 13char Speed PB Ratio to WRs Rankings", "13speedratiostyle");
+            
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             categoryHeader(p, 13, "Average");
@@ -1293,16 +1249,9 @@ public class HtmlGenerator extends DefaultHandler{
         try {
             FileWriter f = new FileWriter(rankingsoutput + "14speedsum.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
+
+            htmlStart(p, "NecroDancer 14char Speed PB Sum Rankings", "14speedsumstyle");
             
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"14speedsumstyle.css\">");
-            p.println("<script>console.log(\"\");</script>"); //for earlier css reading
-            p.println("<title>NecroDancer 14char PB Sum Rankings</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroDancer 14char PB Sum Rankings</h1>");
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             categoryHeader(p, 14, "Sum");
@@ -1351,16 +1300,9 @@ public class HtmlGenerator extends DefaultHandler{
         try {
             FileWriter f = new FileWriter(rankingsoutput + "14scoreratio.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
+
+            htmlStart(p, "NecroDancer 14char Score PB Ratio to WRs Rankings", "rankings");
             
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"rankings.css\">");
-            p.println("<script>console.log(\"\");</script>"); //for earlier css reading
-            p.println("<title>NecroDancer 14char Score PB Ratio to WRs Rankings</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroDancer 14char Score PB Ratio to WRs Rankings</h1>");
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             categoryHeader(p, 14, "Average(%)");
@@ -1411,15 +1353,9 @@ public class HtmlGenerator extends DefaultHandler{
         try {
             FileWriter f = new FileWriter(rankingsoutput + "extraspeeda.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
+
+            htmlStart(p, "NecroDancer Extra Speed Rankings A", "extraastyle");
             
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"extraastyle.css\">");
-            p.println("<title>NecroDancer Extra Speed Rankings A</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroDancer Extra Speed Rankings A</h1>");
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             p.println("<tr>");
@@ -1463,14 +1399,8 @@ public class HtmlGenerator extends DefaultHandler{
             FileWriter f = new FileWriter(rankingsoutput + "extraspeedb.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
             
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"extrabstyle.css\">");
-            p.println("<title>NecroDancer Extra Speed Rankings B</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroDancer Extra Speed Rankings B</h1>");
+            htmlStart(p, "NecroDancer Extra Speed Rankings B", "extrabstyle");
+            
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             categoryHeader(p, 14, "Total");
@@ -1503,14 +1433,8 @@ public class HtmlGenerator extends DefaultHandler{
             FileWriter f = new FileWriter(rankingsoutput + "extrascorea.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
             
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"extraastyle.css\">");
-            p.println("<title>NecroDancer Extra Score Rankings A</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroDancer Extra Score Rankings A</h1>");
+            htmlStart(p, "NecroDancer Extra Score Rankings A", "extraastyle");
+            
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             p.println("<tr>");
@@ -1554,14 +1478,8 @@ public class HtmlGenerator extends DefaultHandler{
             FileWriter f = new FileWriter(rankingsoutput + "extrascoreb.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
             
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"extrabstyle.css\">");
-            p.println("<title>NecroDancer Extra Score Rankings B</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroDancer Extra Score Rankings B</h1>");
+            htmlStart(p, "NecroDancer Extra Score Rankings B", "extrabstyle");
+            
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             categoryHeader(p, 14, "Total");
@@ -1596,15 +1514,8 @@ public class HtmlGenerator extends DefaultHandler{
             FileWriter f = new FileWriter(rankingsoutput + "necrolabspeedimitator.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
             
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"labstyle.css\">");
-            p.println("<script>console.log(\"\");</script>"); //for earlier css reading
-            p.println("<title>NecroLab Speed Rankings Imitator</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroLab Speed Rankings Imitator</h1>");
+            htmlStart(p, "NecroLab Speed Rankings Imitator", "labstyle");
+            
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             categoryHeader(p, 17, "Points");
@@ -1640,15 +1551,8 @@ public class HtmlGenerator extends DefaultHandler{
             FileWriter f = new FileWriter(rankingsoutput + "necrolabscoreimitator.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
             
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"labstyle.css\">");
-            p.println("<script>console.log(\"\");</script>"); //for earlier css reading
-            p.println("<title>NecroLab Score Rankings Imitator</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroLab Score Rankings Imitator</h1>");
+            htmlStart(p, "NecroLab Score Rankings Imitator", "labstyle");
+            
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             p.println("<table border=\"5\">");
             categoryHeader(p, 17, "Points");
@@ -1685,15 +1589,9 @@ public class HtmlGenerator extends DefaultHandler{
         try {
             FileWriter f = new FileWriter(rankingsoutput + "influence.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
+
+            htmlStart(p, "NecroDancer LBs Influence Rankings", "influencestyle");
             
-            p.println("<!DOCTYPE html>");
-            p.println("<html>");
-            p.println("<head>");
-            p.println("<link rel=\"stylesheet\" href=\"influencestyle.css\">");
-            p.println("<title>NecroDancer LBs Influence Rankings</title>");
-            p.println("</head>");
-            p.println("<body>");
-            p.println("<h1>NecroDancer LBs Influence Rankings</h1>");
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             
             p.println("<details class=\"center\">");
@@ -1777,15 +1675,7 @@ public class HtmlGenerator extends DefaultHandler{
                 int extrascorethreshold = 10;
                 int deathlessthreshold = 50;
                 
-                p.println("<!DOCTYPE html>");
-                p.println("<html>");
-                p.println("<head>");
-                p.println("<link rel=\"stylesheet\" href=\"pbstyle.css\">");
-                p.println("<script>console.log(\"\");</script>"); //for earlier css reading
-                p.println("<title>" + player.name() + "</title>");
-                p.println("</head>");
-                p.println("<body>");
-                p.println("<h1>" + player.name() +"</h1>");
+                htmlStart(p, player.name(), "pbstyle");
 
                 p.println("<table border=\"5\">");
                 p.println("<tr>");
@@ -1968,11 +1858,7 @@ public class HtmlGenerator extends DefaultHandler{
             FileWriter f = new FileWriter(chartsoutput + Category + "top10s.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
             
-            p.println("<!DOCTYPE html><html><head>");
-            p.println("<link rel=\"stylesheet\" href=\"recordchart.css\">");
-            p.println("<title>" + Category + " Top10s" + "</title>");
-            p.println("</head><body>");
-            p.println("<h1 class=\"center\">"+ Category + " Top10s" +"</h1>");
+            htmlStart(p, Category + " Top10s", "recordchart");
             
             p.println("<table border=\"5\">");
             p.println("<tr>");
@@ -2012,12 +1898,7 @@ public class HtmlGenerator extends DefaultHandler{
             FileWriter f = new FileWriter(chartsoutput + "extrawrs.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
             
-            p.println("<!DOCTYPE html><html><head>");
-            p.println("<link rel=\"stylesheet\" href=\"recordchart.css\">");
-            p.println("<title>Extra World Records</title>");
-            p.println("</head><body>");
-            p.println("<h1 class=\"center\">Extra World Records</h1>");
-            
+            htmlStart(p, "Extra World Records", "recordchart");
             
             ///Extra Speed
             p.println("<table border=\"5\">");
@@ -2090,6 +1971,29 @@ public class HtmlGenerator extends DefaultHandler{
         
     public static void printPlayerLinkedIcon(PrintWriter p, Player player){
     	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/"+ player.name() + ".html\"><img src=\"players/" + player.name() + ".jpg\"></a></td>");
+    }
+    
+    public static void htmlStart(PrintWriter p, String title, String css){
+    	p.println("<!DOCTYPE html>");
+        p.println("<html lang=\"en\">");
+        p.println("<head>");
+        
+        //analytics
+        p.println("<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-9G9DGMLX02\"></script>");
+        p.println("<script>");
+        p.println("window.dataLayer = window.dataLayer || [];");
+        p.println("function gtag(){dataLayer.push(arguments);}");
+        p.println("gtag('js', new Date());");
+        p.println("gtag('config', 'G-9G9DGMLX02')");
+        p.println("</script>");
+        
+        p.println("<meta charset=\"UTF-8\">");
+        p.println("<link rel=\"stylesheet\" href=\"" + css + ".css\">");
+        p.println("<script>console.log(\"\");</script>"); //for earlier css reading
+        p.println("<title>" + title + "</title>");
+        p.println("</head>");
+        p.println("<body>");
+        p.println("<h1 class=\"center\">" + title +"</h1>");
     }
     
     ///exclude obvious chaters
