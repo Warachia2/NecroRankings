@@ -2254,16 +2254,16 @@ public class HtmlGenerator extends DefaultHandler{
     
     public static String scoreranktag(Player p, int cur, int scorethreshold){
     	if(p.score[cur] == 1){
-        	return "<td class=\"wr\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + category + "lbs.html\">" + rankStr(p.score[cur]) + "</a></td>";
+        	return "<td class=\"wr\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html\">" + rankStr(p.score[cur]) + "</a></td>";
     	}
     	else if(p.score[cur] != 0 && p.gold[cur] >= scorethreshold){
-    		return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + category + "lbs.html\">" + rankStr(p.score[cur]) + "</a></td>";	
+    		return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html\">" + rankStr(p.score[cur]) + "</a></td>";	
     	}
     	else if(p.score[cur] != 0 && p.gold[cur] < scorethreshold){
-    		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + category + "lbs.html\">" + rankStr(p.score[cur]) + "</a></td>";
+    		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html\">" + rankStr(p.score[cur]) + "</a></td>";
     	}
     	else{ //no entry
-    		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + category + "lbs.html\">" + "-" + "</a></td>";
+    		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html\">" + "-" + "</a></td>";
     	}
     }
     
