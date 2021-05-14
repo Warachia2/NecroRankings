@@ -11,10 +11,12 @@ a {
 text-decoration:none;
 }
 a:link {
-   color: blue;
+   color: black;
+   text-decoration: underline;
 }
 a:visited {
-   color: blue;
+   color: black;
+   text-decoration: underline;
 }
 a:hover {
    color: white;
