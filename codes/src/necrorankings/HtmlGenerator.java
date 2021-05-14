@@ -878,6 +878,10 @@ public class HtmlGenerator extends DefaultHandler{
     }
     
     ///html makers
+    public static void rankid(PrintWriter p, int rank){
+        p.println("<td>" + rank + "</td><a class=\"jump\" id=\"r" + rank + "\"></a>");
+    }
+    
     public static void regularLBsMaker(){
 		for(int i=0;i<17;i++){
 	        try {
@@ -909,7 +913,7 @@ public class HtmlGenerator extends DefaultHandler{
 						
 						if(rank<=100 || !player.name().startsWith("ID")){
 				            p.println("<tr>");
-				            p.println("<td><a id=\"r" + rank + "\"></a>" + rank + "</td>");
+				            rankid(p,rank);
 				            if(player.name().startsWith("ID")){
 				            	p.println("<td>" + player.name() + "</td>");
 				            	System.out.println(curToName(i) + "Speed: " + player.name() + " rank:" + rank);
@@ -962,7 +966,7 @@ public class HtmlGenerator extends DefaultHandler{
 						
 						if(rank<=50 || !player.name().startsWith("ID")){
 				            p.println("<tr>");
-				            p.println("<td id=\"r" + rank + "\">" + rank + "</td>");
+				            rankid(p,rank);
 				            if(player.name().startsWith("ID")){
 				            	p.println("<td>" + player.name() + "</td>");
 				            	System.out.println(curToName(i) + "Score:" + player.name() + " rank:" + rank);
@@ -1012,7 +1016,7 @@ public class HtmlGenerator extends DefaultHandler{
 						
 						if(!player.name().startsWith("ID")){
 				            p.println("<tr>");
-				            p.println("<td id=\"r" + rank + "\">" + rank + "</td>");
+				            rankid(p,rank);
 				            p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
 				            p.println("<td>" + player.clearcount(num) + "</td>");
 				            p.println("</tr>");	
@@ -1066,7 +1070,7 @@ public class HtmlGenerator extends DefaultHandler{
 							
 							if(!player.name().startsWith("ID")){
 					            p.println("<tr>");
-					            p.println("<td id=\"r" + rank + "\">" + rank + "</td>");
+					            rankid(p,rank);
 					            p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
 					            p.println("<td>" + Player.csecToString(player.extratime[ord][num]) + "</td>");
 					            p.println("</tr>");	
@@ -1119,7 +1123,7 @@ public class HtmlGenerator extends DefaultHandler{
 							
 							if(!player.name().startsWith("ID")){
 					            p.println("<tr>");
-					            p.println("<td id=\"r" + rank + "\">" + rank + "</td>");
+					            rankid(p,rank);
 					            p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name() + ".html\">" + player.name() + "</a></td>");
 					            p.println("<td>" + player.extragold[ord][num] + "</td>");
 					            p.println("</tr>");	
@@ -2371,31 +2375,31 @@ public class HtmlGenerator extends DefaultHandler{
     //pb tags
     public static String speedpbtag(Player player, int cur){
     	if(player.time[cur] == 0){
-    		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "speedlbs.html\">" + "-" + "</a></td>";
+    		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "speedlbs.html#r" + player.speed[cur] + "\">" + "-" + "</a></td>";
     	}
     	else{
-    		return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "speedlbs.html\">" + Player.csecToString(player.time[cur]) + "</a></td>";
+    		return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "speedlbs.html#r" + player.speed[cur] + "\">" + Player.csecToString(player.time[cur]) + "</a></td>";
     	}
     }
     
     public static String scorepbtag(Player player, int cur){
     	if(player.gold[cur] == 0){
-    		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html\">" + "-" + "</a></td>";
+    		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + player.score[cur] + "\">" + "-" + "</a></td>";
     	}
     	else{
-    		return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html\">" + String.valueOf(player.gold[cur]) + "</a></td>";
+    		return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + player.score[cur] + "\">" + String.valueOf(player.gold[cur]) + "</a></td>";
     	}
     }
     
     public static String scorepbtag(Player player, int cur, int scorethreshold){
     	if(player.gold[cur] == 0){
-    		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html\">" + "-" + "</a></td>";
+    		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + player.score[cur] + "\">" + "-" + "</a></td>";
     	}
     	else if(player.gold[cur] < scorethreshold){
-    		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html\">" + String.valueOf(player.gold[cur]) + "</a></td>";
+    		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + player.score[cur] + "\">" + String.valueOf(player.gold[cur]) + "</a></td>";
     	}
     	else{
-    		return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html\">" + String.valueOf(player.gold[cur]) + "</a></td>";
+    		return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + player.score[cur] + "\">" + String.valueOf(player.gold[cur]) + "</a></td>";
     	}
     }
     
@@ -2409,7 +2413,7 @@ public class HtmlGenerator extends DefaultHandler{
     		tooltip = Player.csecToString(player.time[cur]) + ", Extra Record";
     	}
     	
-    	return "<td class=\"tooltip\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "speedlbs.html\">" 
+    	return "<td class=\"tooltip\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "speedlbs.html#r" + player.speed[cur] + "\">"
     			+ "<span class=\"tooltip-text\">" + tooltip + "</span>" + String.format("%.3f",player.timeRatio(cur)) + "</a></td>";
     }
     
@@ -2423,7 +2427,7 @@ public class HtmlGenerator extends DefaultHandler{
     		tooltip = String.valueOf(player.gold[cur]) + ", Extra Record";
     	}
     	
-    	return "<td class=\"tooltip\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html\">" 
+    	return "<td class=\"tooltip\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + player.score[cur] + "\">"
     			+ "<span class=\"tooltip-text\">" + tooltip + "</span>" + String.format("%.2f",player.scoreRatio(cur)) + "</a></td>";
     }
     
@@ -2443,7 +2447,7 @@ public class HtmlGenerator extends DefaultHandler{
     		tooltip = rankStr(player.speed[cur]);
     	}
     	
-    	return "<td class=\"tooltip\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "speedlbs.html\">" 
+    	return "<td class=\"tooltip\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "speedlbs.html#r" + player.speed[cur] + "\">"
     			+ "<span class=\"tooltip-text\">" + tooltip + "</span>" + Player.csecToString(player.adjustedTime(cur ,player.time[cur])) + "</a></td>";
     }
     
