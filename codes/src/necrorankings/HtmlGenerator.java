@@ -879,7 +879,7 @@ public class HtmlGenerator extends DefaultHandler{
     
     ///html makers
     public static void rankid(PrintWriter p, int rank){
-        p.println("<td>" + rank + "</td><a class=\"jump\" id=\"r" + rank + "\"></a>");
+        p.println("<td><a class=\"jump\" id=\"r" + rank + "\"></a>" + rank + "</td>");
     }
     
     public static void regularLBsMaker(){

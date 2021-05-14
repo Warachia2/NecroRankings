@@ -52,13 +52,14 @@ text-decoration:none;
 display:inline;
 }
 
-a:link {
+
+a:not(.jump):link {
    color: black;
 }
-a:visited {
+a:not(.jump):visited {
    color: black;
 }
-a:hover {
+a:not(.jump):hover {
    color: white;
    background-color: black;
 }
