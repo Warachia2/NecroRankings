@@ -2329,7 +2329,7 @@ public class HtmlGenerator extends DefaultHandler{
     	}
     	
     	String tda = "";
-    	if(0< rank || rank <= boldthreshold){
+    	if(0< rank && rank <= boldthreshold){
     		tda = "<td class=\"wr tooltip\"><a ";
     	}
     	else if(2 <= rank){
