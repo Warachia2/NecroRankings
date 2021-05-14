@@ -90,6 +90,7 @@ vertical-align:bottom;
   border-radius: 3px; /* 角丸 */
   transition: 0.3s ease-in; /* アニメーション */
   pointer-events: none;
+  z-index:600;
 }
 
 /* ホバー時にツールチップの非表示を解除 */
