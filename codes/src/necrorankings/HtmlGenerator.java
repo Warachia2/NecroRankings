@@ -2339,7 +2339,11 @@ public class HtmlGenerator extends DefaultHandler{
     		tda = "<td class=\"tooltip out\"><a class = \"out\"";
     	}
     	
-    	if(category == "deathless" && cur == 3 && player.clear[3] < 1100){
+    	//hides Cad deathless<11, non-Coda deathless<2
+    	if(category == "deathless" && cur == 3 && player.clear[cur] < 1100){
+    		tda = "<td class=\"tooltip out\"><a class = \"out\"";
+    	}
+    	else if(category == "deathless" && cur != 13 && player.clear[cur] < 200){
     		tda = "<td class=\"tooltip out\"><a class = \"out\"";
     	}
     	
