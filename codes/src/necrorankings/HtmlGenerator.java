@@ -758,6 +758,7 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198207378484").addInfo("Also known as: Mewtwo");
     	list.get("76561198207378484").addInfo(conduitWinner(38));
     	list.get("76561198207378484").addInfo(worldsfirst("Diamond Score 40k", "https://www.twitch.tv/videos/740002662"));
+    	list.get("76561198207378484").addInfo(worldsfirst("Nocturna Score 40k"));
     	list.get("76561198207378484").addInfo(worldsfirst("Cadence Score 40k", "https://youtu.be/jrrBKN9leOw"));
     	//Oblivion
     	list.get("76561198006220424").addInfo(conduitWinner(4));
