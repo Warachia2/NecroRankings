@@ -1735,7 +1735,7 @@ public class HtmlGenerator extends DefaultHandler{
                 	p.println(exscoreranktag(player, 2, i, scorethreshold(i)));
                 	p.println(exscoreranktag(player, 3, i, (int) (scorethreshold(i)*0.8)));
                 	p.println(exscoreranktag(player, 4, i, (int) (scorethreshold(i)*0.8)));
-                	p.println(ranktag(player.deathless[i], -1, i, "deathless", player.clearcount(i)));
+                	p.println(ranktag(player, -1, i, "deathless", player.clearcount(i)));
                     p.println("</tr>");
                 }
                 
@@ -1770,8 +1770,7 @@ public class HtmlGenerator extends DefaultHandler{
             }
         }
     }
-    
-    
+      
     public static int scorethreshold(int cur){
     	switch(cur){
     	case 0: return 10000;	//Aria
@@ -2239,6 +2238,47 @@ public class HtmlGenerator extends DefaultHandler{
     		tda = "<td class=\"tooltip\"><a ";
     	}
     	else{ //0
+    		tda = "<td class=\"tooltip out\"><a class = \"out\"";
+    	}
+    	
+    	if(rank != 0){
+        	return tda + "href=\"https://warachia2.github.io/NecroRankings/lbs/" + lbsname + ".html\">" 
+    				+ "<span class=\"tooltip-text\">" + tooltip + "</span>" + rankStr(rank) + "</a></td>";	
+    	}
+    	else{
+        	return tda + "<a href=\"https://warachia2.github.io/NecroRankings/lbs/" + lbsname + ".html\">" + "-" + "</a></td>";
+    	}
+
+    }
+    
+    public static String ranktag(Player player, int ord, int cur, String category, String tooltip){
+    	String lbsname = "";
+    	int rank = 0;
+    	if(category == "speed"){
+    		lbsname = curToName(cur) + ordToCategory(ord) + "speedlbs";
+    		rank = player.getRank(ord, cur, "speed");
+    	}
+    	else if(category == "score"){
+    		lbsname = curToName(cur) + ordToCategory(ord) + "scorelbs";
+    		rank = player.getRank(ord, cur, "score");
+    	}
+    	else{
+    		lbsname = curToName(cur) + "deathlesslbs";
+    		rank = player.deathless[cur];
+    	}
+    	
+    	String tda = "";
+    	if(rank == 1){
+    		tda = "<td class=\"wr tooltip\"><a ";
+    	}
+    	else if(2 <= rank){
+    		tda = "<td class=\"tooltip\"><a ";
+    	}
+    	else{ //0
+    		tda = "<td class=\"tooltip out\"><a class = \"out\"";
+    	}
+    	
+    	if(category == "deathless" && cur == 3 && player.clear[3] <= 1000){
     		tda = "<td class=\"tooltip out\"><a class = \"out\"";
     	}
     	
