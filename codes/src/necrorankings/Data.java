@@ -201,7 +201,7 @@ public class Data {
 		case "76561198171801786": return "asinoura";
 		case "76561198141209080": return "frozen";
 		case "76561198065064203": return "BS004";
-		case "76561198095129892": return "French numbers";
+		case "76561198095129892": return "Dix";
 		case "76561198044935308": return "Smokepipe";
 		case "76561198068808833": return "shiratamamochi";
 		case "76561197971134304": return "Prody";

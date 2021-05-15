@@ -686,6 +686,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198071175501").addInfo("Also known as: Crispy Fried Potatoes");
     	//Cyber
     	list.get("76561198194866686").addInfo(conduitWinner(11));
+    	//Dix
+    	list.get("76561198095129892").addInfo("Also known as: French numbers");
     	//DJC
     	list.get("76561197970186393").addInfo("Winner of ConDOR S1");
     	//DLKurosh
@@ -734,6 +736,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198091352147").addInfo(conduitWinner(41));
     	//Katheryn Miles
     	list.get("76561198042911025").addInfo("Saguara");
+    	//King Torture
+    	list.get("76561197989223079").addInfo("Also known as: KT");
     	//Kupioala
     	list.get("76561198079454638").addInfo("Also known as: Zarushi");
     	//levs57
@@ -741,6 +745,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198087840095").addInfo(conduitWinner(42));
     	//lith
     	list.get("76561198849821236").addInfo("Also known as: Amellia");
+    	//LVS
+    	list.get("76561198082463591").addInfo("Also known as: らびしゅ");
     	//marc
     	list.get("76561198075137353").addInfo("Frequently changes his/her Steam name");
     	list.get("76561198075137353").addInfo(youtube("https://www.youtube.com/channel/UCZty0cjqrVKnBGMnuVk9enQ"));
@@ -820,7 +826,7 @@ public class HtmlGenerator extends DefaultHandler{
     	//seanpwolf
     	list.get("76561198052787418").addInfo(conduitWinner(25));
     	//Shinwa
-    	list.get("76561198119774420").addInfo("Also known as: OTOGI_ZRZR");
+    	list.get("76561198119774420").addInfo("Also known as: しんわ, OTOGI_ZRZR");
     	//Shortcake
     	list.get("76561198087367133").addInfo("Also known as: Shortcake Sweets");
     	//Sivcria
@@ -838,6 +844,7 @@ public class HtmlGenerator extends DefaultHandler{
     	//Sponska
     	list.get("76561198097522980").addInfo(conduitWinner(17));
     	//Spooty
+    	list.get("76561198002854407").addInfo("Also known as: Spootaloo");
     	list.get("76561198002854407").addInfo(worldsfirst("Coda Clear"));
     	list.get("76561198002854407").addInfo(worldsfirst("Coda Sub5","https://youtu.be/Y1a6ISxi9BI"));
     	list.get("76561198002854407").addInfo(worldsfirst("Coda Low% Clear","https://youtu.be/aBOEDwNKCUY"));
