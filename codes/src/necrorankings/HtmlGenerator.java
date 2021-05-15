@@ -795,7 +795,8 @@ public class HtmlGenerator extends DefaultHandler{
     	//omnijectivity
     	list.get("76561198293152614").addInfo(conduitWinner(13));
     	//Oracle
-    	list.get("76561199018238169").addInfo("Also known as: Dragran");
+    	list.get("76561199018238169").addInfo("Also known as: Dragran, Gleeokenspiel");
+    	list.get("76561199018238169").addInfo(conduitWinner(48));
     	//Pancelor
     	list.get("76561198034369998").addInfo(linkText("Pancelor's DR Strats Collection", "https://www.youtube.com/playlist?list=PLDeU_mCoStZmaV9e1CYKJrw6DTDxbaUsh"));
     	//ParkerPNG
