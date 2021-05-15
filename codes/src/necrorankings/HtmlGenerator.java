@@ -706,6 +706,8 @@ public class HtmlGenerator extends DefaultHandler{
     	//encryptid
     	list.get("76561198041011456").addInfo("Also known as: Blaire, Maya, ρψ");
     	list.get("76561198041011456").addInfo(worldsfirst("Mary NR Low% Clear","https://www.youtube.com/watch?v=QVgyOGfhBGY"));
+    	//EladDifficult
+    	list.get("76561197968400814").addInfo(linkText("Hosts CoNDOR", "https://www.twitch.tv/eladdifficult"));
     	//Espeon
     	list.get("76561198853968591").addInfo(conduitWinner(43));
     	//FocusingFace
