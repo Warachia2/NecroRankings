@@ -1846,10 +1846,12 @@ public class HtmlGenerator extends DefaultHandler{
     }
     
     public static void densityStart(PrintWriter p){
-    	p.println("<!DOCTYPE HTML><html><head><link rel=\"stylesheet\" href=\"recordchart.css\"><script>");
+    	htmlStart(p, "Top100 Speed Density", "recordchart");
+    	
+    	p.println("<script>");
     	p.println("window.onload = function(){");
     	p.println("var chart = new CanvasJS.Chart(\"chartContainer\", {");
-    	p.println("title: {text: \"Top100 Speed Density\"},");
+    	p.println("title: {},");
     	p.println("axisX: {title: \"Rank\"},");
     	p.println("axisY2: {title: \"Ratio to WR\", minimum: 1.0},");
     	p.println("toolTip: {shared: false,content: \"{name} {x}: {y}\"},");
@@ -1868,8 +1870,7 @@ public class HtmlGenerator extends DefaultHandler{
     	p.println("}");
     	p.println("chart.render();");
     	p.println("}}");
-    	p.println("</script></head>");
-    	p.println("<body>");
+    	p.println("</script>");
     	p.println("<div id=\"chartContainer\" style=\"height: 800px; max-width: 1200px; margin: 0px auto;\"></div>");
     	p.println("<script src=\"https://canvasjs.com/assets/script/canvasjs.min.js\"></script>");
         p.println("<p>" + "Last Updated:" + fdate1 +"</p>");
