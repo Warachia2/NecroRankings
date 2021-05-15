@@ -680,6 +680,8 @@ public class HtmlGenerator extends DefaultHandler{
     	//biggiemac42
     	list.get("76561197998799529").addInfo(conduitWinner(23));
     	list.get("76561197998799529").addInfo("Found gold duping");
+    	//BronxTaco
+    	list.get("76561198018411976").addInfo(linkText("Developer of Awareness","https://github.com/bronxtaco/Awareness"));
     	//Crispy Fried Potatoes
     	list.get("76561198071175501").addInfo("Also known as: Crispy Fried Potatoes");
     	//Cyber
@@ -708,9 +710,13 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561199043981220").addInfo("Also known as: Gaming Pro's Adventure");
     	//Grimmy
     	list.get("76561198052453103").addInfo(conduitWinner(16));
+    	list.get("76561198052453103").addInfo(linkText("Developer of ChoregraphAI", "https://github.com/Grimy/ChoregraphAI"));
     	list.get("76561198052453103").addInfo(worldsfirst("Aria Rando Low% Clear", "https://www.youtube.com/watch?v=2DB1RW6AvVs"));
     	//Hokuho
     	list.get("76561198398758840").addInfo(worldsfirst("13char Low% Clear","https://youtu.be/9ZFyF3VS_nc"));
+    	list.get("76561198398758840").addInfo(worldsfirst("Dorian 30k","https://www.youtube.com/watch?v=iNE3wN0y0L4"));
+    	list.get("76561198398758840").addInfo(worldsfirst("Story 100k"));
+    	list.get("76561198398758840").addInfo(worldsfirst("9char 400k","https://youtu.be/_GI63eOPlEM"));
     	list.get("76561198398758840").addInfo(youtube("https://www.youtube.com/channel/UC4C2RyyKRNWmM9nXqWsY3qQ"));
     	//HummingBee
     	list.get("76561198101480527").addInfo("Also known as: ZgH");
@@ -775,6 +781,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561199018238169").addInfo("Also known as: Dragran");
     	//Pancelor
     	list.get("76561198034369998").addInfo(linkText("Pancelor's DR Strats Collection", "https://www.youtube.com/playlist?list=PLDeU_mCoStZmaV9e1CYKJrw6DTDxbaUsh"));
+    	//ParkerPNG
+    	list.get("76561198080860867").addInfo(linkText("ParkerPNG's Pokemon Mystery Dungeon Modpack", "https://steamcommunity.com/sharedfiles/filedetails/?id=2478132725"));
     	//Pibonacci
     	list.get("76561198031063446").addInfo(worldsfirst("Diamond Sub4"));
     	//Plectro
@@ -835,6 +843,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198002854407").addInfo("Winner of CoNDOR S6/S8/X/X2");
     	list.get("76561198002854407").addInfo(youtube("https://www.youtube.com/channel/UCLCqsFZw6ZglWzKjjQA4koA"));
     	list.get("76561198002854407").addInfo(linkText("Hosts CRoW","http://race.condor.live/"));
+    	//Squega
+    	list.get("76561197987716503").addInfo("Developer of NecroLab");
     	//Supervillain Joe
     	list.get("76561198836504795").addInfo(conduitWinner(26));
     	//Switchaxe
