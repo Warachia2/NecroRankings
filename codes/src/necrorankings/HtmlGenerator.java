@@ -477,12 +477,15 @@ public class HtmlGenerator extends DefaultHandler{
         //Unsubmitted
         list.get("76561198087367133").setTime(2, 27345); //Shortcake Sweets, Bolt Speed, 4:33.45
         list.get("76561197999948240").setGold(11, 30086); //Ancalagor, Nocturna Score 30086
-        list.get("76561198398758840").setGold(0, 26566); //Hokuho, Aria Score 26566
-        Player.scoreWR[0] = Math.max(Player.scoreWR[0], 26566);
         list.get("76561198136201511").setTime(16, 487546); //Ravio, 13char Speed 1:21:15.636
         Player.speedWR[16] = Math.min(Player.speedWR[16], 487564);
         
-        list.get("76561198994219732").setClear(6, 401);
+        list.get("76561198398758840").setGold(0, 26566); //Hokuho, Aria Score 26566
+        Player.scoreWR[0] = Math.max(Player.scoreWR[0], 26566);
+        
+        list.get("76561198994219732").setClear(6, 401); //NBtelethia, Dove Deathless 4-1-2
+        
+        list.get("76561198317639601").setExtraTime(0, 2, 35101); //Monsterracer, Bolt Hard Speed, 5:51.01
         
         list.get("76561198121399825").setExtraGold(0, 1, 116598); //Warachia, Bard Hard Score 116598
         
