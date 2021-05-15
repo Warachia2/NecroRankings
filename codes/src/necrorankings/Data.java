@@ -583,7 +583,7 @@ public class Data {
     	case "76561197994549024": return "doonboggle";
     	case "76561198063604327": return "teriya_kin";
     	case "76561198261801862": return "Batwoman";
-    	case "76561198119774420": return "OTOGI_ZRZR";
+    	case "76561198119774420": return "Shinwa";
     	case "76561198002540852": return "翼竜";
     	case "76561198165653450": return "mithrana";
     	case "76561198120178003": return "Hisuk";
@@ -867,6 +867,15 @@ public class Data {
     	case "76561198090143615": return "Heskey";
     	case "76561198018411976": return "BronxTaco";
     	case "76561198128730998": return "siotouto";
+    	case "76561198343481226": return "mattgikarp";
+    	case "76561198076660717": return "DorachanS-piyo";
+    	case "76561198119825155": return "Symera";
+    	case "76561198150761378": return "medvezhonok";
+    	case "76561198315060763": return "ryodu";
+    	case "76561198125735337": return "moiLi";
+    	case "76561197986279893": return "Mazzy";
+    	case "76561198036104673": return "Kapejek";
+    	case "76561198093992173": return "torikae";
     	default: return "ID:" + steamid;
 		}
 	}

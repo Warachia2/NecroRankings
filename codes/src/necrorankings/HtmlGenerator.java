@@ -819,6 +819,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198272994316").addInfo("Also known as: scc127");
     	//seanpwolf
     	list.get("76561198052787418").addInfo(conduitWinner(25));
+    	//Shinwa
+    	list.get("76561198119774420").addInfo("Also known as: OTOGI_ZRZR");
     	//Shortcake
     	list.get("76561198087367133").addInfo("Also known as: Shortcake Sweets");
     	//Sivcria
