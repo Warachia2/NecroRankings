@@ -689,6 +689,7 @@ public class HtmlGenerator extends DefaultHandler{
     	//DJC
     	list.get("76561197970186393").addInfo("Winner of ConDOR S1");
     	//DLKurosh
+    	list.get("76561198072087224").addInfo(worldsfirst("Coda Extra Completion"));
     	list.get("76561198072087224").addInfo(youtube("https://www.youtube.com/channel/UCQqf8wGcxNz1NuLSAZQskyg"));
     	//DNH
     	list.get("76561198096014598").addInfo("Also known as: definitely not HIM");
@@ -766,6 +767,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561197996690770").addInfo("Winner of CoNDOR S4");
     	//Nick
     	list.get("76561198049600266").addInfo(worldsfirst("Aria NR Low% Clear", "https://www.youtube.com/watch?v=-5SXUFxYruY"));
+    	//nomkey
+    	list.get("76561198045736705").addInfo(worldsfirst("Coda Deathless 10 Wins","https://www.twitch.tv/videos/569516365"));
     	//Ocre
     	list.get("76561198207378484").addInfo("Also known as: Mewtwo");
     	list.get("76561198207378484").addInfo(conduitWinner(38));
@@ -828,6 +831,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198047144954").addInfo(conduitWinner(34));
     	//Smokepipe
     	list.get("76561198044935308").addInfo("Also known as: The Kataclysmic Kollision Krab, the prince of pickles");
+    	//super bae
+    	list.get("76561198076831862").addInfo("Also known as: badmetaphors");
     	//Sponska
     	list.get("76561198097522980").addInfo(conduitWinner(17));
     	//Spooty
