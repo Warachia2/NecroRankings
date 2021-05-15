@@ -846,7 +846,7 @@ public class Data {
     	case "76561198025390473": return "RemindMeToCheck";
     	case "76561197970283814": return "Carjack";
     	case "76561198051441940": return "pether nortal";
-    	case "76561198048082238": return "Sphinx Morio";
+    	case "76561198048082238": return "Gekke";
     	case "76561198155136197": return "Magus Ascendant";
     	case "76561198104129432": return "Dayz";
     	case "76561198351479567": return "효르앙";

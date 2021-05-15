@@ -713,6 +713,8 @@ public class HtmlGenerator extends DefaultHandler{
     	//Frosty Mentos
     	list.get("76561198168248850").addInfo("Also known as: MantasMBL");
     	list.get("76561198168248850").addInfo(conduitWinner(27));
+    	//Gekke
+    	list.get("76561198048082238").addInfo("Also known as: Sphinx Morio");
     	//GPA
     	list.get("76561199043981220").addInfo("Also known as: Gaming Pro's Adventure");
     	//Grimmy
