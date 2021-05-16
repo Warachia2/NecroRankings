@@ -723,6 +723,7 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198052453103").addInfo(conduitWinner(16));
     	list.get("76561198052453103").addInfo(linkText("Developer of ChoregraphAI", "https://github.com/Grimy/ChoregraphAI"));
     	list.get("76561198052453103").addInfo(worldsfirst("Aria Rando Low% Clear", "https://www.youtube.com/watch?v=2DB1RW6AvVs"));
+    	list.get("76561198052453103").addInfo(worldsfirst("Aria Hard Low% Clear", "https://youtu.be/5WkQI_ut2tY"));
     	//Hokuho
     	list.get("76561198398758840").addInfo(worldsfirst("13char Low% Clear","https://youtu.be/9ZFyF3VS_nc"));
     	list.get("76561198398758840").addInfo(worldsfirst("Dorian 30k","https://www.youtube.com/watch?v=iNE3wN0y0L4"));
@@ -803,6 +804,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198080860867").addInfo(linkText("ParkerPNG's Pokemon Mystery Dungeon Modpack", "https://steamcommunity.com/sharedfiles/filedetails/?id=2478132725"));
     	//Pibonacci
     	list.get("76561198031063446").addInfo(worldsfirst("Diamond Sub4"));
+    	//Plasmatize
+    	list.get("76561198323795107").addInfo(worldsfirst("Mary Hard Low% Clear","https://youtu.be/6X29Kkhck9Y"));
     	//Plectro
     	list.get("76561198044207658").addInfo(conduitWinner(32));
     	list.get("76561198044207658").addInfo(linkText("Plectro's Tactics Videos", "https://www.youtube.com/playlist?list=PLHBvPtZEl_bkixIflKS3M-w8RXWSPR3es"));
