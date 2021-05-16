@@ -13,6 +13,10 @@
   }
 }
 
+.frame{
+  background: #333;
+}
+
 .wr{
   font-weight: bold
 }

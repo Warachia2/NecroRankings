@@ -1738,12 +1738,12 @@ public class HtmlGenerator extends DefaultHandler{
                 for(int i=0;i<17;i++){
                     p.println("<tr>");
                 	//p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + "speedlbs.html\"><img src=\"icons/" + i + ".jpg\">" + "</a></td>");
-                    p.println("<td><img src=\"icons/" + i + ".jpg\">" + "</td>");
+                    p.println("<td class=\"frame\"><img src=\"icons/" + i + ".jpg\">" + "</td>");
                     p.println("<td>" + curToName(i) + "</td>");
                 	p.println(speedpbtag(player, i));
                 	p.println(ranktag(player.speed[i], i, "speed"));
                 	//p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + "scorelbs.html\"><img src=\"icons/" + i + ".jpg\">" + "</a></td>");
-                    p.println("<td><img src=\"icons/" + i + ".jpg\">" + "</td>");
+                    p.println("<td class=\"frame\"><img src=\"icons/" + i + ".jpg\">" + "</td>");
                 	p.println(scorepbtag(player, i, scorethreshold(i)));
                 	p.println(scoreranktag(player, i, scorethreshold(i)));
                     p.println("</tr>");
@@ -1773,14 +1773,14 @@ public class HtmlGenerator extends DefaultHandler{
                 
                 for(int i=0;i<14;i++){
                     p.println("<tr>");
-                	p.println("<td>" + "<img src=\"icons/" + i + ".jpg\">" + "</td>");
+                	p.println("<td class=\"frame\">" + "<img src=\"icons/" + i + ".jpg\">" + "</td>");
                 	p.println("<td>" + curToName(i) + "</td>");
                 	p.println(ranktag(player.hardspeed[i], 0, i, "speed", Player.csecToString(player.extratime[0][i])));
                 	p.println(ranktag(player.nrspeed[i], 1, i, "speed", Player.csecToString(player.extratime[1][i])));
                 	p.println(ranktag(player.randospeed[i], 2, i, "speed", Player.csecToString(player.extratime[2][i])));
                 	p.println(ranktag(player.phasingspeed[i], 3, i, "speed", Player.csecToString(player.extratime[3][i])));
                 	p.println(ranktag(player.mysteryspeed[i], 4, i, "speed", Player.csecToString(player.extratime[4][i])));
-                	p.println("<td>" + "<img src=\"icons/" + i + ".jpg\">" + "</td>");
+                	p.println("<td class=\"frame\">" + "<img src=\"icons/" + i + ".jpg\">" + "</td>");
                 	p.println(exscoreranktag(player, 0, i, scorethreshold(i)));
                 	p.println(exscoreranktag(player, 1, i, (int) (scorethreshold(i)*0.8)));
                 	p.println(exscoreranktag(player, 2, i, scorethreshold(i)));
