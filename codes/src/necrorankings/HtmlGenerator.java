@@ -710,6 +710,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561197968400814").addInfo(linkText("Hosts CoNDOR", "https://www.twitch.tv/eladdifficult"));
     	//Espeon
     	list.get("76561198853968591").addInfo(conduitWinner(43));
+    	//flamehaze
+    	list.get("76561198093336562").addInfo(worldsfirst("Tempo Score 30k"));
     	//FocusingFace
     	list.get("76561198236991654").addInfo("Also known as: ShinobiHende");
     	//Frosty Mentos
