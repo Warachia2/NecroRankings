@@ -824,6 +824,7 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198136201511").addInfo(conduitWinner(18));
     	//RoyalGoof
     	list.get("76561198118733148").addInfo(conduitWinner(12));
+    	list.get("76561198118733148").addInfo(worldsfirst("Bard Sub3"));
     	list.get("76561198118733148").addInfo(worldsfirst("Bolt Sub3", "https://youtu.be/wSIIwp_SynU"));
     	//RPGG
     	list.get("76561198247123198").addInfo(conduitWinner(35));
@@ -859,6 +860,7 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198002854407").addInfo("Also known as: Spootaloo");
     	list.get("76561198002854407").addInfo(worldsfirst("Coda Clear"));
     	list.get("76561198002854407").addInfo(worldsfirst("Coda Sub5","https://youtu.be/Y1a6ISxi9BI"));
+    	list.get("76561198002854407").addInfo(worldsfirst("Coda Score 10k"));
     	list.get("76561198002854407").addInfo(worldsfirst("Coda Low% Clear","https://youtu.be/aBOEDwNKCUY"));
     	list.get("76561198002854407").addInfo(worldsfirst("Coda Low% Sub10","https://youtu.be/FTacfI6ikxM"));
     	list.get("76561198002854407").addInfo(worldsfirst("Coda Mystery Clear","https://youtu.be/8aQ473WFiRs"));
