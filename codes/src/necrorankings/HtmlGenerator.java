@@ -1782,10 +1782,10 @@ public class HtmlGenerator extends DefaultHandler{
                 	p.println(ranktag(player.mysteryspeed[i], 4, i, "speed", Player.csecToString(player.extratime[4][i])));
                 	p.println("<td>" + "<img src=\"icons/" + i + ".jpg\">" + "</td>");
                 	p.println(exscoreranktag(player, 0, i, scorethreshold(i)));
-                	p.println(exscoreranktag(player, 1, i, (int) (scorethreshold(i)*0.7)));
+                	p.println(exscoreranktag(player, 1, i, (int) (scorethreshold(i)*0.8)));
                 	p.println(exscoreranktag(player, 2, i, scorethreshold(i)));
-                	p.println(exscoreranktag(player, 3, i, (int) (scorethreshold(i)*0.7)));
-                	p.println(exscoreranktag(player, 4, i, (int) (scorethreshold(i)*0.7)));
+                	p.println(exscoreranktag(player, 3, i, (int) (scorethreshold(i)*0.8)));
+                	p.println(exscoreranktag(player, 4, i, (int) (scorethreshold(i)*0.8)));
                 	p.println(ranktag(player, -1, i, "deathless", player.clearcount(i)));
                     p.println("</tr>");
                 }
@@ -2414,7 +2414,7 @@ public class HtmlGenerator extends DefaultHandler{
     	if(rank == 1){
     		tda = "<td class=\"wr tooltip\"><a ";
     	}
-    	else if(2 <= rank && gold >= threshold){
+    	else if(2 <= rank && (gold >= threshold || rank <= 10)){
     		tda = "<td class=\"tooltip\"><a ";
     	}
     	else{ //worse than threshold
