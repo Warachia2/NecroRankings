@@ -49,6 +49,7 @@ public class HtmlGenerator extends DefaultHandler{
         list.put("76561198115768228", Player.mizmy());
         list.put("76561198846415602", Player.Priw8());
         list.put("76561199043981220", Player.GPA());
+        list.put("oriane", Player.oriane());
         
         System.out.println("Getting Regular Entries...");
         

@@ -442,6 +442,19 @@ public class Player {
     	return p;
     }
     
+    //Unsubmitted Players
+    
+    public static Player oriane(){ //https://oriane.ink/critique/oeuvre/crypt-of-the-necrodancer
+    	Player p = new Player("oriane");
+    	p.setTime(0, 59357); //Aria 9:53.57
+    	p.setTime(3, 55877); //Cadence 9:18.77
+    	p.setTime(5, 31696); //Dorian 5:16.96
+    	p.setTime(6, 26197); //Dove 4:21.97
+    	p.setTime(8, 46406); //Mary 7:44.06
+    	p.setTime(9, 38183); //Melody 6:21.83
+    	return p;
+    }
+    
     ///Extra Players
     public static Player LowMonster(){
     	Player p = new Player("Low% Monster");
