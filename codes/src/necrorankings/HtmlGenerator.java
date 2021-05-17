@@ -802,6 +802,8 @@ public class HtmlGenerator extends DefaultHandler{
     	//Oracle
     	list.get("76561199018238169").addInfo("Also known as: Dragran, Gleeokenspiel");
     	list.get("76561199018238169").addInfo(conduitWinner(48));
+    	//oriane
+    	list.get("oriane").addInfo(linkText("oriane's PBs","https://oriane.ink/critique/oeuvre/crypt-of-the-necrodancer"));
     	//Pancelor
     	list.get("76561198034369998").addInfo(linkText("Pancelor's DR Strats Collection", "https://www.youtube.com/playlist?list=PLDeU_mCoStZmaV9e1CYKJrw6DTDxbaUsh"));
     	//ParkerPNG
