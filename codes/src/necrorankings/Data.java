@@ -223,7 +223,7 @@ public class Data {
 		case "76561198136926537": return "Pillar Monkey";
 		case "76561198160729694": return "tubistsumi";
 		case "76561198216116108": return "K_APPLE";
-		case "76561198456260566": return "._.";
+		case "76561198456260566": return "meyes";
 		case "76561198171820914": return "iFood";
 		case "76561198140699619": return "cavalca";
 		case "76561198004612980": return "CANCEL";
@@ -859,7 +859,7 @@ public class Data {
     	case "76561198165641882": return "propfeds";
     	case "76561197988962917": return "BOT Zin";
     	case "76561198071175501": return "CFP";
-    	case "76561198108165418": return ". .";
+    	case "76561198108165418": return "Period Period";
     	case "76561198001433805": return "Omnomasaur";
     	case "76561198191906933": return "wcdawtda";
     	case "76561198205107160": return "AtLeastItsAdam";

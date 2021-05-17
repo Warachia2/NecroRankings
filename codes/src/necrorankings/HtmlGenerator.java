@@ -767,6 +767,8 @@ public class HtmlGenerator extends DefaultHandler{
     	//Marukyu
     	list.get("76561198034177100").addInfo("Winner of CoNDOR S3");
     	list.get("76561198034177100").addInfo(linkText("Developer of Synchrony", "https://necro.marukyu.de/"));
+    	//meyes
+    	list.get("76561198456260566").addInfo("Also known as: ._.");
     	//Minhs2
     	list.get("76561198040828497").addInfo(conduitWinner(37));
     	//Mizmy
@@ -808,6 +810,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198034369998").addInfo(linkText("Pancelor's DR Strats Collection", "https://www.youtube.com/playlist?list=PLDeU_mCoStZmaV9e1CYKJrw6DTDxbaUsh"));
     	//ParkerPNG
     	list.get("76561198080860867").addInfo(linkText("ParkerPNG's Pokemon Mystery Dungeon Modpack", "https://steamcommunity.com/sharedfiles/filedetails/?id=2478132725"));
+    	//Period Period
+    	list.get("76561198108165418").addInfo("Also known as: . .");
     	//Pibonacci
     	list.get("76561198031063446").addInfo(worldsfirst("Diamond Sub4"));
     	//Plasmatize
