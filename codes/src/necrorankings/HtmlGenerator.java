@@ -1951,7 +1951,12 @@ public class HtmlGenerator extends DefaultHandler{
             	for(int i=0;i<17;i++){
             		for(Player player: array){
             			if(player.getRank(-1 , i, Category) == r){
-            				printPlayerLinkedIcon(p, player);
+            				if(Category == "Speed"){
+                				printPlayerLinkedIcon(p, player, Player.csecToString(player.time[i]));
+            				}
+            				else{
+                				printPlayerLinkedIcon(p, player, String.valueOf(player.gold[i]));
+            				}
                 			break;	
             			}
             		}
@@ -1992,7 +1997,7 @@ public class HtmlGenerator extends DefaultHandler{
             	for(int i=0;i<14;i++){
             		for(Player player: array){
             			if(player.hasWR(h, i, "speed")){
-            				printPlayerLinkedIcon(p, player);
+            				printPlayerLinkedIcon(p, player, Player.csecToString(player.extratime[h][i]));
                 			break;	
             			}
             		}
@@ -2017,7 +2022,7 @@ public class HtmlGenerator extends DefaultHandler{
             	for(int i=0;i<14;i++){
             		for(Player player: array){
             			if(player.hasWR(h, i, "score")){
-            				printPlayerLinkedIcon(p, player);
+            				printPlayerLinkedIcon(p, player, String.valueOf(player.extragold[h][i]));
                 			break;	
             			}
             		}
@@ -2029,7 +2034,7 @@ public class HtmlGenerator extends DefaultHandler{
             for(int i=0;i<14;i++){
         		for(Player player: array){
         			if(player.hasWR(-1, i, "deathless")){
-        				printPlayerLinkedIcon(p, player);
+        				printPlayerLinkedIcon(p, player, player.clearcount(i));
             			break;	
         			}
         		}
@@ -2044,6 +2049,14 @@ public class HtmlGenerator extends DefaultHandler{
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
+    
+    public static void printPlayerLinkedIcon(PrintWriter p, Player player){
+    	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/"+ player.name() + ".html\"><img src=\"players/" + player.name() + ".jpg\"></a></td>");
+    }
+    
+    public static void printPlayerLinkedIcon(PrintWriter p, Player player, String tooltip){
+    	p.println("<td class=\"tooltip\"><a href=\"https://warachia2.github.io/NecroRankings/pbs/"+ player.name() + ".html\"><span class=\"tooltip-text\">" + tooltip + "</span><img src=\"players/" + player.name() + ".jpg\"></a></td>");
     }
         
     public static void playerListMaker(){
@@ -2091,10 +2104,6 @@ public class HtmlGenerator extends DefaultHandler{
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-    }
-
-    public static void printPlayerLinkedIcon(PrintWriter p, Player player){
-    	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/"+ player.name() + ".html\"><img src=\"players/" + player.name() + ".jpg\"></a></td>");
     }
     
     public static void htmlStart(PrintWriter p, String title, String css){
