@@ -1939,7 +1939,7 @@ public class HtmlGenerator extends DefaultHandler{
             
             p.println("<table border=\"5\">");
             p.println("<tr>");
-            p.println("<th class=\"frame\">Rank</th>");
+            p.println("<th class=\"frame\">"+ Category +"</th>");
             for(int i=0;i<17;i++){
             	p.println("<th class=\"frame\"><img src=\"icons/" + i + ".jpg\"></th>");
             }
@@ -1971,7 +1971,7 @@ public class HtmlGenerator extends DefaultHandler{
                 p.println("<h1 class=\"center\">" + "Page 2" +"</h1>");
                 p.println("<table border=\"5\">");
                 p.println("<tr>");
-                p.println("<th class=\"frame\">Rank</th>");
+                p.println("<th class=\"frame\">"+ Category +"</th>");
                 for(int i=0;i<17;i++){
                 	p.println("<th class=\"frame\"><img src=\"icons/" + i + ".jpg\"></th>");
                 }
