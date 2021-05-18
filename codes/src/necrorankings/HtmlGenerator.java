@@ -511,10 +511,10 @@ public class HtmlGenerator extends DefaultHandler{
         playerListMaker();
         pblistMaker();
         System.out.println("Making Charts...");
-        densityMaker();
         top10ChartMaker("Speed");
         top10ChartMaker("Score");
         extraChartMaker();
+        densityMaker();
         
         System.out.println("Done");
     }
@@ -1965,6 +1965,40 @@ public class HtmlGenerator extends DefaultHandler{
             }
             
             p.println("</table>");
+            
+            //Page 2
+            if(Category == "Speed"){
+                p.println("<h1 class=\"center\">" + "Page 2" +"</h1>");
+                p.println("<table border=\"5\">");
+                p.println("<tr>");
+                p.println("<th class=\"frame\">Rank</th>");
+                for(int i=0;i<17;i++){
+                	p.println("<th class=\"frame\"><img src=\"icons/" + i + ".jpg\"></th>");
+                }
+                p.println("</tr>");
+
+                for(int r=11;r<21;r++){
+                    p.println("<tr>");
+                    p.println("<th class=\"frame\">" + rankStr(r) + "</th>");
+                	for(int i=0;i<17;i++){
+                		for(Player player: array){
+                			if(player.getRank(-1 , i, Category) == r){
+                				if(Category == "Speed"){
+                    				printPlayerLinkedIcon(p, player, Player.csecToString(player.time[i]));
+                				}
+                				else{
+                    				printPlayerLinkedIcon(p, player, String.valueOf(player.gold[i]));
+                				}
+                    			break;	
+                			}
+                		}
+                	}
+                	p.println("</tr>");
+                }
+                
+                p.println("</table>");
+            }
+            
             p.println("<p>" + "Last Updated:" + fdate1 +"</p>");
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>"); 
             p.println("</body></html>");
@@ -1985,7 +2019,7 @@ public class HtmlGenerator extends DefaultHandler{
             ///Extra Speed
             p.println("<table border=\"5\">");
             p.println("<tr>");
-            p.println("<th class=\"frame\">Category</th>");
+            p.println("<th class=\"frame\">WRs</th>");
             for(int i=0;i<14;i++){
             	p.println("<th class=\"frame\"><img src=\"icons/" + i + ".jpg\"></th>");
             }
@@ -2010,7 +2044,7 @@ public class HtmlGenerator extends DefaultHandler{
             ///Extra Score & Deathless
             p.println("<table border=\"5\">");
             p.println("<tr>");
-            p.println("<th class=\"frame\">Category</th>");
+            p.println("<th class=\"frame\">WRs</th>");
             for(int i=0;i<14;i++){
             	p.println("<th class=\"frame\"><img src=\"icons/" + i + ".jpg\"></th>");
             }
