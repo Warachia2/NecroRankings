@@ -1954,10 +1954,10 @@ public class HtmlGenerator extends DefaultHandler{
             		for(Player player: array){
             			if(player.getRank(-1 , i, Category) == r){
             				if(Category == "Speed"){
-                				printPlayerLinkedIcon(p, player, Player.csecToString(player.time[i]));
+                				printPlayerLinkedIcon(p, player, player.name() + ", " + Player.csecToString(player.time[i]));
             				}
             				else{
-                				printPlayerLinkedIcon(p, player, String.valueOf(player.gold[i]));
+                				printPlayerLinkedIcon(p, player, player.name() + ", " + String.valueOf(player.gold[i]));
             				}
                 			break;	
             			}
@@ -1986,10 +1986,10 @@ public class HtmlGenerator extends DefaultHandler{
                 		for(Player player: array){
                 			if(player.getRank(-1 , i, Category) == r){
                 				if(Category == "Speed"){
-                    				printPlayerLinkedIcon(p, player, Player.csecToString(player.time[i]));
+                    				printPlayerLinkedIcon(p, player, player.name() + ", " + Player.csecToString(player.time[i]));
                 				}
                 				else{
-                    				printPlayerLinkedIcon(p, player, String.valueOf(player.gold[i]));
+                    				printPlayerLinkedIcon(p, player, player.name() + ", " + String.valueOf(player.gold[i]));
                 				}
                     			break;	
                 			}
@@ -2033,7 +2033,7 @@ public class HtmlGenerator extends DefaultHandler{
             	for(int i=0;i<14;i++){
             		for(Player player: array){
             			if(player.hasWR(h, i, "speed")){
-            				printPlayerLinkedIcon(p, player, Player.csecToString(player.extratime[h][i]));
+            				printPlayerLinkedIcon(p, player, player.name() + ", " + Player.csecToString(player.extratime[h][i]));
                 			break;	
             			}
             		}
@@ -2058,7 +2058,7 @@ public class HtmlGenerator extends DefaultHandler{
             	for(int i=0;i<14;i++){
             		for(Player player: array){
             			if(player.hasWR(h, i, "score")){
-            				printPlayerLinkedIcon(p, player, String.valueOf(player.extragold[h][i]));
+            				printPlayerLinkedIcon(p, player, player.name() + ", " + String.valueOf(player.extragold[h][i]));
                 			break;	
             			}
             		}
@@ -2070,7 +2070,7 @@ public class HtmlGenerator extends DefaultHandler{
             for(int i=0;i<14;i++){
         		for(Player player: array){
         			if(player.hasWR(-1, i, "deathless")){
-        				printPlayerLinkedIcon(p, player, player.clearcount(i));
+        				printPlayerLinkedIcon(p, player, player.name() + ", " + player.clearcount(i));
             			break;	
         			}
         		}
@@ -2096,7 +2096,7 @@ public class HtmlGenerator extends DefaultHandler{
             	for(int i=0;i<14;i++){
             		for(Player player: array){
             			if(player.getRank(h, i, "speed")==2){
-            				printPlayerLinkedIcon(p, player, Player.csecToString(player.extratime[h][i]));
+            				printPlayerLinkedIcon(p, player, player.name() + ", " + Player.csecToString(player.extratime[h][i]));
                 			break;	
             			}
             		}
@@ -2120,7 +2120,7 @@ public class HtmlGenerator extends DefaultHandler{
             	for(int i=0;i<14;i++){
             		for(Player player: array){
             			if(player.getRank(h, i, "score")==2){
-            				printPlayerLinkedIcon(p, player, String.valueOf(player.extragold[h][i]));
+            				printPlayerLinkedIcon(p, player, player.name() + ", " + String.valueOf(player.extragold[h][i]));
                 			break;	
             			}
             		}
@@ -2132,7 +2132,7 @@ public class HtmlGenerator extends DefaultHandler{
             for(int i=0;i<14;i++){
         		for(Player player: array){
         			if(player.getRank(-1, i, "deathless")==2){
-        				printPlayerLinkedIcon(p, player, player.clearcount(i));
+        				printPlayerLinkedIcon(p, player, player.name() + ", " + player.clearcount(i));
             			break;	
         			}
         		}
