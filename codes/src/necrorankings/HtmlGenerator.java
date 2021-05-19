@@ -790,7 +790,7 @@ public class HtmlGenerator extends DefaultHandler{
     	//nomkey
     	list.get("76561198045736705").addInfo(worldsfirst("Coda Deathless 10 Wins","https://www.twitch.tv/videos/569516365"));
     	//Ocre
-    	list.get("76561198207378484").addInfo("Also known as: Mewtwo");
+    	list.get("76561198207378484").addInfo("Also known as: Mewtoes");
     	list.get("76561198207378484").addInfo(conduitWinner(38));
     	list.get("76561198207378484").addInfo(worldsfirst("Bard Score 300k"));
     	list.get("76561198207378484").addInfo(worldsfirst("Diamond Score 40k", "https://www.twitch.tv/videos/740002662"));
