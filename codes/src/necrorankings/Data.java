@@ -84,6 +84,7 @@ public class Data {
     	case "76561198057165659": return true; //natecougar (?)
     	case "76561198022001573": return true; //Bzerk- (?)
     	case "76561198347833837": return true; //骚的夹不住
+    	case "76561198008667877": return true; //Rulewar //Dove Score 2048, replay looked cheated
     	//totally not sure
     	case "76561198040993726": return true; //Big E (someone's another account?)
     	case "76561198025192029": return true; //Chewy
@@ -880,6 +881,8 @@ public class Data {
     	case "76561198105718205": return "WinnerBit";
     	case "76561198018757876": return "Maratz";
     	case "76561199137860827": return "olgamichalowsk";
+    	case "76561198063289187": return "Penchan";
+    	case "76561198175432278": return "yuuchan";
     	default: return "ID:" + steamid;
 		}
 	}
