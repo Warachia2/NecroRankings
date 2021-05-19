@@ -2075,6 +2075,69 @@ public class HtmlGenerator extends DefaultHandler{
             }
             p.println("</tr>");
             p.println("</table>");
+            
+            //2nd
+            
+            p.println("<h1 class=\"center\">" + "Extra 2nd Places" +"</h1>");
+            
+            p.println("<table border=\"5\">");
+            p.println("<tr>");
+            p.println("<th class=\"frame\">2nd Places</th>");
+            for(int i=0;i<14;i++){
+            	p.println("<th class=\"frame\"><img src=\"icons/" + i + ".jpg\"></th>");
+            }
+            p.println("</tr>");
+            
+            for(int h=0;h<5;h++){
+                p.println("<tr>");
+                p.println("<th class=\"frame\">" + ordToCategory(h) + " Speed" + "</th>");
+            	for(int i=0;i<14;i++){
+            		for(Player player: array){
+            			if(player.getRank(h, i, "speed")==2){
+            				printPlayerLinkedIcon(p, player, Player.csecToString(player.extratime[h][i]));
+                			break;	
+            			}
+            		}
+            	}
+            	p.println("</tr>");
+            }
+            p.println("</table>");
+            p.println("<p></p>");
+            
+            p.println("<table border=\"5\">");
+            p.println("<tr>");
+            p.println("<th class=\"frame\">2nd Places</th>");
+            for(int i=0;i<14;i++){
+            	p.println("<th class=\"frame\"><img src=\"icons/" + i + ".jpg\"></th>");
+            }
+            p.println("</tr>");
+            
+            for(int h=0;h<5;h++){
+                p.println("<tr>");
+                p.println("<th class=\"frame\">" + ordToCategory(h) + " Score" + "</th>");
+            	for(int i=0;i<14;i++){
+            		for(Player player: array){
+            			if(player.getRank(h, i, "score")==2){
+            				printPlayerLinkedIcon(p, player, String.valueOf(player.extragold[h][i]));
+                			break;	
+            			}
+            		}
+            	}
+            	p.println("</tr>");
+            }
+            p.println("<tr>");
+            p.println("<th class=\"frame\">" + "Deathless" + "</th>");
+            for(int i=0;i<14;i++){
+        		for(Player player: array){
+        			if(player.getRank(-1, i, "deathless")==2){
+        				printPlayerLinkedIcon(p, player, player.clearcount(i));
+            			break;	
+        			}
+        		}
+            }
+            p.println("</tr>");
+            p.println("</table>");
+            
             p.println("<p>" + "Last Updated:" + fdate1 +"</p>");
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>"); 
             p.println("</body></html>");
