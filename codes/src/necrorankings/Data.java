@@ -85,6 +85,7 @@ public class Data {
     	case "76561198022001573": return true; //Bzerk- (?)
     	case "76561198347833837": return true; //骚的夹不住
     	case "76561198008667877": return true; //Rulewar //Dove Score 2048, replay looked cheated
+    	case "76561198809875102": return true; //TheCrusedKiwi //got Aria 9:08 with total 4.6hour playtime, replay looks cheated
     	//totally not sure
     	case "76561198040993726": return true; //Big E (someone's another account?)
     	case "76561198025192029": return true; //Chewy

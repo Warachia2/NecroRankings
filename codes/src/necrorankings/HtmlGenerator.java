@@ -687,6 +687,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561197998799529").addInfo("Found gold duping");
     	//BronxTaco
     	list.get("76561198018411976").addInfo(linkText("Developer of Awareness","https://github.com/bronxtaco/Awareness"));
+    	//Captpiplup
+    	list.get("76561198329442425").addInfo("Also known as: EricDaWolf, RealDASlup");
     	//Crispy Fried Potatoes
     	list.get("76561198071175501").addInfo("Also known as: Crispy Fried Potatoes");
     	//Cyber
