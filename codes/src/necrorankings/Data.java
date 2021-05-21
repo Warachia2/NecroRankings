@@ -110,6 +110,7 @@ public class Data {
 		case "76561198115768228": return "Mizmy";
     	case "76561198846415602": return "Priw8";
     	case "76561199043981220": return "GPA";
+		case "Miles": return "Miles";
 		case "oriane": return "oriane";
 		case "76561198317639601": return "Monsterracer";
 		case "76561197993247154": return "Abu Yazan";

@@ -442,7 +442,15 @@ public class Player {
     	return p;
     }
     
-    //Unsubmitted Players
+    ///PSN Players
+    
+    public static Player Miles(){
+    	Player p = new Player("Miles");
+    	p.setExtraTime(3, 13, 63049);
+    	return p;
+    }
+    
+    ///Unsubmitted Players
     
     public static Player oriane(){ //https://oriane.ink/critique/oeuvre/crypt-of-the-necrodancer
     	Player p = new Player("oriane");
