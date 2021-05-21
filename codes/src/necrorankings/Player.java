@@ -447,6 +447,7 @@ public class Player {
     public static Player Miles(){
     	Player p = new Player("Miles");
     	p.setExtraTime(3, 13, 63049);
+    	p.setExtraGold(3, 13, 3331);
     	return p;
     }
     
