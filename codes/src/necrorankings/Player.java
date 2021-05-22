@@ -453,7 +453,7 @@ public class Player {
     	Player p = new Player("oriane");
     	p.setTime(0, 59357); //Aria 9:53.57
     	p.setTime(3, 55877); //Cadence 9:18.77
-    	p.setTime(5, 29878); //Dorian 4:58.78
+    	p.setTime(5, 28101); //Dorian 4:41.01
     	p.setTime(6, 26197); //Dove 4:21.97
     	p.setTime(8, 46406); //Mary 7:44.06
     	p.setTime(9, 38183); //Melody 6:21.83
