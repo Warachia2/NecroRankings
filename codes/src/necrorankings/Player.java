@@ -365,27 +365,23 @@ public class Player {
 	///Switch Players
     public static Player mizmy(){
     	Player p = new Player("76561198115768228");
-    	p.setTime(0, 41335); //Aria
-    	p.setTime(1, 20398); //Bard
-    	p.setTime(2, 22661); //Bolt
-    	p.setTime(3, 35301); //Cadence
-    	p.setTime(4, 28065); //Diamond
-    	p.setTime(5, 23521); //Dorian
-    	p.setTime(6, 17695); //Dove
-    	p.setTime(7, 30632); //Eli
-    	p.setTime(8, 31607); //Mary
-    	p.setTime(9, 32665); //Melody
-    	p.setTime(10, 41264); //Monk
-    	p.setTime(11, 40680); //Nocturna
-    	p.setTime(12, 26472); //Tempo
-    	p.setTime(13, 71917); //Coda
-    	p.setTime(14, 182225); //Story
+    	p.setTime(0, 41335); //Aria 6:53.35
+    	p.setTime(3, 35301); //Cadence 5:53.01
+    	p.setTime(5, 23521); //Dorian 3:55.21
+    	p.setTime(7, 30632); //Eli 5:06.32
+    	p.setTime(8, 31607); //Mary 5:16.07
+    	p.setTime(9, 32665); //Melody 5:26.65
+    	p.setTime(10, 41264); //Monk 6:52.64
+    	p.setTime(11, 40680); //Nocturna 6:46.80
+    	p.setTime(12, 26472); //Tempo 4:24.72
+    	p.setTime(13, 71917); //Coda 11:18.57
+    	p.setTime(14, 182225); //Story 30:22.25
     	
-    	p.setGold(0, 15742); //Aria
-    	p.setGold(1, 140691); //Bard
-    	p.setGold(2, 19359); //Bolt
-    	p.setGold(6, 4258); //Dove
-    	p.setGold(16, 264346); //13char
+    	p.setGold(0, 15742); //Aria 15742
+    	p.setGold(1, 140691); //Bard 140691
+    	p.setGold(2, 19359); //Bolt 19359
+    	p.setGold(6, 4258); //Dove 4258
+    	p.setGold(16, 264346); //13char 264346
     	
     	p.setExtraTime(0, 0, 99642); //Aria Hard 16:36
     	p.setExtraTime(2, 0, 94525); //Aria Rando 15:45
