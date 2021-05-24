@@ -751,6 +751,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198091352147").addInfo(conduitWinner(41));
     	//Katheryn Miles
     	list.get("76561198042911025").addInfo("Saguara");
+    	//KayOh
+    	list.get("76561198210364576").addInfo("Also known as: Krex");
     	//King Torture
     	list.get("76561197989223079").addInfo("Also known as: KT");
     	//Kupioala

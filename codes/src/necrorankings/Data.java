@@ -786,7 +786,7 @@ public class Data {
     	case "76561198085840270": return "miss";
     	case "76561198113991193": return "Dragonsage";
     	case "76561198111812454": return "Timmu";
-    	case "76561198210364576": return "Krex";
+    	case "76561198210364576": return "KayOh";
     	case "76561198169426323": return "Jelly Donut";
     	case "76561198041651094": return "zashes";
     	case "76561198334461747": return "Coldcan";
