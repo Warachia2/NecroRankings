@@ -1,13 +1,13 @@
 @import url("rankings.css");
 
 .rank{
-width: 40px;
+min-width: 40px;
 }
 
 .total{
-width: 90px;
+min-width: 90px;
 }
 
 .char{
-width: 70px;
+min-width: 70px;
 }
