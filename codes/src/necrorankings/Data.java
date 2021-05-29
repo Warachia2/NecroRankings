@@ -107,6 +107,7 @@ public class Data {
 		case "Rando Warachia": return "Rando Wara";
 		case "Mystery Warachia": return "Mystery Wara";
 		case "NR Warachia": return "NR Wara";
+		case "Hard Warachia": return "Hard Wara";
 		case "76561198115768228": return "Mizmy";
     	case "76561198846415602": return "Priw8";
     	case "76561199043981220": return "GPA";

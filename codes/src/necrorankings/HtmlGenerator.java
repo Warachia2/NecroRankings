@@ -473,6 +473,7 @@ public class HtmlGenerator extends DefaultHandler{
         list.put("Rando Warachia",Player.RandoWarachia());
         list.put("Mystery Warachia",Player.MysteryWarachia());
         list.put("NR Warachia",Player.NRWarachia());
+        list.put("Hard Warachia",Player.HardWarachia());
         
         array = new ArrayList<>(list.values());
         
@@ -638,6 +639,9 @@ public class HtmlGenerator extends DefaultHandler{
         		}
         		else if(category == "nrspeed"){
         			Player.NRWarachia[cur] = rawToCsec(rawscore);
+        		}
+        		else if(category == "hardspeed"){
+        			Player.HardWarachia[cur] = rawToCsec(rawscore);
         		}
         	}
         }
@@ -1221,7 +1225,7 @@ public class HtmlGenerator extends DefaultHandler{
             
             int extra = 0;
             
-            for(int i=0;i<156;i++){
+            for(int i=0;i<157;i++){
             	Player player = array.get(i);
             	
                 p.println("<tr>");
@@ -1272,7 +1276,7 @@ public class HtmlGenerator extends DefaultHandler{
             
             int extra = 0;
             
-            for(int i=0;i<156;i++){
+            for(int i=0;i<157;i++){
             	Player player = array.get(i);
             	
                 p.println("<tr>");

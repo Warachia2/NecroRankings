@@ -52,6 +52,7 @@ public class Player {
 	static int NRWarachia[] = new int[14];
 	static int RandoWarachia[] = new int[14];
 	static int MysteryWarachia[] = new int[14];
+	static int HardWarachia[] = new int[14];
 	
 	///Constructer
 	public Player(String id){
@@ -521,6 +522,15 @@ public class Player {
     	Player p = new Player("NR Warachia");
     	for(int i=0;i<14;i++){
     		p.setTime(i, NRWarachia[i]);
+    	}
+    	p.setExtra(true);
+    	return p;
+    }
+    
+    public static Player HardWarachia(){
+    	Player p = new Player("Hard Warachia");
+    	for(int i=0;i<14;i++){
+    		p.setTime(i, HardWarachia[i]);
     	}
     	p.setExtra(true);
     	return p;
