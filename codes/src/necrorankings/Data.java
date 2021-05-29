@@ -262,7 +262,7 @@ public class Data {
     	case "76561198130224176": return "Po4ti";
     	case "76561198036590302": return "nosferatuss";
     	case "76561198079454638": return "Kupioala";
-    	case "76561198105390244": return "Serios Sean";
+    	case "76561198105390244": return "Serious Sean";
     	case "76561198034177100": return "Marukyu";
     	case "76561198093336562": return "flamehaze";
     	case "76561198040143475": return "stuffsz";

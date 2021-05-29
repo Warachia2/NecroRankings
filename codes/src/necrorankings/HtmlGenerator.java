@@ -1466,7 +1466,7 @@ public class HtmlGenerator extends DefaultHandler{
             htmlStart_sort(p, "NecroDancer Extra Speed Rankings B", "extrabstyle", "b");
             
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("<table id=\"sort\" class=\"display\" border=\"5\">");
+            p.println("<table id=\"sort\" class=\"display\" border=\"5\" width=\"90%\">");
             p.println("<thead>");
             categoryHeader(p, 14, "Total");
             p.println("</thead><tbody>");
@@ -1503,7 +1503,7 @@ public class HtmlGenerator extends DefaultHandler{
             htmlStart_sort(p, "NecroDancer Extra Score Rankings A", "extraastyle", "a");
             
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("<table id=\"sort\" class=\"display\" border=\"5\"> width=\"60%\"");
+            p.println("<table id=\"sort\" class=\"display\" border=\"5\" width=\"60%\">");
             p.println("<thead><tr>");
             p.println("<th class=\"fixed01 rank\">Rank</th>");
             p.println("<th class=\"fixed01 name\">" + fdate1 + "</th>");
@@ -1549,7 +1549,7 @@ public class HtmlGenerator extends DefaultHandler{
             htmlStart_sort(p, "NecroDancer Extra Score Rankings B", "extrabstyle", "b");
             
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("<table id=\"sort\" class=\"display\" border=\"5\">");
+            p.println("<table id=\"sort\" class=\"display\" border=\"5\" width=\"90%\">");
             p.println("<thead>");
             categoryHeader(p, 14, "Total");
             p.println("</thead><tbody>");
