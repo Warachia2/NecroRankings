@@ -1417,20 +1417,20 @@ public class HtmlGenerator extends DefaultHandler{
             FileWriter f = new FileWriter(rankingsoutput + "extraspeeda.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
 
-            htmlStart(p, "NecroDancer Extra Speed Rankings A", "extraastyle");
+            htmlStart_sort(p, "NecroDancer Extra Speed Rankings A", "extraastyle","a");
             
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("<table border=\"5\">");
-            p.println("<tr>");
-            p.println("<th class=\"fixed01\">Rank</th>");
-            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
+            p.println("<table id=\"sort\" class=\"display\" border=\"5\" width=\"60%\">");
+            p.println("<thead><tr>");
+            p.println("<th class=\"fixed01 rank\">Rank</th>");
+            p.println("<th class=\"fixed01 name\">" + fdate1 + "</th>");
             p.println("<th class=\"fixed01 total\">Total</th>");
             p.println("<th class=\"fixed01 char\">Hard</th>");
             p.println("<th class=\"fixed01 char\">NR</th>");
             p.println("<th class=\"fixed01 char\">Rando</th>");
             p.println("<th class=\"fixed01 char\">Phasing</th>");
             p.println("<th class=\"fixed01 char\">Mystery</th>");
-            p.println("</tr>");
+            p.println("</tr></thead><tbody>");
             
             for(int i=0;i<100;i++){
             	Player player = array.get(i);
@@ -1452,6 +1452,7 @@ public class HtmlGenerator extends DefaultHandler{
                 p.println("</tr>");
             }
             
+            p.println("</tbody>");
             rankingCloser(p);
  
         } catch (IOException ex) {
@@ -1462,11 +1463,13 @@ public class HtmlGenerator extends DefaultHandler{
             FileWriter f = new FileWriter(rankingsoutput + "extraspeedb.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
             
-            htmlStart(p, "NecroDancer Extra Speed Rankings B", "extrabstyle");
+            htmlStart_sort(p, "NecroDancer Extra Speed Rankings B", "extrabstyle", "b");
             
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("<table border=\"5\">");
+            p.println("<table id=\"sort\" class=\"display\" border=\"5\">");
+            p.println("<thead>");
             categoryHeader(p, 14, "Total");
+            p.println("</thead><tbody>");
             
             for(int i=0;i<100;i++){
             	Player player = array.get(i);
@@ -1484,6 +1487,7 @@ public class HtmlGenerator extends DefaultHandler{
                 p.println("</tr>");
             }
             
+            p.println("</tbody>");
             rankingCloser(p);
  
         } catch (IOException ex) {
@@ -1496,20 +1500,20 @@ public class HtmlGenerator extends DefaultHandler{
             FileWriter f = new FileWriter(rankingsoutput + "extrascorea.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
             
-            htmlStart(p, "NecroDancer Extra Score Rankings A", "extraastyle");
+            htmlStart_sort(p, "NecroDancer Extra Score Rankings A", "extraastyle", "a");
             
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("<table border=\"5\">");
-            p.println("<tr>");
-            p.println("<th class=\"fixed01\">Rank</th>");
-            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
+            p.println("<table id=\"sort\" class=\"display\" border=\"5\"> width=\"60%\"");
+            p.println("<thead><tr>");
+            p.println("<th class=\"fixed01 rank\">Rank</th>");
+            p.println("<th class=\"fixed01 name\">" + fdate1 + "</th>");
             p.println("<th class=\"fixed01 total\">Total</th>");
             p.println("<th class=\"fixed01 char\">Hard</th>");
             p.println("<th class=\"fixed01 char\">NR</th>");
             p.println("<th class=\"fixed01 char\">Rando</th>");
             p.println("<th class=\"fixed01 char\">Phasing</th>");
             p.println("<th class=\"fixed01 char\">Mystery</th>");
-            p.println("</tr>");
+            p.println("</tr></thead><tbody>");
             
             for(int i=0;i<100;i++){
             	Player player = array.get(i);
@@ -1531,6 +1535,7 @@ public class HtmlGenerator extends DefaultHandler{
                 p.println("</tr>");
             }
             
+            p.println("</tbody>");
             rankingCloser(p);
  
         } catch (IOException ex) {
@@ -1541,11 +1546,13 @@ public class HtmlGenerator extends DefaultHandler{
             FileWriter f = new FileWriter(rankingsoutput + "extrascoreb.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
             
-            htmlStart(p, "NecroDancer Extra Score Rankings B", "extrabstyle");
+            htmlStart_sort(p, "NecroDancer Extra Score Rankings B", "extrabstyle", "b");
             
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-            p.println("<table border=\"5\">");
+            p.println("<table id=\"sort\" class=\"display\" border=\"5\">");
+            p.println("<thead>");
             categoryHeader(p, 14, "Total");
+            p.println("</thead><tbody>");
             
             for(int i=0;i<100;i++){
             	Player player = array.get(i);
@@ -1563,6 +1570,7 @@ public class HtmlGenerator extends DefaultHandler{
                 p.println("</tr>");
             }
             
+            p.println("</tbody>");
             rankingCloser(p);
  
         } catch (IOException ex) {
@@ -1653,7 +1661,7 @@ public class HtmlGenerator extends DefaultHandler{
             FileWriter f = new FileWriter(rankingsoutput + "influence.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
 
-            htmlStart(p, "NecroDancer LBs Influence Rankings", "influencestyle");
+            htmlStart_sort(p, "NecroDancer LBs Influence Rankings", "influencestyle", "i");
             
             p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             
@@ -1668,16 +1676,16 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<p>Extra: Coda NR/Rando/Mystery/Hard Speed x0.5, Other Extra Speed x0.06, Extra Score x0.02</p>");
             p.println("</details><p></p>");
             
-            p.println("<table border=\"5\">");
-            p.println("<tr>");
-            p.println("<th class=\"fixed01\">Rank</th>");
-            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
+            p.println("<table id=\"sort\" class=\"display\" border=\"5\" width=\"50%\">");
+            p.println("<thead><tr>");
+            p.println("<th class=\"fixed01 rank\">Rank</th>");
+            p.println("<th class=\"fixed01 name\">" + fdate1 + "</th>");
             p.println("<th class=\"fixed01 total\">Total</th>");
             p.println("<th class=\"fixed01 char\">Speed</th>");
             p.println("<th class=\"fixed01 char\">Score</th>");
             p.println("<th class=\"fixed01 char\">DLess</th>");
             p.println("<th class=\"fixed01 char\">Extra</th>");
-            p.println("</tr>");
+            p.println("</tr></thead><tbody>");
 
             for(int i=0;i<300;i++){
             	Player player = array.get(i);
@@ -1696,6 +1704,7 @@ public class HtmlGenerator extends DefaultHandler{
                 p.println("</tr>");
             }
             
+            p.println("</tbody>");
             rankingCloser(p);
  
         } catch (IOException ex) {
@@ -2226,6 +2235,52 @@ public class HtmlGenerator extends DefaultHandler{
         p.println("<link rel=\"stylesheet\" href=\"" + css + ".css\">");
         p.println("<script>console.log(\"\");</script>"); //for earlier css reading
         p.println("<title>" + title + "</title>");
+        p.println("</head>");
+        p.println("<body>");
+        p.println("<h1 class=\"center\">" + title +"</h1>");
+    }
+    
+    public static void htmlStart_sort(PrintWriter p, String title, String css, String type){
+    	p.println("<!DOCTYPE html>");
+        p.println("<html lang=\"en\">");
+        p.println("<head>");
+        
+        //analytics
+        p.println("<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-9G9DGMLX02\"></script>");
+        p.println("<script>");
+        p.println("window.dataLayer = window.dataLayer || [];");
+        p.println("function gtag(){dataLayer.push(arguments);}");
+        p.println("gtag('js', new Date());");
+        p.println("gtag('config', 'G-9G9DGMLX02')");
+        p.println("</script>");
+        
+        p.println("<meta charset=\"UTF-8\">");
+        p.println("<link rel=\"stylesheet\" href=\"" + css + ".css\">");
+        p.println("<script>console.log(\"\");</script>"); //for earlier css reading
+        p.println("<title>" + title + "</title>");
+        
+        //datatable
+        p.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"https://cdn.datatables.net/v/dt/dt-1.10.24/datatables.min.css\"/>");
+        p.println("<script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-3.5.1.js\"></script>");
+        p.println("<script type=\"text/javascript\" src=\"https://cdn.datatables.net/v/dt/dt-1.10.24/datatables.min.js\"></script>");
+        
+        p.println("<script type=\"text/javascript\" charset=\"utf-8\">");
+        p.println("$(document).ready(function() {");
+        p.println("$('#sort').dataTable({");
+        p.println("\"paging\":   false,");
+        p.println("\"info\":   false,");
+        p.println("\"searching\":     false,");
+        if(type == "a"){
+            p.println("\"columnDefs\": [{ \"orderSequence\": [ \"desc\" ], \"targets\": [ 2,3,4,5,6,7]}]});});");
+        }
+        else if(type == "i"){
+        	p.println("\"columnDefs\": [{ \"orderSequence\": [ \"desc\" ], \"targets\": [ 2,3,4,5,6]}]});});");
+        }
+        else{
+            p.println("\"columnDefs\": [{ \"orderSequence\": [ \"desc\" ], \"targets\": [ 2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]}]});});");	
+        }
+        p.println("</script>");
+        
         p.println("</head>");
         p.println("<body>");
         p.println("<h1 class=\"center\">" + title +"</h1>");
