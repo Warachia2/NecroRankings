@@ -1,11 +1,11 @@
 @import url("rankings.css");
 
 .rank{
-min-width: 30px;
+min-width: 15px;
 }
 
 .total{
-min-width: 100px;
+min-width: 90px;
 }
 
 .char{
