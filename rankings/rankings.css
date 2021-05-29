@@ -69,6 +69,8 @@ a:hover {
 td { 
 text-align:center; 
 vertical-align:middle;
+border:solid 1px;
+padding: 4px;
 }
 
 /* カーソルを重ねる要素 */
