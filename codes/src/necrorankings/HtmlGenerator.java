@@ -2266,19 +2266,28 @@ public class HtmlGenerator extends DefaultHandler{
         
         p.println("<script type=\"text/javascript\" charset=\"utf-8\">");
         p.println("$(document).ready(function() {");
-        p.println("$('#sort').dataTable({");
+        p.println("var t =  $('#sort').DataTable({");
         p.println("\"paging\":   false,");
         p.println("\"info\":   false,");
         p.println("\"searching\":     false,");
+        p.println("\"columnDefs\": [ {\"searchable\": false,\"orderable\": false,\"targets\": 0} ],");
+        p.println("\"order\": [[ 2, 'desc' ]],");
         if(type == "a"){
-            p.println("\"columnDefs\": [{ \"orderSequence\": [ \"desc\" ], \"targets\": [ 2,3,4,5,6,7]}]});});");
+            p.println("\"columnDefs\": [{ \"orderSequence\": [ \"desc\" ], \"targets\": [ 2,3,4,5,6,7]}]});");
         }
         else if(type == "i"){
-        	p.println("\"columnDefs\": [{ \"orderSequence\": [ \"desc\" ], \"targets\": [ 2,3,4,5,6]}]});});");
+        	p.println("\"columnDefs\": [{ \"orderSequence\": [ \"desc\" ], \"targets\": [ 2,3,4,5,6]}]});");
         }
         else{
-            p.println("\"columnDefs\": [{ \"orderSequence\": [ \"desc\" ], \"targets\": [ 2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]}]});});");	
+            p.println("\"columnDefs\": [{ \"orderSequence\": [ \"desc\" ], \"targets\": [ 2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]}]});");	
         }
+        
+        p.println("t.on( 'order.dt search.dt', function () {");
+        p.println("t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {");
+        p.println("cell.innerHTML = i+1;");
+        p.println("});");
+        p.println("} ).draw();});");
+        
         p.println("</script>");
         
         p.println("</head>");

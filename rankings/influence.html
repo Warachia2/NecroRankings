@@ -17,11 +17,18 @@ gtag('config', 'G-9G9DGMLX02')
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.24/datatables.min.js"></script>
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function() {
-$('#sort').dataTable({
+var t =  $('#sort').DataTable({
 "paging":   false,
 "info":   false,
 "searching":     false,
-"columnDefs": [{ "orderSequence": [ "desc" ], "targets": [ 2,3,4,5,6]}]});});
+"columnDefs": [ {"searchable": false,"orderable": false,"targets": 0} ],
+"order": [[ 2, 'desc' ]],
+"columnDefs": [{ "orderSequence": [ "desc" ], "targets": [ 2,3,4,5,6]}]});
+t.on( 'order.dt search.dt', function () {
+t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+cell.innerHTML = i+1;
+});
+} ).draw();});
 </script>
 </head>
 <body>
@@ -40,7 +47,7 @@ $('#sort').dataTable({
 <table id="sort" class="display" border="5" width="50%">
 <thead><tr>
 <th class="fixed01 rank">Rank</th>
-<th class="fixed01 name">2021/05/29 12:37</th>
+<th class="fixed01 name">2021/05/29 12:58</th>
 <th class="fixed01 total">Total</th>
 <th class="fixed01 char">Speed</th>
 <th class="fixed01 char">Score</th>
@@ -167,11 +174,11 @@ $('#sort').dataTable({
 <tr>
 <td>14</td>
 <td><a href="https://warachia2.github.io/NecroRankings/pbs/encryptid.html">encryptid</a></td>
-<td>680.92</td>
+<td>680.86</td>
 <td>426.93</td>
 <td>90.52</td>
 <td>27.27</td>
-<td>136.19</td>
+<td>136.13</td>
 </tr>
 <tr>
 <td>15</td>
@@ -239,9 +246,9 @@ $('#sort').dataTable({
 <tr>
 <td>22</td>
 <td><a href="https://warachia2.github.io/NecroRankings/pbs/Pibonacci.html">Pibonacci</a></td>
-<td>466.59</td>
+<td>465.67</td>
 <td>365.98</td>
-<td>19.75</td>
+<td>18.84</td>
 <td>49.21</td>
 <td>31.65</td>
 </tr>
@@ -455,9 +462,9 @@ $('#sort').dataTable({
 <tr>
 <td>46</td>
 <td><a href="https://warachia2.github.io/NecroRankings/pbs/Elad Difficult.html">Elad Difficult</a></td>
-<td>269.58</td>
+<td>270.26</td>
 <td>130.99</td>
-<td>18.59</td>
+<td>19.27</td>
 <td>2.90</td>
 <td>117.10</td>
 </tr>
@@ -2732,9 +2739,9 @@ $('#sort').dataTable({
 <tr>
 <td>299</td>
 <td><a href="https://warachia2.github.io/NecroRankings/pbs/Chardmander.html">Chardmander</a></td>
-<td>56.62</td>
+<td>55.94</td>
 <td>40.36</td>
-<td>14.05</td>
+<td>13.37</td>
 <td>0.43</td>
 <td>1.78</td>
 </tr>
