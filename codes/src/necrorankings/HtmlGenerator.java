@@ -1723,7 +1723,7 @@ public class HtmlGenerator extends DefaultHandler{
     
     public static void categoryHeader(PrintWriter p, int max, String representative){
         p.println("<tr>");
-        p.println("<th class=\"fixed01\">Rank</th>");
+        p.println("<th class=\"fixed01 rank\">Rank</th>");
         p.println("<th class=\"fixed01 name\">" + fdate1 + "</th>");
         p.println("<th class=\"fixed01 total\">" + representative + "</th>");
         
