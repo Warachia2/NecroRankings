@@ -899,6 +899,8 @@ public class HtmlGenerator extends DefaultHandler{
     	//tang
     	list.get("76561198055098680").addInfo("Also known as: Revalize");
     	list.get("76561198055098680").addInfo(conduitWinner(14));
+    	//TattarsTheBat
+    	list.get("76561198323018845").addInfo("Also known as: Spunky Queer Tatters");
     	//TNF
     	list.get("76561198021587175").addInfo("Also known as: TheNitromeFan");
     	list.get("76561198021587175").addInfo(conduitWinner(46));
