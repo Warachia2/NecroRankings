@@ -908,6 +908,8 @@ public class HtmlGenerator extends DefaultHandler{
     	//TNF
     	list.get("76561198021587175").addInfo("Also known as: TheNitromeFan");
     	list.get("76561198021587175").addInfo(conduitWinner(46));
+    	//t0xicrunner
+    	list.get("76561198045337079").addInfo("Also known as: Flashed & Banged");
     	//Uniowen
     	list.get("76561198149556207").addInfo(conduitWinner(24));
     	//Warachia
