@@ -798,6 +798,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198049600266").addInfo(worldsfirst("Aria NR Low% Clear", "https://www.youtube.com/watch?v=-5SXUFxYruY"));
     	//nomkey
     	list.get("76561198045736705").addInfo(worldsfirst("Coda Deathless 10 Wins","https://www.twitch.tv/videos/569516365"));
+    	//nvsdy
+    	list.get("76561198330876853").addInfo("Also known as: univusday");
     	//Ocre
     	list.get("76561198207378484").addInfo("Also known as: Mewtoes");
     	list.get("76561198207378484").addInfo(conduitWinner(38));

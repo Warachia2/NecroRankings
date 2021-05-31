@@ -288,7 +288,7 @@ public class Data {
     	case "76561198341678837": return "minoru";
     	case "76561198060372231": return "Scuba Moth";
     	case "76561197997652337": return "Gigazelle";
-    	case "76561198330876853": return "univusday";
+    	case "76561198330876853": return "nvsdy";
     	case "76561198275213866": return "Baedol";
     	case "76561198054273465": return "Lilio";
     	case "76561198348302421": return "Serbatian666";
