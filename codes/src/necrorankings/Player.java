@@ -274,6 +274,75 @@ public class Player {
 		return p/50;
 	}
 	
+	public double[] contribution_char(){
+		double[] c = new double[15];
+		
+		for(int i=0;i<15;i++){
+			switch(i){
+			case 0: //Aria
+			case 8: //Mary
+			case 10: //Monk
+				c[i] += otherspeed * points(speed[i]);
+				c[i] += otherscore * points(score[i]);
+				c[i] += difficultdeathless * points(deathless[i]);
+				for(int h=0;h<5;h++){
+					c[i] += extraspeed * points(this.getRank(h,i,"speed"));
+					c[i] += extrascore * points(this.getRank(h,i,"score"));
+				}
+				break;
+			case 1: //Bard
+			case 2: //Bolt
+			case 4: //Diamond
+			case 5: //Dorian
+			case 6: //Dove
+			case 7: //Eli
+			case 9: //Mel
+			case 11: //Noc
+			case 12: //Tempo
+				c[i] += otherspeed * points(speed[i]);
+				c[i] += otherscore * points(score[i]);
+				c[i] += easydeathless * points(deathless[i]);
+				for(int h=0;h<5;h++){
+					c[i] += extraspeed * points(this.getRank(h,i,"speed"));
+					c[i] += extrascore * points(this.getRank(h,i,"score"));
+				}
+				break;
+			case 3: //Cadence
+				c[i] += cadencespeed * points(speed[i]);
+				c[i] += cadencescore * points(score[i]);
+				c[i] += easydeathless * points(deathless[i]);
+				for(int h=0;h<5;h++){
+					c[i] += extraspeed * points(this.getRank(h,i,"speed"));
+					c[i] += extrascore * points(this.getRank(h,i,"score"));
+				}
+				break;
+			case 13: //Coda
+				c[i] += otherspeed * points(speed[i]);
+				c[i] += otherscore * points(score[i]);
+				c[i] += codadeathless * points(deathless[i]);
+				for(int h=0;h<5;h++){
+					if(h!=3){
+						c[i] += codachallenge * points(this.getRank(h,i,"speed"));
+					}
+					else{
+						c[i] += extraspeed * points(this.getRank(h,i,"speed"));
+					}
+					c[i] += extrascore * points(this.getRank(h,i,"score"));
+				}
+				break;
+			case 14: //Multi
+				c[i] += otherspeed * points(speed[14]);
+				c[i] += otherspeed * points(speed[15]);
+				c[i] += otherspeed * points(speed[16]);
+				c[i] += otherscore * points(score[14]);
+				c[i] += bardplusscore * points(score[15]);
+				c[i] += bardplusscore * points(score[16]);
+				break;
+			}
+		}
+		return c;
+	}
+	
 	///Sums, Ratios
 	public int adjustedTime(int cur, int csec){
 		if(time[cur] == 0){
