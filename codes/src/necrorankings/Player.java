@@ -450,7 +450,10 @@ public class Player {
     	p.setGold(0, 15742); //Aria 15742
     	p.setGold(1, 140691); //Bard 140691
     	p.setGold(2, 19359); //Bolt 19359
+    	p.setGold(3, 25943); //Cad 25943
     	p.setGold(6, 4258); //Dove 4258
+    	p.setGold(10, 13225); //Monk 13225
+    	p.setGold(15, 63751); //9char 63751
     	p.setGold(16, 264346); //13char 264346
     	
     	p.setExtraTime(0, 0, 99642); //Aria Hard 16:36
@@ -480,10 +483,13 @@ public class Player {
     	p.setExtraGold(2, 3, 31975); //Cadence Rando 31975
     	
     	p.setClear(0, 610); //Aria deathless 6-4-1
+    	p.setClear(1, 500); //Bard deathless 5-1-1
     	p.setClear(2, 1801); //Bolt deathless 18-1-2
     	p.setClear(4, 1542); //Diamond deathless 15-5-3
     	p.setClear(6, 1740); //Dove deathless 17-5-1
     	p.setClear(7, 6103); //Eli deathless 61-1-4
+    	p.setClear(8, 340); //Mary deathless 3-5-1
+    	p.setClear(9, 802); //Melody deathless 8-1-3
     	p.setClear(10, 2); //Monk deathless 0-3-3
     	p.setClear(12, 303); //Tempo deathless 3-1-4
     	
