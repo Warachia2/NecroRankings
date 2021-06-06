@@ -978,7 +978,7 @@ public class HtmlGenerator extends DefaultHandler{
 					else{
 						player.speed[num] = rank;
 						
-						if(rank<=100 || !player.name().startsWith("ID")){
+						if(rank<=120 || !player.name().startsWith("ID")){
 				            p.println("<tr>");
 				            rankid(p,rank);
 				            if(player.name().startsWith("ID")){
