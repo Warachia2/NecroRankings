@@ -86,6 +86,31 @@ public class Data {
     	case "76561198347833837": return true; //骚的夹不住
     	case "76561198008667877": return true; //Rulewar //Dove Score 2048, replay looked cheated
     	case "76561198809875102": return true; //TheCrusedKiwi //got Aria 9:08 with total 4.6hour playtime, replay looks cheated
+    	//Monk, not sure
+    	case "76561198218217140": return true; //LizardLane: fast/replay dies only on difficult chars
+    	case "76561198320949594": return true; //TheCrocodile6w9: only has Monk entry, replay dies
+    	case "76561198166870466": return true; //Juhku123: only has Monk entry, replay dies
+    	case "76561198003147305": return true; //Jabbofet: sus times, dove replay died to cowardice
+    	case "76561198096326565": return true; //Lagostosa: sus times, replay dies
+    	case "76561198155037126": return true; //jedimithrandir: sus times, replay dies
+    	case "76561198124992540": return true; //chiefagent007: sus times, replay dies
+    	case "76561198037383368": return true; //Zaściankowa: sus times, replay dies
+    	case "76561198057525373": return true; //Ruhe: sus times, replay dies
+    	case "76561198095823455": return true; //Far: sus times, replay dies
+    	case "76561198076596666": return true; //Tresgarbo: sus times, replay dies
+    	case "76561198006181399": return true; //Wild5hadow: sus times, replay dies
+    	case "76561198021007609": return true; //Sega Mega CD: sus times, replay dies
+    	case "76561198086970178": return true; //HELLA: sus times, replay dies
+    	case "76561198198572289": return true; //SmashingQuasar: sus times, replay dies
+    	case "76561198095671812": return true; //Owlsongs: sus times, replay dies
+    	case "76561198074124247": return true; //곽두팔: sus times, replay dies
+    	case "76561197972478841": return true; //Khorne Flakes: sus times, replay dies
+    	//Aria, not sure
+    	case "76561198075718684": return true; //Bourbon: sus times, replay dies
+    	case "76561198078278662": return true; //lsj891012: sus times, replay dies
+    	//Eli, not sure
+    	case "76561198114745521": return true; //no name: sus times, replay dies
+    	case "76561198056493462": return true; //Dante.exe: sus times, replay dies
     	//totally not sure
     	case "76561198040993726": return true; //Big E (someone's another account?)
     	case "76561198025192029": return true; //Chewy
@@ -271,14 +296,12 @@ public class Data {
     	case "76561198080114126": return "SugerHeart";
     	case "76561198349048809": return "Wheaty";
     	case "76561198114091458": return "Itenariuk";
-    	case "76561198096326565": return "Lagostosa";
     	case "76561198347309981": return "BillSYZ0317";
     	case "76561197965084592": return "TicTacFoe";
     	case "76561198189625178": return "htrmonroe";
     	case "76561198255233637": return "Wilhelm";
     	case "76561198107914628": return "OfficialSeidon";
     	case "76561198259285620": return "Szprycha";
-    	case "76561198155037126": return "jedimithrandir";
     	case "76561198158315777": return "Drigallski";
     	case "76561198097897774": return "Sara";
     	case "76561198143370429": return "Sailo";
@@ -330,7 +353,6 @@ public class Data {
     	case "76561198026968010": return "Xan42";
     	case "76561198061963965": return "kath";
     	case "76561198138535845": return "Dragon_V.V";
-    	case "76561198003147305": return "Jabbofet";
     	case "76561198287068602": return "410";
     	case "76561197994523755": return "chefmayhem";
     	case "76561198045573646": return "TororoShinpei";
@@ -390,7 +412,6 @@ public class Data {
     	case "76561198390854162": return "Cottons";
     	case "76561198092460385": return "LC";
     	case "76561198118229165": return "Akaness";
-    	case "76561198095671812": return "Owlsongs";
     	case "76561198137750417": return "lold";
     	case "76561198213842864": return "bun";
     	case "76561198052490310": return "LoMoCoMo";
@@ -405,12 +426,10 @@ public class Data {
     	case "76561198252203614": return "vlatkosh";
     	case "76561198011130555": return "mnymn";
     	case "76561198034265647": return "DePP13";
-    	case "76561198086970178": return "HELLA";
     	case "76561198119500300": return "Topaz";
     	case "76561198060985668": return "Jaster";
     	case "76561198060666168": return "firebrde";
     	case "76561198154038668": return "Alteisy";
-    	case "76561198198572289": return "SmashingQuasar";
     	case "76561198043074739": return "JustSparkyYes";
     	case "76561198042997179": return "implosion";
     	case "76561198400504447": return "ten986";
@@ -507,7 +526,6 @@ public class Data {
     	case "76561198199849531": return "Holo";
     	case "76561198097291852": return "Willow Padoru";
     	case "76561197969559925": return "TuTri";
-    	case "76561198076596666": return "Tresgarbo";
     	case "76561198328509029": return "Morshu";
     	case "76561198051380610": return "holywood";
     	case "76561197997560639": return "Hellminthiasis";
@@ -608,9 +626,6 @@ public class Data {
     	case "76561198104645750": return "Protogymnastos";
     	case "76561198155312238": return "Zy Soua";
     	case "76561198005302226": return "ExsultinContecum";
-    	case "76561198057525373": return "Ruhe";
-    	case "76561198095823455": return "Far";
-    	case "76561198021007609": return "Sega Mega CD";
     	case "76561198014811697": return "Emu7";
     	case "76561198104986481": return "TokyoSexwale";
     	case "76561198195822793": return "kame-noko";
@@ -646,7 +661,6 @@ public class Data {
     	case "76561198157379218": return "Stertin";
     	case "76561198025092168": return "sirasaya";
     	case "76561198014925488": return "Ivelieu";
-    	case "76561198074124247": return "곽두팔";
     	case "76561198087134859": return "薇儿丹迪";
     	case "76561198028926884": return "aRabidHobo";
     	case "76561198084051612": return "Kyord";
@@ -760,7 +774,6 @@ public class Data {
     	case "76561198027341053": return "jim_im";
     	case "76561198018346964": return "Shiny Braixen";
     	case "76561199018238169": return "Oracle";
-    	case "76561198124992540": return "chiefagent007";
     	case "76561198994219732": return "NBtelethia";
     	case "76561197980797064": return "Jethrain";
     	case "76561198060353777": return "Pieczyyea";
@@ -791,7 +804,6 @@ public class Data {
     	case "76561198169426323": return "Jelly Donut";
     	case "76561198041651094": return "zashes";
     	case "76561198334461747": return "Coldcan";
-    	case "76561198037383368": return "Zaściankowa";
     	case "76561199032747602": return "超级大神";
     	case "76561198040299895": return "Snekalot";
     	case "76561198057473982": return "TOAST";
@@ -819,7 +831,6 @@ public class Data {
     	case "76561198143157509": return "rjdimo";
     	case "76561198273450852": return "Pumba";
     	case "76561198056391531": return "cy.molavi";
-    	case "76561198218217140": return "LizardLane";
     	case "76561198125757435": return "Hating Mirror";
     	case "76561198253281128": return "Phoenix";
     	case "76561198427072340": return "Denjkeaa";
@@ -898,7 +909,6 @@ public class Data {
     	case "76561198022807781": return "Orokamono";
     	case "76561198105776538": return "DrSamuraiJack";
     	case "76561198073431251": return "Runedar";
-    	case "76561198006181399": return "Wild5hadow";
     	case "76561198025482159": return "alainmcd";
     	case "76561198343075576": return "rich chanel";
     	case "76561198087843932": return "FL4";
@@ -909,6 +919,61 @@ public class Data {
     	case "76561198027688591": return "leonid";
     	case "76561198046863541": return "노알라";
     	case "76561198223482128": return "alex";
+    	case "76561198409944104": return "ShaggySlouch";
+    	case "76561197994936442": return "J3Xtrom";
+    	case "76561198240804774": return "ypz";
+    	case "76561199003861230": return "성준";
+    	case "76561198846316677": return "PLA";
+    	case "76561198247431144": return "tt18"; //steam name is "http.tt18.www.co.jp"
+    	case "76561198050683329": return "GammaBray";
+    	case "76561198069108299": return "Chapeau_42";
+    	case "76561198142306066": return "Bunnykins"; //Laurie D. Bunnykins
+    	case "76561198018087463": return "pick up your feet";
+    	case "76561198010084408": return "Vipul";
+    	case "76561198382573765": return "wangbo1086j";
+    	case "76561198259490531": return "DalNim";
+    	case "76561198438522276": return "myheadproject";
+    	case "76561198157151459": return "nairobi";
+    	case "76561198058187253": return "RESSO";
+    	case "76561198048209119": return "Siegfried"; //ジークフリート
+    	case "76561198084635083": return "Gold Dust Kitsune";
+    	case "76561198879834698": return "WFM123";
+    	case "76561198263964918": return "Sisil";
+    	case "76561197993234218": return "Haven";
+    	case "76561198070627334": return "ColdKidney";
+    	case "76561198287306777": return "aya";
+    	case "76561198364863446": return "OrionEJ";
+    	case "76561198305141134": return "Valú";
+    	case "76561198065524094": return "Bitonio";
+    	case "76561198158349170": return "Inabed";
+    	case "76561198121208509": return "PhilJFou";
+    	case "76561197971475611": return "Taxor";
+    	case "76561198042005062": return "Jack91al";
+    	case "76561197991266729": return "artreg";
+    	case "76561197964758621": return "Occam's Laser";
+    	case "76561198010758234": return "Mangostar";
+    	case "76561198144979533": return "HordeofTribbles";
+    	case "76561198325534537": return "Titanium";
+    	case "76561198873365324": return "cileuhsa";
+    	case "76561198057698474": return "260866410";
+    	case "76561198190836377": return "gemunopedy";
+    	case "76561198314396385": return "Cricetidae";
+    	case "76561198230447556": return "Bamboozler";
+    	case "76561198974719850": return "MightyFoot";
+    	case "76561198118650689": return "numb3rl0rd";
+    	case "76561198322832784": return "Neo-Arkron";
+    	case "76561197979875453": return "ChairMaster";
+    	case "76561198073889049": return "Hero Puddle";
+    	case "76561198844534301": return "popn40s";
+    	case "76561197972968083": return "Kalrathion";
+    	case "76561198140263721": return "ㅁㄹ";
+    	case "76561198441455498": return "darkkcyan";
+    	case "76561197975655474": return "Ana";
+    	case "76561198002922964": return "Ultimate Chimera";
+    	case "76561198120950952": return "sonicsoul13051";
+    	case "76561198056434055": return "3Face"; //:3
+    	case "76561197998607442": return "Felio";
+    	case "76561198009269589": return "finkry"; //sus a bit
     	default: return "ID:" + steamid;
 		}
 	}

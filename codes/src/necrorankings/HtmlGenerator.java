@@ -922,6 +922,8 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198121399825").addInfo(youtube("https://www.youtube.com/channel/UC0HOUDmhQdFsWZYRQJhqsgQ"));
         //Waski
         list.get("76561198094733262").addInfo(youtube("https://www.youtube.com/channel/UCD8O0AksMFaVNUD4nIihcbw"));
+        //3Face
+        list.get("76561198056434055").addInfo("Also known as: :3");
     }
     
     public static String conduitWinner(int n){
@@ -978,7 +980,7 @@ public class HtmlGenerator extends DefaultHandler{
 					else{
 						player.speed[num] = rank;
 						
-						if(rank<=120 || !player.name().startsWith("ID")){
+						if(rank<=150 || !player.name().startsWith("ID")){
 				            p.println("<tr>");
 				            rankid(p,rank);
 				            if(player.name().startsWith("ID")){
