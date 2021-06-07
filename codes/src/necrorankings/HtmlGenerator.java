@@ -1714,7 +1714,7 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<th class=\"fixed01 char\">Extra</th>");
             p.println("</tr></thead><tbody>");
 
-            for(int i=0;i<300;i++){
+            for(int i=0;i<400;i++){
             	Player player = array.get(i);
             	
                 p.println("<tr>");
