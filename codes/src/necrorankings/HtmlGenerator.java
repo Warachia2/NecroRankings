@@ -692,6 +692,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561197998799529").addInfo("Found gold duping");
     	//BronxTaco
     	list.get("76561198018411976").addInfo(linkText("Developer of Awareness","https://github.com/bronxtaco/Awareness"));
+    	//Bunnykins
+    	list.get("76561198142306066").addInfo("Also known as: Laurie D. Bunnykins");
     	//Captpiplup
     	list.get("76561198329442425").addInfo("Also known as: EricDaWolf, RealDASlup");
     	//Crispy Fried Potatoes
@@ -849,6 +851,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198118733148").addInfo(worldsfirst("Bolt Sub3", "https://youtu.be/wSIIwp_SynU"));
     	//RPGG
     	list.get("76561198247123198").addInfo(conduitWinner(35));
+    	//RUNES
+    	list.get("76561198128414899").addInfo("Also known as: I wanna power. Therefore, RUNES!");
     	//Sailo
     	list.get("76561198143370429").addInfo(youtube("https://www.youtube.com/channel/UCU7t5UX31nY8CXuXQZFxNmA"));
     	//SailorMint
@@ -863,6 +867,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198119774420").addInfo("Also known as: しんわ, OTOGI_ZRZR");
     	//Shortcake
     	list.get("76561198087367133").addInfo("Also known as: Shortcake Sweets");
+    	//Siegfried
+    	list.get("76561198048209119").addInfo("Also known as: ジークフリート");
     	//Sivcria
     	list.get("76561198057683647").addInfo(conduitWinner(39));
     	//Siveure
@@ -1763,7 +1769,7 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<th class=\"fixed01 char\">Multi</th>");
             p.println("</tr></thead><tbody>");
 
-            for(int i=0;i<300;i++){
+            for(int i=0;i<400;i++){
             	Player player = array.get(i);
             	
                 p.println("<tr>");

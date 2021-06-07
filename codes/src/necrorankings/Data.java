@@ -105,9 +105,16 @@ public class Data {
     	case "76561198095671812": return true; //Owlsongs: sus times, replay dies
     	case "76561198074124247": return true; //곽두팔: sus times, replay dies
     	case "76561197972478841": return true; //Khorne Flakes: sus times, replay dies
+    	case "76561198445171435": return true; //Deb: sus times, replay dies
+    	case "76561198017290085": return true; //Fabulous Vulture: sus times, replay dies
     	//Aria, not sure
     	case "76561198075718684": return true; //Bourbon: sus times, replay dies
     	case "76561198078278662": return true; //lsj891012: sus times, replay dies
+    	case "76561198020882454": return true; //RiFiu: sus times, replay dies
+    	case "76561198097291852": return true; //Willow Padoru: sus times, replay dies
+    	case "76561198199849531": return true; //Holo: sus times, replay dies
+    	case "76561198327609732": return true; //Drakz: sus times, replay dies
+    	case "76561198098014829": return true; //auto K: sus times, replay dies
     	//Eli, not sure
     	case "76561198114745521": return true; //no name: sus times, replay dies
     	case "76561198056493462": return true; //Dante.exe: sus times, replay dies
@@ -491,7 +498,6 @@ public class Data {
     	case "76561198272836523": return "Maqua";
     	case "76561198085722059": return "Lazurai";
     	case "76561198041943692": return "rjri";
-    	case "76561198327609732": return "Drakz";
     	case "76561198025231301": return "Jennifer";
     	case "76561198053362086": return "Ampersand";
     	case "76561198008824818": return "Ruby";
@@ -522,9 +528,6 @@ public class Data {
     	case "76561198185703741": return "MelonWine";
     	case "76561198005224434": return "rp2knight";
     	case "76561198004731012": return "Kane";
-    	case "76561198020882454": return "RiFiu";
-    	case "76561198199849531": return "Holo";
-    	case "76561198097291852": return "Willow Padoru";
     	case "76561197969559925": return "TuTri";
     	case "76561198328509029": return "Morshu";
     	case "76561198051380610": return "holywood";
@@ -651,7 +654,6 @@ public class Data {
     	case "76561198155754273": return "amamori";
     	case "76561198096403704": return "すなーく";
     	case "76561197998014949": return "CrownlessK";
-    	case "76561198445171435": return "Deb";
     	case "76561198059489643": return "Gloore";
     	case "76561198081160784": return "Gorigami";
     	case "76561198207590005": return "Drano";
@@ -869,7 +871,6 @@ public class Data {
     	case "76561198832371121": return "Teacher_Q";
     	case "76561198060893337": return "Debby Saurus";
     	case "76561198071916189": return "Bedwardism";
-    	case "76561198017290085": return "Fabulous Vulture";
     	case "76561198344484128": return "Geigenzähler";
     	case "76561198165641882": return "propfeds";
     	case "76561197988962917": return "BOT Zin";
@@ -974,6 +975,18 @@ public class Data {
     	case "76561198056434055": return "3Face"; //:3
     	case "76561197998607442": return "Felio";
     	case "76561198009269589": return "finkry"; //sus a bit
+    	case "76561198022739381": return "Lanvilla";
+    	case "76561198091918557": return "LagartoJuansho";
+    	case "76561198093566871": return "free food";
+    	case "76561198128049035": return "유천영";
+    	case "76561197966356936": return "bostwiek";
+    	case "76561198143289451": return "zamir503";
+    	case "76561198048951312": return "theM1ckster";
+    	case "76561198120331550": return "BlueAura";
+    	case "76561198087293418": return "Lumin";
+    	case "76561198123656730": return "SakuraPython";
+    	case "76561198128414899": return "RUNES"; //I wanna power. Therefore, RUNES!
+    	case "76561198063877523": return "shazoum";
     	default: return "ID:" + steamid;
 		}
 	}
