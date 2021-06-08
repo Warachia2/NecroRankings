@@ -1977,7 +1977,7 @@ public class HtmlGenerator extends DefaultHandler{
                     p.println("<tr>");
                     p.println("<td class=\"catframe\">" + ordToCategory(h) + "</td>");
                     for(int i=0;i<14;i++){
-                    	p.println(ranktag(player.getRank(h, i, "speed"), 0, i, "speed", Player.csecToString(player.extratime[0][i])));
+                    	p.println(ranktag(player.getRank(h, i, "speed"), h, i, "speed", Player.csecToString(player.extratime[h][i])));
                     }
                     p.println("</tr>");
                 }
