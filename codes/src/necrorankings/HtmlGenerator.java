@@ -1816,7 +1816,7 @@ public class HtmlGenerator extends DefaultHandler{
         p.println("</tr>");
     }
     
-    public static void pblistMaker(){
+    public static void pblistMaker_old(){
         for(Player player: array){
         	if(player.name().startsWith("ID") || player.isExtra){
         		continue;
@@ -1924,6 +1924,118 @@ public class HtmlGenerator extends DefaultHandler{
             }
         }
     }
+    
+    public static void pblistMaker(){
+        for(Player player: array){
+        	if(player.name().startsWith("ID") || player.isExtra){
+        		continue;
+        	}
+            try {
+                FileWriter f = new FileWriter(pbsoutput + player.name() + ".html", false);
+                PrintWriter p = new PrintWriter(new BufferedWriter(f));
+                
+                htmlStart(p, player.name(), "pbstyle");
+
+                p.println("<table border=\"5\">");
+                p.println("<tr>");
+                p.println("<th class=\"header\">-</th>");
+                p.println("<th class=\"header\">Character</th>");
+                p.println("<th class=\"header score\">Speed</th>");
+                p.println("<th class=\"header rank\">-</th>");
+                p.println("<th class=\"header\">-</th>");
+                p.println("<th class=\"header score\">Score</th>");
+                p.println("<th class=\"header rank\">-</th>");
+                p.println("</tr>");
+                
+                for(int i=0;i<17;i++){
+                    p.println("<tr>");
+                	//p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + "speedlbs.html\"><img src=\"icons/" + i + ".jpg\">" + "</a></td>");
+                    p.println("<td class=\"frame\"><img src=\"ticons/" + i + "_transparent.png\">" + "</td>");
+                    p.println("<td>" + curToName(i) + "</td>");
+                	p.println(speedpbtag(player, i));
+                	p.println(ranktag(player.speed[i], i, "speed"));
+                	//p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + "scorelbs.html\"><img src=\"icons/" + i + ".jpg\">" + "</a></td>");
+                    p.println("<td class=\"frame\"><img src=\"ticons/" + i + "_transparent.png\">" + "</td>");
+                	p.println(scorepbtag(player, i, scorethreshold(i)));
+                	p.println(scoreranktag(player, i, scorethreshold(i)));
+                    p.println("</tr>");
+                }
+
+                p.println("</table>");
+
+                p.println("<p></p>");
+                
+                p.println("<table border=\"5\">");
+                p.println("<tr>");
+                p.println("<th class=\"header\">Speed</th>");
+                for(int i=0;i<14;i++){
+                	p.println("<th class=\"charheader\">" + "<img src=\"ticons/" + i + "_transparent.png\">" + "</th>");
+                }
+                p.println("</tr>");
+                
+                for(int h=0;h<5;h++){
+                    p.println("<tr>");
+                    p.println("<td class=\"catframe\">" + ordToCategory(h) + "</td>");
+                    for(int i=0;i<14;i++){
+                    	p.println(ranktag(player.getRank(h, i, "speed"), 0, i, "speed", Player.csecToString(player.extratime[0][i])));
+                    }
+                    p.println("</tr>");
+                }
+                
+                p.println("<tr>");
+                p.println("<td class=\"catframe\">Score</td>");
+                for(int i=0;i<14;i++){
+                	p.println("<td class=\"charheader\">" + "<img src=\"ticons/" + i + "_transparent.png\">" + "</td>");
+                }
+                p.println("</tr>");
+                
+                for(int h=0;h<5;h++){
+                    p.println("<tr>");
+                    p.println("<td class=\"catframe\">" + ordToCategory(h) + "</td>");
+                    for(int i=0;i<14;i++){
+                    	p.println(exscoreranktag(player, h, i, scorethreshold(i,h)));
+                    }
+                    p.println("</tr>");
+                }
+                
+                p.println("<tr>");
+                p.println("<td class=\"catframe\">" + "Deathless" + "</td>");
+                for(int i=0;i<14;i++){
+                	p.println(ranktag(player, -1, i, "deathless", player.clearcount(i)));
+                }
+                p.println("</tr>");
+                
+                p.println("</table>");
+                
+                if(!player.moreinfo.isEmpty()){
+                    p.println("<p></p>");
+                    p.println("<details class=\"center\">");
+                    p.println("<summary>More Info</summary>");
+                    for(int i=0;i<player.moreinfo.size();i++){
+                    	p.print(player.moreinfo.get(i));
+                    	if(i+1 != player.moreinfo.size() && !player.moreinfo.get(i).startsWith("<a")){
+                    		p.println("<br>");
+                    	}
+                    	else{
+                    		p.println();
+                    	}
+                    }
+                    p.println("</details>");
+                }
+                
+                p.println("<p>" + "Last Updated:" + fdate1 +"</p>");
+                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+                
+                p.println("</body>");
+                p.println("</html>");
+                
+                p.close();
+     
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
       
     public static int scorethreshold(int cur){
     	switch(cur){
@@ -1944,6 +2056,16 @@ public class HtmlGenerator extends DefaultHandler{
     	case 14: return 50000; //Story
     	case 15: return 50000; //9char
     	default: return 50000; //13char
+    	}
+    }
+    
+    public static int scorethreshold(int cur, int ord){
+    	switch(ord){
+    	case 1:
+    	case 3:
+    	case 4:
+    		return (int) (scorethreshold(cur)*0.8);
+    	default: return scorethreshold(cur);
     	}
     }
 

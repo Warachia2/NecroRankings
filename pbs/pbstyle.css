@@ -13,6 +13,28 @@
   }
 }
 
+.charheader{
+  width: 60px;
+  background: #333;
+}
+
+
+.catframe{
+  top: 0;
+  color: #fff;
+  background: #333;
+  font-weight: bold;
+  &:before{
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+  }
+}
+
 .frame{
   background: #333;
 }
@@ -58,7 +80,6 @@ text-align: center;
 
 td { 
 text-align:center; 
-vertical-align:bottom;
 }
 
 img{
