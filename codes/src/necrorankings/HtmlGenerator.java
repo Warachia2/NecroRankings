@@ -1969,7 +1969,7 @@ public class HtmlGenerator extends DefaultHandler{
                 p.println("<tr>");
                 p.println("<th class=\"header\">Speed</th>");
                 for(int i=0;i<14;i++){
-                	p.println("<th class=\"charheader\">" + "<img src=\"ticons/" + i + "_transparent.png\">" + "</th>");
+                	p.println("<th class=\"header\">" + curToShortName(i) + "</th>");
                 }
                 p.println("</tr>");
                 
