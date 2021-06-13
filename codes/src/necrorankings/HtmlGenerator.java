@@ -494,6 +494,9 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198121399825").setExtraGold(0, 1, 116598); //Warachia, Bard Hard Score 116598
         list.get("76561198317639601").setExtraGold(0, 2, 1933); //Monsterracer, Bolt Hard Score, 1933
         
+        //Android
+        list.get("76561198844450515").setExtraTime(2, 9, 79256); //lakehope, Mel Rando, 13:12.56
+        
         //Bar Text
         LocalDateTime date1 = LocalDateTime.now();
 		DateTimeFormatter dtformat1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
