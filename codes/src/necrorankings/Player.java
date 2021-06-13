@@ -511,6 +511,7 @@ public class Player {
     	p.setGold(0, 12095); //Aria
     	p.setGold(1, 144378); //Bard
     	p.setGold(12, 9815); //Tempo
+    	p.setClear(0, 232); //Aria Deathless 2-2-3
     	return p;
     }
     
