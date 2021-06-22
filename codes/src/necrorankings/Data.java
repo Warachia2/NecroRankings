@@ -107,6 +107,7 @@ public class Data {
     	case "76561197972478841": return true; //Khorne Flakes: sus times, replay dies
     	case "76561198445171435": return true; //Deb: sus times, replay dies
     	case "76561198017290085": return true; //Fabulous Vulture: sus times, replay dies
+    	case "76561198143178648": return true; //Mashiro
     	//Aria, not sure
     	case "76561198075718684": return true; //Bourbon: sus times, replay dies
     	case "76561198078278662": return true; //lsj891012: sus times, replay dies
