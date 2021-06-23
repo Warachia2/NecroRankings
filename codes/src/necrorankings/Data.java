@@ -116,6 +116,7 @@ public class Data {
     	case "76561198199849531": return true; //Holo: sus times, replay dies
     	case "76561198327609732": return true; //Drakz: sus times, replay dies
     	case "76561198098014829": return true; //auto K: sus times, replay dies
+    	case "76561198276908541": return true; //spam name, sus times, replay dies
     	//Eli, not sure
     	case "76561198114745521": return true; //no name: sus times, replay dies
     	case "76561198056493462": return true; //Dante.exe: sus times, replay dies
