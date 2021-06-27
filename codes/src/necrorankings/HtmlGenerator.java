@@ -767,6 +767,7 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561197989223079").addInfo("Also known as: KT");
     	//Kupioala
     	list.get("76561198079454638").addInfo("Also known as: Zarushi");
+    	list.get("76561198079454638").addInfo(conduitWinner(49));
     	//levs57
     	list.get("76561198087840095").addInfo("Also known as: AT");
     	list.get("76561198087840095").addInfo(conduitWinner(42));
