@@ -1936,7 +1936,7 @@ public class HtmlGenerator extends DefaultHandler{
         		continue;
         	}
             try {
-                FileWriter f = new FileWriter(pbsoutput + player.name() + ".html", false);
+                FileWriter f = new FileWriter(pbsoutput + player.name_url() + ".html", false);
                 PrintWriter p = new PrintWriter(new BufferedWriter(f));
                 
                 htmlStart(p, player.name(), "pbstyle");

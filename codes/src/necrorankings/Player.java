@@ -857,5 +857,9 @@ public class Player {
 	public String name(){
 		return necrorankings.Data.name(SteamID);
 	}
+	
+	public String name_url(){
+		return necrorankings.Data.name(SteamID).replace(' ', '_');
+	}
 
 }
