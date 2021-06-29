@@ -503,6 +503,8 @@ public class Player {
     	p.setTime(9, 36235); //Mel 6:02.35
     	p.setTime(11, 40385); //Noc 6:43.85
     	p.setTime(12, 29471); //Tempo 4:54.71
+    	
+    	p.setGold(3, 23552); //Cadence Score 23552
     	return p;
     }
 
