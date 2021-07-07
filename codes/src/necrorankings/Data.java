@@ -73,6 +73,7 @@ public class Data {
     	case "76561198025603321": return true; //Coco_Skmdy@たけのこよりきのこが好き 
     	case "76561198263406012": return true; //Kiwis
     	case "76561198016832989": return true; //Nyog
+    	case "76561198196935749": return true; //tunatune, 50th story/19th 9char/23th 13char in 1 day from nowhere
     	//already excluded by impossible score
     	case "76561198373879461": return true; //thegunslinger
     	//not sure
