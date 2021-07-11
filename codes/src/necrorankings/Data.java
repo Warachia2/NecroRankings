@@ -118,6 +118,7 @@ public class Data {
     	case "76561198327609732": return true; //Drakz: sus times, replay dies
     	case "76561198098014829": return true; //auto K: sus times, replay dies
     	case "76561198276908541": return true; //spam name, sus times, replay dies
+    	case "76561198008863702": return true; //AngryMuser: sus times, replay dies
     	case "76561198045018697": return true; //Gaia
     	//Eli, not sure
     	case "76561198114745521": return true; //no name: sus times, replay dies
@@ -996,6 +997,7 @@ public class Data {
     	case "76561199099490231": return "hlabon";
     	case "76561198000711197": return "Kailaria";
     	case "76561198869511306": return "cheekyhummus";
+    	case "76561198802536955": return "Hae~";
     	default: return "ID:" + steamid;
 		}
 	}
