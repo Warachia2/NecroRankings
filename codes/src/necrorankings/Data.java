@@ -120,6 +120,7 @@ public class Data {
     	case "76561198276908541": return true; //spam name, sus times, replay dies
     	case "76561198008863702": return true; //AngryMuser: sus times, replay dies
     	case "76561198045018697": return true; //Gaia
+    	case "76561198099951744": return true; //有间都古: aria/aria low achievement at the same time
     	//Eli, not sure
     	case "76561198114745521": return true; //no name: sus times, replay dies
     	case "76561198056493462": return true; //Dante.exe: sus times, replay dies
