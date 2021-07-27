@@ -1000,6 +1000,9 @@ public class Data {
     	case "76561198869511306": return "cheekyhummus";
     	case "76561198802536955": return "Hae~";
     	case "76561198405301634": return "leileileinima";
+    	case "76561198076473875": return "DubecLeCroat";
+    	case "76561198032922383": return "shadowjester67"; //Aria
+    	case "76561198065819849": return "Ayaya"; //Monk
     	default: return "ID:" + steamid;
 		}
 	}
