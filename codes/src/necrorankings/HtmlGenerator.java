@@ -863,7 +863,7 @@ public class HtmlGenerator extends DefaultHandler{
     	//SailorMint
     	list.get("76561197967734490").addInfo(conduitWinner(29));
     	//Sanga
-    	list.get("76561198062929160").addInfo("Also known as: Sanga, Park Sang-a, Liquid Nitrogen, 박상아");
+    	list.get("76561198062929160").addInfo("Also known as: Marya, Park Sang-a, Liquid Nitrogen, 박상아");
     	//sc2
     	list.get("76561198272994316").addInfo("Also known as: scc127");
     	//seanpwolf
