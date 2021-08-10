@@ -1004,6 +1004,7 @@ public class Data {
     	case "76561198032922383": return "shadowjester67"; //Aria
     	case "76561198065819849": return "Ayaya"; //Monk
     	case "76561198322985690": return "KC";
+    	case "76561198107596745": return "Phalange of Dynamite"; //9char 44th
     	default: return "ID:" + steamid;
 		}
 	}
