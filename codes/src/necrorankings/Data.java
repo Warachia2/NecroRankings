@@ -1007,6 +1007,7 @@ public class Data {
     	case "76561198107596745": return "Phalange of Dynamite"; //9char 44th
     	case "76561198064881372": return "LOLWUT"; //aria
     	case "76561198056045089": return "Tactical Strawberry";
+    	case "76561198152387838": return "MysticBerry";
     	default: return "ID:" + steamid;
 		}
 	}
