@@ -74,6 +74,7 @@ public class Data {
     	case "76561198263406012": return true; //Kiwis
     	case "76561198016832989": return true; //Nyog
     	case "76561198196935749": return true; //tunatune, 50th story/19th 9char/23th 13char in 1 day from nowhere
+    	case "76561198129845638": return true; //FUNNY-BUUF, 9char 1:16, Monk dies
     	//already excluded by impossible score
     	case "76561198373879461": return true; //thegunslinger
     	//not sure
@@ -709,7 +710,6 @@ public class Data {
     	case "76561198311172601": return "Resh";
     	case "76561198375207674": return "从来未央";
     	case "76561198141681916": return "Sin";
-    	case "76561198129845638": return "FUNNY-BUUF";
     	case "76561198344795752": return "VoyageDB";
     	case "76561198389979146": return "TRAPONY";
     	case "76561198067397389": return "DYuzo";
