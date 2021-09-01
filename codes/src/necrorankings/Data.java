@@ -75,6 +75,7 @@ public class Data {
     	case "76561198016832989": return true; //Nyog
     	case "76561198196935749": return true; //tunatune, 50th story/19th 9char/23th 13char in 1 day from nowhere
     	case "76561198129845638": return true; //FUNNY-BUUF, 9char 1:16, Monk dies
+    	case "76561198146147354": return true; //Valhalla
     	//already excluded by impossible score
     	case "76561198373879461": return true; //thegunslinger
     	//not sure
@@ -110,6 +111,7 @@ public class Data {
     	case "76561198445171435": return true; //Deb: sus times, replay dies
     	case "76561198017290085": return true; //Fabulous Vulture: sus times, replay dies
     	case "76561198143178648": return true; //Mashiro
+    	case "76561197998730109": return true; //Voorprettig, 19.5h playtime Monk 131th Mary 125th
     	//Aria, not sure
     	case "76561198075718684": return true; //Bourbon: sus times, replay dies
     	case "76561198078278662": return true; //lsj891012: sus times, replay dies
