@@ -1010,6 +1010,7 @@ public class Data {
     	case "76561198064881372": return "LOLWUT"; //aria
     	case "76561198056045089": return "Tactical Strawberry";
     	case "76561198152387838": return "MysticBerry";
+    	case "76561198260821875": return "low1poly";
     	default: return "ID:" + steamid;
 		}
 	}
