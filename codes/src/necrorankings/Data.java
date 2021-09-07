@@ -1012,6 +1012,7 @@ public class Data {
     	case "76561198056045089": return "Tactical Strawberry";
     	case "76561198152387838": return "MysticBerry";
     	case "76561198260821875": return "low1poly";
+    	case "76561197967887288": return "Flint Ironstag"; //Aria Score
     	default: return "ID:" + steamid;
 		}
 	}
