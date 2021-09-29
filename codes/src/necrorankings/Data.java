@@ -89,6 +89,7 @@ public class Data {
     	case "76561198347833837": return true; //骚的夹不住
     	case "76561198008667877": return true; //Rulewar //Dove Score 2048, replay looked cheated
     	case "76561198809875102": return true; //TheCrusedKiwi //got Aria 9:08 with total 4.6hour playtime, replay looks cheated
+    	case "76561198013010544": return true; //Saitonashi, haven't seen replay
     	//Monk, not sure
     	case "76561198218217140": return true; //LizardLane: fast/replay dies only on difficult chars
     	case "76561198320949594": return true; //TheCrocodile6w9: only has Monk entry, replay dies
@@ -134,6 +135,7 @@ public class Data {
     	case "76561198027388361": return true; //Sopo
     	case "76561198069475310": return true; //LynX
     	case "76561198286560125": return true; //香港记者
+    	case "76561198071385704": return true; //RAYDENSCOTFIELD, 49hours story 57th 9car 70th, sus achievement times
     	//just an another account of someone
     	case "76561198085518032": return true; //BreedPineapple
     	default: return false;
