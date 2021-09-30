@@ -76,6 +76,7 @@ public class Data {
     	case "76561198196935749": return true; //tunatune, 50th story/19th 9char/23th 13char in 1 day from nowhere
     	case "76561198129845638": return true; //FUNNY-BUUF, 9char 1:16, Monk dies
     	case "76561198146147354": return true; //Valhalla
+    	case "76561198259490531": return true; //DalNim, too fast 9/13 for PB
     	//already excluded by impossible score
     	case "76561198373879461": return true; //thegunslinger
     	//not sure
@@ -943,7 +944,6 @@ public class Data {
     	case "76561198018087463": return "pick up your feet";
     	case "76561198010084408": return "Vipul";
     	case "76561198382573765": return "wangbo1086j";
-    	case "76561198259490531": return "DalNim";
     	case "76561198438522276": return "myheadproject";
     	case "76561198157151459": return "nairobi";
     	case "76561198058187253": return "RESSO";
