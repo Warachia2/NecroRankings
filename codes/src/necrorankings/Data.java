@@ -77,6 +77,7 @@ public class Data {
     	case "76561198129845638": return true; //FUNNY-BUUF, 9char 1:16, Monk dies
     	case "76561198146147354": return true; //Valhalla
     	case "76561198259490531": return true; //DalNim, too fast 9/13 for PB
+    	case "76561198334461747": return true; //Coldcan, sus coda time and coda replay dies
     	//already excluded by impossible score
     	case "76561198373879461": return true; //thegunslinger
     	//not sure
@@ -817,7 +818,6 @@ public class Data {
     	case "76561198210364576": return "KayOh";
     	case "76561198169426323": return "Jelly Donut";
     	case "76561198041651094": return "zashes";
-    	case "76561198334461747": return "Coldcan";
     	case "76561199032747602": return "超级大神";
     	case "76561198040299895": return "Snekalot";
     	case "76561198057473982": return "TOAST";
@@ -848,7 +848,7 @@ public class Data {
     	case "76561198125757435": return "Hating Mirror";
     	case "76561198253281128": return "Phoenix";
     	case "76561198427072340": return "Denjkeaa";
-    	case "76561198013328795": return "Slither";
+    	case "76561198013328795": return "Slither"; //legit coda
     	case "76561197985364526": return "herb pantagruelion";
     	case "76561198151911999": return "치즈로 만든 타이탄";
     	case "76561198304899769": return "아랑";
