@@ -1016,6 +1016,7 @@ public class Data {
     	case "76561198260821875": return "low1poly";
     	case "76561197967887288": return "Flint Ironstag"; //Aria Score
     	case "76561198034664826": return "caluis32";
+    	case "76561199100579861": return "BuddyBl0daua";
     	default: return "ID:" + steamid;
 		}
 	}
