@@ -1017,6 +1017,8 @@ public class Data {
     	case "76561197967887288": return "Flint Ironstag"; //Aria Score
     	case "76561198034664826": return "caluis32";
     	case "76561199100579861": return "BuddyBl0daua";
+    	case "76561197970850463": return "單手玩家";
+    	case "76561198202938685": return "Ineleon57";
     	default: return "ID:" + steamid;
 		}
 	}
