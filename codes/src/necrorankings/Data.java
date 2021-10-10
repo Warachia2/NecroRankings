@@ -1020,6 +1020,8 @@ public class Data {
     	case "76561198034664826": return "caluis32";
     	case "76561199100579861": return "BuddyBl0daua";
     	case "76561198202938685": return "Ineleon57";
+    	case "76561198802864800": return "Lone Wolf";
+    	case "76561198329485215": return "McStompy"; //Aria 135th, legit
     	default: return "ID:" + steamid;
 		}
 	}
