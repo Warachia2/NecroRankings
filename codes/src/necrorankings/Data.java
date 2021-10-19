@@ -1022,6 +1022,7 @@ public class Data {
     	case "76561198202938685": return "Ineleon57";
     	case "76561198802864800": return "Lone Wolf";
     	case "76561198329485215": return "McStompy"; //Aria 135th, legit
+    	case "76561198164059091": return "깜찍 순심"; //13 speed
     	default: return "ID:" + steamid;
 		}
 	}
