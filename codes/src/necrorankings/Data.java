@@ -94,6 +94,7 @@ public class Data {
     	case "76561198008667877": return true; //Rulewar //Dove Score 2048, replay looked cheated
     	case "76561198809875102": return true; //TheCrusedKiwi //got Aria 9:08 with total 4.6hour playtime, replay looks cheated
     	case "76561198013010544": return true; //Saitonashi, haven't seen replay
+    	case "76561198094827839": return true; //DVD_user, 48min Coda? replay is broken: although plausible profile
     	//Monk, not sure
     	case "76561198218217140": return true; //LizardLane: fast/replay dies only on difficult chars
     	case "76561198320949594": return true; //TheCrocodile6w9: only has Monk entry, replay dies
@@ -247,7 +248,7 @@ public class Data {
 		case "76561198045959196": return "Iwuh";
 		case "76561198306352835": return "Marcy";
 		case "76561198142553698": return "Ruenardo";
-		case "76561198062929160": return "Sanga";
+		case "76561198062929160": return "Liquid Nitrogen";
 		case "76561198034369998": return "Pancelor";
 		case "76561198137310107": return "Greenpikmin";
 		case "76561197973971839": return "Paratroopa";
@@ -1024,6 +1025,7 @@ public class Data {
     	case "76561198329485215": return "McStompy"; //Aria 135th, legit
     	case "76561198164059091": return "깜찍 순심"; //13 speed
     	case "76561199206214055": return "CrimCrem"; 
+    	case "76561198022228663": return "kettchup";
     	default: return "ID:" + steamid;
 		}
 	}
