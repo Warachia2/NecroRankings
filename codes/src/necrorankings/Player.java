@@ -403,6 +403,24 @@ public class Player {
 		}
 	}
 	
+	public double timeRatio_general(int ord, int cur, double upperbound){
+		int tim = 0;
+		
+		if(0 <= ord && ord <= 4){
+			tim = extratime[ord][cur];
+		}
+		else{
+			tim = time[cur];
+		}
+
+		if(tim==0){
+			return upperbound;
+		}
+		else{
+			return Math.min(upperbound, (double) tim/speedWR[cur]);
+		}
+	}
+	
 	public double timeRatio_nobound(int cur){
 		if(time[cur]==0){
 			return 100000.0;
