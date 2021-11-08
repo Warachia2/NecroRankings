@@ -501,7 +501,8 @@ public class MiscGenerator extends DefaultHandler{
 		//More Info
 		moreInfo();
 		
-		dataMaker();
+		dataMaker(300, 4.0);
+		dataMaker(5000, 20.0);
         
         System.out.println("Done");
     }
@@ -943,11 +944,11 @@ public class MiscGenerator extends DefaultHandler{
         p.println("<td><a class=\"jump\" id=\"r" + rank + "\"></a>" + rank + "</td>");
     }
     
-    public static void dataMaker(){
+    public static void dataMaker(int playernum, double upperbound){
     	array.sort((a,b) -> (int)(100000*(b.contribution() - a.contribution())));
         
         try {
-            FileWriter f = new FileWriter(dataoutput + "data.html", false);
+            FileWriter f = new FileWriter(dataoutput + "data" + playernum + ".html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
             
             htmlStart(p, "Data", "labstyle");
@@ -990,7 +991,7 @@ public class MiscGenerator extends DefaultHandler{
             
             p.println("</tr>");
             
-            for(int i=0;i<300;i++){
+            for(int i=0;i<playernum;i++){
             	Player player = array.get(i);
             	
                 p.println("<tr>");
@@ -1003,11 +1004,11 @@ public class MiscGenerator extends DefaultHandler{
             	p.println("<td>" + String.format("%.3f",player.contribution()) + "</td>");
 
         		for(int j=0;j<17;j++){
-        			p.println("<td>" + String.format("%.3f", player.timeRatio_general(-1,j,4.0)) +"</td>");
+        			p.println("<td>" + String.format("%.3f", player.timeRatio_general(-1,j,upperbound)) +"</td>");
         		}
             	for(int h=0;h<5;h++){
             		for(int j=0;j<14;j++){
-            			p.println("<td>" + String.format("%.3f", player.timeRatio_general(h,j,4.0)) +"</td>");
+            			p.println("<td>" + String.format("%.3f", player.timeRatio_general(h,j,upperbound)) +"</td>");
             		}
             	}
 
