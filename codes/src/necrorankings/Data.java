@@ -141,8 +141,9 @@ public class Data {
     	case "76561198069475310": return true; //LynX
     	case "76561198286560125": return true; //香港记者
     	case "76561198071385704": return true; //RAYDENSCOTFIELD, 49hours story 57th 9car 70th, sus achievement times
-    	//just an another account of someone
+    	//not cheater, just an another account of someone
     	case "76561198085518032": return true; //BreedPineapple
+    	case "76561199220381387": return true; //tuf's alt
     	default: return false;
     	}
     }
