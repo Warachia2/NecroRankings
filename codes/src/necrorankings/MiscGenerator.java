@@ -492,6 +492,8 @@ public class MiscGenerator extends DefaultHandler{
         
         //Android
         list.get("76561198844450515").setExtraTime(2, 9, 79256); //lakehope, Mel Rando, 13:12.56
+        list.get("76561198844450515").setGold(12, 10571); //lakehope, Tempo, 10571
+        list.get("76561198844450515").setGold(11, 16881); //lakehope, Noc, 16881
         
         //Bar Text
         LocalDateTime date1 = LocalDateTime.now();

@@ -1027,6 +1027,7 @@ public class Data {
     	case "76561198164059091": return "깜찍 순심"; //13 speed
     	case "76561199206214055": return "CrimCrem"; 
     	case "76561198022228663": return "kettchup";
+    	case "76561198879893511": return "Nimu";
     	default: return "ID:" + steamid;
 		}
 	}
