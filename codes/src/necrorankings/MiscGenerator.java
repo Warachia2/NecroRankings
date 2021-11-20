@@ -483,6 +483,7 @@ public class MiscGenerator extends DefaultHandler{
         list.get("76561198398758840").setGold(0, 26566); //Hokuho, Aria Score 26566
         Player.scoreWR[0] = Math.max(Player.scoreWR[0], 26566);
         
+        list.get("76561198994219732").setTime(12, 29863); //NBtelethia, Tempo 4:58.63
         list.get("76561198994219732").setClear(6, 401); //NBtelethia, Dove Deathless 4-1-2
         
         list.get("76561198317639601").setExtraTime(0, 2, 35101); //Monsterracer, Bolt Hard Speed, 5:51.01
