@@ -1938,6 +1938,9 @@ public class HtmlGenerator extends DefaultHandler{
         	if(player.name().startsWith("ID") || player.isExtra){
         		continue;
         	}
+        	if(player.SteamID == "76561198849821236" || player.SteamID == "76561197967734490" || player.SteamID == "76561198041651094"){
+        		continue;
+        	}
             try {
                 FileWriter f = new FileWriter(pbsoutput + player.name_url() + ".html", false);
                 PrintWriter p = new PrintWriter(new BufferedWriter(f));
