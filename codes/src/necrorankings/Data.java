@@ -1033,4 +1033,14 @@ public class Data {
 		}
 	}
 
+	//Banned Players
+	public static boolean isBanned(String steamid){
+		switch(steamid){
+		case "76561198849821236": return true; //lith
+		case "76561197967734490": return true; //Mint
+		case "76561198041651094": return true; //zashes
+		default: return false;
+		}
+	}
+
 }
