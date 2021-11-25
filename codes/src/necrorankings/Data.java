@@ -1033,10 +1033,10 @@ public class Data {
 		}
 	}
 
-	//Banned Players
+	//Banned Players, currently off
 	public static boolean isBanned(String steamid){
 		switch(steamid){
-		case "76561198849821236": return true; //lith
+		case "76561198849821236": return false; //lith
 		default: return false;
 		}
 	}
