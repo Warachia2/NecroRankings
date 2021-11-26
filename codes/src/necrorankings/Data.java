@@ -134,6 +134,7 @@ public class Data {
     	//Eli, not sure
     	case "76561198114745521": return true; //no name: sus times, replay dies
     	case "76561198056493462": return true; //Dante.exe: sus times, replay dies
+    	case "76561198067799784": return true; //Barracuda: first-clear-in, replay dies along with first-clear-in monk
     	//totally not sure
     	case "76561198040993726": return true; //Big E (someone's another account?)
     	case "76561198025192029": return true; //Chewy
@@ -1030,14 +1031,6 @@ public class Data {
     	case "76561198879893511": return "Nimu";
     	case "76561198055733749": return "ria11368";
     	default: return "ID:" + steamid;
-		}
-	}
-
-	//Banned Players, currently off
-	public static boolean isBanned(String steamid){
-		switch(steamid){
-		case "76561198849821236": return false; //lith
-		default: return false;
 		}
 	}
 

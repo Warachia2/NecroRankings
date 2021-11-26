@@ -1935,7 +1935,7 @@ public class HtmlGenerator extends DefaultHandler{
     
     public static void pblistMaker(){
         for(Player player: array){
-        	if(player.name().startsWith("ID") || player.isExtra || Data.isBanned(player.SteamID)){
+        	if(player.name().startsWith("ID") || player.isExtra){
         		continue;
         	}
             try {
