@@ -2235,7 +2235,7 @@ public class HtmlGenerator extends DefaultHandler{
         }
     }
     
-    public static void extraChartMaker(){
+    public static void extraChartMaker_old(){
         try {
             FileWriter f = new FileWriter(chartsoutput + "extrawrs.html", false);
             PrintWriter p = new PrintWriter(new BufferedWriter(f));
@@ -2374,12 +2374,165 @@ public class HtmlGenerator extends DefaultHandler{
         }
     }
     
+    public static void extraChartMaker(){
+        try {
+            FileWriter f = new FileWriter(chartsoutput + "extrawrs.html", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+            
+            htmlStart(p, "Extra World Records", "recordchart");
+            
+            ///Extra Speed
+            p.println("<table border=\"5\">");
+            p.println("<tr>");
+            p.println("<th class=\"frame\">WRs</th>");
+            for(int i=0;i<14;i++){
+            	p.println("<th class=\"frame\"><img src=\"icons/" + i + ".jpg\"></th>");
+            }
+            p.println("</tr>");
+            
+            for(int h=0;h<5;h++){
+                p.println("<tr>");
+                p.println("<th class=\"frame\">" + ordToCategory(h) + " Speed" + "</th>");
+            	for(int i=0;i<14;i++){
+            		for(Player player: array){
+            			if(player.hasWR(h, i, "speed")){
+            				printLBsLinkedIcon(p, player, "speed", i, h, player.name() + ", " + Player.csecToString(player.extratime[h][i]));
+                			break;	
+            			}
+            		}
+            	}
+            	p.println("</tr>");
+            }
+            p.println("</table>");
+            p.println("<p></p>");
+            
+            ///Extra Score & Deathless
+            p.println("<table border=\"5\">");
+            p.println("<tr>");
+            p.println("<th class=\"frame\">WRs</th>");
+            for(int i=0;i<14;i++){
+            	p.println("<th class=\"frame\"><img src=\"icons/" + i + ".jpg\"></th>");
+            }
+            p.println("</tr>");
+            
+            for(int h=0;h<5;h++){
+                p.println("<tr>");
+                p.println("<th class=\"frame\">" + ordToCategory(h) + " Score" + "</th>");
+            	for(int i=0;i<14;i++){
+            		for(Player player: array){
+            			if(player.hasWR(h, i, "score")){
+            				printLBsLinkedIcon(p, player, "score", i, h, player.name() + ", " + String.valueOf(player.extragold[h][i]));
+                			break;	
+            			}
+            		}
+            	}
+            	p.println("</tr>");
+            }
+            p.println("<tr>");
+            p.println("<th class=\"frame\">" + "Deathless" + "</th>");
+            for(int i=0;i<14;i++){
+        		for(Player player: array){
+        			if(player.hasWR(-1, i, "deathless")){
+        				printLBsLinkedIcon(p, player, "deathless", i, -1, player.name() + ", " + player.clearcount(i));
+            			break;	
+        			}
+        		}
+            }
+            p.println("</tr>");
+            p.println("</table>");
+            
+            //2nd
+            
+            p.println("<h1 class=\"center\">" + "Extra 2nd Places" +"</h1>");
+            
+            p.println("<table border=\"5\">");
+            p.println("<tr>");
+            p.println("<th class=\"frame\">2nd Places</th>");
+            for(int i=0;i<14;i++){
+            	p.println("<th class=\"frame\"><img src=\"icons/" + i + ".jpg\"></th>");
+            }
+            p.println("</tr>");
+            
+            for(int h=0;h<5;h++){
+                p.println("<tr>");
+                p.println("<th class=\"frame\">" + ordToCategory(h) + " Speed" + "</th>");
+            	for(int i=0;i<14;i++){
+            		for(Player player: array){
+            			if(player.getRank(h, i, "speed")==2){
+            				printLBsLinkedIcon(p, player, "speed", i, h, player.name() + ", " + Player.csecToString(player.extratime[h][i]));
+                			break;	
+            			}
+            		}
+            	}
+            	p.println("</tr>");
+            }
+            p.println("</table>");
+            p.println("<p></p>");
+            
+            p.println("<table border=\"5\">");
+            p.println("<tr>");
+            p.println("<th class=\"frame\">2nd Places</th>");
+            for(int i=0;i<14;i++){
+            	p.println("<th class=\"frame\"><img src=\"icons/" + i + ".jpg\"></th>");
+            }
+            p.println("</tr>");
+            
+            for(int h=0;h<5;h++){
+                p.println("<tr>");
+                p.println("<th class=\"frame\">" + ordToCategory(h) + " Score" + "</th>");
+            	for(int i=0;i<14;i++){
+            		for(Player player: array){
+            			if(player.getRank(h, i, "score")==2){
+            				printLBsLinkedIcon(p, player, "score", i, h, player.name() + ", " + String.valueOf(player.extragold[h][i]));
+                			break;	
+            			}
+            		}
+            	}
+            	p.println("</tr>");
+            }
+            p.println("<tr>");
+            p.println("<th class=\"frame\">" + "Deathless" + "</th>");
+            for(int i=0;i<14;i++){
+        		for(Player player: array){
+        			if(player.getRank(-1, i, "deathless")==2){
+        				printLBsLinkedIcon(p, player, "deathless", i, -1, player.name() + ", " + player.clearcount(i));
+            			break;	
+        			}
+        		}
+            }
+            p.println("</tr>");
+            p.println("</table>");
+            
+            p.println("<p>" + "Last Updated:" + fdate1 +"</p>");
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>"); 
+            p.println("</body></html>");
+            p.close();
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
     public static void printPlayerLinkedIcon(PrintWriter p, Player player){
     	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/"+ player.name_url() + ".html\"><img src=\"players/" + player.name() + ".jpg\"></a></td>");
     }
     
     public static void printPlayerLinkedIcon(PrintWriter p, Player player, String tooltip){
     	p.println("<td class=\"tooltip\"><a href=\"https://warachia2.github.io/NecroRankings/pbs/"+ player.name_url() + ".html\"><span class=\"tooltip-text\">" + tooltip + "</span><img src=\"players/" + player.name() + ".jpg\"></a></td>");
+    }
+    
+    public static void printLBsLinkedIcon(PrintWriter p, Player player, String category, int cur, int ord, String tooltip){
+    	String lbsname = "";
+    	if(category == "speed"){
+    		lbsname = curToName(cur) + ordToCategory(ord) + "speedlbs";
+    	}
+    	else if(category == "score"){
+    		lbsname = curToName(cur) + ordToCategory(ord) + "scorelbs";
+    	}
+    	else{
+    		lbsname = curToName(cur) + "deathlesslbs";
+    	}
+    	p.println("<td class=\"tooltip\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + lbsname + ".html\"><span class=\"tooltip-text\">" + tooltip + "</span><img src=\"players/" + player.name() + ".jpg\"></a></td>");
     }
         
     public static void playerListMaker(){
