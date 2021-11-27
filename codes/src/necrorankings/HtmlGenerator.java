@@ -25,6 +25,7 @@ public class HtmlGenerator extends DefaultHandler{
 	static String pbsoutput = "C:\\Users\\Warachia\\Documents\\GitHub\\NecroRankings\\pbs\\";
 	static String chartsoutput = "C:\\Users\\Warachia\\Documents\\GitHub\\NecroRankings\\charts\\";
 	static String hiddenoutput = "C:\\Users\\Warachia\\Documents\\GitHub\\NecroRankings\\hidden\\";
+	static String dataoutput = "C:\\Users\\Warachia\\Documents\\GitHub\\NecroRankings\\data\\";
 	
 	static String category = "";
 	static int cur = 0; //category id, 0~16
@@ -495,6 +496,9 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198121399825").setExtraGold(0, 1, 116598); //Warachia, Bard Hard Score 116598
         list.get("76561198317639601").setExtraGold(0, 2, 1933); //Monsterracer, Bolt Hard Score, 1933
         
+        //Alt Account
+        list.get("76561198058867434").setExtraTime(0, 11, 59723); //Tufwfo, Nocturna Hard Speed, 9:57.23
+        
         //Android
         list.get("76561198844450515").setExtraTime(2, 9, 79256); //lakehope, Mel Rando, 13:12.56
         list.get("76561198844450515").setGold(12, 10571); //lakehope, Tempo, 10571
@@ -524,6 +528,8 @@ public class HtmlGenerator extends DefaultHandler{
         top10ChartMaker("Score");
         extraChartMaker();
         densityMaker();
+		dataMaker(300, 4.0);
+		dataMaker(5000, 20.0);
         
         System.out.println("Done");
     }
@@ -2577,6 +2583,94 @@ public class HtmlGenerator extends DefaultHandler{
 
             rankingCloser(p);
             
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+     
+    public static void dataMaker(int playernum, double upperbound){
+    	array.sort((a,b) -> (int)(100000*(b.contribution() - a.contribution())));
+        
+        try {
+            FileWriter f = new FileWriter(dataoutput + "data" + playernum + ".html", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+            
+            htmlStart(p, "Data", "labstyle");
+            
+            p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+            p.println("<table border=\"5\">");
+            
+            //header
+            p.println("<tr>");
+            p.println("<th class=\"fixed01 rank\">Rank</th>");
+            p.println("<th class=\"fixed01 name\">" + fdate1 + "</th>");
+            p.println("<th class=\"fixed01 total\">" + "infl" + "</th>");
+            
+            
+            //speed
+            for(int i=0;i<17;i++){
+                p.println("<th class=\"fixed01 char\">" + ordToCategory(-1) + curToShortName(i) + " Speed</th>");
+            }
+            for(int h=0;h<5;h++){
+                for(int i=0;i<14;i++){
+                    p.println("<th class=\"fixed01 char\">" + ordToCategory(h) + curToShortName(i) + " Speed</th>");
+                }
+            }
+            
+            //score
+            for(int i=0;i<17;i++){
+                p.println("<th class=\"fixed01 char\">" + ordToCategory(-1) + curToShortName(i) + " Score</th>");
+            }
+            for(int h=0;h<5;h++){
+                for(int i=0;i<14;i++){
+                    p.println("<th class=\"fixed01 char\">" + ordToCategory(h) + curToShortName(i) + " Score</th>");
+                }
+            }
+            
+            
+            //deathless
+            for(int i=0;i<14;i++){
+                p.println("<th class=\"fixed01 char\">" + curToShortName(i) + " DL</th>");
+            }
+            
+            p.println("</tr>");
+            
+            for(int i=0;i<playernum;i++){
+            	Player player = array.get(i);
+            	
+                p.println("<tr>");
+            	
+            	p.println("<td>" + (i+1) + "</td>");
+            	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name_url() + ".html\">" + player.name() + "</a></td>");
+            	p.println("<td>" + String.format("%.3f",player.contribution()) + "</td>");
+
+        		for(int j=0;j<17;j++){
+        			p.println("<td>" + String.format("%.3f", player.timeRatio_general(-1,j,upperbound)) +"</td>");
+        		}
+            	for(int h=0;h<5;h++){
+            		for(int j=0;j<14;j++){
+            			p.println("<td>" + String.format("%.3f", player.timeRatio_general(h,j,upperbound)) +"</td>");
+            		}
+            	}
+
+        		for(int j=0;j<17;j++){
+        			p.println("<td>" + player.gold[j] +"</td>");
+        		}
+        		for(int h=0;h<5;h++){
+            		for(int j=0;j<14;j++){
+            			p.println("<td>" + player.extragold[h][j] +"</td>");
+            		}
+        		}
+        		
+        		for(int j=0;j<14;j++){
+        			p.println("<td>" + String.format("%.2f",Player.points(player.deathless[j])) +"</td>");
+        		}
+                
+                p.println("</tr>");
+            }
+            
+            rankingCloser(p);
+ 
         } catch (IOException ex) {
             ex.printStackTrace();
         }
