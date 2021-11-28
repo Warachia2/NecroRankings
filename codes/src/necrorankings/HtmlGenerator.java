@@ -780,8 +780,6 @@ public class HtmlGenerator extends DefaultHandler{
     	//levs57
     	list.get("76561198087840095").addInfo("Also known as: AT");
     	list.get("76561198087840095").addInfo(conduitWinner(42));
-    	//lith
-    	list.get("76561198849821236").addInfo("Also known as: Amellia");
     	//LVS
     	list.get("76561198082463591").addInfo("Also known as: らびしゅ");
     	//marc
