@@ -524,7 +524,7 @@ public class Data {
     	case "76561198039684185": return "Mac";
     	case "76561198053137758": return "Polymerq";
     	case "76561198201336846": return "Mono";
-    	case "76561198849821236": return "lith";
+    	case "76561198849821236": return "banned player";
     	case "76561198398684424": return "esverat";
     	case "76561198025048892": return "crate";
     	case "76561198833437561": return "nari";
