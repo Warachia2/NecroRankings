@@ -2600,7 +2600,7 @@ public class HtmlGenerator extends DefaultHandler{
             
             //header
             p.println("<tr>");
-            p.println("<th class=\"fixed01 rank\">Rank</th>");
+            //p.println("<th class=\"fixed01 rank\">Rank</th>");
             p.println("<th class=\"fixed01 name\">" + fdate1 + "</th>");
             p.println("<th class=\"fixed01 total\">" + "infl" + "</th>");
             
@@ -2638,7 +2638,7 @@ public class HtmlGenerator extends DefaultHandler{
             	
                 p.println("<tr>");
             	
-            	p.println("<td>" + (i+1) + "</td>");
+            	//p.println("<td>" + (i+1) + "</td>");
             	p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name_url() + ".html\">" + player.name() + "</a></td>");
             	p.println("<td>" + String.format("%.3f",player.contribution()) + "</td>");
 
