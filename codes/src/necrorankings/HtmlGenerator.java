@@ -528,8 +528,8 @@ public class HtmlGenerator extends DefaultHandler{
         top10ChartMaker("Score");
         extraChartMaker();
         densityMaker();
-		dataMaker(300, 4.0);
-		dataMaker(5000, 20.0);
+		maincsvMaker(5000, 20.0);
+		allcsvMaker(5000, 20.0);
         
         System.out.println("Done");
     }
@@ -2668,6 +2668,126 @@ public class HtmlGenerator extends DefaultHandler{
             }
             
             rankingCloser(p);
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public static void allcsvMaker(int playernum, double upperbound){
+    	array.sort((a,b) -> (int)(100000*(b.contribution() - a.contribution())));
+        
+        try {
+            FileWriter f = new FileWriter(dataoutput + "all" + playernum + ".csv", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+
+
+            p.print("Name,");
+            
+            //speed
+            for(int i=0;i<17;i++){
+                p.print(ordToCategory(-1) + curToShortName(i) + " Speed,");
+            }
+            for(int h=0;h<5;h++){
+                for(int i=0;i<14;i++){
+                    p.print(ordToCategory(h) + curToShortName(i) + " Speed,");
+                }
+            }
+            
+            //score
+            for(int i=0;i<17;i++){
+                p.print(ordToCategory(-1) + curToShortName(i) + " Score,");
+            }
+            for(int h=0;h<5;h++){
+                for(int i=0;i<14;i++){
+                    p.print(ordToCategory(h) + curToShortName(i) + " Score,");
+                }
+            }
+            
+            
+            //deathless
+            for(int i=0;i<14;i++){
+                p.print(curToShortName(i) + " DL,");
+            }
+            
+            p.println("Influence");
+            
+            for(int i=0;i<playernum;i++){
+            	Player player = array.get(i);
+
+            	p.print(player.name() + ",");
+
+        		for(int j=0;j<17;j++){
+        			p.print(String.format("%.5f", player.timeRatio_general(-1,j,upperbound)) + ",");
+        		}
+            	for(int h=0;h<5;h++){
+            		for(int j=0;j<14;j++){
+            			p.print(String.format("%.5f", player.timeRatio_general(h,j,upperbound)) + ",");
+            		}
+            	}
+
+        		for(int j=0;j<17;j++){
+        			p.print(player.gold[j] + ",");
+        		}
+        		for(int h=0;h<5;h++){
+            		for(int j=0;j<14;j++){
+            			p.print(player.extragold[h][j] + ",");
+            		}
+        		}
+        		
+        		for(int j=0;j<14;j++){
+        			p.print(String.format("%.3f",Player.points(player.deathless[j])) + ",");
+        		}
+                
+            	p.println(String.format("%.5f",player.contribution()));
+            }
+            
+            p.close();
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public static void maincsvMaker(int playernum, double upperbound){
+    	array.sort((a,b) -> (int)(100000*(b.contribution() - a.contribution())));
+        
+        try {
+            FileWriter f = new FileWriter(dataoutput + "main" + playernum + ".csv", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+
+
+            p.print("Name,");
+            
+            //speed
+            for(int i=0;i<17;i++){
+                p.print(ordToCategory(-1) + curToShortName(i) + " Speed,");
+            }
+            
+            //score
+            for(int i=0;i<17;i++){
+                p.print(ordToCategory(-1) + curToShortName(i) + " Score,");
+            }
+
+            p.println("Influence");
+            
+            for(int i=0;i<playernum;i++){
+            	Player player = array.get(i);
+
+            	p.print(player.name() + ",");
+
+        		for(int j=0;j<17;j++){
+        			p.print(String.format("%.5f", player.timeRatio_general(-1,j,upperbound)) + ",");
+        		}
+
+        		for(int j=0;j<17;j++){
+        			p.print(player.gold[j] + ",");
+        		}
+                
+            	p.println(String.format("%.5f",player.contribution()));
+            }
+            
+            p.close();
  
         } catch (IOException ex) {
             ex.printStackTrace();
