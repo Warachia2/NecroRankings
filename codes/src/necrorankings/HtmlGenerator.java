@@ -2692,7 +2692,7 @@ public class HtmlGenerator extends DefaultHandler{
             }
             for(int h=0;h<5;h++){
                 for(int i=0;i<14;i++){
-                    p.print(ordToCategory(h) + curToShortName(i) + " Speed,");
+                    p.print(ordToCategory(h) + " " + curToShortName(i) + " Speed,");
                 }
             }
             
@@ -2702,7 +2702,7 @@ public class HtmlGenerator extends DefaultHandler{
             }
             for(int h=0;h<5;h++){
                 for(int i=0;i<14;i++){
-                    p.print(ordToCategory(h) + curToShortName(i) + " Score,");
+                    p.print(ordToCategory(h) + " " + curToShortName(i) + " Score,");
                 }
             }
             
