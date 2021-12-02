@@ -528,8 +528,10 @@ public class HtmlGenerator extends DefaultHandler{
         top10ChartMaker("Score");
         extraChartMaker();
         densityMaker();
+        System.out.println("Making Data...");
 		maincsvMaker(5000, 20.0);
 		allcsvMaker(5000, 20.0);
+		wrscsvMaker();
         
         System.out.println("Done");
     }
@@ -2785,6 +2787,30 @@ public class HtmlGenerator extends DefaultHandler{
         		}
                 
             	p.println(String.format("%.5f",player.contribution()));
+            }
+            
+            p.close();
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public static void wrscsvMaker(){
+        try {
+            FileWriter f = new FileWriter(dataoutput + "mainwrs.csv", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+            
+            //speed
+            for(int i=0;i<17;i++){
+                p.print(ordToCategory(-1) + curToShortName(i) + " Speed,");
+                p.println(Player.speedWR[i]);
+            }
+            
+            //score
+            for(int i=0;i<17;i++){
+                p.print(ordToCategory(-1) + curToShortName(i) + " Score,");
+                p.println(Player.scoreWR[i]);
             }
             
             p.close();
