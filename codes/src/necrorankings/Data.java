@@ -1031,6 +1031,8 @@ public class Data {
     	case "76561198879893511": return "Nimu";
     	case "76561198055733749": return "ria11368";
     	case "76561198274227922": return "N'zoth";
+    	case "76561198592393277": return "doublestar";
+    	case "76561198797963633": return "morrisdavid732";
     	default: return "ID:" + steamid;
 		}
 	}
