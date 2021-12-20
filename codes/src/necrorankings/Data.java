@@ -180,7 +180,7 @@ public class Data {
 		case "76561198058867434": return "Tufwfo";
 		case "76561198000263514": return "incnone";
 		case "76561198207378484": return "Ocre307";
-		case "76561198094733262": return "WasKilledBy";
+		case "76561198094733262": return "WasKi115";
 		case "76561197998799529": return "biggiemac42";
 		case "76561197999948240": return "Ancalagor";
 		case "76561198089956676": return "Ptrevordactyl";
