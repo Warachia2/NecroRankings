@@ -118,6 +118,7 @@ public class Data {
     	case "76561198017290085": return true; //Fabulous Vulture: sus times, replay dies
     	case "76561198143178648": return true; //Mashiro
     	case "76561197998730109": return true; //Voorprettig, 19.5h playtime Monk 131th Mary 125th
+    	case "76561198046816262": return true; //Mars, Monk 95th from nowhere, replay dies
     	//Aria, not sure
     	case "76561198075718684": return true; //Bourbon: sus times, replay dies
     	case "76561198078278662": return true; //lsj891012: sus times, replay dies
