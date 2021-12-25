@@ -492,6 +492,7 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198994219732").setClear(6, 401); //NBtelethia, Dove Deathless 4-1-2
         
         list.get("76561198317639601").setExtraTime(0, 2, 35101); //Monsterracer, Bolt Hard Speed, 5:51.01
+        list.get("76561198056452044").setExtraTime(0, 11, 57396); //Bgm, Nocturna Hard Speed, 9:33.96
         
         list.get("76561198121399825").setExtraGold(0, 1, 116598); //Warachia, Bard Hard Score 116598
         list.get("76561198317639601").setExtraGold(0, 2, 1933); //Monsterracer, Bolt Hard Score, 1933
