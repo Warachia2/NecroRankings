@@ -1036,6 +1036,7 @@ public class Data {
     	case "76561198797963633": return "morrisdavid732";
     	case "76561198106244684": return "Loneover";
     	case "76561198049233475": return "Hyerf";
+    	case "76561198043869773": return "Friendly Dragon";
     	default: return "ID:" + steamid;
 		}
 	}
