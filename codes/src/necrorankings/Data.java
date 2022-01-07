@@ -80,6 +80,7 @@ public class Data {
     	case "76561198146147354": return true; //Valhalla
     	case "76561198259490531": return true; //DalNim, too fast 9/13 for PB
     	case "76561198334461747": return true; //Coldcan, sus coda time and coda replay dies
+    	case "76561198000408686": return true; //DeadManWalking, dove score
     	//already excluded by impossible score
     	case "76561198373879461": return true; //thegunslinger
     	//not sure
