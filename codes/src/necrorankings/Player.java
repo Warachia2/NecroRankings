@@ -39,7 +39,7 @@ public class Player {
 	final int difficultdeathless = 10;
 	final int easydeathless = 5;
 	final int codachallenge = 25;
-	final int extraspeed = 4;
+	final int extraspeed = 3;
 	final int extrascore = 1;
 	
 	///WRs
