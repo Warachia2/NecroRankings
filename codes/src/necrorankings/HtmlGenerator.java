@@ -1005,6 +1005,7 @@ public class HtmlGenerator extends DefaultHandler{
 						player.speed[num] = rank;
 						
 						if(rank<=150 || !player.name().startsWith("ID")){
+							if(Data.isBanned(player.SteamID)){rank++; continue;}
 				            p.println("<tr>");
 				            rankid(p,rank);
 				            if(player.name().startsWith("ID")){
@@ -1058,6 +1059,7 @@ public class HtmlGenerator extends DefaultHandler{
 						player.score[num] = rank;
 						
 						if(rank<=50 || !player.name().startsWith("ID")){
+							if(Data.isBanned(player.SteamID)){rank++; continue;}
 				            p.println("<tr>");
 				            rankid(p,rank);
 				            if(player.name().startsWith("ID")){
@@ -1108,6 +1110,7 @@ public class HtmlGenerator extends DefaultHandler{
 						player.deathless[num] = rank;
 						
 						if(!player.name().startsWith("ID")){
+							if(Data.isBanned(player.SteamID)){rank++; continue;}
 				            p.println("<tr>");
 				            rankid(p,rank);
 				            p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name_url() + ".html\">" + player.name() + "</a></td>");
@@ -1162,6 +1165,7 @@ public class HtmlGenerator extends DefaultHandler{
 							player.setRank(ord, num, true, rank);
 							
 							if(!player.name().startsWith("ID")){
+								if(Data.isBanned(player.SteamID)){continue;}
 					            p.println("<tr>");
 					            rankid(p,rank);
 					            p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name_url() + ".html\">" + player.name() + "</a></td>");
@@ -1215,6 +1219,7 @@ public class HtmlGenerator extends DefaultHandler{
 							player.setRank(ord, num, false, rank);
 							
 							if(!player.name().startsWith("ID")){
+								if(Data.isBanned(player.SteamID)){continue;}
 					            p.println("<tr>");
 					            rankid(p,rank);
 					            p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name_url() + ".html\">" + player.name() + "</a></td>");
@@ -1257,6 +1262,7 @@ public class HtmlGenerator extends DefaultHandler{
             
             for(int i=0;i<157;i++){
             	Player player = array.get(i);
+				if(Data.isBanned(player.SteamID)){continue;}
             	
                 p.println("<tr>");
             	
@@ -1308,6 +1314,7 @@ public class HtmlGenerator extends DefaultHandler{
             
             for(int i=0;i<157;i++){
             	Player player = array.get(i);
+				if(Data.isBanned(player.SteamID)){continue;}
             	
                 p.println("<tr>");
             	
@@ -1359,6 +1366,7 @@ public class HtmlGenerator extends DefaultHandler{
             
             for(int i=0;i<31;i++){
             	Player player = array.get(i);
+				if(Data.isBanned(player.SteamID)){continue;}
             	
                 p.println("<tr>");
             	
@@ -1410,6 +1418,8 @@ public class HtmlGenerator extends DefaultHandler{
             
             for(int i=0;i<50;i++){
             	Player player = array.get(i);
+				if(Data.isBanned(player.SteamID)){continue;}
+            	
             	
                 p.println("<tr>");
             	
@@ -1472,6 +1482,7 @@ public class HtmlGenerator extends DefaultHandler{
             
             for(int i=0;i<100;i++){
             	Player player = array.get(i);
+				if(Data.isBanned(player.SteamID)){continue;}
             	
                 p.println("<tr>");
             	
@@ -1513,6 +1524,7 @@ public class HtmlGenerator extends DefaultHandler{
             
             for(int i=0;i<100;i++){
             	Player player = array.get(i);
+				if(Data.isBanned(player.SteamID)){continue;}
             	
                 p.println("<tr>");
             	
@@ -1559,6 +1571,7 @@ public class HtmlGenerator extends DefaultHandler{
             
             for(int i=0;i<100;i++){
             	Player player = array.get(i);
+				if(Data.isBanned(player.SteamID)){continue;}
             	
                 p.println("<tr>");
             	
@@ -1600,6 +1613,7 @@ public class HtmlGenerator extends DefaultHandler{
             
             for(int i=0;i<100;i++){
             	Player player = array.get(i);
+				if(Data.isBanned(player.SteamID)){continue;}
             	
                 p.println("<tr>");
             	
@@ -1637,6 +1651,7 @@ public class HtmlGenerator extends DefaultHandler{
             
             for(int i=0;i<300;i++){
             	Player player = array.get(i);
+				if(Data.isBanned(player.SteamID)){continue;}
             	
                 p.println("<tr>");
             	
@@ -1734,6 +1749,7 @@ public class HtmlGenerator extends DefaultHandler{
 
             for(int i=0;i<400;i++){
             	Player player = array.get(i);
+				if(Data.isBanned(player.SteamID)){continue;}
             	
                 p.println("<tr>");
             	p.println("<td>" + (i+1) + "</td>");
@@ -1789,6 +1805,7 @@ public class HtmlGenerator extends DefaultHandler{
 
             for(int i=0;i<400;i++){
             	Player player = array.get(i);
+				if(Data.isBanned(player.SteamID)){continue;}
             	
                 p.println("<tr>");
             	p.println("<td>" + (i+1) + "</td>");
@@ -1948,6 +1965,7 @@ public class HtmlGenerator extends DefaultHandler{
         	if(player.name().startsWith("ID") || player.isExtra){
         		continue;
         	}
+			if(Data.isBanned(player.SteamID)){continue;}
             try {
                 FileWriter f = new FileWriter(pbsoutput + player.name_url() + ".html", false);
                 PrintWriter p = new PrintWriter(new BufferedWriter(f));

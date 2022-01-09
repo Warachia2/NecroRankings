@@ -147,8 +147,6 @@ public class Data {
     	//not cheater, just an another account of someone
     	case "76561198085518032": return true; //BreedPineapple
     	case "76561199220381387": return true; //tuf's alt
-    	//not cheater, just banned by me
-    	case "76561198849821236": return true; //lith
     	default: return false;
     	}
     }
@@ -1039,8 +1037,16 @@ public class Data {
     	case "76561198106244684": return "Loneover";
     	case "76561198049233475": return "Hyerf";
     	case "76561198043869773": return "Friendly Dragon";
+    	case "76561198849821236": return "lith"; //banned
     	default: return "ID:" + steamid;
 		}
 	}
 
+	public static boolean isBanned(String steamid){
+		switch(steamid){
+    	case "76561198849821236": return true; //lith
+		default: return false;
+		}
+	}
+	
 }
