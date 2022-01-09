@@ -169,12 +169,12 @@ public class Data {
 		case "76561198317639601": return "Morraconda";
 		case "76561197993247154": return "Abu Yazan";
 		case "76561198149072446": return "Nominozo";
-		case "76561198398758840": return "Hokuhokureiha";
-		case "76561198002854407": return "SpootyBiscuit";
+		case "76561198398758840": return "hokuhokureiha";
+		case "76561198002854407": return "Spootaloo";
 		case "76561198136201511": return "RavioLinguini";
 		case "76561198028008855": return "Siveure";
 		case "76561198121399825": return "Warachia";
-		case "76561198118733148": return "RoyalGoof";
+		case "76561198118733148": return "Goof";
 		case "76561198076831862": return "super bae";
 		case "76561198041011456": return "encryptid";
 		case "76561198042191965": return "d_tea";
