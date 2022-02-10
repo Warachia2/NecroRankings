@@ -481,6 +481,7 @@ public class HtmlGenerator extends DefaultHandler{
         //Unsubmitted
         list.get("76561198087367133").setTime(2, 27345); //Shortcake Sweets, Bolt Speed, 4:33.45
         list.get("76561198057683647").setTime(2, 23458); //Sivcria, Bolt Speed, 3:54.58
+        list.get("76561198061963965").setTime(11, 54123); //kath, Nocturna Speed, 9:01.23
         list.get("76561197999948240").setGold(11, 30086); //Ancalagor, Nocturna Score 30086
         list.get("76561198056452044").setTime(0, 28347); //Bgm, Aria Speed, 4:43.47
         list.get("76561198136201511").setTime(16, 487546); //Ravio, 13char Speed 1:21:15.636
