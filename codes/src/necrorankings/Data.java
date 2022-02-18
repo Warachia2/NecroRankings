@@ -1048,6 +1048,9 @@ public class Data {
     	case "76561198145921205": return "Ahududu";
     	case "76561198844452548": return "pokkenbro5";
     	case "76561199205955661": return "Reality_Gamer_";
+    	case "76561198136082567": return "Partydroid";
+    	case "76561198103117990": return "EIN";
+    	case "76561198133544183": return "Dragonfru";
     	default: return "ID:" + steamid;
 		}
 	}

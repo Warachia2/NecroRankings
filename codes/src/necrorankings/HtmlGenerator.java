@@ -504,6 +504,9 @@ public class HtmlGenerator extends DefaultHandler{
         //Alt Account
         list.get("76561198058867434").setExtraTime(0, 11, 59723); //Tufwfo, Nocturna Hard Speed, 9:57.23
         
+        //Switch
+        list.get("76561198136082567").setTime(3, 71757); //Partydroid, Cad, 11:57.57
+        
         //Android
         list.get("76561198844450515").setExtraTime(2, 9, 79256); //lakehope, Mel Rando, 13:12.56
         list.get("76561198844450515").setGold(12, 10571); //lakehope, Tempo, 10571
