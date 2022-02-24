@@ -1051,6 +1051,7 @@ public class Data {
     	case "76561198136082567": return "Partydroid";
     	case "76561198103117990": return "EIN";
     	case "76561198133544183": return "Dragonfru";
+    	case "76561198008545121": return "Istas Nix";
     	default: return "ID:" + steamid;
 		}
 	}
