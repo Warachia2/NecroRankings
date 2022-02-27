@@ -96,6 +96,7 @@ public class Data {
     	case "76561198809875102": return true; //TheCrusedKiwi //got Aria 9:08 with total 4.6hour playtime, replay looks cheated
     	case "76561198013010544": return true; //Saitonashi, haven't seen replay
     	case "76561198094827839": return true; //DVD_user, 48min Coda? replay is broken: although plausible profile
+    	case "76561198056856651": return true; //Tyto XIII, #29 14sum/#70 LBI out of nowhere
     	//Monk, not sure
     	case "76561198218217140": return true; //LizardLane: fast/replay dies only on difficult chars
     	case "76561198320949594": return true; //TheCrocodile6w9: only has Monk entry, replay dies
@@ -1052,6 +1053,7 @@ public class Data {
     	case "76561198103117990": return "EIN";
     	case "76561198133544183": return "Dragonfru";
     	case "76561198008545121": return "Istas Nix";
+    	case "76561198164027565": return "Chipapa";
     	default: return "ID:" + steamid;
 		}
 	}
