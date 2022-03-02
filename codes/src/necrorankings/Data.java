@@ -81,6 +81,7 @@ public class Data {
     	case "76561198259490531": return true; //DalNim, too fast 9/13 for PB
     	case "76561198334461747": return true; //Coldcan, sus coda time and coda replay dies
     	case "76561198000408686": return true; //DeadManWalking, dove score
+    	case "76561198354305357": return true; //KidraMan,, 9char 20th from nowhere
     	//already excluded by impossible score
     	case "76561198373879461": return true; //thegunslinger
     	//not sure
@@ -1054,6 +1055,8 @@ public class Data {
     	case "76561198133544183": return "Dragonfru";
     	case "76561198008545121": return "Istas Nix";
     	case "76561198164027565": return "Chipapa";
+    	case "76561198041779053": return "sleurk";
+    	case "76561198012550491": return ""; //Monk 148th, Mary 150th: check later
     	default: return "ID:" + steamid;
 		}
 	}
