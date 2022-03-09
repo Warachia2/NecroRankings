@@ -1058,6 +1058,7 @@ public class Data {
     	case "76561198041779053": return "sleurk";
     	case "76561198012550491": return "Mr.HopsJuice"; //Monk 148th, Mary 150th: check later
     	case "76561197979512215": return "arg0ss";
+    	case "76561198036225763": return "oDevilAngelo"; //Monk 11xth: check later
     	default: return "ID:" + steamid;
 		}
 	}
