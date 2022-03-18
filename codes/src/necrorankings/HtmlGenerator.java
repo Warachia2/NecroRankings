@@ -1,31 +1,30 @@
 package necrorankings;
 
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
-import java.net.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import java.io.IOException;
 
-import java.io.FileWriter;
-import java.io.BufferedWriter;
-import java.io.PrintWriter;
-
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
-import java.util.*;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
 
 public class HtmlGenerator extends DefaultHandler{
-	static String rankingsoutput = "C:\\Users\\Warachia\\Documents\\GitHub\\NecroRankings\\rankings\\";
-	static String lbsoutput = "C:\\Users\\Warachia\\Documents\\GitHub\\NecroRankings\\lbs\\";
-	static String pbsoutput = "C:\\Users\\Warachia\\Documents\\GitHub\\NecroRankings\\pbs\\";
-	static String chartsoutput = "C:\\Users\\Warachia\\Documents\\GitHub\\NecroRankings\\charts\\";
-	static String hiddenoutput = "C:\\Users\\Warachia\\Documents\\GitHub\\NecroRankings\\hidden\\";
-	static String dataoutput = "C:\\Users\\Warachia\\Documents\\GitHub\\NecroRankings\\data\\";
+	static String rankingsoutput = "C:\\Users\\Warachia\\Documents\\Files\\Codes\\NecroRankings\\rankings\\";
+	static String lbsoutput = "C:\\Users\\Warachia\\Documents\\Files\\Codes\\NecroRankings\\lbs\\";
+	static String pbsoutput = "C:\\Users\\Warachia\\Documents\\Files\\Codes\\NecroRankings\\pbs\\";
+	static String chartsoutput = "C:\\Users\\Warachia\\Documents\\Files\\Codes\\NecroRankings\\charts\\";
+	static String hiddenoutput = "C:\\Users\\Warachia\\Documents\\Files\\Codes\\NecroRankings\\hidden\\";
+	static String dataoutput = "C:\\Users\\Warachia\\Documents\\Files\\Codes\\NecroRankings\\data\\";
 	
 	static String category = "";
 	static int cur = 0; //category id, 0~16
