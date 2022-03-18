@@ -1061,6 +1061,7 @@ public class Data {
     	case "76561198036225763": return "oDevilAngelo"; //Monk 11xth: check later
     	case "76561198147612184": return "Kinix";
     	case "76561199142118017": return "thbontyhunter";
+    	case "76561198108757874": return "Cloiss";
     	default: return "ID:" + steamid;
 		}
 	}
