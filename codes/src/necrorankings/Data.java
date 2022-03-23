@@ -98,6 +98,7 @@ public class Data {
     	case "76561198013010544": return true; //Saitonashi, haven't seen replay
     	case "76561198094827839": return true; //DVD_user, 48min Coda? replay is broken: although plausible profile
     	case "76561198056856651": return true; //Tyto XIII, #29 14sum/#70 LBI out of nowhere
+    	case "76561199257603681": return true; //36th story from nowhere
     	//Monk, not sure
     	case "76561198218217140": return true; //LizardLane: fast/replay dies only on difficult chars
     	case "76561198320949594": return true; //TheCrocodile6w9: only has Monk entry, replay dies
@@ -1062,6 +1063,7 @@ public class Data {
     	case "76561198147612184": return "Kinix";
     	case "76561199142118017": return "thbontyhunter";
     	case "76561198108757874": return "Cloiss";
+    	case "76561198032957997": return "Sir Gamelot the Fair";
     	default: return "ID:" + steamid;
 		}
 	}
