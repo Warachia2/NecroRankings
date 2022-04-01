@@ -2774,6 +2774,75 @@ public class HtmlGenerator extends DefaultHandler{
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        
+        try {
+            FileWriter f = new FileWriter(dataoutput + "all" + playernum + "place.csv", false);
+            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+
+
+            p.print("Name,");
+            
+            //speed
+            for(int i=0;i<17;i++){
+                p.print(ordToCategory(-1) + curToShortName(i) + " Speed,");
+            }
+            for(int h=0;h<5;h++){
+                for(int i=0;i<14;i++){
+                    p.print(curToShortName(i) + " " + ordToCategory(h) + " Speed,");
+                }
+            }
+            
+            //score
+            for(int i=0;i<17;i++){
+                p.print(ordToCategory(-1) + curToShortName(i) + " Score,");
+            }
+            for(int h=0;h<5;h++){
+                for(int i=0;i<14;i++){
+                    p.print(curToShortName(i) + " " + ordToCategory(h) + " Score,");
+                }
+            }
+            
+            
+            //deathless
+            for(int i=0;i<13;i++){
+                p.print(curToShortName(i) + " DL" + ",");
+            }
+            p.println(curToShortName(13) + " DL");
+
+            for(int i=0;i<playernum;i++){
+            	Player player = array.get(i);
+
+            	p.print(player.name() + ",");
+
+        		for(int j=0;j<17;j++){
+        			p.print(player.getRank(-1,j,"speed") + ",");
+        		}
+            	for(int h=0;h<5;h++){
+            		for(int j=0;j<14;j++){
+            			p.print(player.getRank(h,j,"speed") + ",");
+            		}
+            	}
+
+        		for(int j=0;j<17;j++){
+        			p.print(player.getRank(-1,j,"score") + ",");
+        		}
+        		for(int h=0;h<5;h++){
+            		for(int j=0;j<14;j++){
+            			p.print(player.getRank(h,j,"score") + ",");
+            		}
+        		}
+        		
+        		for(int j=0;j<13;j++){
+        			p.print(player.getRank(-1,j,"deathless") + ",");
+        		}
+        		p.println(player.getRank(-1,13,"deathless"));
+            }
+            
+            p.close();
+ 
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
     
     public static void maincsvMaker(int playernum, double upperbound){
