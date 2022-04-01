@@ -2763,7 +2763,7 @@ public class HtmlGenerator extends DefaultHandler{
         		}
         		
         		for(int j=0;j<14;j++){
-        			p.print(String.format("%.3f",Player.points(player.deathless[j])) + ",");
+        			p.print(player.clear[j] + ",");
         		}
                 
             	p.println(String.format("%.5f",player.contribution()));
