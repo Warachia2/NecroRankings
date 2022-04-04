@@ -1064,6 +1064,7 @@ public class Data {
     	case "76561199142118017": return "thbontyhunter";
     	case "76561198108757874": return "Cloiss";
     	case "76561198032957997": return "Sir Gamelot the Fair";
+    	case "76561198045421850": return "FoksMachine";
     	default: return "ID:" + steamid;
 		}
 	}
