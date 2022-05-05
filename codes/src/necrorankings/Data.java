@@ -658,7 +658,7 @@ public class Data {
     	case "76561198195822793": return "kame-noko";
     	case "76561197994897453": return "Thalfon";
     	case "76561198062962620": return "jte712";
-    	case "76561198451763633": return "Squidy";
+    	case "76561198451763633": return "Faira";
     	case "76561198027188884": return "sex haver";
     	case "76561198025184224": return "petsgomoo";
     	case "76561198410912857": return "尖沙蛆一哥";
