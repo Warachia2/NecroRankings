@@ -1069,6 +1069,7 @@ public class Data {
     	case "76561198806332934": return "fermangurleroglu";
     	case "76561197996962161": return "Gazz";
     	case "76561199137511668": return "mothgram";
+    	case "76561198167352657": return "mavarium"; //Necrolab speed 120th from nowhere, check later
     	default: return "ID:" + steamid;
 		}
 	}
