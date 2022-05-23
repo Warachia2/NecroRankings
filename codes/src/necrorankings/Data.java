@@ -1072,6 +1072,8 @@ public class Data {
     	case "76561198167352657": return "mavarium"; //Necrolab speed 120th from nowhere, check later
     	case "76561198138847183": return "TheJazMaster"; //9score 29th, 9speed 142th
     	case "76561198080285842": return "NORTHORUZ"; //noc score 32th, check later
+    	case "76561198348936729": return "IIHexxyII";
+    	case "76561198838531525": return "Igrmi";
     	default: return "ID:" + steamid;
 		}
 	}
