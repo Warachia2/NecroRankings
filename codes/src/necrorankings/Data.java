@@ -1074,6 +1074,7 @@ public class Data {
     	case "76561198080285842": return "NORTHORUZ"; //noc score 32th, check later
     	case "76561198348936729": return "IIHexxyII";
     	case "76561198838531525": return "Igrmi";
+    	case "76561199058890647": return "pesialg";
     	default: return "ID:" + steamid;
 		}
 	}
