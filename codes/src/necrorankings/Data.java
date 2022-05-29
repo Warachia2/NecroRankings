@@ -1081,7 +1081,9 @@ public class Data {
 
 	public static boolean isBanned(String steamid){
 		switch(steamid){
+    	case "76561198849821236": return true;
 		default: return false;
+		
 		}
 	}
 	
