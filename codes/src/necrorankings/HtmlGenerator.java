@@ -500,7 +500,7 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198317639601").setExtraGold(0, 2, 1933); //Monsterracer, Bolt Hard Score, 1933
         
         list.get("76561198075137353").setClear(6, 14902); //marc, Dove Deathless 149-1-3
-        list.get("76561198058867434").setClear(0, 1620); //Tuf, Aria Deathless 16-3-?
+        list.get("76561198058867434").setClear(0, 1621); //Tuf, Aria Deathless 16-3-2
         
         //Alt Account
         list.get("76561198058867434").setExtraTime(0, 11, 59723); //Tufwfo, Nocturna Hard Speed, 9:57.23
