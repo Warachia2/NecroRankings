@@ -83,6 +83,7 @@ public class Data {
     	case "76561198000408686": return true; //DeadManWalking, dove score
     	case "76561198354305357": return true; //KidraMan,, 9char 20th from nowhere
     	case "76561198036225763": return true; //oDevilAngelo, coda
+    	case "76561198167352657": return true; //mavarium, Necrolab speed 120th from nowhere, now Coda 11th
     	//already excluded by impossible score
     	case "76561198373879461": return true; //thegunslinger
     	//not sure
@@ -1069,7 +1070,6 @@ public class Data {
     	case "76561198806332934": return "fermangurleroglu";
     	case "76561197996962161": return "Gazz";
     	case "76561199137511668": return "mothgram";
-    	case "76561198167352657": return "mavarium"; //Necrolab speed 120th from nowhere, check later
     	case "76561198138847183": return "TheJazMaster"; //9score 29th, 9speed 142th
     	case "76561198080285842": return "NORTHORUZ"; //noc score 32th, check later
     	case "76561198348936729": return "IIHexxyII";
