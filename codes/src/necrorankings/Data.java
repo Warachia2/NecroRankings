@@ -1077,6 +1077,7 @@ public class Data {
     	case "76561199058890647": return "pesialg";
     	case "76561198148319325": return "walker";
     	case "76561198828375118": return "Elee.exe";
+    	case "76561198310992849": return "Hitman7128"; //Monk 76th, check later
     	default: return "ID:" + steamid;
 		}
 	}
