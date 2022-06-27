@@ -1078,6 +1078,7 @@ public class Data {
     	case "76561198148319325": return "walker";
     	case "76561198828375118": return "Elee.exe";
     	case "76561198310992849": return "Hitman7128"; //Monk 76th, check later
+    	case "76561198445776899": return "outer wilds propaganda"; 
     	default: return "ID:" + steamid;
 		}
 	}
