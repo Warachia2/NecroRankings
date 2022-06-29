@@ -172,7 +172,7 @@ public class Data {
 		case "Miles": return "Miles";
 		case "oriane": return "oriane";
 		case "76561198317639601": return "Morraconda";
-		case "76561197993247154": return "Abu Yazan";
+		case "76561197993247154": return "AbuYazan";
 		case "76561198149072446": return "Nominozo";
 		case "76561198398758840": return "hokuhokureiha";
 		case "76561198002854407": return "Spootaloo";
@@ -1079,6 +1079,7 @@ public class Data {
     	case "76561198828375118": return "Elee.exe";
     	case "76561198310992849": return "Hitman7128"; //Monk 76th, check later
     	case "76561198445776899": return "outer wilds propaganda"; 
+    	case "76561198867899785": return "masonmanftw";
     	default: return "ID:" + steamid;
 		}
 	}
