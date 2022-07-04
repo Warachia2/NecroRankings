@@ -1592,7 +1592,7 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<th class=\"fixed01 char\">Rando</th>");
             p.println("<th class=\"fixed01 char\">Phasing</th>");
             p.println("<th class=\"fixed01 char\">Mystery</th>");
-            p.println("<th class=\"fixed01 char\">Low%</th>");
+            p.println("<th class=\"fixed01 char\">Low</th>");
             p.println("</tr></thead><tbody>");
             
             for(int i=0;i<100;i++){
@@ -3126,7 +3126,7 @@ public class HtmlGenerator extends DefaultHandler{
     	case 2: return "Rando";
     	case 3: return "Phasing";
     	case 4: return "Mystery";
-    	case 5: return "Low%";
+    	case 5: return "Low";
     	default: return "";
     	}
     }
@@ -3138,7 +3138,7 @@ public class HtmlGenerator extends DefaultHandler{
     	case 2: return "Rando";
     	case 3: return "Phasing";
     	case 4: return "Mystery";
-    	case 5: return "Low%";
+    	case 5: return "Low";
     	default: return "Standard";
     	}
     }
