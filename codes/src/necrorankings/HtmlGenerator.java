@@ -557,6 +557,7 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198002854407").setExtraTime(5, 2, 32462); //Spooty, Bolt Low% 5:24.62
         list.get("76561198021587175").setExtraTime(5, 2, 41055); //TNF, Bolt Low% 6:50.55
         list.get("76561198049600266").setExtraTime(5, 2, 46052); //Nick, Bolt Low% 7:40.52
+        list.get("76561198041011456").setExtraTime(5, 2, 34185); //encryptid, Bolt Low% 5:41.85
         
         list.get("76561198317639601").setExtraTime(5, 3, 59368); //Morra, Cad Low% 9:53.68
         list.get("76561198021587175").setExtraTime(5, 3, 65821); //TNF, Cad Low% 10:58.21
@@ -566,6 +567,7 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198317639601").setExtraTime(5, 4, 40829); //Morra, Dia Low% 6:48.29
         list.get("76561198002854407").setExtraTime(5, 4, 41759); //Spooty, Dia Low% 6:57.59
         list.get("76561198021587175").setExtraTime(5, 4, 45063); //TNF, Dia Low% 7:30.63
+        list.get("76561198041011456").setExtraTime(5, 4, 56262); //encryptid, Dia Low% 9:22.62
 
         list.get("76561198317639601").setExtraTime(5, 5, 33377); //Morra, Dor Low% 5:33.77
         list.get("76561198002854407").setExtraTime(5, 5, 37355); //Spooty, Dor Low% 6:13.55
@@ -587,9 +589,11 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198121399825").setExtraTime(5, 7, 50216); //Warachia, Eli Low% 8:22.16
         list.get("76561198002854407").setExtraTime(5, 7, 54640); //Spooty, Eli Low% 9:06.40
         list.get("76561198021587175").setExtraTime(5, 7, 72177); //TNF, Eli Low% 12:01.77
+        list.get("76561198041011456").setExtraTime(5, 7, 61855); //encryptid, Elo Low% 10:18.55
         
         list.get("76561198002854407").setExtraTime(5, 8, 63129); //Spooty, Mary Low% 10:31.29
         list.get("76561198317639601").setExtraTime(5, 8, 64778); //Morra, Mary Low% 10:47.78
+        list.get("76561198041011456").setExtraTime(5, 8, 69511); //encryptid, Mary Low% 11:35.11
         list.get("76561198021587175").setExtraTime(5, 8, 92143); //TNF, Mary Low% 15:21.43
         
         list.get("76561198317639601").setExtraTime(5, 9, 36019); //Morra, Mel Low% 6:00.19
