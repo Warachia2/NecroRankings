@@ -569,7 +569,7 @@ public class Player {
     
     ///Extra Players
     public static Player LowMonster(){
-    	Player p = new Player("Low% Monster");
+    	Player p = new Player("Low% Morra");
     	p.setTime(0, 58017); //Aria
     	p.setTime(1, 32541); //Bard
     	p.setTime(2, 32271); //Bolt
@@ -583,6 +583,26 @@ public class Player {
     	p.setTime(10, 75520); //Monk
     	p.setTime(11, 48074); //Nocturna
     	p.setTime(12, 36167); //Tempo
+    	p.setTime(13, 999999); //Coda
+    	p.setExtra(true);
+    	return p;
+    }
+    
+    public static Player WtWMonster(){
+    	Player p = new Player("WtW Morra");
+    	p.setTime(0, 36121); //Aria
+    	p.setTime(1, 17550); //Bard
+    	p.setTime(2, 18942); //Bolt
+    	p.setTime(3, 32610); //Cadence
+    	p.setTime(4, 23605); //Diamond
+    	p.setTime(5, 22085); //Dorian
+    	p.setTime(6, 16418); //Dove
+    	p.setTime(7, 32451); //Eli
+    	p.setTime(8, 28221); //Mary
+    	p.setTime(9, 30848); //Melody
+    	p.setTime(10, 38251); //Monk
+    	p.setTime(11, 40187); //Nocturna
+    	p.setTime(12, 23229); //Tempo
     	p.setTime(13, 999999); //Coda
     	p.setExtra(true);
     	return p;

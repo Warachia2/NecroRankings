@@ -496,6 +496,7 @@ public class HtmlGenerator extends DefaultHandler{
         
         //Extra Players
         list.put("Low% Monster",Player.LowMonster());
+        list.put("WtW Monster",Player.WtWMonster());
         list.put("NR Hokuho",Player.NRHokuho());
         list.put("Hard Hokuho",Player.HardHokuho());
         list.put("Rando Warachia",Player.RandoWarachia());

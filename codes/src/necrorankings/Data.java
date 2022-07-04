@@ -159,7 +159,8 @@ public class Data {
     //Player Names
 	public static String name(String steamid){
 		switch(steamid){
-		case "Low% Monster": return "Low% Monster";
+		case "Low% Morra": return "Low% Morra";
+		case "WtW Morra": return "WtW Morra";
 		case "NR Hokuho": return "NR Hokuho";
 		case "Hard Hokuho": return "Hard Hokuho";
 		case "Rando Warachia": return "Rando Wara";
