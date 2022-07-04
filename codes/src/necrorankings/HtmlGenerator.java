@@ -922,6 +922,7 @@ public class HtmlGenerator extends DefaultHandler{
     	//Mizmy
     	list.get("76561198115768228").addInfo(youtube("https://www.youtube.com/channel/UCowvRn1WHf-WE4B9pzYAGBw"));
     	//Monster
+    	list.get("76561198456260566").addInfo("Winner of WtW2");
     	list.get("76561198317639601").addInfo(linkText("Organizer of WtW2", "https://discord.gg/4PgxpXW"));
     	list.get("76561198317639601").addInfo(conduitWinner(31));
     	list.get("76561198317639601").addInfo(linkText("Low% Records", "https://www.speedrun.com/user/Monsterracer"));
