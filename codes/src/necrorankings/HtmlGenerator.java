@@ -2488,7 +2488,7 @@ public class HtmlGenerator extends DefaultHandler{
             }
             p.println("</tr>");
             
-            for(int h=0;h<5;h++){
+            for(int h=0;h<6;h++){
                 p.println("<tr>");
                 p.println("<th class=\"frame\">" + ordToCategory(h) + " Speed" + "</th>");
             	for(int i=0;i<14;i++){
