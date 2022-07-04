@@ -186,7 +186,7 @@ public class Data {
 		case "76561198031063446": return "Pibonacci";
 		case "76561198058867434": return "Tufwfo";
 		case "76561198000263514": return "incnone";
-		case "76561198207378484": return "Ocre307";
+		case "76561198207378484": return "violet";
 		case "76561198094733262": return "WasKi115";
 		case "76561197998799529": return "biggiemac42";
 		case "76561197999948240": return "Ancalagor";
@@ -1080,6 +1080,7 @@ public class Data {
     	case "76561198310992849": return "Hitman7128"; //Monk 76th, check later
     	case "76561198445776899": return "outer wilds propaganda"; 
     	case "76561198867899785": return "masonmanftw";
+    	case "76561198127837318": return "raulguardira";
     	default: return "ID:" + steamid;
 		}
 	}

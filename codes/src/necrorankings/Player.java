@@ -16,6 +16,7 @@ public class Player {
 	int[] randospeed;
 	int[] phasingspeed;
 	int[] mysteryspeed;
+	int[] lowspeed;
 	int[] hardscore;
 	int[] nrscore;
 	int[] randoscore;
@@ -68,6 +69,7 @@ public class Player {
 		randospeed = new int[14];
 		mysteryspeed = new int[14];
 		phasingspeed = new int[14];
+		lowspeed = new int[17];
 		hardscore  = new int[14];
 		nrscore = new int[14];
 		randoscore = new int[14];
@@ -78,7 +80,7 @@ public class Player {
 		time = new int[17];
 		gold = new int[17];
 		clear = new int[14];
-		extratime = new int[5][14];
+		extratime = new int[6][14];
 		extragold = new int[5][14];
 		
 		moreinfo = new ArrayList<>();
@@ -157,6 +159,14 @@ public class Player {
 		return p;
 	}
 	
+	public double lowspeed(){
+		double p = 0;
+		for(int i=0;i<17;i++){
+			p += points(lowspeed[i]);
+		}
+		return p;
+	}
+	
 	public double hardscore(){
 		double p = 0;
 		for(int i=0;i<14;i++){
@@ -198,7 +208,7 @@ public class Player {
 	}
 	
 	public double extraspeed(){
-		return hardspeed() + nrspeed() + randospeed() + phasingspeed() + mysteryspeed();
+		return hardspeed() + nrspeed() + randospeed() + phasingspeed() + mysteryspeed() + lowspeed();
 	}
 	
 	public double extrascore(){
@@ -206,7 +216,7 @@ public class Player {
 	}
 	
 	public double extraSpeedCharPoints(int cur){
-		return points(hardspeed[cur]) + points(nrspeed[cur]) + points(randospeed[cur]) + points(phasingspeed[cur]) + points(mysteryspeed[cur]);
+		return points(hardspeed[cur]) + points(nrspeed[cur]) + points(randospeed[cur]) + points(phasingspeed[cur]) + points(mysteryspeed[cur]) + points(lowspeed[cur]);
 	}
 	
 	public double extraScoreCharPoints(int cur){
@@ -267,7 +277,7 @@ public class Player {
 	public double contribution_extra(){
 		double p = 0;
 		
-		p += (codachallenge - extraspeed) * (points(nrspeed[13])+ points(hardspeed[13]) + points(randospeed[13]) + points(mysteryspeed[13]));
+		p += (codachallenge - extraspeed) * (points(nrspeed[13])+ points(hardspeed[13]) + points(randospeed[13]) + points(mysteryspeed[13]) + points(lowspeed[13]));
 		p += extraspeed * extraspeed();
 		p += extrascore * extrascore();
 		
@@ -656,6 +666,9 @@ public class Player {
 		case "mysteryspeed":
 			mysteryspeed[cur] = rank;
 			break;
+		case "lowspeed":
+			lowspeed[cur] = rank;
+			break;
 		case "hardscore":
 			hardscore[cur] = rank;
 			break;
@@ -711,7 +724,7 @@ public class Player {
 				phasingscore[cur] = rank;
 			}
 			break;
-		default:
+		case 4:
 			if(isSpeed){
 				mysteryspeed[cur] = rank; 
 			}
@@ -719,6 +732,8 @@ public class Player {
 				mysteryscore[cur] = rank;
 			}
 			break;
+		default:
+			lowspeed[cur] = rank;
 		}
 	}
 	
@@ -769,6 +784,7 @@ public class Player {
 			case 2: return randospeed[cur] == 1;
 			case 3: return phasingspeed[cur] == 1;
 			case 4: return mysteryspeed[cur] == 1;
+			case 5: return lowspeed[cur] == 1;
 			default: return speed[cur] == 1;
 			}
 		}
@@ -795,6 +811,7 @@ public class Player {
 			case 2: return randospeed[cur];
 			case 3: return phasingspeed[cur];
 			case 4: return mysteryspeed[cur];
+			case 5: return lowspeed[cur];
 			default: return speed[cur];
 			}
 		}

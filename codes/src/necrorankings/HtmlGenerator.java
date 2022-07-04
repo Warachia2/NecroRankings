@@ -91,8 +91,6 @@ public class HtmlGenerator extends DefaultHandler{
         cur++; WRflag = true; //13char 16
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/2047440?xml=1").openStream(), new HtmlGenerator());
         
-        
-        
         category = "score";
         cur = 0; WRflag = true; //Aria
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/2047493?xml=1").openStream(), new HtmlGenerator());
@@ -311,6 +309,36 @@ public class HtmlGenerator extends DefaultHandler{
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/2047864/?xml=1").openStream(), new HtmlGenerator());
         cur++; //Coda
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/2048845/?xml=1").openStream(), new HtmlGenerator());
+       
+        category = "lowspeed"; //1795149 - empty
+        cur = 0; //Aria
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8670233/?xml=1").openStream(), new HtmlGenerator());
+        cur++; //Bard
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8672561/?xml=1").openStream(), new HtmlGenerator());
+        cur++; //Bolt
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8674004/?xml=1").openStream(), new HtmlGenerator());
+        cur++; //Cadence
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
+        cur++; //Diamond
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
+        cur++; //Dorian
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8676454/?xml=1").openStream(), new HtmlGenerator());
+        cur++; //Dove
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8670409/?xml=1").openStream(), new HtmlGenerator());
+        cur++; //Eli
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
+        cur++; //Mary
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8671595/?xml=1").openStream(), new HtmlGenerator());
+        cur++; //Melody
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8670103/?xml=1").openStream(), new HtmlGenerator());
+        cur++; //Monk
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
+        cur++; //Nocturna
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8675963/?xml=1").openStream(), new HtmlGenerator());
+        cur++; //Tempo
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8670050/?xml=1").openStream(), new HtmlGenerator());
+        cur++; //Coda
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
         
         System.out.println("Getting Extra Score Entries...");
         
@@ -513,6 +541,87 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198844450515").setGold(12, 10571); //lakehope, Tempo, 10571
         list.get("76561198844450515").setGold(11, 16881); //lakehope, Noc, 16881
         
+        //Speedrun.com
+        list.get("76561198317639601").setExtraTime(5, 0, 58017); //Morra, Aria Low% 9:40.17
+        list.get("76561198062929160").setExtraTime(5, 0, 55213); //Sanga, Aria Low% 9:12.13
+        list.get("76561198002854407").setExtraTime(5, 0, 68530); //Spooty, Aria Low% 11:25.30 
+        list.get("76561198021587175").setExtraTime(5, 0, 71875); //TNF, Aria Low% 11:58.75
+        list.get("76561198253324593").setExtraTime(5, 0, 84429); //ptar124, Aria Low% 14:04.29
+        
+        list.get("76561198317639601").setExtraTime(5, 1, 32541); //Morra, Bard Low% 5:25.41
+        list.get("76561198002854407").setExtraTime(5, 1, 38356); //Spooty, Bard Low% 6:23.56
+        list.get("76561198021587175").setExtraTime(5, 1, 42148); //TNF, Bard Low% 7:01.48
+        list.get("76561197998799529").setExtraTime(5, 1, 59017); //biggiemac, Bard Low% 9:50.17
+        
+        list.get("76561198317639601").setExtraTime(5, 2, 32271); //Morra, Bolt Low% 5:22.71
+        list.get("76561198002854407").setExtraTime(5, 2, 32462); //Spooty, Bolt Low% 5:24.62
+        list.get("76561198021587175").setExtraTime(5, 2, 41055); //TNF, Bolt Low% 6:50.55
+        list.get("76561198049600266").setExtraTime(5, 2, 46052); //Nick, Bolt Low% 7:40.52
+        
+        list.get("76561198317639601").setExtraTime(5, 3, 59368); //Morra, Cad Low% 9:53.68
+        list.get("76561198021587175").setExtraTime(5, 3, 65821); //TNF, Cad Low% 10:58.21
+        list.get("76561198002854407").setExtraTime(5, 3, 70308); //Spooty, Cad Low% 11:43.08
+        list.get("76561198253324593").setExtraTime(5, 3, 102474); //ptar124, Cad Low% 17:04.74
+        
+        list.get("76561198317639601").setExtraTime(5, 4, 40829); //Morra, Dia Low% 6:48.29
+        list.get("76561198002854407").setExtraTime(5, 4, 41759); //Spooty, Dia Low% 6:57.59
+        list.get("76561198021587175").setExtraTime(5, 4, 45063); //TNF, Dia Low% 7:30.63
+
+        list.get("76561198317639601").setExtraTime(5, 5, 33377); //Morra, Dor Low% 5:33.77
+        list.get("76561198002854407").setExtraTime(5, 5, 37355); //Spooty, Dor Low% 6:13.55
+        list.get("76561198021587175").setExtraTime(5, 5, 39379); //TNF, Dor Low% 6:33.79
+        list.get("76561198247123198").setExtraTime(5, 5, 60772); //RPGG, Dor Low% 10:07.72
+        
+        list.get("76561198072087224").setExtraTime(5, 6, 19714); //DLKurosh, Dove Low% 3:17.14
+        list.get("76561198002854407").setExtraTime(5, 6, 20077); //Spooty, Dove Low% 3:20.77
+        list.get("76561198121399825").setExtraTime(5, 6, 22432); //Warachia, Dove Low% 3:44.32
+        list.get("76561197999948240").setExtraTime(5, 6, 23277); //Ancalagor, Dove Low% 3:52.77
+        list.get("76561198021587175").setExtraTime(5, 6, 23648); //TNF, Dove Low% 3:56.48
+        list.get("76561198317639601").setExtraTime(5, 6, 27133); //Morra, Dove Low% 4:31.33
+        list.get("76561198247123198").setExtraTime(5, 6, 30376); //RPGG, Dove Low% 5:03.76
+        list.get("76561198108757874").setExtraTime(5, 6, 34543); //Cloiss, Dove Low% 5:45.43
+        list.get("76561198115768228").setExtraTime(5, 6, 39337); //Mizmy, Dove Low% 6:33.37
+        
+        list.get("76561198101072470").setExtraTime(5, 7, 41903); //Switch, Eli Low% 6:59.03
+        list.get("76561198317639601").setExtraTime(5, 7, 48909); //Morra, Eli Low% 8:09.09
+        list.get("76561198121399825").setExtraTime(5, 7, 50216); //Warachia, Eli Low% 8:22.16
+        list.get("76561198002854407").setExtraTime(5, 7, 54640); //Spooty, Eli Low% 9:06.40
+        list.get("76561198021587175").setExtraTime(5, 7, 72177); //TNF, Eli Low% 12:01.77
+        
+        list.get("76561198002854407").setExtraTime(5, 8, 63129); //Spooty, Mary Low% 10:31.29
+        list.get("76561198317639601").setExtraTime(5, 8, 64778); //Morra, Mary Low% 10:47.78
+        list.get("76561198021587175").setExtraTime(5, 8, 92143); //TNF, Mary Low% 15:21.43
+        
+        list.get("76561198317639601").setExtraTime(5, 9, 36019); //Morra, Mel Low% 6:00.19
+        list.get("76561198136201511").setExtraTime(5, 9, 39214); //Ravio, Mel Low% 6:32.14
+        list.get("76561199043981220").setExtraTime(5, 9, 51314); //GPA, Mel Low% 8:33.14
+        list.get("76561198002854407").setExtraTime(5, 9, 42343); //Spooty, Mel Low% 7:03.43
+        list.get("76561198021587175").setExtraTime(5, 9, 44320); //TNF, Mel Low% 7:27.20
+        list.get("76561198121399825").setExtraTime(5, 9, 46348); //Warachia, Mel Low% 7:43.48
+        list.get("76561198115768228").setExtraTime(5, 9, 64495); //Mizmy, Mel Low% 10:44.95
+        
+        list.get("76561198317639601").setExtraTime(5, 10, 75520); //Morra, Monk Low% 12:53.20
+        list.get("76561198002854407").setExtraTime(5, 10, 79495); //Spooty, Monk Low% 13:14.95
+        list.get("76561198076428509").setExtraTime(5, 10, 99893); //preimi, Monk Low% 16:38.93
+        list.get("76561198021587175").setExtraTime(5, 10, 126455); //TNF, Monk Low% 21:04.55
+        list.get("76561198247123198").setExtraTime(5, 10, 149763); //RPGG, Monk Low% 24:57.63
+        
+        list.get("76561198317639601").setExtraTime(5, 11, 48074); //Morra, Noc Low% 8:00.74
+        list.get("76561198021587175").setExtraTime(5, 11, 49547); //TNF, Noc Low% 8:15.47
+        list.get("76561198121399825").setExtraTime(5, 11, 49727); //Warachia, Noc Low% 8:17.27
+        list.get("76561198002854407").setExtraTime(5, 11, 52100); //Spooty, Noc Low% 8:41.00
+        list.get("76561197984187817").setExtraTime(5, 11, 53553); //Lucoa, Noc Low% 8:55.53
+        
+        list.get("76561198317639601").setExtraTime(5, 12, 36167); //Morra, Tempo Low% 6:01.67
+        list.get("76561198002854407").setExtraTime(5, 12, 40586); //Spooty, Tempo Low% 6:45.86
+        list.get("76561198021587175").setExtraTime(5, 12, 42168); //TNF, Tempo Low% 7:01.68
+        list.get("76561198115768228").setExtraTime(5, 12, 44863); //Mizmy, Tempo Low% 7:28.63
+        
+        list.get("76561198002854407").setExtraTime(5, 13, 59663); //Spooty, Coda Low% 9:36.63
+        list.get("76561198072087224").setExtraTime(5, 13, 83049); //DLKurosh, Coda Low% 13:50.49
+        
+      //0:Aria 1:Bard 2:Bolt 3:Cadence 4:Diamond 5:Dorian 6:Dove 7:Eli 8:Mary 9:Mel 10:Monk 11:Noc 12:Tempo 13:Coda 14:Story 15:9char 16:13char
+        
         //Bar Text
         LocalDateTime date1 = LocalDateTime.now();
 		DateTimeFormatter dtformat1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
@@ -618,7 +727,7 @@ public class HtmlGenerator extends DefaultHandler{
                 	}
         		}
         	}
-        	else if(category == "hardspeed" || category == "nrspeed" || category == "randospeed" || category == "phasingspeed" || category == "mysteryspeed"){
+        	else if(category == "hardspeed" || category == "nrspeed" || category == "randospeed" || category == "phasingspeed" || category == "mysteryspeed" || category == "lowspeed"){
             	if(!necrorankings.Data.isCheater(nowid)){
             		int csec = rawToCsec(rawscore);
             		int ord = categoryToOrd(category);
@@ -1141,7 +1250,7 @@ public class HtmlGenerator extends DefaultHandler{
     }
     
     public static void extraLBsMaker(){
-		for(int h=0;h<5;h++){
+		for(int h=0;h<6;h++){
 			for(int i=0;i<14;i++){
 		        try {
 		            FileWriter f = new FileWriter(lbsoutput + curToName(i) + ordToCategory(h) + "speedlbs.html", false);
@@ -1483,6 +1592,7 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<th class=\"fixed01 char\">Rando</th>");
             p.println("<th class=\"fixed01 char\">Phasing</th>");
             p.println("<th class=\"fixed01 char\">Mystery</th>");
+            p.println("<th class=\"fixed01 char\">Low%</th>");
             p.println("</tr></thead><tbody>");
             
             for(int i=0;i<100;i++){
@@ -1502,6 +1612,7 @@ public class HtmlGenerator extends DefaultHandler{
             	p.println("<td>" + String.format("%.2f",player.randospeed()) + "</td>");
             	p.println("<td>" + String.format("%.2f",player.phasingspeed()) + "</td>");
             	p.println("<td>" + String.format("%.2f",player.mysteryspeed()) + "</td>");
+            	p.println("<td>" + String.format("%.2f",player.lowspeed()) + "</td>");
                 
                 p.println("</tr>");
             }
@@ -1856,115 +1967,6 @@ public class HtmlGenerator extends DefaultHandler{
         p.println("</tr>");
     }
     
-    public static void pblistMaker_old(){
-        for(Player player: array){
-        	if(player.name().startsWith("ID") || player.isExtra){
-        		continue;
-        	}
-            try {
-                FileWriter f = new FileWriter(pbsoutput + player.name_url() + ".html", false);
-                PrintWriter p = new PrintWriter(new BufferedWriter(f));
-                
-                htmlStart(p, player.name(), "pbstyle");
-
-                p.println("<table border=\"5\">");
-                p.println("<tr>");
-                p.println("<th class=\"header\">-</th>");
-                p.println("<th class=\"header\">Character</th>");
-                p.println("<th class=\"header score\">Speed</th>");
-                p.println("<th class=\"header rank\">-</th>");
-                p.println("<th class=\"header\">-</th>");
-                p.println("<th class=\"header score\">Score</th>");
-                p.println("<th class=\"header rank\">-</th>");
-                p.println("</tr>");
-                
-                for(int i=0;i<17;i++){
-                    p.println("<tr>");
-                	//p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + "speedlbs.html\"><img src=\"icons/" + i + ".jpg\">" + "</a></td>");
-                    p.println("<td class=\"frame\"><img src=\"icons/" + i + ".jpg\">" + "</td>");
-                    p.println("<td>" + curToName(i) + "</td>");
-                	p.println(speedpbtag(player, i));
-                	p.println(ranktag(player.speed[i], i, "speed"));
-                	//p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + "scorelbs.html\"><img src=\"icons/" + i + ".jpg\">" + "</a></td>");
-                    p.println("<td class=\"frame\"><img src=\"icons/" + i + ".jpg\">" + "</td>");
-                	p.println(scorepbtag(player, i, scorethreshold(i)));
-                	p.println(scoreranktag(player, i, scorethreshold(i)));
-                    p.println("</tr>");
-                }
-
-                p.println("</table>");
-
-                p.println("<p></p>");
-                
-                p.println("<table border=\"5\">");
-                p.println("<tr>");
-                p.println("<th class=\"header\">-</th>");
-                p.println("<th class=\"header\">Character</th>");
-                p.println("<th class=\"header extra\">HrdSp</th>");
-                p.println("<th class=\"header extra\">NRSp</th>");
-                p.println("<th class=\"header extra\">RndSp</th>");
-                p.println("<th class=\"header extra\">PhsSp</th>");
-                p.println("<th class=\"header extra\">MysSp</th>");
-                p.println("<th class=\"header\">-</th>");
-                p.println("<th class=\"header extra\">HrdSc</th>");
-                p.println("<th class=\"header extra\">NRSc</th>");
-                p.println("<th class=\"header extra\">RndSc</th>");
-                p.println("<th class=\"header extra\">PhsSc</th>");
-                p.println("<th class=\"header extra\">MysSc</th>");
-                p.println("<th class=\"header extra\">DLess</th>");
-                p.println("</tr>");
-                
-                for(int i=0;i<14;i++){
-                    p.println("<tr>");
-                	p.println("<td class=\"frame\">" + "<img src=\"icons/" + i + ".jpg\">" + "</td>");
-                	p.println("<td>" + curToName(i) + "</td>");
-                	p.println(ranktag(player.hardspeed[i], 0, i, "speed", Player.csecToString(player.extratime[0][i])));
-                	p.println(ranktag(player.nrspeed[i], 1, i, "speed", Player.csecToString(player.extratime[1][i])));
-                	p.println(ranktag(player.randospeed[i], 2, i, "speed", Player.csecToString(player.extratime[2][i])));
-                	p.println(ranktag(player.phasingspeed[i], 3, i, "speed", Player.csecToString(player.extratime[3][i])));
-                	p.println(ranktag(player.mysteryspeed[i], 4, i, "speed", Player.csecToString(player.extratime[4][i])));
-                	p.println("<td class=\"frame\">" + "<img src=\"icons/" + i + ".jpg\">" + "</td>");
-                	p.println(exscoreranktag(player, 0, i, scorethreshold(i)));
-                	p.println(exscoreranktag(player, 1, i, (int) (scorethreshold(i)*0.8)));
-                	p.println(exscoreranktag(player, 2, i, scorethreshold(i)));
-                	p.println(exscoreranktag(player, 3, i, (int) (scorethreshold(i)*0.8)));
-                	p.println(exscoreranktag(player, 4, i, (int) (scorethreshold(i)*0.8)));
-                	p.println(ranktag(player, -1, i, "deathless", player.clearcount(i)));
-                    p.println("</tr>");
-                }
-                
-                p.println("</table>");
-                
-                if(!player.moreinfo.isEmpty()){
-                    p.println("<p></p>");
-                    p.println("<details class=\"center\">");
-                    p.println("<summary>More Info</summary>");
-                    for(int i=0;i<player.moreinfo.size();i++){
-                    	p.print(player.moreinfo.get(i));
-                    	if(i+1 != player.moreinfo.size() && !player.moreinfo.get(i).startsWith("<a")){
-                    		p.println("<br>");
-                    	}
-                    	else{
-                    		p.println();
-                    	}
-                    }
-                    p.println("</details>");
-                }
-                
-                p.println("<p>" + "Last Updated:" + fdate1 +"</p>");
-                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-                
-                p.println("</body>");
-                p.println("</html>");
-                
-                p.close();
-     
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
-    }
-    
     public static void pblistMaker(){
         for(Player player: array){
         	if(player.name().startsWith("ID") || player.isExtra){
@@ -2014,7 +2016,7 @@ public class HtmlGenerator extends DefaultHandler{
                 }
                 p.println("</tr>");
                 
-                for(int h=0;h<5;h++){
+                for(int h=0;h<6;h++){
                     p.println("<tr>");
                     p.println("<td class=\"catframe\">" + ordToCategory(h) + "</td>");
                     for(int i=0;i<14;i++){
@@ -2423,7 +2425,7 @@ public class HtmlGenerator extends DefaultHandler{
             }
             p.println("</tr>");
             
-            for(int h=0;h<5;h++){
+            for(int h=0;h<6;h++){
                 p.println("<tr>");
                 p.println("<th class=\"frame\">" + ordToCategory(h) + " Speed" + "</th>");
             	for(int i=0;i<14;i++){
@@ -3109,8 +3111,11 @@ public class HtmlGenerator extends DefaultHandler{
     	else if(category == "phasingspeed" || category == "phasingscore"){
     		return 3;
     	}
-    	else{
+    	else if(category == "mysteryspeed" || category == "mysteryscore"){
     		return 4;
+    	}
+    	else{
+    		return 5;
     	}
     }
     
@@ -3121,6 +3126,7 @@ public class HtmlGenerator extends DefaultHandler{
     	case 2: return "Rando";
     	case 3: return "Phasing";
     	case 4: return "Mystery";
+    	case 5: return "Low%";
     	default: return "";
     	}
     }
@@ -3132,6 +3138,7 @@ public class HtmlGenerator extends DefaultHandler{
     	case 2: return "Rando";
     	case 3: return "Phasing";
     	case 4: return "Mystery";
+    	case 5: return "Low%";
     	default: return "Standard";
     	}
     }
@@ -3411,7 +3418,11 @@ public class HtmlGenerator extends DefaultHandler{
     ///lbs header tag
     public static String headertag(int cur, int ord, String cat){
     	String s = "<h4>";
-    	for(int i=-1;i<5;i++){
+    	int ordupper = 5;
+    	if(cat == "Speed" || cat == "speed") {
+    		ordupper = 6;
+    	}
+    	for(int i=-1;i<ordupper;i++){
     		if(ord == i){
     			//s += "<a>" + ordToCategoryDisplay(i) + "</a>\r\n";
     		}
