@@ -1123,6 +1123,9 @@ public class HtmlGenerator extends DefaultHandler{
 	            if(i<14){
 	            	p.println(headertag(i,-1, "speed"));
 	            }
+	            else {
+	            	p.println("<h4><a class=\"header\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + ordToCategory(5) + "speedlbs.html\">" + ordToCategoryDisplay(5) + "</a>\r\n</h4>");
+	            }
 	            p.println("<table border=\"5\">");
 	            p.println("<tr>");
 	            p.println("<th class=\"fixed01\">Rank</th>");
@@ -1335,6 +1338,11 @@ public class HtmlGenerator extends DefaultHandler{
 	            htmlStart(p, curToName(i) + " " + ordToCategory(5) + " Speed LBs", "rankings");
 	            
                 p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+                
+                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+            	
+            	p.println("<h4><a class=\"header\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + ordToCategory(-1) + "speedlbs.html\">" + ordToCategoryDisplay(-1) + "</a>\r\n</h4>");
+            	
 	            p.println("<table border=\"5\">");
 	            p.println("<tr>");
 	            p.println("<th class=\"fixed01\">Rank</th>");
@@ -2111,11 +2119,13 @@ public class HtmlGenerator extends DefaultHandler{
                 p.println("<p></p>");
                 p.println("<table border=\"5\">");
                 p.println("<tr>");
-                p.println("<th class=\"catframe\">StoryLow</th>");
-                p.println("<th class=\"catframe\">9Low</th>");
-                p.println("<th class=\"catframe\">13Low</th>");
+                p.println("<td class=\"catframe\">Speed</td>");
+                p.println("<td class=\"charheader\">" + "<img src=\"ticons/" + 14 + "_transparent.png\">" + "</td>");
+                p.println("<td class=\"charheader\">" + "<img src=\"ticons/" + 15 + "_transparent.png\">" + "</td>");
+                p.println("<td class=\"charheader\">" + "<img src=\"ticons/" + 16 + "_transparent.png\">" + "</td>");
                 p.println("</tr>");
                 p.println("<tr>");
+                p.println("<td class=\"catframe\">" + ordToCategory(5) + "</td>");
                 p.println(ranktag(player.getRank(5, 14, "speed"), 5, 14, "speed", Player.csecToString(player.extratime[5][14])));
                 p.println(ranktag(player.getRank(5, 15, "speed"), 5, 15, "speed", Player.csecToString(player.extratime[5][15])));
                 p.println(ranktag(player.getRank(5, 16, "speed"), 5, 16, "speed", Player.csecToString(player.extratime[5][16])));
