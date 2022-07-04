@@ -1082,6 +1082,8 @@ public class Data {
     	case "76561198445776899": return "outer wilds propaganda"; 
     	case "76561198867899785": return "masonmanftw";
     	case "76561198127837318": return "raulguardira";
+    	case "76561198157311049": return "jabenero1";
+    	case "76561197993344223": return "Frobisher";
     	default: return "ID:" + steamid;
 		}
 	}
