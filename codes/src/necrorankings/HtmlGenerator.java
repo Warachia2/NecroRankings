@@ -339,6 +339,12 @@ public class HtmlGenerator extends DefaultHandler{
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8670050/?xml=1").openStream(), new HtmlGenerator());
         cur++; //Coda
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
+        cur++; //Story
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
+        cur++; //9
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
+        cur++; //13
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
         
         System.out.println("Getting Extra Score Entries...");
         
@@ -624,6 +630,16 @@ public class HtmlGenerator extends DefaultHandler{
         
         list.get("76561198002854407").setExtraTime(5, 13, 59663); //Spooty, Coda Low% 9:36.63
         list.get("76561198072087224").setExtraTime(5, 13, 83049); //DLKurosh, Coda Low% 13:50.49
+        
+        list.get("76561198021587175").setExtraTime(5, 14, 265179); //TNF Story Low% 44:11.79
+        list.get("76561198398758840").setExtraTime(5, 14, 294773); //Hokuho Story Low% 49:07.73
+        
+        list.get("76561198058867434").setExtraTime(5, 15, 693281); //Tufwfo 9 Low% 1:55:32.808
+        list.get("76561198398758840").setExtraTime(5, 15, 715372); //Hokuho 9 Low% 1:59:13.722
+        list.get("76561198021587175").setExtraTime(5, 15, 846967); //TNF 9 Low% 2:21:09.671
+        
+        list.get("76561198398758840").setExtraTime(5, 16, 1541367); //Hokuho 13 Low% 4:16:53.669
+        
         
       //0:Aria 1:Bard 2:Bolt 3:Cadence 4:Diamond 5:Dorian 6:Dove 7:Eli 8:Mary 9:Mel 10:Monk 11:Noc 12:Tempo 13:Coda 14:Story 15:9char 16:13char
         
@@ -1308,6 +1324,58 @@ public class HtmlGenerator extends DefaultHandler{
 		            ex.printStackTrace();
 		        }
 			}
+		}
+		
+		//multi low
+		for(int i=14;i<17;i++){
+	        try {
+	            FileWriter f = new FileWriter(lbsoutput + curToName(i) + ordToCategory(5) + "speedlbs.html", false);
+	            PrintWriter p = new PrintWriter(new BufferedWriter(f));
+	            
+	            htmlStart(p, curToName(i) + " " + ordToCategory(5) + " Speed LBs", "rankings");
+	            
+                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
+	            p.println("<table border=\"5\">");
+	            p.println("<tr>");
+	            p.println("<th class=\"fixed01\">Rank</th>");
+	            p.println("<th class=\"fixed01\">" + fdate1 + "</th>");
+	            p.println("<th class=\"fixed01\">Time</th>");
+	            p.println("</tr>");
+	            
+	            int ord = 5;
+				int num = i;
+				array.sort((a,b) -> (a.extratime[ord][num] - b.extratime[ord][num]));
+				int rank = 1;
+				for(Player player:array){
+					if(player.extratime[ord][num] == 0 || player.isExtra){
+						continue;
+					}
+					else{
+						player.setRank(ord, num, true, rank);
+						
+						if(!player.name().startsWith("ID")){
+							if(Data.isBanned(player.SteamID)){continue;}
+				            p.println("<tr>");
+				            rankid(p,rank);
+				            p.println("<td><a href=\"https://warachia2.github.io/NecroRankings/pbs/" + player.name_url() + ".html\">" + player.name() + "</a></td>");
+				            p.println("<td>" + Player.csecToString(player.extratime[ord][num]) + "</td>");
+				            p.println("</tr>");	
+						}
+						else{
+							if(rank <=10){
+								System.out.println(curToName(i) + " " + ordToCategory(5) + " Speed: " + player.name() + " rank:" + rank);
+							}
+						}
+			            
+						rank++;
+					}
+				}
+
+	            rankingCloser(p);
+	 
+	        } catch (IOException ex) {
+	            ex.printStackTrace();
+	        }
 		}
 		
 		for(int h=0;h<5;h++){
@@ -2015,10 +2083,18 @@ public class HtmlGenerator extends DefaultHandler{
                 p.println("<p></p>");
                 
                 p.println("<table border=\"5\">");
+                //p.println("<tr>");
+                //p.println("<th class=\"header\">Speed</th>");
+                //for(int i=0;i<14;i++){
+                	//p.println("<th class=\"header\">" + curToShortName(i) + "</th>");
+                //}
+                //p.println("</tr>");
+                
+                p.println("</tr>");
                 p.println("<tr>");
-                p.println("<th class=\"header\">Speed</th>");
+                p.println("<td class=\"catframe\">Speed</td>");
                 for(int i=0;i<14;i++){
-                	p.println("<th class=\"header\">" + curToShortName(i) + "</th>");
+                	p.println("<td class=\"charheader\">" + "<img src=\"ticons/" + i + "_transparent.png\">" + "</td>");
                 }
                 p.println("</tr>");
                 
@@ -2030,7 +2106,26 @@ public class HtmlGenerator extends DefaultHandler{
                     }
                     p.println("</tr>");
                 }
+                p.println("</table>");
                 
+                p.println("<p></p>");
+                p.println("<table border=\"5\">");
+                p.println("<tr>");
+                p.println("<th class=\"catframe\">StoryLow</th>");
+                p.println("<th class=\"catframe\">9Low</th>");
+                p.println("<th class=\"catframe\">13Low</th>");
+                p.println("</tr>");
+                p.println("<tr>");
+                p.println(ranktag(player.getRank(5, 14, "speed"), 5, 14, "speed", Player.csecToString(player.extratime[5][14])));
+                p.println(ranktag(player.getRank(5, 15, "speed"), 5, 15, "speed", Player.csecToString(player.extratime[5][15])));
+                p.println(ranktag(player.getRank(5, 16, "speed"), 5, 16, "speed", Player.csecToString(player.extratime[5][16])));
+                p.println("</tr>");
+                p.println("</table>");
+                p.println("<p></p>");
+
+                p.println("<table border=\"5\">");
+                
+                p.println("</tr>");
                 p.println("<tr>");
                 p.println("<td class=\"catframe\">Score</td>");
                 for(int i=0;i<14;i++){
@@ -2052,8 +2147,6 @@ public class HtmlGenerator extends DefaultHandler{
                 for(int i=0;i<14;i++){
                 	p.println(ranktag(player, -1, i, "deathless", player.clearcount(i)));
                 }
-                p.println("</tr>");
-                
                 p.println("</table>");
                 
                 if(!player.moreinfo.isEmpty()){

@@ -80,7 +80,7 @@ public class Player {
 		time = new int[17];
 		gold = new int[17];
 		clear = new int[14];
-		extratime = new int[6][14];
+		extratime = new int[6][17];
 		extragold = new int[5][14];
 		
 		moreinfo = new ArrayList<>();
