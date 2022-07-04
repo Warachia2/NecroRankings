@@ -224,6 +224,14 @@ public class Player {
 		return points(hardscore[cur]) + points(nrscore[cur]) + points(randoscore[cur]) + points(phasingscore[cur]) + points(mysteryscore[cur]);
 	}
 	
+	public double extraSpeedMultiPoints() {
+		double p = 0;
+		for(int cur=14;cur<17;cur++) {
+			p += points(lowspeed[cur]);
+		}
+		return p;
+	}
+	
 	public double contribution(){
 		return contribution_speed() + contribution_score() + contribution_deathless() + contribution_extra();
 	}

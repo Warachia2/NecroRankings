@@ -1718,7 +1718,19 @@ public class HtmlGenerator extends DefaultHandler{
             
             p.println("<table id=\"sort\" class=\"display\" border=\"5\" width=\"90%\">");
             p.println("<thead>");
-            categoryHeader(p, 14, "Total");
+            
+            p.println("<tr>");
+            p.println("<th class=\"fixed01 rank\">Rank</th>");
+            p.println("<th class=\"fixed01 name\">" + fdate1 + "</th>");
+            p.println("<th class=\"fixed01 total\">" + "Total" + "</th>");
+            
+            for(int i=0;i<14;i++){
+                p.println("<th class=\"fixed01 char\">" + curToShortName(i) + "</th>");
+            }
+            p.println("<th class=\"fixed01 char\">" + "Multi" + "</th>");
+            
+            p.println("</tr>");
+            
             p.println("</thead><tbody>");
             
             for(int i=0;i<100;i++){
@@ -1734,6 +1746,7 @@ public class HtmlGenerator extends DefaultHandler{
         		for(int j=0;j<14;j++){
                 	p.println("<td>" + String.format("%.2f",player.extraSpeedCharPoints(j)) + "</td>");
         		}
+        		p.println("<td>" + String.format("%.2f",player.extraSpeedMultiPoints()) + "</td>");
                 
                 p.println("</tr>");
             }
@@ -2126,10 +2139,10 @@ public class HtmlGenerator extends DefaultHandler{
                 p.println("<td class=\"charheader\">" + "<img src=\"ticons/" + 16 + "_transparent.png\">" + "</td>");
                 p.println("</tr>");
                 p.println("<tr>");
-                p.println("<td class=\"catframe\">" + ordToCategory(5) + "</td>");
-                p.println(ranktag(player.getRank(5, 14, "speed"), 5, 14, "speed", Player.csecToString(player.extratime[5][14])));
-                p.println(ranktag(player.getRank(5, 15, "speed"), 5, 15, "speed", Player.csecToString(player.extratime[5][15])));
-                p.println(ranktag(player.getRank(5, 16, "speed"), 5, 16, "speed", Player.csecToString(player.extratime[5][16])));
+                p.println("<td class=\"catframe\">" + ordToCategory(loword) + "</td>");
+                p.println(ranktag(player.getRank(loword, 14, "speed"), loword, 14, "speed", Player.csecToString(player.extratime[loword][14])));
+                p.println(ranktag(player.getRank(loword, 15, "speed"), loword, 15, "speed", Player.csecToString(player.extratime[loword][15])));
+                p.println(ranktag(player.getRank(loword, 16, "speed"), loword, 16, "speed", Player.csecToString(player.extratime[loword][16])));
                 p.println("</tr>");
                 p.println("</table>");
                 p.println("<p></p>");
