@@ -25,6 +25,7 @@ public class HtmlGenerator extends DefaultHandler{
 	static String chartsoutput = "C:\\Users\\Warachia\\Documents\\Files\\Codes\\NecroRankings\\charts\\";
 	static String hiddenoutput = "C:\\Users\\Warachia\\Documents\\Files\\Codes\\NecroRankings\\hidden\\";
 	static String dataoutput = "C:\\Users\\Warachia\\Documents\\Files\\Codes\\NecroRankings\\data\\";
+	static final int loword = 5;
 	
 	static String category = "";
 	static int cur = 0; //category id, 0~16
@@ -1124,7 +1125,7 @@ public class HtmlGenerator extends DefaultHandler{
 	            	p.println(headertag(i,-1, "speed"));
 	            }
 	            else {
-	            	p.println("<h4><a class=\"header\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + ordToCategory(5) + "speedlbs.html\">" + ordToCategoryDisplay(5) + "</a>\r\n</h4>");
+	            	p.println("<h4><a class=\"header\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + ordToCategory(loword) + "speedlbs.html\">" + ordToCategoryDisplay(loword) + "</a>\r\n</h4>");
 	            }
 	            p.println("<table border=\"5\">");
 	            p.println("<tr>");
@@ -1332,10 +1333,10 @@ public class HtmlGenerator extends DefaultHandler{
 		//multi low
 		for(int i=14;i<17;i++){
 	        try {
-	            FileWriter f = new FileWriter(lbsoutput + curToName(i) + ordToCategory(5) + "speedlbs.html", false);
+	            FileWriter f = new FileWriter(lbsoutput + curToName(i) + ordToCategory(loword) + "speedlbs.html", false);
 	            PrintWriter p = new PrintWriter(new BufferedWriter(f));
 	            
-	            htmlStart(p, curToName(i) + " " + ordToCategory(5) + " Speed LBs", "rankings");
+	            htmlStart(p, curToName(i) + " " + ordToCategory(loword) + " Speed LBs", "rankings");
 	            
                 p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
                 
@@ -1371,7 +1372,7 @@ public class HtmlGenerator extends DefaultHandler{
 						}
 						else{
 							if(rank <=10){
-								System.out.println(curToName(i) + " " + ordToCategory(5) + " Speed: " + player.name() + " rank:" + rank);
+								System.out.println(curToName(i) + " " + ordToCategory(loword) + " Speed: " + player.name() + " rank:" + rank);
 							}
 						}
 			            
@@ -3224,7 +3225,7 @@ public class HtmlGenerator extends DefaultHandler{
     		return 4;
     	}
     	else{
-    		return 5;
+    		return loword;
     	}
     }
     
@@ -3235,7 +3236,7 @@ public class HtmlGenerator extends DefaultHandler{
     	case 2: return "Rando";
     	case 3: return "Phasing";
     	case 4: return "Mystery";
-    	case 5: return "Low";
+    	case loword: return "Low";
     	default: return "";
     	}
     }
@@ -3247,7 +3248,7 @@ public class HtmlGenerator extends DefaultHandler{
     	case 2: return "Rando";
     	case 3: return "Phasing";
     	case 4: return "Mystery";
-    	case 5: return "Low";
+    	case loword: return "Low";
     	default: return "Standard";
     	}
     }

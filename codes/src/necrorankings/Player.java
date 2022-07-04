@@ -6,6 +6,7 @@ public class Player {
 	String SteamID;
 	boolean isExtra;
 	ArrayList<String> moreinfo;
+	static final int loword = 5;
 	
 	///ranks
 	int[] speed;
