@@ -570,6 +570,7 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198317639601").setExtraTime(5, 3, 59368); //Morra, Cad Low% 9:53.68
         list.get("76561198021587175").setExtraTime(5, 3, 65821); //TNF, Cad Low% 10:58.21
         list.get("76561198002854407").setExtraTime(5, 3, 70308); //Spooty, Cad Low% 11:43.08
+        list.get("76561198121399825").setExtraTime(5, 3, 73462); //Warachia, Cad Low% 12:14.62
         list.get("76561198253324593").setExtraTime(5, 3, 102474); //ptar124, Cad Low% 17:04.74
         
         list.get("76561198317639601").setExtraTime(5, 4, 40829); //Morra, Dia Low% 6:48.29
