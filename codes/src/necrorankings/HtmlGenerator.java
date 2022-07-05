@@ -1340,8 +1340,6 @@ public class HtmlGenerator extends DefaultHandler{
 	            htmlStart(p, curToName(i) + " " + ordToCategory(loword) + " Speed LBs", "rankings");
 	            
                 p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
-                
-                p.println("<p><a href=\"https://warachia2.github.io/NecroRankings/\">" + "Top" + "</a></p>");
             	
             	p.println("<h4><a class=\"header\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(i) + ordToCategory(-1) + "speedlbs.html\">" + ordToCategoryDisplay(-1) + "</a>\r\n</h4>");
             	
