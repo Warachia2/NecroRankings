@@ -304,8 +304,10 @@ public class Player {
 				c[i] += otherspeed * points(speed[i]);
 				c[i] += otherscore * points(score[i]);
 				c[i] += difficultdeathless * points(deathless[i]);
-				for(int h=0;h<5;h++){
+				for(int h=0;h<loword+1;h++){
 					c[i] += extraspeed * points(this.getRank(h,i,"speed"));
+				}
+				for(int h=0;h<loword;h++){
 					c[i] += extrascore * points(this.getRank(h,i,"score"));
 				}
 				break;
@@ -321,8 +323,10 @@ public class Player {
 				c[i] += otherspeed * points(speed[i]);
 				c[i] += otherscore * points(score[i]);
 				c[i] += easydeathless * points(deathless[i]);
-				for(int h=0;h<5;h++){
+				for(int h=0;h<loword+1;h++){
 					c[i] += extraspeed * points(this.getRank(h,i,"speed"));
+				}
+				for(int h=0;h<loword;h++){
 					c[i] += extrascore * points(this.getRank(h,i,"score"));
 				}
 				break;
@@ -330,8 +334,10 @@ public class Player {
 				c[i] += cadencespeed * points(speed[i]);
 				c[i] += cadencescore * points(score[i]);
 				c[i] += easydeathless * points(deathless[i]);
-				for(int h=0;h<5;h++){
+				for(int h=0;h<loword+1;h++){
 					c[i] += extraspeed * points(this.getRank(h,i,"speed"));
+				}
+				for(int h=0;h<loword;h++){
 					c[i] += extrascore * points(this.getRank(h,i,"score"));
 				}
 				break;
@@ -339,13 +345,15 @@ public class Player {
 				c[i] += otherspeed * points(speed[i]);
 				c[i] += otherscore * points(score[i]);
 				c[i] += codadeathless * points(deathless[i]);
-				for(int h=0;h<5;h++){
+				for(int h=0;h<loword+1;h++){
 					if(h!=3){
 						c[i] += codachallenge * points(this.getRank(h,i,"speed"));
 					}
 					else{
 						c[i] += extraspeed * points(this.getRank(h,i,"speed"));
 					}
+				}
+				for(int h=0;h<loword;h++){
 					c[i] += extrascore * points(this.getRank(h,i,"score"));
 				}
 				break;
@@ -356,6 +364,9 @@ public class Player {
 				c[i] += otherscore * points(score[14]);
 				c[i] += bardplusscore * points(score[15]);
 				c[i] += bardplusscore * points(score[16]);
+				c[i] += extraspeed * points(lowspeed[14]);
+				c[i] += extraspeed * points(lowspeed[15]);
+				c[i] += extraspeed * points(lowspeed[16]);
 				break;
 			}
 		}
