@@ -577,7 +577,6 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198317639601").setExtraTime(5, 4, 40829); //Morra, Dia Low% 6:48.29
         list.get("76561198002854407").setExtraTime(5, 4, 41759); //Spooty, Dia Low% 6:57.59
         list.get("76561198021587175").setExtraTime(5, 4, 45063); //TNF, Dia Low% 7:30.63
-        list.get("76561198041011456").setExtraTime(5, 4, 56262); //encryptid, Dia Low% 9:22.62
 
         list.get("76561198317639601").setExtraTime(5, 5, 33377); //Morra, Dor Low% 5:33.77
         list.get("76561198002854407").setExtraTime(5, 5, 37355); //Spooty, Dor Low% 6:13.55
@@ -643,8 +642,12 @@ public class HtmlGenerator extends DefaultHandler{
         
         list.get("76561198398758840").setExtraTime(5, 16, 1541367); //Hokuho 13 Low% 4:16:53.669
         
+        //band-aids (until steam LBs become public)
+        list.get("76561198121399825").setExtraTime(5, 4, 43040); //Warachia, Dia Low% 7:10.40
+        list.get("76561198041011456").setExtraTime(5, 3, 60505); //encryptid, Cad Low% 10:05.05
+        list.get("76561198041011456").setExtraTime(5, 4, 54130); //encryptid, Dia Low% 9:01.30
         
-      //0:Aria 1:Bard 2:Bolt 3:Cadence 4:Diamond 5:Dorian 6:Dove 7:Eli 8:Mary 9:Mel 10:Monk 11:Noc 12:Tempo 13:Coda 14:Story 15:9char 16:13char
+       //0:Aria 1:Bard 2:Bolt 3:Cadence 4:Diamond 5:Dorian 6:Dove 7:Eli 8:Mary 9:Mel 10:Monk 11:Noc 12:Tempo 13:Coda 14:Story 15:9char 16:13char
         
         //Bar Text
         LocalDateTime date1 = LocalDateTime.now();
