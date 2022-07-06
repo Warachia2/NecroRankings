@@ -520,6 +520,7 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198061963965").setTime(11, 54123); //kath, Nocturna Speed, 9:01.23
         list.get("76561197999948240").setGold(11, 30086); //Ancalagor, Nocturna Score 30086
         list.get("76561198056452044").setTime(0, 28347); //Bgm, Aria Speed, 4:43.47
+        list.get("76561198416833719").setTime(3, 46473); //medi, Cad Speed, 7:44.73
         list.get("76561198136201511").setTime(16, 487546); //Ravio, 13char Speed 1:21:15.636
         Player.speedWR[16] = Math.min(Player.speedWR[16], 487564);
         
