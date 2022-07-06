@@ -3060,7 +3060,7 @@ public class HtmlGenerator extends DefaultHandler{
         p.println("\"columnDefs\": [ {\"searchable\": false,\"orderable\": false,\"targets\": 0} ],");
         p.println("\"order\": [[ 2, 'desc' ]],");
         if(type == "a"){
-            p.println("\"columnDefs\": [{ \"orderSequence\": [ \"desc\" ], \"targets\": [ 2,3,4,5,6,7]}]});");
+            p.println("\"columnDefs\": [{ \"orderSequence\": [ \"desc\" ], \"targets\": [ 2,3,4,5,6,7,8]}]});");
         }
         else if(type == "i"){
         	p.println("\"columnDefs\": [{ \"orderSequence\": [ \"desc\" ], \"targets\": [ 2,3,4,5,6]}]});");
@@ -3069,7 +3069,7 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("\"columnDefs\": [{ \"orderSequence\": [ \"desc\" ], \"targets\": [ 2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]}]});");	
         }
         else{
-            p.println("\"columnDefs\": [{ \"orderSequence\": [ \"desc\" ], \"targets\": [ 2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]}]});");	
+            p.println("\"columnDefs\": [{ \"orderSequence\": [ \"desc\" ], \"targets\": [ 2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]}]});");	
         }
         
         p.println("t.on( 'order.dt search.dt', function () {");

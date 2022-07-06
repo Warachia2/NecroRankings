@@ -23,7 +23,7 @@ var t =  $('#sort').DataTable({
 "searching":     false,
 "columnDefs": [ {"searchable": false,"orderable": false,"targets": 0} ],
 "order": [[ 2, 'desc' ]],
-"columnDefs": [{ "orderSequence": [ "desc" ], "targets": [ 2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]}]});
+"columnDefs": [{ "orderSequence": [ "desc" ], "targets": [ 2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]}]});
 t.on( 'order.dt search.dt', function () {
 t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
 cell.innerHTML = i+1;
@@ -41,7 +41,7 @@ cell.innerHTML = i+1;
 <thead>
 <tr>
 <th class="fixed01 rank">Rank</th>
-<th class="fixed01 name">2022/07/06 21:57</th>
+<th class="fixed01 name">2022/07/07 00:22</th>
 <th class="fixed01 total">Total</th>
 <th class="fixed01 char">Aria</th>
 <th class="fixed01 char">Bard</th>
@@ -1043,7 +1043,7 @@ cell.innerHTML = i+1;
 <tr>
 <td>50</td>
 <td><a href="https://warachia2.github.io/NecroRankings/pbs/Maqua.html">Maqua</a></td>
-<td>320.59</td>
+<td>320.58</td>
 <td>21.47</td>
 <td>65.72</td>
 <td>22.50</td>
