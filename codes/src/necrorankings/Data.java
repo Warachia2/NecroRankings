@@ -292,7 +292,7 @@ public class Data {
 		case "76561198004612980": return "CANCEL";
 		case "76561198045629156": return "ribbongraph";
 		case "76561198112858645": return "Horten";
-		case "76561198109414601": return "echaen";
+		case "76561198109414601": return "rin";
 		case "76561198335978292": return "Repeat";
 		case "76561198046471496": return "mastel";
 		case "76561198324265232": return "NecroRebel";
