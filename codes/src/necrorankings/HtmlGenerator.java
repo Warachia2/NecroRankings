@@ -500,7 +500,6 @@ public class HtmlGenerator extends DefaultHandler{
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/2041286/?xml=1").openStream(), new HtmlGenerator());
 
         System.out.println("Modifying Player Data...");
-        
         //Extra Players
         list.put("Low% Monster",Player.LowMonster());
         list.put("WtW Monster",Player.WtWMonster());
@@ -513,6 +512,44 @@ public class HtmlGenerator extends DefaultHandler{
         
         array = new ArrayList<>(list.values());
         
+        addRecords();
+        
+        //Bar Text
+        LocalDateTime date1 = LocalDateTime.now();
+		DateTimeFormatter dtformat1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
+		fdate1 = dtformat1.format(date1);
+		
+		//More Info
+		moreInfo();
+		
+		System.out.println("Making LBs");
+		regularLBsMaker();
+		extraLBsMaker();
+		System.out.println("Making Rankings...");
+        sumratioMaker();
+        extraRankingMaker();
+        labMaker();
+        influenceMaker();
+        System.out.println("Making PB Lists...");
+        playerListMaker();
+        pblistMaker();
+        System.out.println("Making Charts...");
+        top10ChartMaker("Speed");
+        top10ChartMaker("Score");
+        extraChartMaker();
+        densityMaker();
+        System.out.println("Making Data...");
+		maincsvMaker(5000, 20.0);
+		allcsvMaker(5000, 20.0);
+		wrscsvMaker();
+        
+        System.out.println("Done");
+    }
+
+    public static void addRecords() {
+    	//force
+        list.get("76561198031256099").forceExtraTime(2, 8, 41989); //yuka, Mary Rando, 6:59.89
+    	
         //Unsubmitted
         list.get("76561198087367133").setTime(2, 27345); //Shortcake Sweets, Bolt Speed, 4:33.45
         list.get("76561198087367133").setTime(8, 33267); //Shortcake Sweets, Bolt Speed, 4:33.45
@@ -648,39 +685,7 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198041011456").setExtraTime(5, 4, 54130); //encryptid, Dia Low% 9:01.30
         
        //0:Aria 1:Bard 2:Bolt 3:Cadence 4:Diamond 5:Dorian 6:Dove 7:Eli 8:Mary 9:Mel 10:Monk 11:Noc 12:Tempo 13:Coda 14:Story 15:9char 16:13char
-        
-        //Bar Text
-        LocalDateTime date1 = LocalDateTime.now();
-		DateTimeFormatter dtformat1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
-		fdate1 = dtformat1.format(date1);
-		
-		//More Info
-		moreInfo();
-		
-		System.out.println("Making LBs");
-		regularLBsMaker();
-		extraLBsMaker();
-		System.out.println("Making Rankings...");
-        sumratioMaker();
-        extraRankingMaker();
-        labMaker();
-        influenceMaker();
-        System.out.println("Making PB Lists...");
-        playerListMaker();
-        pblistMaker();
-        System.out.println("Making Charts...");
-        top10ChartMaker("Speed");
-        top10ChartMaker("Score");
-        extraChartMaker();
-        densityMaker();
-        System.out.println("Making Data...");
-		maincsvMaker(5000, 20.0);
-		allcsvMaker(5000, 20.0);
-		wrscsvMaker();
-        
-        System.out.println("Done");
     }
-
     public void startDocument() {
     }
     public void startElement(String uri, String localName, String qName, Attributes attributes) {

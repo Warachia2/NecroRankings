@@ -803,6 +803,10 @@ public class Player {
 		}
 	}
 	
+	public void forceExtraTime(int ord, int cur, int csec){
+		extratime[ord][cur] = csec;
+	}
+	
 	public void setExtraGold(int ord, int cur, int score){
 		extragold[ord][cur] = Math.max(score, extragold[ord][cur]);
 	}
