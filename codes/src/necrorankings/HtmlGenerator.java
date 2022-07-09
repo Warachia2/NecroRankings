@@ -679,10 +679,13 @@ public class HtmlGenerator extends DefaultHandler{
         
         list.get("76561198398758840").setExtraTime(5, 16, 1541367); //Hokuho 13 Low% 4:16:53.669
         
-        //band-aids (until steam LBs become public)
+        //band-aids (until steam LBs become public) cad,eli,dia,monk
         list.get("76561198121399825").setExtraTime(5, 4, 43040); //Warachia, Dia Low% 7:10.40
         list.get("76561198041011456").setExtraTime(5, 3, 60505); //encryptid, Cad Low% 10:05.05
         list.get("76561198041011456").setExtraTime(5, 4, 54130); //encryptid, Dia Low% 9:01.30
+        list.get("76561198398758840").setExtraTime(5, 10, 87291); //Hokuho Monk Low% 14:32.01
+        list.get("76561198041943692").setExtraTime(5, 7, 87432); //rjri, Eli Low% 14:34.32
+        list.get("76561198031256099").setExtraTime(5, 4, 48106); //yuka, Dia Low% 8:01.06
         
        //0:Aria 1:Bard 2:Bolt 3:Cadence 4:Diamond 5:Dorian 6:Dove 7:Eli 8:Mary 9:Mel 10:Monk 11:Noc 12:Tempo 13:Coda 14:Story 15:9char 16:13char
     }
