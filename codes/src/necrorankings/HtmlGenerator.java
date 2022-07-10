@@ -1956,7 +1956,7 @@ public class HtmlGenerator extends DefaultHandler{
             p.println("<p>Speed: Cadence x2, Other x1</p>");
             p.println("<p>Score: Cadence x1, 9/13char x0.2, Other x0.5</p>");
             p.println("<p>DLess: Coda x0.5, Aria/Monk/Mary x0.2, Other x0.1</p>");
-            p.println("<p>Extra: Coda NR/Rando/Mystery/Hard Speed x0.5, Other Extra Speed x0.06, Extra Score x0.02</p>");
+            p.println("<p>Extra: Coda Non-Phasing Speed x0.5, Other Extra Speed x0.06, Extra Score x0.02</p>");
             p.println("</details><p></p>");
             
             p.println("<table id=\"sort\" class=\"display\" border=\"5\" width=\"50%\">");
