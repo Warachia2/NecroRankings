@@ -981,7 +981,7 @@ public class HtmlGenerator extends DefaultHandler{
     	//nvsdy
     	list.get("76561198330876853").addInfo("Also known as: univusday");
     	//Ocre
-    	list.get("76561198207378484").addInfo("Also known as: Mewtoes");
+    	list.get("76561198207378484").addInfo("Also known as: Mewtoes, Ocre307");
     	list.get("76561197996690770").addInfo("Winner of CoNDOR XII");
     	list.get("76561198207378484").addInfo(conduitWinner(38));
     	list.get("76561198207378484").addInfo(worldsfirst("Bard Score 300k"));
@@ -1074,7 +1074,7 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198002854407").addInfo(worldsfirst("Coda Hard Clear","https://youtu.be/R_02QKWL7Vc"));
     	list.get("76561198002854407").addInfo(worldsfirst("9char Sub-Hour","https://youtu.be/YmSn4X4iMnk"));
     	list.get("76561198002854407").addInfo(conduitWinner(1));
-    	list.get("76561198002854407").addInfo("Winner of CoNDOR S6/S8/X/X2");
+    	list.get("76561198002854407").addInfo("Winner of CoNDOR S6/S8/X/X2/S14");
     	list.get("76561198002854407").addInfo(youtube("https://www.youtube.com/channel/UCLCqsFZw6ZglWzKjjQA4koA"));
     	list.get("76561198002854407").addInfo(linkText("Hosts CRoW","http://race.condor.live/"));
     	//Squega
