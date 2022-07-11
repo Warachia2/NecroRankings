@@ -871,7 +871,7 @@ public class HtmlGenerator extends DefaultHandler{
     	//Cyber
     	list.get("76561198194866686").addInfo(conduitWinner(11));
     	//Dekatriath
-    	list.get("76561198095129892").addInfo("Also known as: zashes");
+    	list.get("76561198041651094").addInfo("Also known as: zashes");
     	list.get("76561198041651094").addInfo(conduitWinner(53));
     	//Dix
     	list.get("76561198095129892").addInfo("Also known as: French numbers");
@@ -894,7 +894,7 @@ public class HtmlGenerator extends DefaultHandler{
     	//Espeon
     	list.get("76561198853968591").addInfo(conduitWinner(43));
     	//Faira
-    	list.get("76561198041011456").addInfo("Also known as: Squidie");
+    	list.get("76561198451763633").addInfo("Also known as: Squidie");
     	list.get("76561198451763633").addInfo(conduitWinner(52));
     	//flamehaze
     	list.get("76561198093336562").addInfo(worldsfirst("Tempo Score 30k"));
