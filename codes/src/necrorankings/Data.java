@@ -829,7 +829,7 @@ public class Data {
     	case "76561198111812454": return "Timmu";
     	case "76561198210364576": return "KayOh";
     	case "76561198169426323": return "Jelly Donut";
-    	case "76561198041651094": return "zashes";
+    	case "76561198041651094": return "dekatriath";
     	case "76561199032747602": return "超级大神";
     	case "76561198040299895": return "Snekalot";
     	case "76561198057473982": return "TOAST";

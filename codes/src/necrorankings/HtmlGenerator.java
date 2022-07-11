@@ -868,6 +868,9 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198071175501").addInfo("Also known as: Crispy Fried Potatoes");
     	//Cyber
     	list.get("76561198194866686").addInfo(conduitWinner(11));
+    	//Dekatriath
+    	list.get("76561198095129892").addInfo("Also known as: zashes");
+    	list.get("76561198041651094").addInfo(conduitWinner(53));
     	//Dix
     	list.get("76561198095129892").addInfo("Also known as: French numbers");
     	//DJC
@@ -888,6 +891,9 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561197968400814").addInfo(linkText("Hosts CoNDOR", "https://www.twitch.tv/eladdifficult"));
     	//Espeon
     	list.get("76561198853968591").addInfo(conduitWinner(43));
+    	//Faira
+    	list.get("76561198041011456").addInfo("Also known as: Squidie");
+    	list.get("76561198451763633").addInfo(conduitWinner(52));
     	//flamehaze
     	list.get("76561198093336562").addInfo(worldsfirst("Tempo Score 30k"));
     	//FocusingFace
@@ -932,6 +938,8 @@ public class HtmlGenerator extends DefaultHandler{
     	//Kupioala
     	list.get("76561198079454638").addInfo("Also known as: Zarushi");
     	list.get("76561198079454638").addInfo(conduitWinner(49));
+    	//lakehope
+    	list.get("76561198844450515").addInfo(conduitWinner(50));
     	//levs57
     	list.get("76561198087840095").addInfo("Also known as: AT");
     	list.get("76561198087840095").addInfo(conduitWinner(42));
@@ -964,6 +972,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198002760663").addInfo(conduitWinner(28));
     	//mudjoe
     	list.get("76561197996690770").addInfo("Winner of CoNDOR S4");
+    	//NBTelethia
+    	list.get("76561198994219732").addInfo(conduitWinner(51));
     	//Nick
     	list.get("76561198049600266").addInfo(worldsfirst("Aria NR Low% Clear", "https://www.youtube.com/watch?v=-5SXUFxYruY"));
     	//nomkey
@@ -972,6 +982,7 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198330876853").addInfo("Also known as: univusday");
     	//Ocre
     	list.get("76561198207378484").addInfo("Also known as: Mewtoes");
+    	list.get("76561197996690770").addInfo("Winner of CoNDOR XII");
     	list.get("76561198207378484").addInfo(conduitWinner(38));
     	list.get("76561198207378484").addInfo(worldsfirst("Bard Score 300k"));
     	list.get("76561198207378484").addInfo(worldsfirst("Diamond Score 40k", "https://www.twitch.tv/videos/740002662"));
@@ -1061,7 +1072,7 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198002854407").addInfo(worldsfirst("Coda Mystery Clear","https://youtu.be/8aQ473WFiRs"));
     	list.get("76561198002854407").addInfo(worldsfirst("Coda NR Clear","https://youtu.be/bnigp0V7U-M"));
     	list.get("76561198002854407").addInfo(worldsfirst("Coda Hard Clear","https://youtu.be/R_02QKWL7Vc"));
-    	list.get("76561198002854407").addInfo(worldsfirst("9char Sub Hour","https://youtu.be/YmSn4X4iMnk"));
+    	list.get("76561198002854407").addInfo(worldsfirst("9char Sub-Hour","https://youtu.be/YmSn4X4iMnk"));
     	list.get("76561198002854407").addInfo(conduitWinner(1));
     	list.get("76561198002854407").addInfo("Winner of CoNDOR S6/S8/X/X2");
     	list.get("76561198002854407").addInfo(youtube("https://www.youtube.com/channel/UCLCqsFZw6ZglWzKjjQA4koA"));
@@ -1095,6 +1106,7 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198121399825").addInfo(linkText("Warachia's warehouse", "https://sites.google.com/view/warachiasouko/%E3%83%9B%E3%83%BC%E3%83%A0/necrodancer-english"));
         list.get("76561198121399825").addInfo(youtube("https://www.youtube.com/channel/UC0HOUDmhQdFsWZYRQJhqsgQ"));
         //Waski
+        list.get("76561198121399825").addInfo(worldsfirst("14sum Sub-Hour"));
         list.get("76561198094733262").addInfo(youtube("https://www.youtube.com/channel/UCD8O0AksMFaVNUD4nIihcbw"));
         //3Face
         list.get("76561198056434055").addInfo("Also known as: :3");
