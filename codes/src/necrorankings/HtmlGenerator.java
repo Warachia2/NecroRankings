@@ -866,6 +866,8 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198329442425").addInfo("Also known as: EricDaWolf, RealDASlup");
     	//Crispy Fried Potatoes
     	list.get("76561198071175501").addInfo("Also known as: Crispy Fried Potatoes");
+    	//crate
+    	list.get("76561198025048892").addInfo(linkText("Hosts CRoW","http://race.condor.live/"));
     	//Cyber
     	list.get("76561198194866686").addInfo(conduitWinner(11));
     	//Dekatriath
@@ -982,7 +984,7 @@ public class HtmlGenerator extends DefaultHandler{
     	list.get("76561198330876853").addInfo("Also known as: univusday");
     	//Ocre
     	list.get("76561198207378484").addInfo("Also known as: Mewtoes, Ocre307");
-    	list.get("76561197996690770").addInfo("Winner of CoNDOR XII");
+    	list.get("76561198207378484").addInfo("Winner of CoNDOR XII");
     	list.get("76561198207378484").addInfo(conduitWinner(38));
     	list.get("76561198207378484").addInfo(worldsfirst("Bard Score 300k"));
     	list.get("76561198207378484").addInfo(worldsfirst("Diamond Score 40k", "https://www.twitch.tv/videos/740002662"));
