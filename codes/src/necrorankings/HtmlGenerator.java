@@ -2297,7 +2297,11 @@ public class HtmlGenerator extends DefaultHandler{
     	
     	p.println("<script>");
     	p.println("window.onload = function(){");
+    	p.println("CanvasJS.addColorSet(\"customColorSet1\",");
+    	p.println("     [\"#2F4F4F\",\"#00BFFF\",\"#FFFF00\",\"#FF0000\",\"#8B4513\",\"#006400\",");
+    	p.println("     \"#00FA9A\",\"#A9A9A9\",\"#F5F5DC\",\"#FF9900\",\"#66CDAA\",\"#00008B\",\"#9400D3\"]);");
     	p.println("var chart = new CanvasJS.Chart(\"chartContainer\", {");
+    	p.println("colorSet:  \"customColorSet1\",");
     	p.println("title: {},");
     	p.println("axisX: {title: \"Rank\"},");
     	p.println("axisY2: {title: \"Ratio to WR\", minimum: 1.0},");
