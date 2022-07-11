@@ -1065,7 +1065,7 @@ public class HtmlGenerator extends DefaultHandler{
     	//Sponska
     	list.get("76561198097522980").addInfo(conduitWinner(17));
     	//Spooty
-    	list.get("76561198002854407").addInfo("Also known as: Spootaloo");
+    	list.get("76561198002854407").addInfo("Also known as: SpootyBiscuit");
     	list.get("76561198002854407").addInfo(worldsfirst("Coda Clear"));
     	list.get("76561198002854407").addInfo(worldsfirst("Coda Sub5","https://youtu.be/Y1a6ISxi9BI"));
     	list.get("76561198002854407").addInfo(worldsfirst("Coda Score 10k"));
