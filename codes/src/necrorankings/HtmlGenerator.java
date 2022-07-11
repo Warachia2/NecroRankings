@@ -1108,7 +1108,7 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198121399825").addInfo(linkText("Warachia's warehouse", "https://sites.google.com/view/warachiasouko/%E3%83%9B%E3%83%BC%E3%83%A0/necrodancer-english"));
         list.get("76561198121399825").addInfo(youtube("https://www.youtube.com/channel/UC0HOUDmhQdFsWZYRQJhqsgQ"));
         //Waski
-        list.get("76561198121399825").addInfo(worldsfirst("14sum Sub-Hour"));
+        list.get("76561198094733262").addInfo(worldsfirst("14sum Sub-Hour"));
         list.get("76561198094733262").addInfo(youtube("https://www.youtube.com/channel/UCD8O0AksMFaVNUD4nIihcbw"));
         //3Face
         list.get("76561198056434055").addInfo("Also known as: :3");
