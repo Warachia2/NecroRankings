@@ -675,6 +675,7 @@ public class HtmlGenerator extends DefaultHandler{
         
         list.get("76561198058867434").setExtraTime(5, 15, 693281); //Tufwfo 9 Low% 1:55:32.808
         list.get("76561198398758840").setExtraTime(5, 15, 715372); //Hokuho 9 Low% 1:59:13.722
+        list.get("76561198072087224").setExtraTime(5, 15, 742930); //DLKurosh 9 Low% 2:03:49.30
         list.get("76561198317639601").setExtraTime(5, 15, 764279); //Morra 9 Low% 2:07:22.79
         list.get("76561198151086583").setExtraTime(5, 15, 844068); //Plasmatize 9 Low% 2:20:40.68
         list.get("76561198021587175").setExtraTime(5, 15, 846967); //TNF 9 Low% 2:21:09.671
