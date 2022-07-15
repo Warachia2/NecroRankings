@@ -319,31 +319,31 @@ public class HtmlGenerator extends DefaultHandler{
         cur++; //Bolt
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8674004/?xml=1").openStream(), new HtmlGenerator());
         cur++; //Cadence
-        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8695229/?xml=1").openStream(), new HtmlGenerator());
         cur++; //Diamond
-        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8695309/?xml=1").openStream(), new HtmlGenerator());
         cur++; //Dorian
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8676454/?xml=1").openStream(), new HtmlGenerator());
         cur++; //Dove
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8670409/?xml=1").openStream(), new HtmlGenerator());
         cur++; //Eli
-        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8693759/?xml=1").openStream(), new HtmlGenerator());
         cur++; //Mary
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8671595/?xml=1").openStream(), new HtmlGenerator());
         cur++; //Melody
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8670103/?xml=1").openStream(), new HtmlGenerator());
         cur++; //Monk
-        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8689346/?xml=1").openStream(), new HtmlGenerator());
         cur++; //Nocturna
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8675963/?xml=1").openStream(), new HtmlGenerator());
         cur++; //Tempo
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8670050/?xml=1").openStream(), new HtmlGenerator());
         cur++; //Coda
-        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8742709/?xml=1").openStream(), new HtmlGenerator());
         cur++; //Story
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
         cur++; //9
-        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8677480/?xml=1").openStream(), new HtmlGenerator());
         cur++; //13
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
         
