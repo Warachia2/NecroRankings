@@ -668,7 +668,7 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198115768228").setExtraTime(5, 12, 44863); //Mizmy, Tempo Low% 7:28.63
         
         list.get("76561198002854407").setExtraTime(5, 13, 59663); //Spooty, Coda Low% 9:36.63
-        list.get("76561198072087224").setExtraTime(5, 13, 83049); //DLKurosh, Coda Low% 13:50.49
+        list.get("76561198072087224").setExtraTime(5, 13, 67221); //DLKurosh, Coda Low% 11:12.21
         
         list.get("76561198021587175").setExtraTime(5, 14, 265179); //TNF Story Low% 44:11.79
         list.get("76561198398758840").setExtraTime(5, 14, 294773); //Hokuho Story Low% 49:07.73
@@ -688,7 +688,11 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198041011456").setExtraTime(5, 4, 54130); //encryptid, Dia Low% 9:01.30
         list.get("76561198398758840").setExtraTime(5, 10, 87291); //Hokuho Monk Low% 14:32.01
         list.get("76561198041943692").setExtraTime(5, 7, 87432); //rjri, Eli Low% 14:34.32
+        list.get("76561198041943692").setExtraTime(5, 3, 105701); //rjri, Cad Low% 17:37.01
+        list.get("76561198041943692").setExtraTime(5, 4, 83862); //rjri, Dia Low% 13:58.62
         list.get("76561198031256099").setExtraTime(5, 4, 48106); //yuka, Dia Low% 8:01.06
+        list.get("76561197971134304").setExtraTime(5, 3, 65699); //Prody, Cad Low% 10:56.99
+        list.get("76561198048082238").setExtraTime(5, 4, 72504); //Gekke, Dia Low% 12:05.04
         
        //0:Aria 1:Bard 2:Bolt 3:Cadence 4:Diamond 5:Dorian 6:Dove 7:Eli 8:Mary 9:Mel 10:Monk 11:Noc 12:Tempo 13:Coda 14:Story 15:9char 16:13char
     }
