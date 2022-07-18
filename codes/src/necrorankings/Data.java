@@ -1086,6 +1086,9 @@ public class Data {
     	case "76561197993344223": return "Frobisher";
     	case "76561198416833719": return "medi";
     	case "76561198011222275": return "neet";
+    	case "76561198114277103": return "Gerardo Belic";
+    	case "76561199015401952": return "Eirozof";
+    	
     	default: return "ID:" + steamid;
 		}
 	}
