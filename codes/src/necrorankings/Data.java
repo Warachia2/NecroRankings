@@ -1088,6 +1088,7 @@ public class Data {
     	case "76561198011222275": return "neet";
     	case "76561198114277103": return "Gerardo Belic";
     	case "76561199015401952": return "Eirozof";
+    	case "76561198292092655": return "Lucas";
     	
     	default: return "ID:" + steamid;
 		}
