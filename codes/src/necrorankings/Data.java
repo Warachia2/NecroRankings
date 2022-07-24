@@ -1090,6 +1090,9 @@ public class Data {
     	case "76561199015401952": return "Eirozof";
     	case "76561198292092655": return "Lucas";
     	case "76561197964186259": return "Warlordian";
+    	case "76561199031631948": return "Warze";
+    	case "76561198065903789": return "KarmicChaos";
+    	case "76561198099726291": return "SoroTsune"; //noc 54th from nowhere
     	
     	default: return "ID:" + steamid;
 		}
