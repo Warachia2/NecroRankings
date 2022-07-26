@@ -1095,6 +1095,7 @@ public class Data {
     	case "76561198099726291": return "SoroTsune"; //noc 54th from nowhere
     	case "76561198027291270": return "kody"; //noc score 26th in 11hours, check later
     	case "76561198162419523": return "Discowy";
+    	case "76561198806301503": return "PS";
     	
     	default: return "ID:" + steamid;
 		}

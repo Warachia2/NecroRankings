@@ -670,6 +670,7 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198002854407").setExtraTime(5, 13, 59663); //Spooty, Coda Low% 9:36.63
         list.get("76561198072087224").setExtraTime(5, 13, 67221); //DLKurosh, Coda Low% 11:12.21
         
+        list.get("76561198207378484").setExtraTime(5, 14, 258210); //violet Story Low% 43:02.10
         list.get("76561198021587175").setExtraTime(5, 14, 265179); //TNF Story Low% 44:11.79
         list.get("76561198398758840").setExtraTime(5, 14, 294773); //Hokuho Story Low% 49:07.73
         
