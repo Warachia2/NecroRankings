@@ -195,7 +195,7 @@ public class Data {
 		case "76561198247123198": return "RPGG";
 		case "76561198012546822": return "ashastral";
 		case "76561198055098680": return "tang";
-		case "76561198052787418": return "seanpwolf";
+		case "76561198052787418": return "seanpyre";
 		case "76561198049600266": return "Nick";
 		case "76561198084303847": return "Spef";
 		case "76561198161380239": return "blexstar";
