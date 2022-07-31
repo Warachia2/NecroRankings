@@ -549,6 +549,8 @@ public class HtmlGenerator extends DefaultHandler{
     public static void addRecords() {
     	//force
         list.get("76561198031256099").forceExtraTime(2, 8, 41989); //yuka, Mary Rando, 6:59.89
+        list.get("76561198121399825").forceTime(15, 351660); //Warachia, 9char 58:36.60
+        list.get("76561198121399825").forceTime(14, 169162); //Warachia, Story 28:11.62
     	
         //Unsubmitted
         list.get("76561198087367133").setTime(2, 27345); //Shortcake Sweets, Bolt Speed, 4:33.45

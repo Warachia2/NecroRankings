@@ -786,6 +786,10 @@ public class Player {
 		}
 	}
 	
+	public void forceTime(int cur, int csec) {
+		time[cur] = csec;
+	}
+	
 	public void setGold(int cur, int score){
 		gold[cur] = Math.max(score, gold[cur]);
 	}
