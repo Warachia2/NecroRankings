@@ -84,6 +84,7 @@ public class Data {
     	case "76561198354305357": return true; //KidraMan,, 9char 20th from nowhere
     	case "76561198036225763": return true; //oDevilAngelo, coda
     	case "76561198167352657": return true; //mavarium, Necrolab speed 120th from nowhere, now Coda 11th
+    	case "76561198042014297": return true; //bard score 10th with 13.7h playtime
     	//already excluded by impossible score
     	case "76561198373879461": return true; //thegunslinger
     	//not sure
