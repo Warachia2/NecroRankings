@@ -1102,6 +1102,9 @@ public class Data {
     	case "76561198065436563": return "LordMondayIX";
     	case "76561198058865457": return "lenin";
     	case "76561198085625258": return "Mastoman";
+    	case "76561198000612366": return "인터넷 친구";
+    	case "76561198070033778": return "Rock You";
+    	case "76561198065845706": return "Almazest";
     	
     	default: return "ID:" + steamid;
 		}
