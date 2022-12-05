@@ -1109,6 +1109,11 @@ public class Data {
     	case "76561198823682255": return "elgz2010";
     	case "76561198002399439": return "PeteOzzy";
     	case "76561198437915106": return "Ricardo Myers";
+    	case "76561198796738647": return "Portoss";
+    	case "76561198120250589": return "008080";
+    	case "76561198272387096": return "Willplaygames";
+    	case "76561198071068724": return "ZEKE";
+    	case "76561198787056919": return "gamesenyou321";
     	
     	default: return "ID:" + steamid;
 		}
