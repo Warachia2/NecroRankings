@@ -188,7 +188,7 @@ public class Data {
 		case "76561198031063446": return "Pibonacci";
 		case "76561198058867434": return "Tufwfo";
 		case "76561198000263514": return "incnone";
-		case "76561198207378484": return "violet";
+		case "76561198207378484": return "ocre";
 		case "76561198094733262": return "WasKi115";
 		case "76561197998799529": return "biggiemac42";
 		case "76561197999948240": return "Ancalagor";
@@ -1114,6 +1114,10 @@ public class Data {
     	case "76561198272387096": return "Willplaygames";
     	case "76561198071068724": return "ZEKE";
     	case "76561198787056919": return "gamesenyou321";
+    	case "76561198302061008": return "Danya";
+    	case "76561198130286506": return "Sacred";
+    	case "76561198150109687": return "Miyano";
+    	case "76561197971398453": return "NEX"; //9low 6th, idk
     	
     	default: return "ID:" + steamid;
 		}

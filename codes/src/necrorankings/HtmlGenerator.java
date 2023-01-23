@@ -677,12 +677,14 @@ public class HtmlGenerator extends DefaultHandler{
         list.get("76561198398758840").setExtraTime(5, 14, 294773); //Hokuho Story Low% 49:07.73
         
         list.get("76561198058867434").setExtraTime(5, 15, 693281); //Tufwfo 9 Low% 1:55:32.808
+        list.get("76561198207378484").setExtraTime(5, 15, 708276); //violet 9 Low% 1:58:02.76
         list.get("76561198398758840").setExtraTime(5, 15, 715372); //Hokuho 9 Low% 1:59:13.722
         list.get("76561198072087224").setExtraTime(5, 15, 742930); //DLKurosh 9 Low% 2:03:49.30
         list.get("76561198317639601").setExtraTime(5, 15, 764279); //Morra 9 Low% 2:07:22.79
         list.get("76561198151086583").setExtraTime(5, 15, 844068); //Plasmatize 9 Low% 2:20:40.68
         list.get("76561198021587175").setExtraTime(5, 15, 846967); //TNF 9 Low% 2:21:09.671
         
+        list.get("76561198207378484").setExtraTime(5, 16, 1089576); //violet 13 Low% 3:01:35.80
         list.get("76561198398758840").setExtraTime(5, 16, 1541367); //Hokuho 13 Low% 4:16:53.669
         
         //band-aids (until steam LBs become public) cad,eli,dia,monk
