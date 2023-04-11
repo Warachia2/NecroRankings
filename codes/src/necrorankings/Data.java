@@ -153,6 +153,8 @@ public class Data {
     	//not cheater, just an another account of someone
     	case "76561198085518032": return true; //BreedPineapple
     	case "76561199220381387": return true; //tuf's alt
+    	//2023~, which I don't check much
+    	case "76561198020328904": return true; //Cissamannen 14sum 22th from nowhere
     	default: return false;
     	}
     }
@@ -1118,7 +1120,19 @@ public class Data {
     	case "76561198130286506": return "Sacred";
     	case "76561198150109687": return "Miyano";
     	case "76561197971398453": return "NEX"; //9low 6th, idk
-    	
+    	case "76561198040702628": return "silico";
+    	case "76561198251945238": return "Jos";
+    	case "76561199026777015": return "nicky72004";
+    	case  "76561198364986113": return "Griled Chez";
+    	case  "76561198070941044": return "corndogcop";
+    	case  "76561198330104175": return "Jeremy"; //bard score 18th?
+    	case  "76561198184875006": return "Master of Disaster";
+    	case  "76561198081127587": return "Ersatz";
+    	case  "76561198065348225": return "Tihvani";
+    	case  "76561198870654159": return "Pinguim";
+    	case  "76561198171933018": return "sfprodomi";
+    	case  "76561198119689047": return "93notes";
+    	case "76561198086845825": return "belch75"; //monk 104th
     	default: return "ID:" + steamid;
 		}
 	}
