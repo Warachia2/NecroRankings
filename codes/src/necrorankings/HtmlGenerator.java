@@ -343,7 +343,7 @@ public class HtmlGenerator extends DefaultHandler{
         cur++; //Story
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
         cur++; //9
-        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/8677480/?xml=1").openStream(), new HtmlGenerator());
+        saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
         cur++; //13
         saxParser.parse(new URL("https://steamcommunity.com/stats/247080/leaderboards/1795149/?xml=1").openStream(), new HtmlGenerator());
         
@@ -3302,10 +3302,10 @@ public class HtmlGenerator extends DefaultHandler{
     		boldthreshold = 10;
     	}
     	if(0<rank && rank <= boldthreshold){
-        	return "<td class=\"wr\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + category + "lbs.html#r" + rank + "\">" + rankStr(rank) + "</a></td>";
+        	return "<td><a  class=\"wr tooltip\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + category + "lbs.html#r" + rank + "\">" + rankStr(rank) + "</a></td>";
     	}
     	else if(rank != 0){
-    		return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + category + "lbs.html#r" + rank + "\">" + rankStr(rank) + "</a></td>";	
+    		return "<td><a class=\"tooltip\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + category + "lbs.html#r" + rank + "\">" + rankStr(rank) + "</a></td>";	
     	}
     	else{ //no entry
     		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + category + "lbs.html#r" + rank + "\">" + "-" + "</a></td>";
@@ -3314,10 +3314,10 @@ public class HtmlGenerator extends DefaultHandler{
     
     public static String scoreranktag(Player p, int cur, int scorethreshold){
     	if(0 < p.score[cur] && p.score[cur] <= 10){
-        	return "<td class=\"wr\"><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + p.score[cur] + "\">" + rankStr(p.score[cur]) + "</a></td>";
+        	return "<td><a  class=\"wr tooltip\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + p.score[cur] + "\">" + rankStr(p.score[cur]) + "</a></td>";
     	}
     	else if(p.score[cur] != 0 && p.gold[cur] >= scorethreshold){
-    		return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + p.score[cur] + "\">" + rankStr(p.score[cur]) + "</a></td>";	
+    		return "<td><a class=\"tooltip\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + p.score[cur] + "\">" + rankStr(p.score[cur]) + "</a></td>";	
     	}
     	else if(p.score[cur] != 0 && p.gold[cur] < scorethreshold){
     		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + p.score[cur] + "\">" + rankStr(p.score[cur]) + "</a></td>";
@@ -3451,7 +3451,7 @@ public class HtmlGenerator extends DefaultHandler{
     		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "speedlbs.html#r" + player.speed[cur] + "\">" + "-" + "</a></td>";
     	}
     	else{
-    		return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "speedlbs.html#r" + player.speed[cur] + "\">" + Player.csecToString(player.time[cur]) + "</a></td>";
+    		return "<td><a class=\"tooltip\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "speedlbs.html#r" + player.speed[cur] + "\">" + Player.csecToString(player.time[cur]) + "</a></td>";
     	}
     }
     
@@ -3460,7 +3460,7 @@ public class HtmlGenerator extends DefaultHandler{
     		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + player.score[cur] + "\">" + "-" + "</a></td>";
     	}
     	else{
-    		return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + player.score[cur] + "\">" + String.valueOf(player.gold[cur]) + "</a></td>";
+    		return "<td><a class=\"tooltip\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + player.score[cur] + "\">" + String.valueOf(player.gold[cur]) + "</a></td>";
     	}
     }
     
@@ -3472,7 +3472,7 @@ public class HtmlGenerator extends DefaultHandler{
     		return "<td><a class=\"out\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + player.score[cur] + "\">" + String.valueOf(player.gold[cur]) + "</a></td>";
     	}
     	else{
-    		return "<td><a href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + player.score[cur] + "\">" + String.valueOf(player.gold[cur]) + "</a></td>";
+    		return "<td><a class=\"tooltip\" href=\"https://warachia2.github.io/NecroRankings/lbs/" + curToName(cur) + "scorelbs.html#r" + player.score[cur] + "\">" + String.valueOf(player.gold[cur]) + "</a></td>";
     	}
     }
     
