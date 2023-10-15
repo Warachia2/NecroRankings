@@ -871,6 +871,8 @@ public class HtmlGenerator extends DefaultHandler{
     	//biggiemac42
     	list.get("76561197998799529").addInfo(conduitWinner(23));
     	list.get("76561197998799529").addInfo("Found gold duping");
+    	//bongus
+    	list.get("76561198124900228").addInfo("Also known as: philburt");
     	//BronxTaco
     	list.get("76561198018411976").addInfo(linkText("Developer of Awareness","https://github.com/bronxtaco/Awareness"));
     	//Bunnykins
